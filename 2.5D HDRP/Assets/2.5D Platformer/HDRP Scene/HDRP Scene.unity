@@ -26429,7 +26429,7 @@ PrefabInstance:
     - target: {fileID: 4311981481879050721, guid: a44700dc5b05f62448217466f5b71462,
         type: 3}
       propertyPath: m_Name
-      value: Fay Guy - Playable
+      value: Fat Guy - Playable
       objectReference: {fileID: 0}
     - target: {fileID: 4313487744060074283, guid: a44700dc5b05f62448217466f5b71462,
         type: 3}

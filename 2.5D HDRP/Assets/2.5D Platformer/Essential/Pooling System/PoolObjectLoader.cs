@@ -14,6 +14,9 @@ namespace Roundbeargames
 
     public class PoolObjectLoader : MonoBehaviour
     {
+        static string AttackCondition = "AttackCondition";
+        static string BasicHitPrefab = "Basic Hit Prefab";
+        
         public static PoolObject InstantiatePrefab(PoolObjectType objType)
         {
             GameObject obj = null;
@@ -22,7 +25,7 @@ namespace Roundbeargames
             {
                 case PoolObjectType.ATTACK_CONDITION:
                     {
-                        obj = Instantiate(Resources.Load("AttackCondition", typeof(GameObject)) as GameObject);
+                        obj = Instantiate(Resources.Load(AttackCondition, typeof(GameObject)) as GameObject);
                         break;
                     }
                 case PoolObjectType.HAMMER_OBJ:
@@ -37,7 +40,7 @@ namespace Roundbeargames
                     }
                 case PoolObjectType.DAMAGE_WHITE_VFX:
                     {
-                        obj = Instantiate(Resources.Load("VFX_Damage_White", typeof(GameObject)) as GameObject);
+                        obj = Instantiate(Resources.Load(BasicHitPrefab, typeof(GameObject)) as GameObject);
                         break;
                     }
             }
