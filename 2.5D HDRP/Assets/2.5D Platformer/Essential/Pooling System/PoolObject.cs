@@ -36,9 +36,12 @@ namespace Roundbeargames
         {
             yield return new WaitForSeconds(ScheduledOffTime);
 
-            if (!PoolManager.Instance.PoolDictionary[poolObjectType].Contains(this.gameObject))
+            if (PoolManager.Instance.PoolDictionary.ContainsKey(poolObjectType))
             {
-                TurnOff();
+                if (!PoolManager.Instance.PoolDictionary[poolObjectType].Contains(this.gameObject))
+                {
+                    TurnOff();
+                }
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Roundbeargames
     public class PoolObjectLoader : MonoBehaviour
     {
         static string AttackCondition = "AttackCondition";
-        static string BasicHitPrefab = "Basic Hit Prefab";
+        static string BasicHitPrefab = "Basic Hit VFX Prefab";
         
         public static PoolObject InstantiatePrefab(PoolObjectType objType)
         {
