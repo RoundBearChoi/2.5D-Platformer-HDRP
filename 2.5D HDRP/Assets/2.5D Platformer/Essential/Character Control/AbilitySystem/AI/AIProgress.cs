@@ -224,8 +224,8 @@ namespace Roundbeargames
             control.MoveRight = false;
             control.MoveLeft = false;
 
-            control.ATTACK_DATA.AttackTriggered = true;
-            control.Attack = false;
+            //control.ATTACK_DATA.AttackTriggered = true;
+            control.Attack = true;
         }
 
         void ForwardGroundAttack(CharacterControl control)
@@ -248,11 +248,10 @@ namespace Roundbeargames
 
         void ProcForwardGroundAttack(CharacterControl control)
         {
-            if (control.aiProgress.IsFacingTarget() &&
-                    control.ANIMATION_DATA.IsRunning(typeof(MoveForward)))
+            if (control.aiProgress.IsFacingTarget())
             {
-                control.ATTACK_DATA.AttackTriggered = true;
-                control.Attack = false;
+                //control.ATTACK_DATA.AttackTriggered = true;
+                control.Attack = true;
             }
         }
     }
