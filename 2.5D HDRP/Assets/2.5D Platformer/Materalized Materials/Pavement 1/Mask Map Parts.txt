@@ -1,4 +1,0 @@
-R - Metallic Map
-G - AO Map (ambient occlusion)
-B - not using for now
-A - Smoothness Map
