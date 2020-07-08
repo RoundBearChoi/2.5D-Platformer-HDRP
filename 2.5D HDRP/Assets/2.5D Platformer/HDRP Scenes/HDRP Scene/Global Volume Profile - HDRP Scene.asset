@@ -22,7 +22,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.21
+    m_Value: 1.79
     min: 0
     max: 4
   directLightingStrength:
