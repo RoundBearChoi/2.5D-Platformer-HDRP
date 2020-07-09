@@ -22,17 +22,17 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.01
+    m_Value: 1.54
     min: 0
     max: 4
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0.445
+    m_Value: 0.304
     min: 0
     max: 1
   radius:
     m_OverrideState: 1
-    m_Value: 1.18
+    m_Value: 1.62
     min: 0.25
     max: 5
   temporalAccumulation:
@@ -40,7 +40,7 @@ MonoBehaviour:
     m_Value: 1
   ghostingReduction:
     m_OverrideState: 0
-    m_Value: 0.5
+    m_Value: 0.552
     min: 0
     max: 1
   blurSharpness:
@@ -369,16 +369,16 @@ MonoBehaviour:
     m_Value: 2
   threshold:
     m_OverrideState: 1
-    m_Value: 3.5
+    m_Value: 2.8
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.485
+    m_Value: 0.329
     min: 0
     max: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.632
+    m_Value: 0.234
     min: 0
     max: 1
   tint:
