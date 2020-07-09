@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 55bc548e378cf67408e08c3072250017
+labels:
+- Props
+- Environment
+- Plant
+- Decoration
+- Concrete
+- Interior
+- Nature
+- Bamboo
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

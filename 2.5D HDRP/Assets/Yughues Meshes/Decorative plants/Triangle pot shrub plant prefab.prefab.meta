@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bce569b12951f4841ba3a7dfef62ec63
+labels:
+- Props
+- Environment
+- Plant
+- Decoration
+- Concrete
+- Interior
+- Nature
+- Shrub
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
