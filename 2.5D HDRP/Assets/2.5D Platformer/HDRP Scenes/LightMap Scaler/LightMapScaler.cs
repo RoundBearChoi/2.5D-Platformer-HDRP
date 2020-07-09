@@ -10,6 +10,7 @@ namespace Roundbeargames
 
         public void ScaleAll()
         {
+            #if UNITY_EDITOR
             Debug.Log("---Changing ALL LightMap Scale---");
 
             MeshRenderer[] arr = FindObjectsOfType<MeshRenderer>();
@@ -19,6 +20,7 @@ namespace Roundbeargames
                 Debug.Log(r.gameObject.name);
                 r.scaleInLightmap = Scale;
             }
+            #endif
         }
     }
 }
