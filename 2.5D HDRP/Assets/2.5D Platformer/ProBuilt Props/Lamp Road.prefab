@@ -44,7 +44,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9952003, b: 0.8632076, a: 1}
-  m_Intensity: 7.957747
+  m_Intensity: 100
   m_Range: 8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 0
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 2
   m_FadeDistance: 10000
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
