@@ -77,12 +77,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.high-definition-config": {
-      "version": "file:../LocalPackages/com.unity.render-pipelines.high-definition-config",
-      "depth": 0,
-      "source": "local",
+      "version": "7.3.1",
+      "depth": 1,
+      "source": "registry",
       "dependencies": {
         "com.unity.render-pipelines.core": "7.3.1"
-      }
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.settings-manager": {
       "version": "1.0.2",
