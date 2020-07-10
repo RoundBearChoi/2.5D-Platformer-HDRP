@@ -1439,6 +1439,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp Road
       objectReference: {fileID: 0}
+    - target: {fileID: 5695978906082602487, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695978906082602487, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 5521
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695978906082602487, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695978906082602487, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781308994372676399, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781308994372676399, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_ShadowResolution.m_UseOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781308994372676399, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_ShadowResolution.m_Level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781308994372676399, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_ShadowNearPlane
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488670591078529911, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
 --- !u!4 &7012945468240924572 stripped
