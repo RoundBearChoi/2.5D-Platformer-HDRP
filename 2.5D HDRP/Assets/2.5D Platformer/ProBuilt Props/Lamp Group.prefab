@@ -52,7 +52,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 118
   m_IsActive: 1
 --- !u!4 &7012945467884436007
 Transform:
@@ -722,7 +722,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 118
   m_IsActive: 1
 --- !u!4 &7012945468158902952
 Transform:
@@ -1353,7 +1353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_Intensity
-      value: 10539.926
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_LightShadowCasterMode
@@ -1468,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_Intensity
-      value: 10539.926
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_LightShadowCasterMode
@@ -1480,7 +1480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_UseBoundingSphereOverride
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 150218140331290721, guid: dd1964d65ab8aec46846064236885f3a,
         type: 3}
