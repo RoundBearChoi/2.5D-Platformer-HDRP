@@ -1339,6 +1339,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7012945467629986443}
     m_Modifications:
+    - target: {fileID: 1340480497, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
+      propertyPath: m_Intensity
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340480497, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
+      propertyPath: m_LightUnit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_BoundingSphereOverride.x
       value: 0
@@ -1353,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_Intensity
-      value: 95
+      value: 39.788734
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_LightShadowCasterMode
@@ -1439,6 +1447,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp Road
       objectReference: {fileID: 0}
+    - target: {fileID: 2261816022962216657, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_Range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261816022962216657, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261816022962216657, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 763.9437
+      objectReference: {fileID: 0}
     - target: {fileID: 5695978906082602487, guid: dd1964d65ab8aec46846064236885f3a,
         type: 3}
       propertyPath: m_SpotAngle
@@ -1484,6 +1507,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 119
       objectReference: {fileID: 0}
+    - target: {fileID: 7542256870671632549, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542256870671632549, guid: dd1964d65ab8aec46846064236885f3a,
+        type: 3}
+      propertyPath: m_LightUnit
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
 --- !u!4 &7012945468240924572 stripped
@@ -1513,7 +1546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_Intensity
-      value: 95
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1340480498, guid: dd1964d65ab8aec46846064236885f3a, type: 3}
       propertyPath: m_LightShadowCasterMode
