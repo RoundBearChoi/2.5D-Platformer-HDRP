@@ -318,8 +318,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0.18750611, y: 0.29181966, z: 0.5}
   desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
+    m_OverrideState: 1
+    m_Value: 6
   updateMode:
     m_OverrideState: 0
     m_Value: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: -2.25
+    m_Value: -2
   contrast:
     m_OverrideState: 1
     m_Value: -42
