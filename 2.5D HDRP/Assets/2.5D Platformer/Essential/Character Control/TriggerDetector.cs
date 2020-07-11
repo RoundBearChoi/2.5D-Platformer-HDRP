@@ -23,13 +23,19 @@ namespace Roundbeargames
         private void OnTriggerEnter(Collider col)
         {
             CharacterControl attacker = CheckCollidingBodyParts(col);
-
+        
             if (attacker != null)
             {
                 TakeCollateralDamage(attacker, col);
             }
-
+        
             CheckCollidingWeapons(col);
+        }
+
+        private void OnTriggerExit(Collider col)
+        {
+            CheckExitingBodyParts(col);
+            CheckExitingWeapons(col);
         }
 
         CharacterControl CheckCollidingBodyParts(Collider col)
@@ -127,12 +133,6 @@ namespace Roundbeargames
             {
                 control.animationProgress.CollidingWeapons[this].Add(col);
             }
-        }
-
-        private void OnTriggerExit(Collider col)
-        {
-            CheckExitingBodyParts(col);
-            CheckExitingWeapons(col);
         }
 
         void CheckExitingBodyParts(Collider col)

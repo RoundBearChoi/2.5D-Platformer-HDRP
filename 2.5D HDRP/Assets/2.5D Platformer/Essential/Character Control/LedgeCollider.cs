@@ -18,7 +18,6 @@ namespace Roundbeargames
                     CollidedObjects.Add(other.gameObject);
                 }
             }
-            
         }
 
         private void OnTriggerExit(Collider other)
