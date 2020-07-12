@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 2f80bc070099b954c9d28991af95482c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 51b33ba6b7a3eac4faf69f2adc1e46fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -83,15 +83,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2f80bc070099b954c9d28991af95482c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 51b33ba6b7a3eac4faf69f2adc1e46fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: e2c63f9f01716e94eace8c28e5d3eee8, type: 3}
+        m_Texture: {fileID: 2800000, guid: f2605a3afbd64334699092a76b2ac719, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: c3f78900c97c02946a20c7938873b9b4, type: 3}
+        m_Texture: {fileID: 2800000, guid: f87c3a13957f4594295bfa4fab61a5c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -124,7 +124,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AORemapMax: 1
-    - _AORemapMin: 0.43536896
+    - _AORemapMin: 0
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
@@ -190,9 +190,9 @@ Material:
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
-    - _Metallic: 1
+    - _Metallic: 0.6
     - _NormalMapSpace: 0
-    - _NormalScale: 0.05
+    - _NormalScale: 0.15
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -202,7 +202,7 @@ Material:
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 0.19476017
+    - _SmoothnessRemapMax: 0.4345992
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
