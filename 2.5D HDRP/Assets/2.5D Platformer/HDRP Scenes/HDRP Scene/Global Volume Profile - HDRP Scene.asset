@@ -297,7 +297,7 @@ MonoBehaviour:
     m_Value: 49.82
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+    m_Value: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -450,7 +450,7 @@ MonoBehaviour:
     m_Value: 2
   threshold:
     m_OverrideState: 1
-    m_Value: 2.8
+    m_Value: 2.5
     min: 0
   intensity:
     m_OverrideState: 1
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: -2
+    m_Value: -2.75
   contrast:
     m_OverrideState: 1
     m_Value: -42
