@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4005320452914618979}
   m_LocalRotation: {x: -0.3399072, y: -0, z: 0.000000014901158, w: -0.94045895}
-  m_LocalPosition: {x: -0.89000404, y: 0.96000004, z: 0.40999985}
+  m_LocalPosition: {x: -0.8900002, y: 0.9764704, z: 0.42000008}
   m_LocalScale: {x: 0.8823532, y: 0.9127273, z: 2.0525148}
   m_Children: []
   m_Father: {fileID: 6639508573569162927}
@@ -43,9 +43,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.79998666, b: 0.4669811, a: 1}
-  m_Intensity: 60.29252
-  m_Range: 9
+  m_Color: {r: 1, g: 0.937631, b: 0.8349056, a: 1}
+  m_Intensity: 64.90511
+  m_Range: 8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -87,9 +87,9 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 3734
+  m_ColorTemperature: 4673
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 9}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 8}
   m_UseBoundingSphereOverride: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
-  m_ShapeWidth: 5.2794256
+  m_ShapeWidth: 4.904234
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
   m_ShapeRadius: 0.025
@@ -203,7 +203,6 @@ MonoBehaviour:
   showAdditionalSettings: 0
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
-  m_AreaLightEmissiveMeshLayer: -1
 --- !u!1 &6300418721117651989
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 6300418721117651989}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.13, y: 3.3899999, z: 2.8899999}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 1112484798067562581}
   m_Father: {fileID: 0}
