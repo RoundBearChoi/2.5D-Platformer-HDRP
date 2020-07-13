@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <HFDS>
+    <useAdjustedDiffuse>false</useAdjustedDiffuse>
+    <useOriginalDiffuse>true</useOriginalDiffuse>
+    <Blur0Weight>0.02</Blur0Weight>
+    <Blur1Weight>0.03</Blur1Weight>
+    <Blur2Weight>0.1</Blur2Weight>
+    <Blur3Weight>0.35</Blur3Weight>
+    <FinalContrast>4.480769</FinalContrast>
+    <FinalContrastText>4.4807</FinalContrastText>
+    <FinalBiasText>0.0</FinalBiasText>
+    <FinalGain>-0.298076928</FinalGain>
+    <FinalGainText>-0.298</FinalGainText>
+    <SampleColor1>
+      <r>0</r>
+      <g>0</g>
+      <b>0</b>
+      <a>1</a>
+    </SampleColor1>
+    <SampleUV1>
+      <x>0</x>
+      <y>0</y>
+    </SampleUV1>
+    <SampleColor2>
+      <r>0</r>
+      <g>0</g>
+      <b>0</b>
+      <a>1</a>
+    </SampleColor2>
+    <SampleUV2>
+      <x>0</x>
+      <y>0</y>
+    </SampleUV2>
+    <Sample2Height>0.3</Sample2Height>
+  </HFDS>
+  <heightMapPath>green fabric_height.png</heightMapPath>
+  <EDS>
+    <LightMaskPowText>0</LightMaskPowText>
+  </EDS>
+  <diffuseMapPath>null</diffuseMapPath>
+  <diffuseMapOriginalPath>green fabric_diffuseOriginal.png</diffuseMapOriginalPath>
+  <NFHS>
+    <Blur0Weight>1</Blur0Weight>
+    <Blur1Weight>0.9</Blur1Weight>
+    <Blur2Weight>0.6</Blur2Weight>
+    <Blur3Weight>0.4</Blur3Weight>
+    <Blur4Weight>0.25</Blur4Weight>
+    <Blur5Weight>0.15</Blur5Weight>
+    <Blur6Weight>0.1</Blur6Weight>
+    <FinalContrast>6.77884626</FinalContrast>
+    <FinalContrastText>6.7788</FinalContrastText>
+    <SlopeBlur>50</SlopeBlur>
+  </NFHS>
+  <normalMapPath>green fabric_normal.png</normalMapPath>
+  <MS>
+    <MetalColor>
+      <r>0</r>
+      <g>0</g>
+      <b>0</b>
+      <a>1</a>
+    </MetalColor>
+    <SampleUV>
+      <x>0</x>
+      <y>0</y>
+    </SampleUV>
+  </MS>
+  <metallicMapPath>green fabric_metallic.png</metallicMapPath>
+  <SS>
+    <SampleColor1>
+      <r>0</r>
+      <g>0</g>
+      <b>0</b>
+      <a>1</a>
+    </SampleColor1>
+    <SampleUV1>
+      <x>0</x>
+      <y>0</y>
+    </SampleUV1>
+    <SampleColor2>
+      <r>0</r>
+      <g>0</g>
+      <b>0</b>
+      <a>1</a>
+    </SampleColor2>
+    <SampleUV2>
+      <x>0</x>
+      <y>0</y>
+    </SampleUV2>
+    <SampleColor3>
+      <r>0</r>
+      <g>0</g>
+      <b>0</b>
+      <a>1</a>
+    </SampleColor3>
+    <SampleUV3>
+      <x>0</x>
+      <y>0</y>
+    </SampleUV3>
+  </SS>
+  <smoothnessMapPath>green fabric_smoothness.png</smoothnessMapPath>
+  <ES>
+    <Blur0Contrast>1</Blur0Contrast>
+  </ES>
+  <edgeMapPath>null</edgeMapPath>
+  <AOS>
+    <Spread>50</Spread>
+    <FinalContrast>0.57163465</FinalContrast>
+    <FinalContrastText>0.5716</FinalContrastText>
+    <BlendText>1.0</BlendText>
+  </AOS>
+  <aoMapPath>green fabric_ao.png</aoMapPath>
+  <MatS />
+</ProjectObject>
