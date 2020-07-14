@@ -91,7 +91,7 @@ Light:
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 14}
   m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 0.065
   m_ShadowAngle: 0
 --- !u!114 &1340480497
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_ShapeWidth: 0.20524669
   m_ShapeHeight: 0.07357096
   m_AspectRatio: 1
-  m_ShapeRadius: 0.025
+  m_ShapeRadius: 0.065
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
@@ -220,7 +220,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 118
+  m_StaticEditorFlags: 119
   m_IsActive: 1
 --- !u!4 &150218140331290720
 Transform:
