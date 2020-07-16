@@ -1,8 +1,7 @@
 # 2.5D-Platformer-HDRP
-
-**YouTube**
-
 https://youtube.com/roundbeargames
+
+![early screenshot](https://i.imgur.com/f0j0mPy.png)
 
 ----
 
