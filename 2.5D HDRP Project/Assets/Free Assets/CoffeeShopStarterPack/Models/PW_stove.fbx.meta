@@ -1,56 +1,152 @@
 fileFormatVersion: 2
 guid: 9f0519225c65144c0b637b15dda857c8
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: door
-    100002: //RootNode
-    100004: shelf
-    100006: stove 1
-    100008: black
-    100010: button
-    100012: door1
-    100014: fiber
-    100016: polySurface51
-    400000: door
-    400002: //RootNode
-    400004: shelf
-    400006: stove 1
-    400008: black
-    400010: button
-    400012: door1
-    400014: fiber
-    400016: polySurface51
-    2300000: door
-    2300002: shelf
-    2300004: stove 1
-    2300006: black
-    2300008: button
-    2300010: door1
-    2300012: fiber
-    2300014: polySurface51
-    3300000: door
-    3300002: shelf
-    3300004: stove 1
-    3300006: black
-    3300008: button
-    3300010: door1
-    3300012: fiber
-    3300014: polySurface51
-    4300000: shelf
-    4300002: stove
-    4300004: door
-    4300006: button
-    4300008: black
-    4300010: polySurface51
-    4300012: door1
-    4300014: fiber
-    6400000: black
-    6400002: button
-    6400004: door1
-    6400006: fiber
-    6400008: polySurface51
-    6400010: stove 1
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: door
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: shelf
+  - first:
+      1: 100006
+    second: stove 1
+  - first:
+      1: 100008
+    second: black
+  - first:
+      1: 100010
+    second: button
+  - first:
+      1: 100012
+    second: door1
+  - first:
+      1: 100014
+    second: fiber
+  - first:
+      1: 100016
+    second: polySurface51
+  - first:
+      4: 400000
+    second: door
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: shelf
+  - first:
+      4: 400006
+    second: stove 1
+  - first:
+      4: 400008
+    second: black
+  - first:
+      4: 400010
+    second: button
+  - first:
+      4: 400012
+    second: door1
+  - first:
+      4: 400014
+    second: fiber
+  - first:
+      4: 400016
+    second: polySurface51
+  - first:
+      23: 2300000
+    second: door
+  - first:
+      23: 2300002
+    second: shelf
+  - first:
+      23: 2300004
+    second: stove 1
+  - first:
+      23: 2300006
+    second: black
+  - first:
+      23: 2300008
+    second: button
+  - first:
+      23: 2300010
+    second: door1
+  - first:
+      23: 2300012
+    second: fiber
+  - first:
+      23: 2300014
+    second: polySurface51
+  - first:
+      33: 3300000
+    second: door
+  - first:
+      33: 3300002
+    second: shelf
+  - first:
+      33: 3300004
+    second: stove 1
+  - first:
+      33: 3300006
+    second: black
+  - first:
+      33: 3300008
+    second: button
+  - first:
+      33: 3300010
+    second: door1
+  - first:
+      33: 3300012
+    second: fiber
+  - first:
+      33: 3300014
+    second: polySurface51
+  - first:
+      43: 4300000
+    second: shelf
+  - first:
+      43: 4300002
+    second: stove
+  - first:
+      43: 4300004
+    second: door
+  - first:
+      43: 4300006
+    second: button
+  - first:
+      43: 4300008
+    second: black
+  - first:
+      43: 4300010
+    second: polySurface51
+  - first:
+      43: 4300012
+    second: door1
+  - first:
+      43: 4300014
+    second: fiber
+  - first:
+      64: 6400000
+    second: black
+  - first:
+      64: 6400002
+    second: button
+  - first:
+      64: 6400004
+    second: door1
+  - first:
+      64: 6400006
+    second: fiber
+  - first:
+      64: 6400008
+    second: polySurface51
+  - first:
+      64: 6400010
+    second: stove 1
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -68,7 +164,7 @@ ModelImporter:
       name: transparan
     second: {fileID: 2100000, guid: 2fbdaf6467d4342e6861bed4e750a9bf, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 1
     materialSearch: 2
     materialLocation: 1
@@ -85,6 +181,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -99,17 +196,23 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 1
-    importVisibility: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -121,10 +224,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -134,14 +240,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

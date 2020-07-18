@@ -1,34 +1,86 @@
 fileFormatVersion: 2
 guid: 381eb029d06ce4246b00b6361a470447
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: bread
-    100002: cheese
-    100004: mint
-    100006: //RootNode
-    100008: tomatoes
-    400000: bread
-    400002: cheese
-    400004: mint
-    400006: //RootNode
-    400008: tomatoes
-    2300000: bread
-    2300002: cheese
-    2300004: mint
-    2300006: tomatoes
-    3300000: bread
-    3300002: cheese
-    3300004: mint
-    3300006: tomatoes
-    4300000: mint
-    4300002: tomatoes
-    4300004: cheese
-    4300006: bread
-    6400000: bread
-    6400002: cheese
-    6400004: mint
-    6400006: tomatoes
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: bread
+  - first:
+      1: 100002
+    second: cheese
+  - first:
+      1: 100004
+    second: mint
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: tomatoes
+  - first:
+      4: 400000
+    second: bread
+  - first:
+      4: 400002
+    second: cheese
+  - first:
+      4: 400004
+    second: mint
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: tomatoes
+  - first:
+      23: 2300000
+    second: bread
+  - first:
+      23: 2300002
+    second: cheese
+  - first:
+      23: 2300004
+    second: mint
+  - first:
+      23: 2300006
+    second: tomatoes
+  - first:
+      33: 3300000
+    second: bread
+  - first:
+      33: 3300002
+    second: cheese
+  - first:
+      33: 3300004
+    second: mint
+  - first:
+      33: 3300006
+    second: tomatoes
+  - first:
+      43: 4300000
+    second: mint
+  - first:
+      43: 4300002
+    second: tomatoes
+  - first:
+      43: 4300004
+    second: cheese
+  - first:
+      43: 4300006
+    second: bread
+  - first:
+      64: 6400000
+    second: bread
+  - first:
+      64: 6400002
+    second: cheese
+  - first:
+      64: 6400004
+    second: mint
+  - first:
+      64: 6400006
+    second: tomatoes
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -36,7 +88,7 @@ ModelImporter:
       name: basic
     second: {fileID: 2100000, guid: c84dda17c95484eaca9d29a983138b14, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 1
     materialSearch: 2
     materialLocation: 1
@@ -53,6 +105,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -67,17 +120,23 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 1
-    importVisibility: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -89,10 +148,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -102,14 +164,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

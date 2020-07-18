@@ -1,43 +1,113 @@
 fileFormatVersion: 2
 guid: 90c9369496bdb4fd285bc323d418f542
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: plant
-    100002: polySurface1
-    100004: polySurface11
-    100006: pot
-    100008: //RootNode
-    100010: rock
-    100012: soil
-    400000: plant
-    400002: polySurface1
-    400004: polySurface11
-    400006: pot
-    400008: //RootNode
-    400010: rock
-    400012: soil
-    2100000: lambert8
-    2300000: polySurface1
-    2300002: polySurface11
-    2300004: pot
-    2300006: rock
-    2300008: soil
-    3300000: polySurface1
-    3300002: polySurface11
-    3300004: pot
-    3300006: rock
-    3300008: soil
-    4300000: soil
-    4300002: pot
-    4300004: rock
-    4300006: polySurface11
-    4300008: polySurface1
-    6400000: polySurface1
-    6400002: polySurface11
-    6400004: pot
-    6400006: rock
-    6400008: soil
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: plant
+  - first:
+      1: 100002
+    second: polySurface1
+  - first:
+      1: 100004
+    second: polySurface11
+  - first:
+      1: 100006
+    second: pot
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      1: 100010
+    second: rock
+  - first:
+      1: 100012
+    second: soil
+  - first:
+      4: 400000
+    second: plant
+  - first:
+      4: 400002
+    second: polySurface1
+  - first:
+      4: 400004
+    second: polySurface11
+  - first:
+      4: 400006
+    second: pot
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      4: 400010
+    second: rock
+  - first:
+      4: 400012
+    second: soil
+  - first:
+      21: 2100000
+    second: lambert8
+  - first:
+      23: 2300000
+    second: polySurface1
+  - first:
+      23: 2300002
+    second: polySurface11
+  - first:
+      23: 2300004
+    second: pot
+  - first:
+      23: 2300006
+    second: rock
+  - first:
+      23: 2300008
+    second: soil
+  - first:
+      33: 3300000
+    second: polySurface1
+  - first:
+      33: 3300002
+    second: polySurface11
+  - first:
+      33: 3300004
+    second: pot
+  - first:
+      33: 3300006
+    second: rock
+  - first:
+      33: 3300008
+    second: soil
+  - first:
+      43: 4300000
+    second: soil
+  - first:
+      43: 4300002
+    second: pot
+  - first:
+      43: 4300004
+    second: rock
+  - first:
+      43: 4300006
+    second: polySurface11
+  - first:
+      43: 4300008
+    second: polySurface1
+  - first:
+      64: 6400000
+    second: polySurface1
+  - first:
+      64: 6400002
+    second: polySurface11
+  - first:
+      64: 6400004
+    second: pot
+  - first:
+      64: 6400006
+    second: rock
+  - first:
+      64: 6400008
+    second: soil
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -50,7 +120,7 @@ ModelImporter:
       name: lambert8
     second: {fileID: 2100000, guid: f54232aba16bf4b04ac8377906f459e6, type: 2}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 1
     materialSearch: 2
     materialLocation: 1
@@ -67,6 +137,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -81,17 +152,23 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 1
-    importVisibility: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -103,10 +180,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -116,14 +196,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
