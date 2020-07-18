@@ -15,11 +15,11 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   shadows:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.00000001826297}
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: -0.058910187}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.122783095}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.063872926}
   highlights:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: -1.3574877e-10}
@@ -61,12 +61,12 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.3
+    m_Value: 0.7
     min: 0
     max: 4
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.15
     min: 0
     max: 1
   radius:
@@ -410,25 +410,25 @@ MonoBehaviour:
     m_Value: 31.4
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    m_Value: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 35
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   anisotropy:
     m_OverrideState: 1
-    m_Value: 0.877
+    m_Value: 0.35
     min: -1
     max: 1
   globalLightProbeDimmer:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.75
     min: 0
     max: 1
   depthExtent:
@@ -654,7 +654,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1
     min: 0
   maximumVelocity:
     m_OverrideState: 0
