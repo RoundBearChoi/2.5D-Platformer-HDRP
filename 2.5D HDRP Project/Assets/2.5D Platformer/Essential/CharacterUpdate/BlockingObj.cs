@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class BlockingObj : CharacterUpdate
     {
-        Dictionary<GameObject, GameObject> FrontBlockingObjs = new Dictionary<GameObject, GameObject>();
         Dictionary<GameObject, GameObject> UpBlockingObjs = new Dictionary<GameObject, GameObject>();
         Dictionary<GameObject, GameObject> DownBlockingObjs = new Dictionary<GameObject, GameObject>();
 
@@ -20,7 +19,6 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            control.BLOCKING_DATA.ClearFrontBlockingObjDic = ClearFrontBlockingObjDic;
             control.BLOCKING_DATA.LeftSideBlocked = LeftSideIsBlocked;
             control.BLOCKING_DATA.RightSideBlocked = RightSideIsBlocked;
             control.BLOCKING_DATA.GetFrontBlockingCharacterList = GetFrontBlockingCharacterList;
@@ -37,9 +35,9 @@ namespace Roundbeargames
             }
             else
             {
-                if (FrontBlockingObjs.Count != 0)
+                if (control.BLOCKING_DATA.FrontBlockingObjs.Count != 0)
                 {
-                    FrontBlockingObjs.Clear();
+                    control.BLOCKING_DATA.FrontBlockingObjs.Clear();
                 }
             }
 
@@ -90,7 +88,7 @@ namespace Roundbeargames
 
             CheckMarioStomp();
 
-            control.BLOCKING_DATA.FrontBlockingDicCount = FrontBlockingObjs.Count;
+            control.BLOCKING_DATA.FrontBlockingDicCount = control.BLOCKING_DATA.FrontBlockingObjs.Count;
             control.BLOCKING_DATA.UpBlockingDicCount = UpBlockingObjs.Count;
         }
 
@@ -170,9 +168,9 @@ namespace Roundbeargames
 
                 foreach (GameObject s in control.COLLISION_SPHERE_DATA.BackSpheres)
                 {
-                    if (FrontBlockingObjs.ContainsKey(s))
+                    if (control.BLOCKING_DATA.FrontBlockingObjs.ContainsKey(s))
                     {
-                        FrontBlockingObjs.Remove(s);
+                        control.BLOCKING_DATA.FrontBlockingObjs.Remove(s);
                     }
                 }
             }
@@ -183,9 +181,9 @@ namespace Roundbeargames
 
                 foreach (GameObject s in control.COLLISION_SPHERE_DATA.FrontSpheres)
                 {
-                    if (FrontBlockingObjs.ContainsKey(s))
+                    if (control.BLOCKING_DATA.FrontBlockingObjs.ContainsKey(s))
                     {
-                        FrontBlockingObjs.Remove(s);
+                        control.BLOCKING_DATA.FrontBlockingObjs.Remove(s);
                     }
                 }
             }
@@ -199,11 +197,11 @@ namespace Roundbeargames
 
                 if (blockingObj != null)
                 {
-                    AddBlockingObjToDic(FrontBlockingObjs, FrontSpheresArray[i], blockingObj);
+                    AddBlockingObjToDic(control.BLOCKING_DATA.FrontBlockingObjs, FrontSpheresArray[i], blockingObj);
                 }
                 else
                 {
-                    RemoveBlockingObjFromDic(FrontBlockingObjs, FrontSpheresArray[i]);
+                    RemoveBlockingObjFromDic(control.BLOCKING_DATA.FrontBlockingObjs, FrontSpheresArray[i]);
                 }
             }
         }
@@ -266,7 +264,7 @@ namespace Roundbeargames
 
         bool RightSideIsBlocked()
         {
-            foreach (KeyValuePair<GameObject, GameObject> data in FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
                 if ((data.Value.transform.position - control.transform.position).z > 0f)
                 {
@@ -279,7 +277,7 @@ namespace Roundbeargames
 
         bool LeftSideIsBlocked()
         {
-            foreach (KeyValuePair<GameObject, GameObject> data in FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
                 if ((data.Value.transform.position - control.transform.position).z < 0f)
                 {
@@ -289,17 +287,12 @@ namespace Roundbeargames
 
             return false;
         }
-
-        void ClearFrontBlockingObjDic()
-        {
-            FrontBlockingObjs.Clear();
-        }
-
+        
         List<GameObject> GetFrontBlockingCharacterList()
         {
             FrontBlockingCharacters.Clear();
 
-            foreach(KeyValuePair<GameObject, GameObject> data in FrontBlockingObjs)
+            foreach(KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
                 CharacterControl c = CharacterManager.Instance.GetCharacter(data.Value.transform.root.gameObject);
 
@@ -319,7 +312,7 @@ namespace Roundbeargames
         {
             FrontBlockingObjsList.Clear();
 
-            foreach(KeyValuePair<GameObject, GameObject> data in FrontBlockingObjs)
+            foreach(KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
                 if (!FrontBlockingObjsList.Contains(data.Value))
                 {

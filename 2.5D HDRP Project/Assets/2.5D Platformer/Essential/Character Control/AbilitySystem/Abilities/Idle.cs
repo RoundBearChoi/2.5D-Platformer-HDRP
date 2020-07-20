@@ -11,7 +11,7 @@ namespace Roundbeargames
         {
             animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Move], false);
 
-            characterState.BLOCKING_DATA.ClearFrontBlockingObjDic();
+            characterState.BLOCKING_DATA.FrontBlockingObjs.Clear();
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

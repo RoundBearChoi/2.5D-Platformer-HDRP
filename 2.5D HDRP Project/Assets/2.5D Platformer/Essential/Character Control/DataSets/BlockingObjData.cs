@@ -9,6 +9,8 @@ namespace Roundbeargames
     {
         public Vector3 RaycastContact = new Vector3();
 
+        public Dictionary<GameObject, GameObject> FrontBlockingObjs;
+
         public int FrontBlockingDicCount;
         public int UpBlockingDicCount;
 
@@ -16,7 +18,6 @@ namespace Roundbeargames
         public delegate bool ReturnBool();
         public delegate List<GameObject> ReturnGameObjList();
 
-        public DoSomething ClearFrontBlockingObjDic;
         public ReturnBool LeftSideBlocked;
         public ReturnBool RightSideBlocked;
         public ReturnGameObjList GetFrontBlockingObjList;
