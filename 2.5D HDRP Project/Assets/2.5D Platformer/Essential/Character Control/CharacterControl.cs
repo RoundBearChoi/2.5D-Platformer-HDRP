@@ -24,9 +24,6 @@ namespace Roundbeargames
         public bool Attack;
         public bool Block;
 
-        [Header("SubComponents")]
-        public CharacterUpdateProcessor characterUpdateProcessor;
-
         // temp
         public AIProgress aiProgress;
         public AIController aiController;
@@ -35,6 +32,7 @@ namespace Roundbeargames
 
         public CharacterData characterData;
         public CharacterFunctionProcessor characterFunctionProcessor;
+        public CharacterUpdateProcessor characterUpdateProcessor;
         public CharacterQueryProcessor characterQueryProcessor;
 
         public BlockingObjData BLOCKING_DATA => characterData.blockingData;
@@ -55,6 +53,7 @@ namespace Roundbeargames
         public CollidingObjData COLLIDING_OBJ_DATA => characterData.collidingObjData;
         public WeaponData WEAPON_DATA => characterData.weaponData;
 
+        //temp
         [Header("Setup")]
         public PlayableCharacterType playableCharacterType;
         public Animator SkinnedMeshAnimator;
@@ -126,7 +125,6 @@ namespace Roundbeargames
             foreach(CharacterState c in arr)
             {
                 c.characterControl = this;
-                //c.PutStatesInArray();
             }
         }
 
@@ -138,14 +136,14 @@ namespace Roundbeargames
             }
         }
 
-        public void MoveForward(float Speed, float SpeedGraph)
-        {
-            transform.Translate(Vector3.forward * Speed * SpeedGraph * Time.deltaTime);
-        }
-
         public void RunFunction(System.Type CharacterFunctionType)
         {
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
+        }
+
+        public void RunFunction(System.Type CharacterFunctionType, float float1, float float2)
+        {
+            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(float1, float2);
         }
 
         public void RunFunction(System.Type CharacterFunctionType, CharacterControl characterControl, PoolObjectType poolObjType)

@@ -132,7 +132,9 @@ namespace Roundbeargames
 
             if (!IsBlocked(control))
             {
-                control.MoveForward(Speed, Mathf.Abs(control.MOMENTUM_DATA.Momentum));
+                control.RunFunction(typeof(MoveTransformForward),
+                    Speed,
+                    Mathf.Abs(control.MOMENTUM_DATA.Momentum));
             }
         }
 
@@ -144,16 +146,22 @@ namespace Roundbeargames
                 {
                     if (!control.GetBool(typeof(FacingAttacker)))// animationProgress.IsFacingAttacker())
                     {
-                        control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
+                        control.RunFunction(typeof(MoveTransformForward),
+                            Speed,
+                            SpeedGraph.Evaluate(stateInfo.normalizedTime));
                     }
                     else
                     {
-                        control.MoveForward(-Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
+                        control.RunFunction(typeof(MoveTransformForward),
+                            -Speed,
+                            SpeedGraph.Evaluate(stateInfo.normalizedTime));
                     }
                 }
                 else
                 {
-                    control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
+                    control.RunFunction(typeof(MoveTransformForward),
+                        Speed,
+                        SpeedGraph.Evaluate(stateInfo.normalizedTime));
                 }
             }
         }
@@ -174,7 +182,9 @@ namespace Roundbeargames
             {
                 if (!IsBlocked(control))
                 {
-                    control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
+                    control.RunFunction(typeof(MoveTransformForward),
+                        Speed,
+                        SpeedGraph.Evaluate(stateInfo.normalizedTime));
                 }
             }
 
@@ -182,7 +192,9 @@ namespace Roundbeargames
             {
                 if (!IsBlocked(control))
                 {
-                    control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
+                    control.RunFunction(typeof(MoveTransformForward),
+                        Speed,
+                        SpeedGraph.Evaluate(stateInfo.normalizedTime));
                 }
             }
 
