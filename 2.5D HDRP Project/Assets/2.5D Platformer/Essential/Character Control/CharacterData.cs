@@ -81,6 +81,12 @@ namespace Roundbeargames
                 Momentum = 0f,
             };
 
+            rotationData = new RotationData
+            {
+                LockTurn = false,
+                UnlockTiming = 0f,
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

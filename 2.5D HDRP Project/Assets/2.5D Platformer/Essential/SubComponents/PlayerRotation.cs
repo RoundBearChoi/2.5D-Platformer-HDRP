@@ -6,20 +6,13 @@ namespace Roundbeargames
 {
     public class PlayerRotation : SubComponent
     {
-        public RotationData rotationData;
         static string TutorialScene_CharacterSelect = "TutorialScene_CharacterSelect";
 
-        private void Start()
+        public override void InitComponent()
         {
-            rotationData = new RotationData
-            {
-                LockTurn = false,
-                UnlockTiming = 0f,
-                FaceForward = FaceForward,
-                IsFacingForward = IsFacingForward,
-            };
+            control.ROTATION_DATA.FaceForward = FaceForward;
+            control.ROTATION_DATA.IsFacingForward = IsFacingForward;
 
-            control.characterData.rotationData = rotationData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ROTATION] = this;
         }
 
@@ -76,13 +69,13 @@ namespace Roundbeargames
         {
             if (!control.ANIMATION_DATA.IsRunning(typeof(LockTurn)))
             {
-                if (rotationData.LockTurn)
+                if (control.ROTATION_DATA.LockTurn)
                 {
                     AnimatorStateInfo info = control.SkinnedMeshAnimator.GetCurrentAnimatorStateInfo(0);
 
-                    if (info.normalizedTime >= rotationData.UnlockTiming)
+                    if (info.normalizedTime >= control.ROTATION_DATA.UnlockTiming)
                     {
-                        rotationData.LockTurn = false;
+                        control.ROTATION_DATA.LockTurn = false;
                     }
                 }
             }
