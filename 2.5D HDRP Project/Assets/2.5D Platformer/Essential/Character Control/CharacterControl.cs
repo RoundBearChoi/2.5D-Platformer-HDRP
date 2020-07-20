@@ -28,7 +28,6 @@ namespace Roundbeargames
         public CharacterUpdateProcessor characterUpdateProcessor;
 
         // temp
-        public AnimationProgress animationProgress;
         public AIProgress aiProgress;
         public AIController aiController;
         public BoxCollider boxCollider;
@@ -83,7 +82,6 @@ namespace Roundbeargames
             characterUpdateProcessor = GetComponentInChildren<CharacterUpdateProcessor>();
 
             // temp
-            animationProgress = GetComponent<AnimationProgress>();
             aiProgress = GetComponentInChildren<AIProgress>();
             boxCollider = GetComponent<BoxCollider>();
             navMeshObstacle = GetComponent<NavMeshObstacle>();
