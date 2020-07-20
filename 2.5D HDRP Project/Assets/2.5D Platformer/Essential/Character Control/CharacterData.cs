@@ -109,6 +109,11 @@ namespace Roundbeargames
 
             };
 
+            groundData = new GroundData
+            {
+
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

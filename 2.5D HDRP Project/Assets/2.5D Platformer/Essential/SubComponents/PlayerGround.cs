@@ -6,16 +6,9 @@ namespace Roundbeargames
 {
     public class PlayerGround : SubComponent
     {
-        public GroundData groundData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            groundData = new GroundData
-            {
 
-            };
-
-            control.characterData.groundData = groundData;
         }
 
         public override void OnFixedUpdate()
