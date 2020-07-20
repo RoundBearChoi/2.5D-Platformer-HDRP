@@ -230,8 +230,9 @@ namespace Roundbeargames
                 }
 
                 info.RegisteredTargets.Add(this.control);
+
                 control.RunFunction(typeof(ClearAllVelocity));
-                control.RAGDOLL_DATA.AddForceToDamagedPart(RagdollPushType.DEAD_BODY);
+                control.RunFunction(typeof(AddForceToDamagedPart), RagdollPushType.DEAD_BODY);
             }
 
             return;

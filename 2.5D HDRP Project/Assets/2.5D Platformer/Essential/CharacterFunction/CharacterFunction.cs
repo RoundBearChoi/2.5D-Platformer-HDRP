@@ -17,5 +17,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual void RunFunction(RagdollPushType ragdollPushType)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -4,18 +4,10 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public enum RagdollPushType
-    {
-        NORMAL,
-        DEAD_BODY,
-    }
-
     public class Ragdoll : CharacterUpdate
     {
         public override void InitComponent()
         {
-            control.RAGDOLL_DATA.AddForceToDamagedPart = AddForceToDamagedPart;
-
             SetupBodyParts();
             characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.RAGDOLL] = this;
         }
@@ -150,59 +142,22 @@ namespace Roundbeargames
                 //take damage from attack
                 else
                 {
-                    control.RAGDOLL_DATA.AddForceToDamagedPart(RagdollPushType.NORMAL);
+                    control.RunFunction(typeof(AddForceToDamagedPart), RagdollPushType.NORMAL);
                 }
             }
         }
 
-        Collider GetBodyPart(string name)
-        {
-            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
-            {
-                if (control.RAGDOLL_DATA.ArrBodyParts[i].name.Contains(name))
-                {
-                    return control.RAGDOLL_DATA.ArrBodyParts[i];
-                }
-            }
-
-            return null;
-        }
-
-        void AddForceToDamagedPart(RagdollPushType pushType)
-        {
-            if (control.DAMAGE_DATA.damageTaken == null)
-            {
-                return;
-            }
-
-            if (control.DAMAGE_DATA.damageTaken.ATTACKER == null)
-            {
-                return;
-            }
-
-            DamageData damageData = control.DAMAGE_DATA;
-
-            Vector3 forwardDir = damageData.damageTaken.ATTACKER.transform.forward;
-            Vector3 rightDir = damageData.damageTaken.ATTACKER.transform.right;
-            Vector3 upDir = damageData.damageTaken.ATTACKER.transform.up;
-
-            Rigidbody body = control.DAMAGE_DATA.damageTaken.DAMAGEE.GetComponent<Rigidbody>();
-            Attack attack = damageData.damageTaken.ATTACK;
-
-            if (pushType == RagdollPushType.NORMAL)
-            {
-                body.AddForce(
-                    forwardDir * attack.normalRagdollVelocity.ForwardForce +
-                    rightDir * attack.normalRagdollVelocity.RightForce +
-                    upDir * attack.normalRagdollVelocity.UpForce);
-            }
-            else if (pushType == RagdollPushType.DEAD_BODY)
-            {
-                body.AddForce(
-                    forwardDir * attack.collateralRagdollVelocity.ForwardForce +
-                    rightDir * attack.collateralRagdollVelocity.RightForce +
-                    upDir * attack.collateralRagdollVelocity.UpForce);
-            }
-        }
+        //Collider GetBodyPart(string name)
+        //{
+        //    for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
+        //    {
+        //        if (control.RAGDOLL_DATA.ArrBodyParts[i].name.Contains(name))
+        //        {
+        //            return control.RAGDOLL_DATA.ArrBodyParts[i];
+        //        }
+        //    }
+        //
+        //    return null;
+        //}
     }
 }

@@ -202,6 +202,11 @@ namespace Roundbeargames
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(characterControl, poolObjType);
         }
 
+        public void RunFunction(System.Type CharacterFunctionType, RagdollPushType ragdollPushType)
+        {
+            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(ragdollPushType);
+        }
+
         public bool GetBool(System.Type CharacterQueryType)
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool();
