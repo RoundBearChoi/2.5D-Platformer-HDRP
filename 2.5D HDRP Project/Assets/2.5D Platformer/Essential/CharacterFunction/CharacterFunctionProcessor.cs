@@ -11,6 +11,7 @@ namespace Roundbeargames
         private void Start()
         {
             AddFunction(typeof(LedgeCollidersOff));
+            AddFunction(typeof(SpawnHitParticles));
         }
 
         void AddFunction(System.Type type)

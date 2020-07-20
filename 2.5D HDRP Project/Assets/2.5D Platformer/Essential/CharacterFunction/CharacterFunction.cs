@@ -12,5 +12,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual void RunFunction(CharacterControl attacker, PoolObjectType EffectsType)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

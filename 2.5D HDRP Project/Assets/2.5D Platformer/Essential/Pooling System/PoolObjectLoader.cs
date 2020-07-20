@@ -4,14 +4,6 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public enum PoolObjectType
-    {
-        ATTACK_CONDITION,
-        HAMMER_OBJ,
-        HAMMER_VFX,
-        DAMAGE_WHITE_VFX,
-    }
-
     public class PoolObjectLoader : MonoBehaviour
     {
         static string AttackCondition = "AttackCondition";
