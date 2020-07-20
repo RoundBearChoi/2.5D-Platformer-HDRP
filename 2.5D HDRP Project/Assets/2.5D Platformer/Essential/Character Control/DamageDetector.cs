@@ -117,14 +117,15 @@ namespace Roundbeargames
                 {
                     foreach (AttackPartType part in info.AttackParts)
                     {
-                        if (info.Attacker.GetAttackingPart(part) ==
-                            collider.gameObject)
+                        GameObject attackingPart = info.Attacker.GetGameObject(typeof(GetAttackingPart), part);
+
+                        if (attackingPart == collider.gameObject)
                         {
                             control.DAMAGE_DATA.damageTaken = new DamageTaken(
                                 info.Attacker,
                                 info.AttackAbility,
                                 data.Key,
-                                info.Attacker.GetAttackingPart(part),
+                                attackingPart,
                                 Vector3.zero);
 
                             return true;

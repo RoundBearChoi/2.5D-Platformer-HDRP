@@ -15,6 +15,7 @@ namespace Roundbeargames
 
             AddQuery(typeof(FrontBlockingCharacterList));
             AddQuery(typeof(FrontBlockingObjList));
+            AddQuery(typeof(GetAttackingPart));
         }
 
         void AddQuery(System.Type type)

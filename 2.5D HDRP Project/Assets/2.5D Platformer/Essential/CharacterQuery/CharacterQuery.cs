@@ -17,5 +17,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual GameObject ReturnGameObj(AttackPartType attackPartType)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -4,17 +4,6 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public enum AttackPartType
-    {
-        LEFT_HAND,
-        RIGHT_HAND,
-
-        LEFT_FOOT,
-        RIGHT_FOOT,
-
-        MELEE_WEAPON,
-    }
-
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/Attack")]
     public class Attack : CharacterAbility
     {

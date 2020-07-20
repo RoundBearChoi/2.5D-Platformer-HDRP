@@ -166,32 +166,6 @@ namespace Roundbeargames
             return null;
         }
 
-        public GameObject GetAttackingPart(AttackPartType attackPart)
-        {
-            if (attackPart == AttackPartType.LEFT_HAND)
-            {
-                return LeftHand_Attack;
-            }
-            else if (attackPart == AttackPartType.RIGHT_HAND)
-            {
-                return RightHand_Attack;
-            }
-            else if (attackPart == AttackPartType.LEFT_FOOT)
-            {
-                return LeftFoot_Attack;
-            }
-            else if (attackPart == AttackPartType.RIGHT_FOOT)
-            {
-                return RightFoot_Attack;
-            }
-            else if (attackPart == AttackPartType.MELEE_WEAPON)
-            {
-                return animationProgress.HoldingWeapon.triggerDetector.gameObject;
-            }
-
-            return null;
-        }
-
         public void RunFunction(System.Type CharacterFunctionType)
         {
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
@@ -217,5 +191,9 @@ namespace Roundbeargames
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnGameObjList();
         }
 
+        public GameObject GetGameObject(System.Type CharacterQueryType, AttackPartType attackPartType)
+        {
+            return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnGameObj(attackPartType);
+        }
     }
 }
