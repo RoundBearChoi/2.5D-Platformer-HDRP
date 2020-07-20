@@ -15,7 +15,6 @@ namespace Roundbeargames
         public override void InitComponent()
         {
             control.RAGDOLL_DATA.AddForceToDamagedPart = AddForceToDamagedPart;
-            control.RAGDOLL_DATA.ClearExistingVelocity = ClearExistingVelocity;
 
             SetupBodyParts();
             characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.RAGDOLL] = this;
@@ -134,7 +133,7 @@ namespace Roundbeargames
                 control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.isKinematic = false;
             }
 
-            control.RAGDOLL_DATA.ClearExistingVelocity();
+            control.RunFunction(typeof(ClearAllVelocity));
             
             if (control.DAMAGE_DATA.damageTaken != null)
             {
@@ -203,14 +202,6 @@ namespace Roundbeargames
                     forwardDir * attack.collateralRagdollVelocity.ForwardForce +
                     rightDir * attack.collateralRagdollVelocity.RightForce +
                     upDir * attack.collateralRagdollVelocity.UpForce);
-            }
-        }
-
-        void ClearExistingVelocity()
-        {
-            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
-            {
-                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
             }
         }
     }

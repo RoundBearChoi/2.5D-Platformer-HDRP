@@ -13,12 +13,9 @@ namespace Roundbeargames
 
         public delegate Collider GetCollider(string name);
         public delegate void ProcRagdoll(RagdollPushType type);
-        public delegate void DoSomething();
-
 
         public GetCollider GetBody;
         public ProcRagdoll AddForceToDamagedPart;
-        public DoSomething ClearExistingVelocity;
     }
 
     [System.Serializable]
