@@ -184,5 +184,10 @@ namespace Roundbeargames
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnGameObj(str);
         }
+
+        public MeleeWeapon GetMeleeWeapon(System.Type CharacterQueryType)
+        {
+            return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnMeleeWeapon();
+        }
     }
 }

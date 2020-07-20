@@ -12,7 +12,7 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             characterState.WEAPON_DATA.HoldingWeapon =
-                characterState.characterControl.animationProgress.GetTouchingWeapon();
+                characterState.characterControl.GetMeleeWeapon(typeof(GetTouchingMeleeWeapon));
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

@@ -32,5 +32,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual MeleeWeapon ReturnMeleeWeapon()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
