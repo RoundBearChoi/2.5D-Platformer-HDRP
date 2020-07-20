@@ -10,14 +10,14 @@ namespace Roundbeargames
 
         private void Start()
         {
-            CreateQuery(typeof(LeftSideIsBlocked));
-            CreateQuery(typeof(RightSideIsBlocked));
+            AddQuery(typeof(LeftSideIsBlocked));
+            AddQuery(typeof(RightSideIsBlocked));
 
-            CreateQuery(typeof(FrontBlockingCharacterList));
-            CreateQuery(typeof(FrontBlockingObjList));
+            AddQuery(typeof(FrontBlockingCharacterList));
+            AddQuery(typeof(FrontBlockingObjList));
         }
 
-        void CreateQuery(System.Type type)
+        void AddQuery(System.Type type)
         {
             if (type.IsSubclassOf(typeof(CharacterQuery)))
             {
@@ -28,6 +28,8 @@ namespace Roundbeargames
 
                 CharacterQuery q = newQ.AddComponent(type) as CharacterQuery;
                 DicQueries.Add(type, q);
+
+                q.control = this.transform.root.gameObject.GetComponent<CharacterControl>();
 
                 newQ.name = type.ToString();
                 newQ.name = newQ.name.Replace("Roundbeargames.", "");

@@ -8,9 +8,7 @@ namespace Roundbeargames
     public class LedgeGrabData
     {
         public bool isGrabbingLedge;
-
-        public delegate void DoSomething();
-
-        public DoSomething LedgeCollidersOff;
+        public GameObject Collider1;
+        public GameObject Collider2;
     }
 }

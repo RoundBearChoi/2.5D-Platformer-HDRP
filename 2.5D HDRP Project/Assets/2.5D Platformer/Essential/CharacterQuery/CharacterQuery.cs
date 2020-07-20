@@ -6,13 +6,8 @@ namespace Roundbeargames
 {
     public abstract class CharacterQuery : MonoBehaviour
     {
-        protected CharacterControl control;
-
-        private void Start()
-        {
-            control = this.gameObject.GetComponentInParent<CharacterControl>();
-        }
-
+        public CharacterControl control;
+        
         public virtual bool ReturnBool()
         {
             throw new System.NotImplementedException();

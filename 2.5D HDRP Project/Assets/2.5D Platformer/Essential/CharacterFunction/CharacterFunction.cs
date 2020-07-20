@@ -6,7 +6,9 @@ namespace Roundbeargames
 {
     public abstract class CharacterFunction : MonoBehaviour
     {
-        public virtual void Execute()
+        public CharacterControl control;
+
+        public virtual void RunFunction()
         {
             throw new System.NotImplementedException();
         }

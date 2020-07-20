@@ -13,7 +13,10 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            control.LEDGE_GRAB_DATA.LedgeCollidersOff = LedgeCollidersOff;
+            //temp
+            control.LEDGE_GRAB_DATA.Collider1 = Collider1.gameObject;
+            control.LEDGE_GRAB_DATA.Collider2 = Collider2.gameObject;
+
             characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.LEDGECHECKER] = this;
         }
 
@@ -132,12 +135,6 @@ namespace Roundbeargames
             }
 
             return true;
-        }
-
-        public void LedgeCollidersOff()
-        {
-            Collider1.GetComponent<BoxCollider>().enabled = false;
-            Collider2.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
