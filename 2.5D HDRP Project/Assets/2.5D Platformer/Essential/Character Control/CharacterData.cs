@@ -50,6 +50,19 @@ namespace Roundbeargames
 
             };
 
+            boxColliderData = new BoxColliderData
+            {
+                IsUpdatingSpheres = false,
+                IsLanding = false,
+
+                Size_Update_Speed = 0f,
+                Center_Update_Speed = 0f,
+
+                TargetSize = Vector3.zero,
+                TargetCenter = Vector3.zero,
+                LandingPosition = Vector3.zero,
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {
