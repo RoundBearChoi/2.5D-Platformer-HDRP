@@ -19,7 +19,7 @@ namespace Roundbeargames
                 IsFacingForward = IsFacingForward,
             };
 
-            subComponentProcessor.rotationData = rotationData;
+            control.characterData.rotationData = rotationData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ROTATION] = this;
         }
 

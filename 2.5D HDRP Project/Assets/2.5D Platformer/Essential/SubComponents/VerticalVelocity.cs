@@ -16,9 +16,8 @@ namespace Roundbeargames
                 MaxWallSlideVelocity = Vector3.zero,
             };
 
-            subComponentProcessor.verticalVelocityData = verticalVelocityData;
+            control.characterData.verticalVelocityData = verticalVelocityData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.VERTICAL_VELOCITY] = this;
-            //subComponentProcessor.ComponentsDic.Add(SubComponentType.VERTICAL_VELOCITY, this);
         }
 
         public override void OnFixedUpdate()

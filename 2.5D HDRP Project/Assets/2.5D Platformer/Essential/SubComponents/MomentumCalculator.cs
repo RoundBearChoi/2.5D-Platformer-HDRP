@@ -16,7 +16,7 @@ namespace Roundbeargames
                 CalculateMomentum = CalculateMomentum,
             };
 
-            subComponentProcessor.momentumData = momentumData;
+            control.characterData.momentumData = momentumData;
         }
 
         public override void OnFixedUpdate()

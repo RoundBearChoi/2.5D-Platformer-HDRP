@@ -16,14 +16,14 @@ namespace Roundbeargames
         public BlockingObjData BLOCKING_DATA => characterControl.characterData.blockingData;
         public RagdollData RAGDOLL_DATA => characterControl.characterData.ragdollData;
         public BoxColliderData BOX_COLLIDER_DATA => characterControl.characterData.boxColliderData;
-        public VerticalVelocityData VERTICAL_VELOCITY_DATA => characterControl.subComponentProcessor.verticalVelocityData;
-        public MomentumData MOMENTUM_DATA => characterControl.subComponentProcessor.momentumData;
-        public RotationData ROTATION_DATA => characterControl.subComponentProcessor.rotationData;
-        public JumpData JUMP_DATA => characterControl.subComponentProcessor.jumpData;
-        public CollisionSphereData COLLISION_SPHERE_DATA => characterControl.subComponentProcessor.collisionSphereData;
-        public GroundData GROUND_DATA => characterControl.subComponentProcessor.groundData;
-        public AttackData ATTACK_DATA => characterControl.subComponentProcessor.attackData;
-        public AnimationData ANIMATION_DATA => characterControl.subComponentProcessor.animationData;
+        public VerticalVelocityData VERTICAL_VELOCITY_DATA => characterControl.characterData.verticalVelocityData;
+        public MomentumData MOMENTUM_DATA => characterControl.characterData.momentumData;
+        public RotationData ROTATION_DATA => characterControl.characterData.rotationData;
+        public JumpData JUMP_DATA => characterControl.characterData.jumpData;
+        public CollisionSphereData COLLISION_SPHERE_DATA => characterControl.characterData.collisionSphereData;
+        public GroundData GROUND_DATA => characterControl.characterData.groundData;
+        public AttackData ATTACK_DATA => characterControl.characterData.attackData;
+        public AnimationData ANIMATION_DATA => characterControl.characterData.animationData;
         public AIController AI_CONTROLLER => characterControl.aiController;
 
         public void PutStatesInArray()

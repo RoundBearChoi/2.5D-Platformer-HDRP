@@ -16,9 +16,8 @@ namespace Roundbeargames
                 AttackTriggered = false,
             };
 
-            subComponentProcessor.attackData = attackData;
+            control.characterData.attackData = attackData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ATTACK] = this;
-            //subComponentProcessor.ComponentsDic.Add(SubComponentType.PLAYER_ATTACK, this);
         }
 
         public override void OnFixedUpdate()

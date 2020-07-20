@@ -41,15 +41,15 @@ namespace Roundbeargames
         public RagdollData RAGDOLL_DATA => characterData.ragdollData;
         public ManualInputData MANUAL_INPUT_DATA => characterData.manualInputData;
         public BoxColliderData BOX_COLLIDER_DATA => characterData.boxColliderData;
-        public DamageData DAMAGE_DATA => subComponentProcessor.damageData;
-        public MomentumData MOMENTUM_DATA => subComponentProcessor.momentumData;
-        public RotationData ROTATION_DATA => subComponentProcessor.rotationData;
-        public JumpData JUMP_DATA => subComponentProcessor.jumpData;
-        public CollisionSphereData COLLISION_SPHERE_DATA => subComponentProcessor.collisionSphereData;
-        public InstaKillData INSTA_KILL_DATA => subComponentProcessor.instaKillData;
-        public GroundData GROUND_DATA => subComponentProcessor.groundData;
-        public AttackData ATTACK_DATA => subComponentProcessor.attackData;
-        public AnimationData ANIMATION_DATA => subComponentProcessor.animationData;
+        public DamageData DAMAGE_DATA => characterData.damageData;
+        public MomentumData MOMENTUM_DATA => characterData.momentumData;
+        public RotationData ROTATION_DATA => characterData.rotationData;
+        public JumpData JUMP_DATA => characterData.jumpData;
+        public CollisionSphereData COLLISION_SPHERE_DATA => characterData.collisionSphereData;
+        public InstaKillData INSTA_KILL_DATA => characterData.instaKillData;
+        public GroundData GROUND_DATA => characterData.groundData;
+        public AttackData ATTACK_DATA => characterData.attackData;
+        public AnimationData ANIMATION_DATA => characterData.animationData;
 
         [Header("Setup")]
         public PlayableCharacterType playableCharacterType;

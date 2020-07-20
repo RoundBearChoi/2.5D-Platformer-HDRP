@@ -15,7 +15,7 @@ namespace Roundbeargames
 
             };
 
-            subComponentProcessor.groundData = groundData;
+            control.characterData.groundData = groundData;
         }
 
         public override void OnFixedUpdate()

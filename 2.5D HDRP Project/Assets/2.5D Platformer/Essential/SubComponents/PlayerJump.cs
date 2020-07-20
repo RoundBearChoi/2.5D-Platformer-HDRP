@@ -17,7 +17,7 @@ namespace Roundbeargames
                 CheckWallBlock = false,
             };
 
-            subComponentProcessor.jumpData = jumpData;
+            control.characterData.jumpData = jumpData;
         }
 
         public override void OnFixedUpdate()

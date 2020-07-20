@@ -21,9 +21,8 @@ namespace Roundbeargames
                 DeathByInstaKill = DeathByInstaKill,
             };
 
-            subComponentProcessor.instaKillData = instaKillData;
+            control.characterData.instaKillData = instaKillData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.INSTA_KILL] = this;
-            //subComponentProcessor.ComponentsDic.Add(SubComponentType.INSTA_KILL, this);
         }
 
         public override void OnFixedUpdate()

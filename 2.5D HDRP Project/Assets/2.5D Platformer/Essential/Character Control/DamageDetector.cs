@@ -31,7 +31,7 @@ namespace Roundbeargames
                 TakeDamage = ProcessDamage,
             };
 
-            subComponentProcessor.damageData = damageData;
+            control.characterData.damageData = damageData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.DAMAGE_DETECTOR] = this;
         }
 
