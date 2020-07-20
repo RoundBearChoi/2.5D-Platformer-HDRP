@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class BlockingObj : SubComponent
     {
-        public BlockingObjData blockingData;
-
         Dictionary<GameObject, GameObject> FrontBlockingObjs = new Dictionary<GameObject, GameObject>();
         Dictionary<GameObject, GameObject> UpBlockingObjs = new Dictionary<GameObject, GameObject>();
         Dictionary<GameObject, GameObject> DownBlockingObjs = new Dictionary<GameObject, GameObject>();
@@ -20,20 +18,14 @@ namespace Roundbeargames
         GameObject[] FrontSpheresArray;
         float DirBlock;
 
-        private void Start()
+        public override void InitComponent()
         {
-            blockingData = new BlockingObjData
-            {
-                FrontBlockingDicCount = 0,
-                UpBlockingDicCount = 0,
-                ClearFrontBlockingObjDic = ClearFrontBlockingObjDic,
-                LeftSideBlocked = LeftSideIsBlocked,
-                RightSideBlocked = RightSideIsBlocked,
-                GetFrontBlockingCharacterList = GetFrontBlockingCharacterList,
-                GetFrontBlockingObjList = GetFrontBlockingObjList,
-            };
+            control.BLOCKING_DATA.ClearFrontBlockingObjDic = ClearFrontBlockingObjDic;
+            control.BLOCKING_DATA.LeftSideBlocked = LeftSideIsBlocked;
+            control.BLOCKING_DATA.RightSideBlocked = RightSideIsBlocked;
+            control.BLOCKING_DATA.GetFrontBlockingCharacterList = GetFrontBlockingCharacterList;
+            control.BLOCKING_DATA.GetFrontBlockingObjList = GetFrontBlockingObjList;
 
-            control.characterData.blockingData = blockingData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.BLOCKINGOBJECTS] = this;
         }
 
@@ -98,8 +90,8 @@ namespace Roundbeargames
 
             CheckMarioStomp();
 
-            blockingData.FrontBlockingDicCount = FrontBlockingObjs.Count;
-            blockingData.UpBlockingDicCount = UpBlockingObjs.Count;
+            control.BLOCKING_DATA.FrontBlockingDicCount = FrontBlockingObjs.Count;
+            control.BLOCKING_DATA.UpBlockingDicCount = UpBlockingObjs.Count;
         }
 
         public override void OnUpdate()

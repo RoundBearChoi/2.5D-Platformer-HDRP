@@ -41,5 +41,10 @@ namespace Roundbeargames
 
         public abstract void OnUpdate();
         public abstract void OnFixedUpdate();
+
+        public virtual void InitComponent()
+        {
+
+        }
     }
 }
