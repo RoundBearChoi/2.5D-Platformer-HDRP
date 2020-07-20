@@ -23,7 +23,7 @@ namespace Roundbeargames
 
         void CalculateMomentum(float speed, float maxMomentum)
         {
-            if (!control.BLOCKING_DATA.RightSideBlocked())
+            if (!control.GetBool(typeof(RightSideIsBlocked)))
             {
                 if (control.MoveRight)
                 {
@@ -39,7 +39,7 @@ namespace Roundbeargames
                 }
             }
 
-            if (control.BLOCKING_DATA.RightSideBlocked() || control.GetBool(typeof(LeftSideIsBlocked)))
+            if (control.GetBool(typeof(RightSideIsBlocked)) || control.GetBool(typeof(LeftSideIsBlocked)))
             {
                 float lerped = Mathf.Lerp(control.MOMENTUM_DATA.Momentum, 0f, Time.deltaTime * 1.5f);
                 control.MOMENTUM_DATA.Momentum = lerped;

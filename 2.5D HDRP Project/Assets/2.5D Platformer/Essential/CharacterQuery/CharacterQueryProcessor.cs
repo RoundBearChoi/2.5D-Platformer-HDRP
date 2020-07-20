@@ -11,6 +11,7 @@ namespace Roundbeargames
         private void Start()
         {
             CreateQuery(typeof(LeftSideIsBlocked));
+            CreateQuery(typeof(RightSideIsBlocked));
         }
 
         void CreateQuery(System.Type type)

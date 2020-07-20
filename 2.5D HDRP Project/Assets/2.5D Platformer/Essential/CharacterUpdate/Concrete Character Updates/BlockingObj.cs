@@ -19,7 +19,6 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            control.BLOCKING_DATA.RightSideBlocked = RightSideIsBlocked;
             control.BLOCKING_DATA.GetFrontBlockingCharacterList = GetFrontBlockingCharacterList;
             control.BLOCKING_DATA.GetFrontBlockingObjList = GetFrontBlockingObjList;
 
@@ -260,33 +259,7 @@ namespace Roundbeargames
                 dic.Remove(key);
             }
         }
-
-        bool RightSideIsBlocked()
-        {
-            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
-            {
-                if ((data.Value.transform.position - control.transform.position).z > 0f)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        bool LeftSideIsBlocked()
-        {
-            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
-            {
-                if ((data.Value.transform.position - control.transform.position).z < 0f)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-        
+                
         List<GameObject> GetFrontBlockingCharacterList()
         {
             FrontBlockingCharacters.Clear();
