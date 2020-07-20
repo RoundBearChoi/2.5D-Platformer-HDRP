@@ -69,6 +69,13 @@ namespace Roundbeargames
                 MaxWallSlideVelocity = Vector3.zero,
             };
 
+            damageData = new DamageData
+            {
+                BlockedAttack = null,
+                hp = 1f,
+                damageTaken = new DamageTaken(null, null, null, null, Vector3.zero),
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

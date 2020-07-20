@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class DamageDetector : SubComponent
     {
-        public DamageData damageData;
-
         [Header("Damage Setup")]
         [SerializeField]
         Attack MarioStompAttack;
@@ -16,22 +14,13 @@ namespace Roundbeargames
 
         static string VFX = "VFX";
 
-        private void Start()
+        public override void InitComponent()
         {
-            damageData = new DamageData
-            {
-                BlockedAttack = null,
-                hp = 1f,
-                MarioStompAttack = MarioStompAttack,
-                AxeThrow = AxeThrow,
+            control.DAMAGE_DATA.MarioStompAttack = MarioStompAttack;
+            control.DAMAGE_DATA.AxeThrow = AxeThrow;
+            control.DAMAGE_DATA.IsDead = IsDead;
+            control.DAMAGE_DATA.TakeDamage = ProcessDamage;
 
-                damageTaken = new DamageTaken(null, null, null, null, Vector3.zero),
-
-                IsDead = IsDead,
-                TakeDamage = ProcessDamage,
-            };
-
-            control.characterData.damageData = damageData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.DAMAGE_DETECTOR] = this;
         }
 
@@ -131,7 +120,7 @@ namespace Roundbeargames
                         if (info.Attacker.GetAttackingPart(part) ==
                             collider.gameObject)
                         {
-                            damageData.damageTaken = new DamageTaken(
+                            control.DAMAGE_DATA.damageTaken = new DamageTaken(
                                 info.Attacker,
                                 info.AttackAbility,
                                 data.Key,
@@ -159,7 +148,7 @@ namespace Roundbeargames
                     int index = Random.Range(0, control.RAGDOLL_DATA.ArrBodyParts.Length);
                     TriggerDetector triggerDetector = control.RAGDOLL_DATA.ArrBodyParts[index].GetComponent<TriggerDetector>();
 
-                    damageData.damageTaken = new DamageTaken(
+                    control.DAMAGE_DATA.damageTaken = new DamageTaken(
                         info.Attacker,
                         info.AttackAbility,
                         triggerDetector,
@@ -175,7 +164,7 @@ namespace Roundbeargames
 
         bool IsDead()
         {
-            if (damageData.hp <= 0f)
+            if (control.DAMAGE_DATA.hp <= 0f)
             {
                 return true;
             }
@@ -187,7 +176,7 @@ namespace Roundbeargames
 
         bool IsBlocked(AttackCondition info)
         {
-            if (info == damageData.BlockedAttack && damageData.BlockedAttack != null)
+            if (info == control.DAMAGE_DATA.BlockedAttack && control.DAMAGE_DATA.BlockedAttack != null)
             {
                 return true;
             }
@@ -253,7 +242,7 @@ namespace Roundbeargames
             ProcessHitParticles(info);
 
             info.CurrentHits++;
-            damageData.hp -= info.AttackAbility.Damage;
+            control.DAMAGE_DATA.hp -= info.AttackAbility.Damage;
 
             AttackManager.Instance.ForceDeregister(control);
             control.ANIMATION_DATA.CurrentRunningAbilities.Clear();
