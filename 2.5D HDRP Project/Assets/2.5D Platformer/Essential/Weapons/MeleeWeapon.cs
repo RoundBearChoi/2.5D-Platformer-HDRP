@@ -138,21 +138,10 @@ namespace Roundbeargames
 
                 if (t != null)
                 {
-                    ProcRemove(c.animationProgress.CollidingWeapons, t);
-                    ProcRemove(c.animationProgress.CollidingBodyParts, t);
+                    ProcRemove(c.COLLIDING_OBJ_DATA.CollidingWeapons, t);
+                    ProcRemove(c.COLLIDING_OBJ_DATA.CollidingBodyParts, t);
                 }
             }
-
-            //foreach(Collider col in c.RAGDOLL_DATA.BodyParts)
-            //{
-            //    TriggerDetector t = col.GetComponent<TriggerDetector>();
-            //
-            //    if (t != null)
-            //    {
-            //        ProcRemove(c.animationProgress.CollidingWeapons, t);
-            //        ProcRemove(c.animationProgress.CollidingBodyParts, t);
-            //    }
-            //}
         }
 
         void ProcRemove(Dictionary<TriggerDetector, List<Collider>> d, TriggerDetector t)

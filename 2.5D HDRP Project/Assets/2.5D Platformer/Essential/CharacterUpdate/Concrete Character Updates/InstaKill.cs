@@ -31,7 +31,7 @@ namespace Roundbeargames
                 return;
             }
 
-            foreach (KeyValuePair<TriggerDetector, List<Collider>> data in control.animationProgress.CollidingBodyParts)
+            foreach (KeyValuePair<TriggerDetector, List<Collider>> data in control.COLLIDING_OBJ_DATA.CollidingBodyParts)
             {
                 foreach (Collider col in data.Value)
                 {

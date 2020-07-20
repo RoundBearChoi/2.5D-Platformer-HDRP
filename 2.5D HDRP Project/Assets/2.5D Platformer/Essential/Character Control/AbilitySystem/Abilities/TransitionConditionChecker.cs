@@ -244,7 +244,7 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.TOUCHING_WEAPON:
                         {
-                            if (control.animationProgress.CollidingWeapons.Count == 0)
+                            if (control.COLLIDING_OBJ_DATA.CollidingWeapons.Count == 0)
                             {
                                 if (control.animationProgress.HoldingWeapon == null)
                                 {

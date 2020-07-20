@@ -89,7 +89,7 @@ namespace Roundbeargames
                 {
                     if (info.MustCollide)
                     {
-                        if (control.animationProgress.CollidingBodyParts.Count != 0)
+                        if (control.COLLIDING_OBJ_DATA.CollidingBodyParts.Count != 0)
                         {
                             if (IsCollided(info))
                             {
@@ -111,7 +111,7 @@ namespace Roundbeargames
         bool IsCollided(AttackCondition info)
         {
             foreach(KeyValuePair<TriggerDetector, List<Collider>> data in
-                control.animationProgress.CollidingBodyParts)
+                control.COLLIDING_OBJ_DATA.CollidingBodyParts)
             {
                 foreach(Collider collider in data.Value)
                 {

@@ -14,12 +14,6 @@ namespace Roundbeargames
 
         [Header("GroundMovement")]
         public bool IsIgnoreCharacterTime;
-
-        [Header("Colliding Objects")]
-        public Dictionary<TriggerDetector, List<Collider>> CollidingWeapons =
-            new Dictionary<TriggerDetector, List<Collider>>();
-        public Dictionary<TriggerDetector, List<Collider>> CollidingBodyParts =
-            new Dictionary<TriggerDetector, List<Collider>>();
                 
         [Header("Transition")]
         public bool LockTransition;
@@ -116,7 +110,7 @@ namespace Roundbeargames
 
         public MeleeWeapon GetTouchingWeapon()
         {
-            foreach(KeyValuePair<TriggerDetector, List<Collider>> data in CollidingWeapons)
+            foreach(KeyValuePair<TriggerDetector, List<Collider>> data in control.COLLIDING_OBJ_DATA.CollidingWeapons)
             {
                 MeleeWeapon w = data.Value[0].gameObject.GetComponent<MeleeWeapon>();
                 return w;

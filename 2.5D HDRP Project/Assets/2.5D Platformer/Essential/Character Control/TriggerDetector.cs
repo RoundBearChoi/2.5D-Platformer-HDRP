@@ -67,14 +67,14 @@ namespace Roundbeargames
 
             // add collider to dictionary
 
-            if (!control.animationProgress.CollidingBodyParts.ContainsKey(this))
+            if (!control.COLLIDING_OBJ_DATA.CollidingBodyParts.ContainsKey(this))
             {
-                control.animationProgress.CollidingBodyParts.Add(this, new List<Collider>());
+                control.COLLIDING_OBJ_DATA.CollidingBodyParts.Add(this, new List<Collider>());
             }
 
-            if (!control.animationProgress.CollidingBodyParts[this].Contains(col))
+            if (!control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Contains(col))
             {
-                control.animationProgress.CollidingBodyParts[this].Add(col);
+                control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Add(col);
             }
 
             return attacker;
@@ -124,14 +124,14 @@ namespace Roundbeargames
                 }
             }
                        
-            if (!control.animationProgress.CollidingWeapons.ContainsKey(this))
+            if (!control.COLLIDING_OBJ_DATA.CollidingWeapons.ContainsKey(this))
             {
-                control.animationProgress.CollidingWeapons.Add(this, new List<Collider>());
+                control.COLLIDING_OBJ_DATA.CollidingWeapons.Add(this, new List<Collider>());
             }
 
-            if (!control.animationProgress.CollidingWeapons[this].Contains(col))
+            if (!control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Contains(col))
             {
-                control.animationProgress.CollidingWeapons[this].Add(col);
+                control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Add(col);
             }
         }
 
@@ -142,16 +142,16 @@ namespace Roundbeargames
                 return;
             }
 
-            if (control.animationProgress.CollidingBodyParts.ContainsKey(this))
+            if (control.COLLIDING_OBJ_DATA.CollidingBodyParts.ContainsKey(this))
             {
-                if (control.animationProgress.CollidingBodyParts[this].Contains(col))
+                if (control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Contains(col))
                 {
-                    control.animationProgress.CollidingBodyParts[this].Remove(col);
+                    control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Remove(col);
                 }
 
-                if (control.animationProgress.CollidingBodyParts[this].Count == 0)
+                if (control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Count == 0)
                 {
-                    control.animationProgress.CollidingBodyParts.Remove(this);
+                    control.COLLIDING_OBJ_DATA.CollidingBodyParts.Remove(this);
                 }
             }
         }
@@ -163,16 +163,16 @@ namespace Roundbeargames
                 return;
             }
 
-            if (control.animationProgress.CollidingWeapons.ContainsKey(this))
+            if (control.COLLIDING_OBJ_DATA.CollidingWeapons.ContainsKey(this))
             {
-                if (control.animationProgress.CollidingWeapons[this].Contains(col))
+                if (control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Contains(col))
                 {
-                    control.animationProgress.CollidingWeapons[this].Remove(col);
+                    control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Remove(col);
                 }
 
-                if (control.animationProgress.CollidingWeapons[this].Count == 0)
+                if (control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Count == 0)
                 {
-                    control.animationProgress.CollidingWeapons.Remove(this);
+                    control.COLLIDING_OBJ_DATA.CollidingWeapons.Remove(this);
                 }
             }
         }

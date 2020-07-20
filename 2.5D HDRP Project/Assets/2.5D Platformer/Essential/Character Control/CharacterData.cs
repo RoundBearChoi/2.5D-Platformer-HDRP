@@ -21,6 +21,7 @@ namespace Roundbeargames
         [Space(15)] public GroundData groundData;
         [Space(15)] public AttackData attackData;
         [Space(15)] public AnimationData animationData;
+        [Space(15)] public CollidingObjData collidingObjData;
 
         private void Start()
         {
@@ -122,6 +123,12 @@ namespace Roundbeargames
             {
                 InstantTransitionMade = false,
                 CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
+            };
+
+            collidingObjData = new CollidingObjData
+            {
+                CollidingBodyParts = new Dictionary<TriggerDetector, List<Collider>>(),
+                CollidingWeapons = new Dictionary<TriggerDetector, List<Collider>>(),
             };
 
             InitAllCharacterUpdates();
