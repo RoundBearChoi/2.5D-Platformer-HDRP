@@ -31,7 +31,7 @@ namespace Roundbeargames
                 }
             }
 
-            if (!control.BLOCKING_DATA.LeftSideBlocked())
+            if (!control.GetBool(typeof(LeftSideIsBlocked)))
             {
                 if (control.MoveLeft)
                 {
@@ -39,7 +39,7 @@ namespace Roundbeargames
                 }
             }
 
-            if (control.BLOCKING_DATA.RightSideBlocked() || control.BLOCKING_DATA.LeftSideBlocked())
+            if (control.BLOCKING_DATA.RightSideBlocked() || control.GetBool(typeof(LeftSideIsBlocked)))
             {
                 float lerped = Mathf.Lerp(control.MOMENTUM_DATA.Momentum, 0f, Time.deltaTime * 1.5f);
                 control.MOMENTUM_DATA.Momentum = lerped;

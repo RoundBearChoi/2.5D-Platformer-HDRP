@@ -19,7 +19,6 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            control.BLOCKING_DATA.LeftSideBlocked = LeftSideIsBlocked;
             control.BLOCKING_DATA.RightSideBlocked = RightSideIsBlocked;
             control.BLOCKING_DATA.GetFrontBlockingCharacterList = GetFrontBlockingCharacterList;
             control.BLOCKING_DATA.GetFrontBlockingObjList = GetFrontBlockingObjList;

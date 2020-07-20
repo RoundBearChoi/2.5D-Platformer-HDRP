@@ -35,6 +35,7 @@ namespace Roundbeargames
         public NavMeshObstacle navMeshObstacle;
 
         public CharacterData characterData;
+        public CharacterQueryProcessor characterQueryProcessor;
 
         public BlockingObjData BLOCKING_DATA => characterData.blockingData;
         public LedgeGrabData LEDGE_GRAB_DATA => characterData.ledgeGrabData;
@@ -96,6 +97,7 @@ namespace Roundbeargames
             }
 
             characterData = GetComponentInChildren<CharacterData>();
+            characterQueryProcessor = GetComponentInChildren<CharacterQueryProcessor>();
 
             RegisterCharacter();
             InitCharacterStates(SkinnedMeshAnimator);
@@ -186,6 +188,11 @@ namespace Roundbeargames
             }
 
             return null;
+        }
+
+        public bool GetBool(System.Type CharacterQueryType)
+        {
+            return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool();
         }
     }
 }

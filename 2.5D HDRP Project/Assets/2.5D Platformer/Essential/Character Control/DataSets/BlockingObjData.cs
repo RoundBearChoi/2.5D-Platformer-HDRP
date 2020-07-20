@@ -18,7 +18,6 @@ namespace Roundbeargames
         public delegate bool ReturnBool();
         public delegate List<GameObject> ReturnGameObjList();
 
-        public ReturnBool LeftSideBlocked;
         public ReturnBool RightSideBlocked;
         public ReturnGameObjList GetFrontBlockingObjList;
         public ReturnGameObjList GetFrontBlockingCharacterList;
