@@ -17,15 +17,12 @@ namespace Roundbeargames
         {
             if (SpawnTiming == 0f)
             {
-                //CharacterControl control = characterState.GetCharacterControl(animator);
                 SpawnObj(characterState.characterControl);
             }
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            //CharacterControl control = characterState.GetCharacterControl(animator);
-
             if (!characterState.characterControl.animationProgress.SpawnedObjList.Contains(ObjectType))
             {
                 if (stateInfo.normalizedTime >= SpawnTiming)
@@ -37,7 +34,6 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            //CharacterControl control = characterState.GetCharacterControl(animator);
             if (characterState.characterControl.animationProgress.SpawnedObjList.Contains(ObjectType))
             {
                 characterState.characterControl.animationProgress.SpawnedObjList.Remove(ObjectType);
@@ -57,7 +53,7 @@ namespace Roundbeargames
 
             if (!string.IsNullOrEmpty(ParentObjectName))
             {
-                GameObject p = control.GetChildObj(ParentObjectName);
+                GameObject p = control.GetGameObject(typeof(GetChildObj), ParentObjectName);
                 obj.transform.parent = p.transform;
                 obj.transform.localPosition = Vector3.zero;
                 obj.transform.localRotation = Quaternion.identity;

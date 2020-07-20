@@ -22,5 +22,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual GameObject ReturnGameObj(string str)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -62,8 +62,6 @@ namespace Roundbeargames
         public GameObject LeftFoot_Attack;
         public GameObject RightFoot_Attack;
         
-        private Dictionary<string, GameObject> ChildObjects = new Dictionary<string, GameObject>();
-
         private Rigidbody rigid;
 
         public Rigidbody RIGID_BODY
@@ -145,27 +143,6 @@ namespace Roundbeargames
             transform.Translate(Vector3.forward * Speed * SpeedGraph * Time.deltaTime);
         }
 
-        public GameObject GetChildObj(string name)
-        {
-            if (ChildObjects.ContainsKey(name))
-            {
-                return ChildObjects[name];
-            }
-
-            Transform[] arr = this.gameObject.GetComponentsInChildren<Transform>();
-
-            foreach(Transform t in arr)
-            {
-                if (t.gameObject.name.Equals(name))
-                {
-                    ChildObjects.Add(name, t.gameObject);
-                    return t.gameObject;
-                }
-            }
-
-            return null;
-        }
-
         public void RunFunction(System.Type CharacterFunctionType)
         {
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
@@ -194,6 +171,11 @@ namespace Roundbeargames
         public GameObject GetGameObject(System.Type CharacterQueryType, AttackPartType attackPartType)
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnGameObj(attackPartType);
+        }
+
+        public GameObject GetGameObject(System.Type CharacterQueryType, string str)
+        {
+            return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnGameObj(str);
         }
     }
 }
