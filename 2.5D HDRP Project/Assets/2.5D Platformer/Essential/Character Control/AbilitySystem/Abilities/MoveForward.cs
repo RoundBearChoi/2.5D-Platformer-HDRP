@@ -142,7 +142,7 @@ namespace Roundbeargames
             {
                 if (MoveOnHit)
                 {
-                    if (!control.animationProgress.IsFacingAttacker())
+                    if (!control.GetBool(typeof(FacingAttacker)))// animationProgress.IsFacingAttacker())
                     {
                         control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
                     }

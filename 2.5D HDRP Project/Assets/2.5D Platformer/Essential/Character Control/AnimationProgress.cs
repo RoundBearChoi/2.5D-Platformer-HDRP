@@ -21,42 +21,11 @@ namespace Roundbeargames
                             control.RIGID_BODY.velocity.z);
         }
 
-        public bool IsFacingAttacker()
-        {
-            Vector3 vec = control.DAMAGE_DATA.damageTaken.ATTACKER.transform.position -
-                control.transform.position;
-
-            if (vec.z < 0f)
-            {
-                if (control.ROTATION_DATA.IsFacingForward())
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else if (vec.z > 0f)
-            {
-                if (control.ROTATION_DATA.IsFacingForward())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
         public bool ForwardIsReversed()
         {
             if (control.ANIMATION_DATA.LatestMoveForward.MoveOnHit)
             {
-                if (IsFacingAttacker())
+                if (control.GetBool(typeof(FacingAttacker)))// IsFacingAttacker())
                 {
                     return true;
                 }
