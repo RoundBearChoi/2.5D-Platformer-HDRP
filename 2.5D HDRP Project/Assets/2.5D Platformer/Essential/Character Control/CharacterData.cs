@@ -63,6 +63,12 @@ namespace Roundbeargames
                 LandingPosition = Vector3.zero,
             };
 
+            verticalVelocityData = new VerticalVelocityData
+            {
+                NoJumpCancel = false,
+                MaxWallSlideVelocity = Vector3.zero,
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

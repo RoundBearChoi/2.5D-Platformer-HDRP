@@ -41,6 +41,7 @@ namespace Roundbeargames
         public RagdollData RAGDOLL_DATA => characterData.ragdollData;
         public ManualInputData MANUAL_INPUT_DATA => characterData.manualInputData;
         public BoxColliderData BOX_COLLIDER_DATA => characterData.boxColliderData;
+        public VerticalVelocityData VERTICAL_VELOCITY_DATA => characterData.verticalVelocityData;
         public DamageData DAMAGE_DATA => characterData.damageData;
         public MomentumData MOMENTUM_DATA => characterData.momentumData;
         public RotationData ROTATION_DATA => characterData.rotationData;

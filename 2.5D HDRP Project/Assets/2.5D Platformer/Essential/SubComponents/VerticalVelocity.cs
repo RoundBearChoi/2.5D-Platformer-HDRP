@@ -6,24 +6,15 @@ namespace Roundbeargames
 {
     public class VerticalVelocity : SubComponent
     {
-        public VerticalVelocityData verticalVelocityData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            verticalVelocityData = new VerticalVelocityData
-            {
-                NoJumpCancel = false,
-                MaxWallSlideVelocity = Vector3.zero,
-            };
-
-            control.characterData.verticalVelocityData = verticalVelocityData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.VERTICAL_VELOCITY] = this;
         }
 
         public override void OnFixedUpdate()
         {
             // jump cancel after letting go
-            if (!verticalVelocityData.NoJumpCancel)
+            if (!control.VERTICAL_VELOCITY_DATA.NoJumpCancel)
             {
                 if (control.RIGID_BODY.velocity.y > 0f && !control.Jump)
                 {
@@ -32,11 +23,11 @@ namespace Roundbeargames
             }
 
             // slow down wallslide
-            if (verticalVelocityData.MaxWallSlideVelocity.y != 0f)
+            if (control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity.y != 0f)
             {
-                if (control.RIGID_BODY.velocity.y <= verticalVelocityData.MaxWallSlideVelocity.y)
+                if (control.RIGID_BODY.velocity.y <= control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity.y)
                 {
-                    control.RIGID_BODY.velocity = verticalVelocityData.MaxWallSlideVelocity;
+                    control.RIGID_BODY.velocity = control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity;
                 }
             }
         }
