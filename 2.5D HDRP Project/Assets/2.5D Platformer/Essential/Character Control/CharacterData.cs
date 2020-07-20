@@ -120,8 +120,20 @@ namespace Roundbeargames
                 AttackTriggered = false,
             };
 
+            animationData = new AnimationData
+            {
+                InstantTransitionMade = false,
+                CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
+            };
+
+            InitAllSubcomponents();
+        }
+
+        void InitAllSubcomponents()
+        {
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
-            foreach(SubComponent s in arr)
+
+            foreach (SubComponent s in arr)
             {
                 s.InitComponent();
             }

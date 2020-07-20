@@ -6,18 +6,9 @@ namespace Roundbeargames
 {
     public class PlayerAnimation : SubComponent
     {
-        public AnimationData animationData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            animationData = new AnimationData
-            {
-                InstantTransitionMade = false,
-                CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
-                IsRunning = IsRunning,
-            };
-
-            control.characterData.animationData = animationData;
+            control.ANIMATION_DATA.IsRunning = IsRunning;
 
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ANIMATION] = this;
         }
@@ -54,7 +45,7 @@ namespace Roundbeargames
 
         bool IsRunning(System.Type type)
         {
-            foreach (KeyValuePair<CharacterAbility, int> data in animationData.CurrentRunningAbilities)
+            foreach (KeyValuePair<CharacterAbility, int> data in control.ANIMATION_DATA.CurrentRunningAbilities)
             {
                 if (data.Key.GetType() == type)
                 {
