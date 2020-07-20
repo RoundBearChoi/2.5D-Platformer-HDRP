@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class LedgeChecker : SubComponent
+    public class LedgeChecker : CharacterUpdate
     {
         [Header("Ledge Setup")]
         [SerializeField] Vector3 LedgeCalibration = new Vector3();
@@ -14,7 +14,7 @@ namespace Roundbeargames
         public override void InitComponent()
         {
             control.LEDGE_GRAB_DATA.LedgeCollidersOff = LedgeCollidersOff;
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.LEDGECHECKER] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.LEDGECHECKER] = this;
         }
 
         public override void OnUpdate()

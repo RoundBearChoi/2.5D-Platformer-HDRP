@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class PlayerAttack : SubComponent
+    public class PlayerAttack : CharacterUpdate
     {
         public override void InitComponent()
         {
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ATTACK] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.PLAYER_ATTACK] = this;
         }
 
         public override void OnFixedUpdate()

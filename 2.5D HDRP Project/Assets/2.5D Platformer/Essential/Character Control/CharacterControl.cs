@@ -25,7 +25,7 @@ namespace Roundbeargames
         public bool Block;
 
         [Header("SubComponents")]
-        public SubComponentProcessor subComponentProcessor;
+        public CharacterUpdateProcessor characterUpdateProcessor;
 
         // temp
         public AnimationProgress animationProgress;
@@ -78,7 +78,7 @@ namespace Roundbeargames
 
         private void Awake()
         {
-            subComponentProcessor = GetComponentInChildren<SubComponentProcessor>();
+            characterUpdateProcessor = GetComponentInChildren<CharacterUpdateProcessor>();
 
             // temp
             animationProgress = GetComponent<AnimationProgress>();
@@ -104,12 +104,12 @@ namespace Roundbeargames
 
         private void Update()
         {
-            subComponentProcessor.UpdateSubComponents();
+            characterUpdateProcessor.RunCharacterUpdate();
         }
 
         private void FixedUpdate()
         {
-            subComponentProcessor.FixedUpdateSubComponents();
+            characterUpdateProcessor.RunCharacterFixedUpdate();
         }
 
         private void OnCollisionStay(Collision collision)

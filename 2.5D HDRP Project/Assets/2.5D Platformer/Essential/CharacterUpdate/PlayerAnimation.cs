@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class PlayerAnimation : SubComponent
+    public class PlayerAnimation : CharacterUpdate
     {
         public override void InitComponent()
         {
             control.ANIMATION_DATA.IsRunning = IsRunning;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ANIMATION] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.PLAYER_ANIMATION] = this;
         }
 
         public override void OnFixedUpdate()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class CollisionSpheres : SubComponent
+    public class CollisionSpheres : CharacterUpdate
     {
         public override void InitComponent()
         {
@@ -14,7 +14,7 @@ namespace Roundbeargames
             control.COLLISION_SPHERE_DATA.Reposition_BackSpheres = Reposition_BackSpheres;
             control.COLLISION_SPHERE_DATA.Reposition_UpSpheres = Reposition_UpSpheres;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.COLLISION_SPHERES] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.COLLISION_SPHERES] = this;
 
             SetColliderSpheres();
         }

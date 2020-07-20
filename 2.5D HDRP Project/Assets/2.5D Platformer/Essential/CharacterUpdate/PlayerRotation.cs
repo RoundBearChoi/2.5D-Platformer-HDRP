@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class PlayerRotation : SubComponent
+    public class PlayerRotation : CharacterUpdate
     {
         static string TutorialScene_CharacterSelect = "TutorialScene_CharacterSelect";
 
@@ -13,7 +13,7 @@ namespace Roundbeargames
             control.ROTATION_DATA.FaceForward = FaceForward;
             control.ROTATION_DATA.IsFacingForward = IsFacingForward;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ROTATION] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.PLAYER_ROTATION] = this;
         }
 
         public override void OnFixedUpdate()

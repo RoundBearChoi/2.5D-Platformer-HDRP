@@ -43,6 +43,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f5ff051f23a7c46be58c95701d8d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockingData:
+    RaycastContact: {x: 0, y: 0, z: 0}
+    FrontBlockingDicCount: 0
+    UpBlockingDicCount: 0
+  ledgeGrabData:
+    isGrabbingLedge: 0
+  ragdollData:
+    RagdollTriggered: 0
+    ArrBodyParts: []
+    flyingRagdollData:
+      IsTriggered: 0
+      Attacker: {fileID: 0}
+  boxColliderData:
+    IsUpdatingSpheres: 0
+    IsLanding: 0
+    Size_Update_Speed: 0
+    Center_Update_Speed: 0
+    TargetSize: {x: 0, y: 0, z: 0}
+    TargetCenter: {x: 0, y: 0, z: 0}
+    LandingPosition: {x: 0, y: 0, z: 0}
+  verticalVelocityData:
+    NoJumpCancel: 0
+    MaxWallSlideVelocity: {x: 0, y: 0, z: 0}
+  damageData:
+    BlockedAttack: {fileID: 0}
+    hp: 0
+    MarioStompAttack: {fileID: 0}
+    AxeThrow: {fileID: 0}
+    damageTaken:
+      mAttacker: {fileID: 0}
+      mAttack: {fileID: 0}
+      mDamager: {fileID: 0}
+      mDamagee: {fileID: 0}
+      mIncomingVelocity: {x: 0, y: 0, z: 0}
+  momentumData:
+    Momentum: 0
+  rotationData:
+    LockTurn: 0
+    UnlockTiming: 0
+  jumpData:
+    CanWallJump: 0
+    CheckWallBlock: 0
+  collisionSphereData:
+    BottomSpheres: []
+    FrontSpheres: []
+    BackSpheres: []
+    UpSpheres: []
+    FrontOverlapCheckers: []
+    AllOverlapCheckers: []
+  instaKillData:
+    Animation_A: {fileID: 0}
+    Animation_B: {fileID: 0}
+  groundData:
+    Ground: {fileID: 0}
+  attackData:
+    AttackTriggered: 0
+    AttackButtonIsReset: 0
 --- !u!1 &108123440768055017
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,9 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2047dc6e51f65b42b75d24c2393a206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalVelocityData:
-    NoJumpCancel: 0
-    MaxWallSlideVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &319097897894110478
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +330,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27614462, y: 0.00000026444803, z: 0.00000034791785}
+  m_ConnectedAnchor: {x: -0.27614462, y: 0.00000026444798, z: 0.00000019890625}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -400,13 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c1ad271352e024c81546a5bb198196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSphereData:
-    BottomSpheres: []
-    FrontSpheres: []
-    BackSpheres: []
-    UpSpheres: []
-    FrontOverlapCheckers: []
-    AllOverlapCheckers: []
 --- !u!1 &877859058002271199
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +520,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27614456, y: 0.0000002408318, z: -0.000000026387594}
+  m_ConnectedAnchor: {x: 0.27614456, y: 0.00000024083178, z: 0.00000018222867}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1101,9 +1148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91dc96668be87f42aebb0378c029517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationData:
-    LockTurn: 0
-    UnlockTiming: 0
 --- !u!1 &2284176468906571315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,9 +1191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2823f8418cf2d654390faa3554eb8d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpData:
-    CanWallJump: 0
-    CheckWallBlock: 0
 --- !u!1 &2334154454243288051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1253,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18760951, y: 0.222047, z: -0.035218373}
+  m_ConnectedAnchor: {x: -0.18760951, y: 0.222047, z: -0.035218306}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1322,7 +1363,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27404684, y: 0.000000417287, z: -0.000000065192616}
+  m_ConnectedAnchor: {x: -0.27404684, y: 0.000000417287, z: 0.000000065192545}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1589,7 +1630,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.09124453, y: -0.06656406, z: -0.00055361306}
+  m_ConnectedAnchor: {x: 0.09124453, y: -0.066564, z: -0.00055377925}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1680,9 +1721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c75817733e68b44b31aabbea641082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackData:
-    AttackTriggered: 0
-    AttackButtonIsReset: 0
 --- !u!1 &2851301061069850952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,9 +1887,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8457966283628990782}
-  - component: {fileID: 4370680994593391371}
+  - component: {fileID: 5063233347889680670}
   m_Layer: 9
-  m_Name: SubComponent Processor
+  m_Name: CharacterUpdate Processor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1924,7 @@ Transform:
   m_Father: {fileID: 7198515055300973108}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4370680994593391371
+--- !u!114 &5063233347889680670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1895,68 +1933,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3140155050568985211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f0b081e242c4ed478fc91208b9e457b, type: 3}
+  m_Script: {fileID: 11500000, guid: 64ffcb032295b9b4aa90515c8951dcf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrSubComponents: []
+  ArrCharacterUpdate: []
   control: {fileID: 0}
-  blockingData:
-    RaycastContact: {x: 0, y: 0, z: 0}
-    FrontBlockingDicCount: 0
-    UpBlockingDicCount: 0
-  ledgeGrabData:
-    isGrabbingLedge: 0
-  ragdollData:
-    RagdollTriggered: 0
-    ArrBodyParts: []
-    flyingRagdollData:
-      IsTriggered: 0
-      Attacker: {fileID: 0}
-  boxColliderData:
-    IsUpdatingSpheres: 0
-    IsLanding: 0
-    Size_Update_Speed: 0
-    Center_Update_Speed: 0
-    TargetSize: {x: 0, y: 0, z: 0}
-    TargetCenter: {x: 0, y: 0, z: 0}
-    LandingPosition: {x: 0, y: 0, z: 0}
-  verticalVelocityData:
-    NoJumpCancel: 0
-    MaxWallSlideVelocity: {x: 0, y: 0, z: 0}
-  damageData:
-    BlockedAttack: {fileID: 0}
-    hp: 0
-    MarioStompAttack: {fileID: 0}
-    AxeThrow: {fileID: 0}
-    damageTaken:
-      mAttacker: {fileID: 0}
-      mAttack: {fileID: 0}
-      mDamager: {fileID: 0}
-      mDamagee: {fileID: 0}
-      mIncomingVelocity: {x: 0, y: 0, z: 0}
-  momentumData:
-    Momentum: 0
-  rotationData:
-    LockTurn: 0
-    UnlockTiming: 0
-  jumpData:
-    CanWallJump: 0
-    CheckWallBlock: 0
-  collisionSphereData:
-    BottomSpheres: []
-    FrontSpheres: []
-    BackSpheres: []
-    UpSpheres: []
-    FrontOverlapCheckers: []
-    AllOverlapCheckers: []
-  instaKillData:
-    Animation_A: {fileID: 0}
-    Animation_B: {fileID: 0}
-  groundData:
-    Ground: {fileID: 0}
-  attackData:
-    AttackTriggered: 0
-    AttackButtonIsReset: 0
 --- !u!1 &3299876615741576762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,14 +2073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc623dc4424bcae47bbdcf7c51662fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxColliderData:
-    IsUpdatingSpheres: 0
-    IsLanding: 0
-    Size_Update_Speed: 0
-    Center_Update_Speed: 0
-    TargetSize: {x: 0, y: 0, z: 0}
-    TargetCenter: {x: 0, y: 0, z: 0}
-    LandingPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3532624835290403015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,7 +2135,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18760645, y: 0.22204688, z: -0.035217896}
+  m_ConnectedAnchor: {x: 0.18760645, y: 0.22204688, z: -0.03521792}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2271,7 +2244,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000012805019, y: 0.215689, z: -0.026496895}
+  m_ConnectedAnchor: {x: 0.0000012805019, y: 0.215689, z: -0.02649676}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2502,7 +2475,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000011901354, y: 0.3871452, z: 0.023088798}
+  m_ConnectedAnchor: {x: -0.0000011901354, y: 0.3871452, z: 0.023088736}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2624,12 +2597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc215bbaa6952747bfc74ab07edcb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdollData:
-    RagdollTriggered: 0
-    ArrBodyParts: []
-    flyingRagdollData:
-      IsTriggered: 0
-      Attacker: {fileID: 0}
 --- !u!1 &4213738526981836892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,7 +2753,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0024467986, y: -0.40595406, z: -0.005170578}
+  m_ConnectedAnchor: {x: -0.0024467986, y: -0.40595406, z: -0.005170411}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3036,8 +3003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894bdb8c91ebe594395957cbb32d7090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ledgeGrabData:
-    isGrabbingLedge: 0
   LedgeCalibration: {x: 0, y: -2.3, z: -0.1}
   Collider1: {fileID: 6935082071955424662}
   Collider2: {fileID: 18895733413753873}
@@ -3146,10 +3111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da350e455f304504dbcdea6196a09bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockingData:
-    RaycastContact: {x: 0, y: 0, z: 0}
-    FrontBlockingDicCount: 0
-    UpBlockingDicCount: 0
 --- !u!1 &6088108438254778433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,7 +3411,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.091244526, y: -0.066563986, z: -0.00055361807}
+  m_ConnectedAnchor: {x: -0.091244526, y: -0.066563986, z: -0.00055377925}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3800,8 +3761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e4dea3e05cf334dad7861df0df3723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momentumData:
-    Momentum: 0
 --- !u!1 &7200667830176523006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,12 +3843,13 @@ MonoBehaviour:
   Jump: 0
   Attack: 0
   Block: 0
-  subComponentProcessor: {fileID: 0}
+  characterUpdateProcessor: {fileID: 0}
   animationProgress: {fileID: 0}
   aiProgress: {fileID: 0}
   aiController: {fileID: 0}
   boxCollider: {fileID: 0}
   navMeshObstacle: {fileID: 0}
+  characterData: {fileID: 0}
   playableCharacterType: 1
   SkinnedMeshAnimator: {fileID: 3363093133717548819}
   LeftHand_Attack: {fileID: 382542608833660889}
@@ -4037,7 +3997,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0024466957, y: -0.42048007, z: -0.02057628}
+  m_ConnectedAnchor: {x: 0.0024466957, y: -0.42048007, z: -0.020576412}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4146,9 +4106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3e2958f567e46498f65c0d1f761538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instaKillData:
-    Animation_A: {fileID: 0}
-    Animation_B: {fileID: 0}
   Assassination_A: {fileID: 9100000, guid: 2c591432c965b1041b880ee5668fdf0c, type: 2}
   Assassination_B: {fileID: 9100000, guid: 10f7c43e2afdfee49bd01286cb794ef5, type: 2}
 --- !u!1 &7560492571556014558
@@ -4376,17 +4333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5779ac7ef543f4c8ec4af11375e035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageData:
-    BlockedAttack: {fileID: 0}
-    hp: 0
-    MarioStompAttack: {fileID: 0}
-    AxeThrow: {fileID: 0}
-    damageTaken:
-      mAttacker: {fileID: 0}
-      mAttack: {fileID: 0}
-      mDamager: {fileID: 0}
-      mDamagee: {fileID: 0}
-      mIncomingVelocity: {x: 0, y: 0, z: 0}
   MarioStompAttack: {fileID: 11400000, guid: 92ce7c8391eaac44d87d389d84d90066, type: 2}
   AxeThrow: {fileID: 11400000, guid: 053e61407dc88804e92699c3fb3162be, type: 2}
 --- !u!1 &8213854393442678034
@@ -4451,7 +4397,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27404684, y: 0.00000033126352, z: 0.000000024214376}
+  m_ConnectedAnchor: {x: 0.27404684, y: 0.00000033126352, z: 0.0000000540167}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -4542,8 +4488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbbab92c72bde548a7ef4b4fb3feb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundData:
-    Ground: {fileID: 0}
 --- !u!1 &8441897012437176547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,7 +4681,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0024466957, y: -0.42047873, z: -0.020602142}
+  m_ConnectedAnchor: {x: -0.0024466957, y: -0.42047873, z: -0.02060231}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4832,7 +4776,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0024468026, y: -0.4059544, z: -0.005145379}
+  m_ConnectedAnchor: {x: 0.0024468026, y: -0.4059544, z: -0.0051452797}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:

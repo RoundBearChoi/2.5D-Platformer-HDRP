@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class BlockingObj : SubComponent
+    public class BlockingObj : CharacterUpdate
     {
         Dictionary<GameObject, GameObject> FrontBlockingObjs = new Dictionary<GameObject, GameObject>();
         Dictionary<GameObject, GameObject> UpBlockingObjs = new Dictionary<GameObject, GameObject>();
@@ -26,7 +26,7 @@ namespace Roundbeargames
             control.BLOCKING_DATA.GetFrontBlockingCharacterList = GetFrontBlockingCharacterList;
             control.BLOCKING_DATA.GetFrontBlockingObjList = GetFrontBlockingObjList;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.BLOCKINGOBJECTS] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.BLOCKINGOBJECTS] = this;
         }
 
         public override void OnFixedUpdate()

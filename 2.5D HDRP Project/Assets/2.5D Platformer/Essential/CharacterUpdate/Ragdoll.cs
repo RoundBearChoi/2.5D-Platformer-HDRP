@@ -10,7 +10,7 @@ namespace Roundbeargames
         DEAD_BODY,
     }
 
-    public class Ragdoll : SubComponent
+    public class Ragdoll : CharacterUpdate
     {
         public override void InitComponent()
         {
@@ -18,7 +18,7 @@ namespace Roundbeargames
             control.RAGDOLL_DATA.ClearExistingVelocity = ClearExistingVelocity;
 
             SetupBodyParts();
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.RAGDOLL] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.RAGDOLL] = this;
         }
 
         public override void OnFixedUpdate()

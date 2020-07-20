@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class MomentumCalculator : SubComponent
+    public class MomentumCalculator : CharacterUpdate
     {
         public override void InitComponent()
         {

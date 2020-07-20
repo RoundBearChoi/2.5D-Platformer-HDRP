@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class DamageDetector : SubComponent
+    public class DamageDetector : CharacterUpdate
     {
         [Header("Damage Setup")]
         [SerializeField]
@@ -21,7 +21,7 @@ namespace Roundbeargames
             control.DAMAGE_DATA.IsDead = IsDead;
             control.DAMAGE_DATA.TakeDamage = ProcessDamage;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.DAMAGE_DETECTOR] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.DAMAGE_DETECTOR] = this;
         }
 
         public override void OnFixedUpdate()

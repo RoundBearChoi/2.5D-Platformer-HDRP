@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class PlayerGround : SubComponent
+    public class PlayerGround : CharacterUpdate
     {
         public override void InitComponent()
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class PlayerJump : SubComponent
+    public class PlayerJump : CharacterUpdate
     {
         public override void InitComponent()
         {

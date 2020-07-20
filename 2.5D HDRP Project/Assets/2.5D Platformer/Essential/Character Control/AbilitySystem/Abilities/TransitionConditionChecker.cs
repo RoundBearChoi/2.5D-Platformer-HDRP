@@ -202,7 +202,7 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.DOUBLE_TAP_UP:
                         {
-                            if (control.subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] == null)
+                            if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] == null)
                             {
                                 return false;
                             }
@@ -219,7 +219,7 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.DOUBLE_TAP_DOWN:
                         {
-                            if (control.subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] == null)
+                            if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] == null)
                             {
                                 return false;
                             }

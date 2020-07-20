@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class BoxColliderUpdater : SubComponent
+    public class BoxColliderUpdater : CharacterUpdate
     {
         public override void InitComponent()
         {
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.BOX_COLLIDER_UPDATER] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.BOX_COLLIDER_UPDATER] = this;
         }
 
         public override void OnFixedUpdate()

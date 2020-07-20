@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class VerticalVelocity : SubComponent
+    public class VerticalVelocity : CharacterUpdate
     {
         public override void InitComponent()
         {
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.VERTICAL_VELOCITY] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.VERTICAL_VELOCITY] = this;
         }
 
         public override void OnFixedUpdate()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public enum SubComponentType
+    public enum CharacterUpdateType
     {
         MANUALINPUT,
         LEDGECHECKER,
@@ -22,21 +22,21 @@ namespace Roundbeargames
         COUNT,
     }
 
-    public abstract class SubComponent : MonoBehaviour
+    public abstract class CharacterUpdate : MonoBehaviour
     {
-        protected SubComponentProcessor subComponentProcessor;
+        protected CharacterUpdateProcessor characterUpdateProcessor;
 
         public CharacterControl control
         {
             get
             {
-                return subComponentProcessor.control;
+                return characterUpdateProcessor.control;
             }
         }
 
         private void Awake()
         {
-            subComponentProcessor = this.gameObject.GetComponentInParent<SubComponentProcessor>();
+            characterUpdateProcessor = this.gameObject.GetComponentInParent<CharacterUpdateProcessor>();
         }
 
         public abstract void OnUpdate();

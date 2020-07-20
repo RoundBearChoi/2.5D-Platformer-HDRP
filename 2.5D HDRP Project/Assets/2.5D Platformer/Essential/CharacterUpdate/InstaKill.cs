@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class InstaKill : SubComponent
+    public class InstaKill : CharacterUpdate
     {
         [SerializeField] RuntimeAnimatorController Assassination_A;
         [SerializeField] RuntimeAnimatorController Assassination_B;
@@ -15,12 +15,12 @@ namespace Roundbeargames
             control.INSTA_KILL_DATA.Animation_B = Assassination_B;
             control.INSTA_KILL_DATA.DeathByInstaKill = DeathByInstaKill;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.INSTA_KILL] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.INSTA_KILL] = this;
         }
 
         public override void OnFixedUpdate()
         {
-            if (control.subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] != null)
+            if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] != null)
             {
                 return;
             }
@@ -42,7 +42,7 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (c.subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] == null)
+                    if (c.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] == null)
                     {
                         continue;
                     }

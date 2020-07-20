@@ -122,14 +122,14 @@ namespace Roundbeargames
                 CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
             };
 
-            InitAllSubcomponents();
+            InitAllCharacterUpdates();
         }
 
-        void InitAllSubcomponents()
+        void InitAllCharacterUpdates()
         {
-            SubComponent[] arr = this.gameObject.transform.root.gameObject.GetComponentsInChildren<SubComponent>();
+            CharacterUpdate[] arr = this.gameObject.transform.root.gameObject.GetComponentsInChildren<CharacterUpdate>();
 
-            foreach (SubComponent s in arr)
+            foreach (CharacterUpdate s in arr)
             {
                 s.InitComponent();
             }

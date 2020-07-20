@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ManualInput : SubComponent
+    public class ManualInput : CharacterUpdate
     {
         List<InputKeyType> DoubleTaps = new List<InputKeyType>();
         List<InputKeyType> UpKeys = new List<InputKeyType>();
@@ -15,7 +15,7 @@ namespace Roundbeargames
             control.MANUAL_INPUT_DATA.DoubleTapDown = IsDoubleTap_Down;
             control.MANUAL_INPUT_DATA.DoubleTapUp = IsDoubleTap_Up;
 
-            subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] = this;
+            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] = this;
         }
 
         public override void OnFixedUpdate()
