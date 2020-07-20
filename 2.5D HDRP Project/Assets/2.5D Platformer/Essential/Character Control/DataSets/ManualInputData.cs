@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
+    //[System.Serializable]
     public class ManualInputData
     {
         public delegate bool ReturnBool();

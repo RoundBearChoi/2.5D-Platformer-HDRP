@@ -23,9 +23,8 @@ namespace Roundbeargames
                 LandingPosition = Vector3.zero,
             };
 
-            subComponentProcessor.boxColliderData = boxColliderData;
+            control.characterData.boxColliderData = boxColliderData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.BOX_COLLIDER_UPDATER] = this;
-            //subComponentProcessor.ComponentsDic.Add(SubComponentType.BOX_COLLIDER_UPDATER, this);
         }
 
         public override void OnFixedUpdate()

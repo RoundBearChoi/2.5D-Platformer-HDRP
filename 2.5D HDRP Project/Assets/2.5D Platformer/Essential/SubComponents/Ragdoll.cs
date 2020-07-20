@@ -27,7 +27,7 @@ namespace Roundbeargames
             };
 
             SetupBodyParts();
-            subComponentProcessor.ragdollData = ragdollData;
+            control.characterData.ragdollData = ragdollData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.RAGDOLL] = this;
         }
 

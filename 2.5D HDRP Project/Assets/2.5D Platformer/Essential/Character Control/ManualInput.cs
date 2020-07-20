@@ -20,9 +20,8 @@ namespace Roundbeargames
                 DoubleTapUp = IsDoubleTap_Up,
             };
 
-            subComponentProcessor.manualInputData = manualInputData;
+            control.characterData.manualInputData = manualInputData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] = this;
-            //subComponentProcessor.ComponentsDic.Add(SubComponentType.MANUALINPUT, this);
         }
 
         public override void OnFixedUpdate()

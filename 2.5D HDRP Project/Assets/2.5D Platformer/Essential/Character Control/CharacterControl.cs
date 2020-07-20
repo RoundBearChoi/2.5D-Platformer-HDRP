@@ -38,9 +38,9 @@ namespace Roundbeargames
 
         public BlockingObjData BLOCKING_DATA => characterData.blockingData;
         public LedgeGrabData LEDGE_GRAB_DATA => characterData.ledgeGrabData;
-        public RagdollData RAGDOLL_DATA => subComponentProcessor.ragdollData;
-        public ManualInputData MANUAL_INPUT_DATA => subComponentProcessor.manualInputData;
-        public BoxColliderData BOX_COLLIDER_DATA => subComponentProcessor.boxColliderData;
+        public RagdollData RAGDOLL_DATA => characterData.ragdollData;
+        public ManualInputData MANUAL_INPUT_DATA => characterData.manualInputData;
+        public BoxColliderData BOX_COLLIDER_DATA => characterData.boxColliderData;
         public DamageData DAMAGE_DATA => subComponentProcessor.damageData;
         public MomentumData MOMENTUM_DATA => subComponentProcessor.momentumData;
         public RotationData ROTATION_DATA => subComponentProcessor.rotationData;
