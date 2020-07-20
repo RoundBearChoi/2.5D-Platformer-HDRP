@@ -154,7 +154,7 @@ namespace Roundbeargames
 
         void CheckFrontBlocking()
         {
-            if (!control.animationProgress.ForwardIsReversed())
+            if (!control.GetBool(typeof(ForwardReversed)))
             {
                 FrontSpheresArray = control.COLLISION_SPHERE_DATA.FrontSpheres;
                 DirBlock = 1f;
