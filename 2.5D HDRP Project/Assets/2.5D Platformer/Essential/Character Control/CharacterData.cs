@@ -34,6 +34,11 @@ namespace Roundbeargames
                 UpBlockingDicCount = 0,
             };
 
+            ledgeGrabData = new LedgeGrabData
+            {
+                isGrabbingLedge = false,
+            };
+
             control.characterData.blockingData = blockingData;
 
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();

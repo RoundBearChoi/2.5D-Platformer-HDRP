@@ -6,23 +6,14 @@ namespace Roundbeargames
 {
     public class LedgeChecker : SubComponent
     {
-        public LedgeGrabData ledgeGrabData;
-
         [Header("Ledge Setup")]
-
         [SerializeField] Vector3 LedgeCalibration = new Vector3();
         [SerializeField] LedgeCollider Collider1;
         [SerializeField] LedgeCollider Collider2;
 
-        private void Start()
+        public override void InitComponent()
         {
-            ledgeGrabData = new LedgeGrabData
-            {
-                isGrabbingLedge = false,
-                LedgeCollidersOff = LedgeCollidersOff,
-            };
-
-            control.characterData.ledgeGrabData = ledgeGrabData;
+            control.LEDGE_GRAB_DATA.LedgeCollidersOff = LedgeCollidersOff;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.LEDGECHECKER] = this;
         }
 
@@ -38,7 +29,7 @@ namespace Roundbeargames
             {
                 if (control.RIGID_BODY.useGravity)
                 {
-                    ledgeGrabData.isGrabbingLedge = false;
+                    control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
                 }
             }
 
@@ -83,18 +74,18 @@ namespace Roundbeargames
                     }
                     else
                     {
-                        ledgeGrabData.isGrabbingLedge = false;
+                        control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
                     }
                 }
             }
             else
             {
-                ledgeGrabData.isGrabbingLedge = false;
+                control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
             }
 
             if (Collider1.CollidedObjects.Count == 0)
             {
-                ledgeGrabData.isGrabbingLedge = false;
+                control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
             }
         }
 
@@ -107,12 +98,12 @@ namespace Roundbeargames
                 return false;
             }
 
-            if (ledgeGrabData.isGrabbingLedge)
+            if (control.LEDGE_GRAB_DATA.isGrabbingLedge)
             {
                 return false;
             }
 
-            ledgeGrabData.isGrabbingLedge = true;
+            control.LEDGE_GRAB_DATA.isGrabbingLedge = true;
             control.RIGID_BODY.useGravity = false;
             control.RIGID_BODY.velocity = Vector3.zero;
 
