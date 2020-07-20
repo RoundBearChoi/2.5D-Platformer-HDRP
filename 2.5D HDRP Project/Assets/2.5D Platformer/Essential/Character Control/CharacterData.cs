@@ -39,8 +39,6 @@ namespace Roundbeargames
                 isGrabbingLedge = false,
             };
 
-            control.characterData.blockingData = blockingData;
-
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {
