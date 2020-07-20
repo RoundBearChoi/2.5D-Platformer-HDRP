@@ -12,6 +12,7 @@ namespace Roundbeargames
         {
             AddFunction(typeof(LedgeCollidersOff));
             AddFunction(typeof(ClearAllVelocity));
+            AddFunction(typeof(ClearUpVelocity));
 
             AddFunction(typeof(SpawnHitParticles));
             AddFunction(typeof(AddForceToDamagedPart));

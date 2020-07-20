@@ -13,14 +13,6 @@ namespace Roundbeargames
             control = GetComponent<CharacterControl>();
         }
 
-        public void NullifyUpVelocity()
-        {
-            control.RIGID_BODY.velocity = new Vector3(
-                            control.RIGID_BODY.velocity.x,
-                            0f,
-                            control.RIGID_BODY.velocity.z);
-        }
-
         public bool StateNameContains(string str)
         {
             AnimatorClipInfo[] arr = control.SkinnedMeshAnimator.GetCurrentAnimatorClipInfo(0);

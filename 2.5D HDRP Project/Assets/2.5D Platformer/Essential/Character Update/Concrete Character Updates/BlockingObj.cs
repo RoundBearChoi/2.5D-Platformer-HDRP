@@ -56,7 +56,7 @@ namespace Roundbeargames
 
                         if (c == null)
                         {
-                            control.animationProgress.NullifyUpVelocity();
+                            control.RunFunction(typeof(ClearUpVelocity));//.NullifyUpVelocity();
                             break;
                         }
                         else
@@ -64,7 +64,7 @@ namespace Roundbeargames
                             if (control.transform.position.y + control.boxCollider.center.y <
                                 c.transform.position.y)
                             {
-                                control.animationProgress.NullifyUpVelocity();
+                                control.RunFunction(typeof(ClearUpVelocity));//.NullifyUpVelocity();
                                 break;
                             }
                         }
