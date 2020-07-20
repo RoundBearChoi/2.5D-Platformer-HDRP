@@ -76,6 +76,11 @@ namespace Roundbeargames
                 damageTaken = new DamageTaken(null, null, null, null, Vector3.zero),
             };
 
+            momentumData = new MomentumData
+            {
+                Momentum = 0f,
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

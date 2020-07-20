@@ -6,17 +6,9 @@ namespace Roundbeargames
 {
     public class MomentumCalculator : SubComponent
     {
-        public MomentumData momentumData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            momentumData = new MomentumData
-            {
-                Momentum = 0f,
-                CalculateMomentum = CalculateMomentum,
-            };
-
-            control.characterData.momentumData = momentumData;
+            control.MOMENTUM_DATA.CalculateMomentum = CalculateMomentum;
         }
 
         public override void OnFixedUpdate()
@@ -35,7 +27,7 @@ namespace Roundbeargames
             {
                 if (control.MoveRight)
                 {
-                    momentumData.Momentum += speed;
+                    control.MOMENTUM_DATA.Momentum += speed;
                 }
             }
 
@@ -43,26 +35,26 @@ namespace Roundbeargames
             {
                 if (control.MoveLeft)
                 {
-                    momentumData.Momentum -= speed;
+                    control.MOMENTUM_DATA.Momentum -= speed;
                 }
             }
 
             if (control.BLOCKING_DATA.RightSideBlocked() || control.BLOCKING_DATA.LeftSideBlocked())
             {
-                float lerped = Mathf.Lerp(momentumData.Momentum, 0f, Time.deltaTime * 1.5f);
-                momentumData.Momentum = lerped;
+                float lerped = Mathf.Lerp(control.MOMENTUM_DATA.Momentum, 0f, Time.deltaTime * 1.5f);
+                control.MOMENTUM_DATA.Momentum = lerped;
             }
 
 
-            if (Mathf.Abs(momentumData.Momentum) >= maxMomentum)
+            if (Mathf.Abs(control.MOMENTUM_DATA.Momentum) >= maxMomentum)
             {
-                if (momentumData.Momentum > 0f)
+                if (control.MOMENTUM_DATA.Momentum > 0f)
                 {
-                    momentumData.Momentum = maxMomentum;
+                    control.MOMENTUM_DATA.Momentum = maxMomentum;
                 }
-                else if (momentumData.Momentum < 0f)
+                else if (control.MOMENTUM_DATA.Momentum < 0f)
                 {
-                    momentumData.Momentum = -maxMomentum;
+                    control.MOMENTUM_DATA.Momentum = -maxMomentum;
                 }
             }
         }
