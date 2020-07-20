@@ -45,6 +45,11 @@ namespace Roundbeargames
                 flyingRagdollData = new FlyingRagdollData(),
             };
 
+            manualInputData = new ManualInputData
+            {
+
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

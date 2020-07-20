@@ -6,21 +6,15 @@ namespace Roundbeargames
 {
     public class ManualInput : SubComponent
     {
-        public ManualInputData manualInputData;
-
         List<InputKeyType> DoubleTaps = new List<InputKeyType>();
         List<InputKeyType> UpKeys = new List<InputKeyType>();
         Dictionary<InputKeyType, float> DicDoubleTapTimings = new Dictionary<InputKeyType, float>();
 
-        private void Start()
+        public override void InitComponent()
         {
-            manualInputData = new ManualInputData
-            {
-                DoubleTapDown = IsDoubleTap_Down,
-                DoubleTapUp = IsDoubleTap_Up,
-            };
+            control.MANUAL_INPUT_DATA.DoubleTapDown = IsDoubleTap_Down;
+            control.MANUAL_INPUT_DATA.DoubleTapUp = IsDoubleTap_Up;
 
-            control.characterData.manualInputData = manualInputData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.MANUALINPUT] = this;
         }
 
