@@ -104,6 +104,11 @@ namespace Roundbeargames
                 FrontOverlapCheckers = new OverlapChecker[10],
             };
 
+            instaKillData = new InstaKillData
+            {
+
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

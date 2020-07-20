@@ -6,22 +6,15 @@ namespace Roundbeargames
 {
     public class InstaKill : SubComponent
     {
-        public InstaKillData instaKillData;
-
         [SerializeField] RuntimeAnimatorController Assassination_A;
         [SerializeField] RuntimeAnimatorController Assassination_B;
 
-        private void Start()
+        public override void InitComponent()
         {
-            instaKillData = new InstaKillData
-            {
-                Animation_A = Assassination_A,
-                Animation_B = Assassination_B,
+            control.INSTA_KILL_DATA.Animation_A = Assassination_A;
+            control.INSTA_KILL_DATA.Animation_B = Assassination_B;
+            control.INSTA_KILL_DATA.DeathByInstaKill = DeathByInstaKill;
 
-                DeathByInstaKill = DeathByInstaKill,
-            };
-
-            control.characterData.instaKillData = instaKillData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.INSTA_KILL] = this;
         }
 
@@ -31,10 +24,6 @@ namespace Roundbeargames
             {
                 return;
             }
-            //if (control.subComponentProcessor.ComponentsDic.ContainsKey(SubComponentType.MANUALINPUT))
-            //{
-            //    return;
-            //}
 
             if (!control.SkinnedMeshAnimator.
                 GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
@@ -57,11 +46,6 @@ namespace Roundbeargames
                     {
                         continue;
                     }
-
-                    //if (!c.subComponentProcessor.ComponentsDic.ContainsKey(SubComponentType.MANUALINPUT))
-                    //{
-                    //    continue;
-                    //}
 
                     if (!c.SkinnedMeshAnimator.GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
                     {
