@@ -8,9 +8,7 @@ namespace Roundbeargames
     {
         public bool CameraShaken;
         public List<PoolObjectType> SpawnedObjList = new List<PoolObjectType>();
-
-        public MoveUp LatestMoveUp;
-
+        
         [Header("GroundMovement")]
         public bool IsIgnoreCharacterTime;
                 

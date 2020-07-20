@@ -37,7 +37,7 @@ namespace Roundbeargames
             // checking while ledge grabbing
             if (control.ANIMATION_DATA.IsRunning(typeof(MoveUp)))
             {
-                if (control.animationProgress.LatestMoveUp.Speed > 0f)
+                if (control.ANIMATION_DATA.LatestMoveUp.Speed > 0f)
                 {
                     CheckUpBlocking();
                 }
