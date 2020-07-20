@@ -6,18 +6,9 @@ namespace Roundbeargames
 {
     public class PlayerJump : SubComponent
     {
-        public JumpData jumpData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            jumpData = new JumpData
-            {
-                DicJumped = new Dictionary<int, bool>(),
-                CanWallJump = false,
-                CheckWallBlock = false,
-            };
 
-            control.characterData.jumpData = jumpData;
         }
 
         public override void OnFixedUpdate()

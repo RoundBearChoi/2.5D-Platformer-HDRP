@@ -87,6 +87,13 @@ namespace Roundbeargames
                 UnlockTiming = 0f,
             };
 
+            jumpData = new JumpData
+            {
+                DicJumped = new Dictionary<int, bool>(),
+                CanWallJump = false,
+                CheckWallBlock = false,
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {
