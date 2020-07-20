@@ -182,9 +182,7 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.MOVING_TO_BLOCKING_OBJ:
                         {
-                            List<GameObject> objs = control.BLOCKING_DATA.GetFrontBlockingObjList();
-
-                            foreach (GameObject o in objs)
+                            foreach (GameObject o in control.GetGameObjList(typeof(FrontBlockingObjList)))
                             {
                                 Vector3 dir = o.transform.position - control.transform.position;
 

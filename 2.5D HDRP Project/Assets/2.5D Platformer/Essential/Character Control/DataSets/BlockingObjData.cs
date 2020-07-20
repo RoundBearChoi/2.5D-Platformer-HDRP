@@ -13,10 +13,5 @@ namespace Roundbeargames
 
         public int FrontBlockingDicCount;
         public int UpBlockingDicCount;
-
-        public delegate List<GameObject> ReturnGameObjList();
-
-        public ReturnGameObjList GetFrontBlockingObjList;
-        public ReturnGameObjList GetFrontBlockingCharacterList;
     }
 }

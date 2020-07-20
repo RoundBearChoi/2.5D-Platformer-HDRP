@@ -58,7 +58,7 @@ namespace Roundbeargames
             }
             else
             {
-                List<GameObject> objs = characterState.BLOCKING_DATA.GetFrontBlockingCharacterList();
+                List<GameObject> objs = characterState.characterControl.GetGameObjList(typeof(FrontBlockingCharacterList));
 
                 foreach(GameObject o in objs)
                 {

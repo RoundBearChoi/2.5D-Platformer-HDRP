@@ -10,18 +10,13 @@ namespace Roundbeargames
         Dictionary<GameObject, GameObject> DownBlockingObjs = new Dictionary<GameObject, GameObject>();
 
         List<CharacterControl> MarioStompTargets = new List<CharacterControl>();
-
         List<GameObject> FrontBlockingObjsList = new List<GameObject>();
-        List<GameObject> FrontBlockingCharacters = new List<GameObject>();
 
         GameObject[] FrontSpheresArray;
         float DirBlock;
 
         public override void InitComponent()
         {
-            control.BLOCKING_DATA.GetFrontBlockingCharacterList = GetFrontBlockingCharacterList;
-            control.BLOCKING_DATA.GetFrontBlockingObjList = GetFrontBlockingObjList;
-
             characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.BLOCKINGOBJECTS] = this;
         }
 
@@ -258,26 +253,6 @@ namespace Roundbeargames
             {
                 dic.Remove(key);
             }
-        }
-                
-        List<GameObject> GetFrontBlockingCharacterList()
-        {
-            FrontBlockingCharacters.Clear();
-
-            foreach(KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
-            {
-                CharacterControl c = CharacterManager.Instance.GetCharacter(data.Value.transform.root.gameObject);
-
-                if (c != null)
-                {
-                    if (!FrontBlockingCharacters.Contains(c.gameObject))
-                    {
-                        FrontBlockingCharacters.Add(c.gameObject);
-                    }
-                }
-            }
-
-            return FrontBlockingCharacters;
         }
 
         List<GameObject> GetFrontBlockingObjList()
