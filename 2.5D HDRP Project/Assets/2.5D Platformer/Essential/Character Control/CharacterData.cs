@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        CharacterControl control;
-
         [Space(15)] public BlockingObjData blockingData;
         [Space(15)] public LedgeGrabData ledgeGrabData;
         [Space(15)] public RagdollData ragdollData;
@@ -26,8 +24,6 @@ namespace Roundbeargames
 
         private void Start()
         {
-            control = this.gameObject.GetComponentInParent<CharacterControl>();
-
             blockingData = new BlockingObjData
             {
                 FrontBlockingDicCount = 0,
@@ -131,7 +127,7 @@ namespace Roundbeargames
 
         void InitAllSubcomponents()
         {
-            SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
+            SubComponent[] arr = this.gameObject.transform.root.gameObject.GetComponentsInChildren<SubComponent>();
 
             foreach (SubComponent s in arr)
             {
