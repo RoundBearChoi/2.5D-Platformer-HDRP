@@ -7,6 +7,7 @@ namespace Roundbeargames
     public class AnimationData
     {
         public bool InstantTransitionMade;
+        public MoveForward LatestMoveForward;
 
         public Dictionary<CharacterAbility, int> CurrentRunningAbilities = new Dictionary<CharacterAbility, int>();
 

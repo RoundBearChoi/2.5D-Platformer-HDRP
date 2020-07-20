@@ -33,7 +33,7 @@ namespace Roundbeargames
         
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.animationProgress.LatestMoveForward = this;
+            characterState.ANIMATION_DATA.LatestMoveForward = this;
 
             if (AllowEarlyTurn)
             {
@@ -70,7 +70,7 @@ namespace Roundbeargames
                 Debug.Log(stateInfo.normalizedTime);
             }
 
-            if (characterState.characterControl.animationProgress.LatestMoveForward != this)
+            if (characterState.ANIMATION_DATA.LatestMoveForward != this)
             {
                 return;
             }

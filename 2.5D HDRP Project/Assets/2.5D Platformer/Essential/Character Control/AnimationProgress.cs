@@ -9,7 +9,6 @@ namespace Roundbeargames
         public bool CameraShaken;
         public List<PoolObjectType> SpawnedObjList = new List<PoolObjectType>();
 
-        public MoveForward LatestMoveForward;
         public MoveUp LatestMoveUp;
 
         [Header("GroundMovement")]
@@ -69,7 +68,7 @@ namespace Roundbeargames
 
         public bool ForwardIsReversed()
         {
-            if (LatestMoveForward.MoveOnHit)
+            if (control.ANIMATION_DATA.LatestMoveForward.MoveOnHit)
             {
                 if (IsFacingAttacker())
                 {
@@ -81,11 +80,11 @@ namespace Roundbeargames
                 }
             }
 
-            if (LatestMoveForward.Speed > 0f)
+            if (control.ANIMATION_DATA.LatestMoveForward.Speed > 0f)
             {
                 return false;
             }
-            else if (LatestMoveForward.Speed < 0f)
+            else if (control.ANIMATION_DATA.LatestMoveForward.Speed < 0f)
             {
                 return true;
             }

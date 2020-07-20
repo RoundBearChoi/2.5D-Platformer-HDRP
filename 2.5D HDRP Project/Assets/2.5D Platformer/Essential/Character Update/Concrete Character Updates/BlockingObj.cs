@@ -185,7 +185,7 @@ namespace Roundbeargames
             {
                 GameObject blockingObj = CollisionDetection.GetCollidingObject(
                     control, FrontSpheresArray[i], this.transform.forward * DirBlock,
-                    control.animationProgress.LatestMoveForward.BlockDistance,
+                    control.ANIMATION_DATA.LatestMoveForward.BlockDistance,
                     ref control.BLOCKING_DATA.RaycastContact);
 
                 if (blockingObj != null)
