@@ -12,9 +12,6 @@ namespace Roundbeargames
         [Header("GroundMovement")]
         public bool IsIgnoreCharacterTime;
                 
-        [Header("Transition")]
-        public bool LockTransition;
-
         [Header("Weapon")]
         public MeleeWeapon HoldingWeapon;
 

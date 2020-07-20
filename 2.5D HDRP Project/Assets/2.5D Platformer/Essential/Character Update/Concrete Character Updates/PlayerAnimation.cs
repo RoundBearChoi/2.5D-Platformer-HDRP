@@ -22,7 +22,7 @@ namespace Roundbeargames
         {
             if (IsRunning(typeof(LockTransition)))
             {
-                if (control.animationProgress.LockTransition)
+                if (control.ANIMATION_DATA.LockTransition)
                 {
                     control.SkinnedMeshAnimator.
                         SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.LockTransition],

@@ -68,7 +68,7 @@ namespace Roundbeargames
 
         bool Interfered(CharacterControl control)
         {
-            if (control.animationProgress.LockTransition)
+            if (control.ANIMATION_DATA.LockTransition)
             {
                 return true;
             }
