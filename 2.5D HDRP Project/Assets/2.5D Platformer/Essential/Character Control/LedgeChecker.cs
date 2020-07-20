@@ -22,7 +22,7 @@ namespace Roundbeargames
                 LedgeCollidersOff = LedgeCollidersOff,
             };
 
-            subComponentProcessor.ledgeGrabData = ledgeGrabData;
+            control.characterData.ledgeGrabData = ledgeGrabData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.LEDGECHECKER] = this;
         }
 

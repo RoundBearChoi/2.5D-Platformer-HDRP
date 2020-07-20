@@ -13,7 +13,7 @@ namespace Roundbeargames
         [Space(10)]
         public CharacterAbility[] ArrAbilities;
 
-        public BlockingObjData BLOCKING_DATA => characterControl.subComponentProcessor.blockingData;
+        public BlockingObjData BLOCKING_DATA => characterControl.characterData.blockingData;
         public RagdollData RAGDOLL_DATA => characterControl.subComponentProcessor.ragdollData;
         public BoxColliderData BOX_COLLIDER_DATA => characterControl.subComponentProcessor.boxColliderData;
         public VerticalVelocityData VERTICAL_VELOCITY_DATA => characterControl.subComponentProcessor.verticalVelocityData;

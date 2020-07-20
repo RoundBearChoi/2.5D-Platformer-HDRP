@@ -34,8 +34,10 @@ namespace Roundbeargames
         public BoxCollider boxCollider;
         public NavMeshObstacle navMeshObstacle;
 
-        public BlockingObjData BLOCKING_DATA => subComponentProcessor.blockingData;
-        public LedgeGrabData LEDGE_GRAB_DATA => subComponentProcessor.ledgeGrabData;
+        public CharacterData characterData;
+
+        public BlockingObjData BLOCKING_DATA => characterData.blockingData;
+        public LedgeGrabData LEDGE_GRAB_DATA => characterData.ledgeGrabData;
         public RagdollData RAGDOLL_DATA => subComponentProcessor.ragdollData;
         public ManualInputData MANUAL_INPUT_DATA => subComponentProcessor.manualInputData;
         public BoxColliderData BOX_COLLIDER_DATA => subComponentProcessor.boxColliderData;
@@ -91,6 +93,8 @@ namespace Roundbeargames
                     navMeshObstacle.carving = true;
                 }
             }
+
+            characterData = GetComponentInChildren<CharacterData>();
 
             RegisterCharacter();
             InitCharacterStates(SkinnedMeshAnimator);

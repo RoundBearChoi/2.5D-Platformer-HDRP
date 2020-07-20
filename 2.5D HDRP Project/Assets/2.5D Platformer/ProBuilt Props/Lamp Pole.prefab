@@ -1,70 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4304546190957071658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1674150264771729884}
-  - component: {fileID: 7329058990671246675}
-  m_Layer: 0
-  m_Name: Light Probe Group
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
-  m_IsActive: 1
---- !u!4 &1674150264771729884
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4304546190957071658}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8789472650386732901}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!220 &7329058990671246675
-LightProbeGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4304546190957071658}
-  m_Enabled: 1
-  m_SourcePositions:
-  - {x: 0.23550421, y: -0.92248106, z: 0.2909513}
-  - {x: 0.23550421, y: -0.92248106, z: -0.2601235}
-  - {x: 0.23550421, y: -1.5396438, z: 0.2909513}
-  - {x: 0.23550421, y: -1.5396438, z: -0.2601235}
-  - {x: -0.21301955, y: -0.92248106, z: 0.2909513}
-  - {x: -0.21301955, y: -0.92248106, z: -0.2601235}
-  - {x: -0.21301955, y: -1.5396438, z: 0.2909513}
-  - {x: -0.21301955, y: -1.5396438, z: -0.2601235}
-  - {x: 0.23550421, y: -0.29368854, z: 0.2909513}
-  - {x: 0.23550421, y: -0.29368854, z: -0.2601235}
-  - {x: -0.21301955, y: -0.29368854, z: 0.2909513}
-  - {x: -0.21301955, y: -0.29368854, z: -0.2601235}
-  - {x: 0.23550421, y: 0.31976748, z: 0.2909513}
-  - {x: 0.23550421, y: 0.31976748, z: -0.2601235}
-  - {x: -0.21301955, y: 0.31976748, z: 0.2909513}
-  - {x: -0.21301955, y: 0.31976748, z: -0.2601235}
-  - {x: 0.23550421, y: 0.8718777, z: 0.2909513}
-  - {x: 0.23550421, y: 0.8718777, z: -0.2601235}
-  - {x: -0.21301955, y: 0.8718777, z: 0.2909513}
-  - {x: -0.21301955, y: 0.8718777, z: -0.2601235}
-  - {x: 0.23550421, y: 1.4469926, z: 0.2909513}
-  - {x: 0.23550421, y: 1.4469926, z: -0.2601235}
-  - {x: -0.21301955, y: 1.4469926, z: 0.2909513}
-  - {x: -0.21301955, y: 1.4469926, z: -0.2601235}
-  m_Dering: 1
 --- !u!1 &8789472650386732900
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,8 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1674150264771729884}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

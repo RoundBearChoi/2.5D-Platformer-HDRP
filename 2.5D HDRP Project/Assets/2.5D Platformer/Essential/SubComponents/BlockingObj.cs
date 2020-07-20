@@ -33,7 +33,7 @@ namespace Roundbeargames
                 GetFrontBlockingObjList = GetFrontBlockingObjList,
             };
 
-            subComponentProcessor.blockingData = blockingData;
+            control.characterData.blockingData = blockingData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.BLOCKINGOBJECTS] = this;
         }
 
