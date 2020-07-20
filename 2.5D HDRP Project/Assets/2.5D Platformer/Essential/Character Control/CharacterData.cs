@@ -39,6 +39,12 @@ namespace Roundbeargames
                 isGrabbingLedge = false,
             };
 
+            ragdollData = new RagdollData
+            {
+                RagdollTriggered = false,
+                flyingRagdollData = new FlyingRagdollData(),
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

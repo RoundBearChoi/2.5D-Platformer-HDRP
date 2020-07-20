@@ -12,28 +12,18 @@ namespace Roundbeargames
 
     public class Ragdoll : SubComponent
     {
-        public RagdollData ragdollData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            ragdollData = new RagdollData
-            {
-                RagdollTriggered = false,
-                flyingRagdollData = new FlyingRagdollData(),
-
-                GetBody = GetBodyPart,
-                AddForceToDamagedPart = AddForceToDamagedPart,
-                ClearExistingVelocity = ClearExistingVelocity,
-            };
+            control.RAGDOLL_DATA.AddForceToDamagedPart = AddForceToDamagedPart;
+            control.RAGDOLL_DATA.ClearExistingVelocity = ClearExistingVelocity;
 
             SetupBodyParts();
-            control.characterData.ragdollData = ragdollData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.RAGDOLL] = this;
         }
 
         public override void OnFixedUpdate()
         {
-            if (ragdollData.RagdollTriggered)
+            if (control.RAGDOLL_DATA.RagdollTriggered)
             {
                 ProcRagdoll();
             }
@@ -75,17 +65,17 @@ namespace Roundbeargames
                 }
             }
 
-            ragdollData.ArrBodyParts = new Collider[BodyParts.Count];
+            control.RAGDOLL_DATA.ArrBodyParts = new Collider[BodyParts.Count];
 
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                ragdollData.ArrBodyParts[i] = BodyParts[i];
+                control.RAGDOLL_DATA.ArrBodyParts[i] = BodyParts[i];
             }
         }
 
         void ProcRagdoll()
         {
-            ragdollData.RagdollTriggered = false;
+            control.RAGDOLL_DATA.RagdollTriggered = false;
 
             if (control.SkinnedMeshAnimator.avatar == null)
             {
@@ -100,11 +90,11 @@ namespace Roundbeargames
             }
 
             //save bodypart positions
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                TriggerDetector det = ragdollData.ArrBodyParts[i].GetComponent<TriggerDetector>();
-                det.LastPosition = ragdollData.ArrBodyParts[i].gameObject.transform.position;
-                det.LastRotation = ragdollData.ArrBodyParts[i].gameObject.transform.rotation;
+                TriggerDetector det = control.RAGDOLL_DATA.ArrBodyParts[i].GetComponent<TriggerDetector>();
+                det.LastPosition = control.RAGDOLL_DATA.ArrBodyParts[i].gameObject.transform.position;
+                det.LastRotation = control.RAGDOLL_DATA.ArrBodyParts[i].gameObject.transform.rotation;
             }
 
             //turn off animator/avatar
@@ -125,26 +115,26 @@ namespace Roundbeargames
             }
 
             //turn on ragdoll
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                ragdollData.ArrBodyParts[i].isTrigger = false;
-                ragdollData.ArrBodyParts[i].attachedRigidbody.isKinematic = true;
+                control.RAGDOLL_DATA.ArrBodyParts[i].isTrigger = false;
+                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.isKinematic = true;
             }
 
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                TriggerDetector det = ragdollData.ArrBodyParts[i].GetComponent<TriggerDetector>();
-                ragdollData.ArrBodyParts[i].attachedRigidbody.MovePosition(det.LastPosition);
-                ragdollData.ArrBodyParts[i].attachedRigidbody.MoveRotation(det.LastRotation);
-                ragdollData.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
+                TriggerDetector det = control.RAGDOLL_DATA.ArrBodyParts[i].GetComponent<TriggerDetector>();
+                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.MovePosition(det.LastPosition);
+                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.MoveRotation(det.LastRotation);
+                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
             }
 
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                ragdollData.ArrBodyParts[i].attachedRigidbody.isKinematic = false;
+                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.isKinematic = false;
             }
-            
-            ragdollData.ClearExistingVelocity();
+
+            control.RAGDOLL_DATA.ClearExistingVelocity();
             
             if (control.DAMAGE_DATA.damageTaken != null)
             {
@@ -161,18 +151,18 @@ namespace Roundbeargames
                 //take damage from attack
                 else
                 {
-                    ragdollData.AddForceToDamagedPart(RagdollPushType.NORMAL);
+                    control.RAGDOLL_DATA.AddForceToDamagedPart(RagdollPushType.NORMAL);
                 }
             }
         }
 
         Collider GetBodyPart(string name)
         {
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                if (ragdollData.ArrBodyParts[i].name.Contains(name))
+                if (control.RAGDOLL_DATA.ArrBodyParts[i].name.Contains(name))
                 {
-                    return ragdollData.ArrBodyParts[i];
+                    return control.RAGDOLL_DATA.ArrBodyParts[i];
                 }
             }
 
@@ -218,9 +208,9 @@ namespace Roundbeargames
 
         void ClearExistingVelocity()
         {
-            for (int i = 0; i < ragdollData.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                ragdollData.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
+                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
             }
         }
     }
