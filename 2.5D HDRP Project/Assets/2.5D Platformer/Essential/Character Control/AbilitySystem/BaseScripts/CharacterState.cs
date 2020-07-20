@@ -26,6 +26,7 @@ namespace Roundbeargames
         public AnimationData ANIMATION_DATA => characterControl.characterData.animationData;
         public AIController AI_CONTROLLER => characterControl.aiController;
         public WeaponData WEAPON_DATA => characterControl.characterData.weaponData;
+        public CameraData CAMERA_DATA => characterControl.characterData.cameraData;
 
         public void PutStatesInArray()
         {

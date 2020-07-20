@@ -23,6 +23,7 @@ namespace Roundbeargames
         [Space(15)] public AnimationData animationData;
         [Space(15)] public CollidingObjData collidingObjData;
         [Space(15)] public WeaponData weaponData;
+        [Space(15)] public CameraData cameraData;
 
         private void Start()
         {
@@ -139,6 +140,11 @@ namespace Roundbeargames
             weaponData = new WeaponData
             {
                 HoldingWeapon = null,
+            };
+
+            cameraData = new CameraData
+            {
+                CameraShaken = false,
             };
 
             InitAllCharacterUpdates();
