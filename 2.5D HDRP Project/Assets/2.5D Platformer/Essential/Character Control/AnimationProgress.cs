@@ -13,21 +13,6 @@ namespace Roundbeargames
             control = GetComponent<CharacterControl>();
         }
 
-        public bool StateNameContains(string str)
-        {
-            AnimatorClipInfo[] arr = control.SkinnedMeshAnimator.GetCurrentAnimatorClipInfo(0);
-
-            foreach(AnimatorClipInfo clipInfo in arr)
-            {
-                if (clipInfo.clip.name.Contains(str))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public MeleeWeapon GetTouchingWeapon()
         {
             foreach(KeyValuePair<TriggerDetector, List<Collider>> data in control.COLLIDING_OBJ_DATA.CollidingWeapons)

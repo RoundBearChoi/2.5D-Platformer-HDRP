@@ -165,6 +165,11 @@ namespace Roundbeargames
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool();
         }
 
+        public bool GetBool(System.Type CharacterQueryType, string str)
+        {
+            return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool(str);
+        }
+
         public List<GameObject> GetGameObjList(System.Type CharacterQueryType)
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnGameObjList();

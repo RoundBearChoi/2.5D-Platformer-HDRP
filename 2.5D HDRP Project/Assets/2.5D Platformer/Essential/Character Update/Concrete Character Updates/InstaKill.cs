@@ -62,7 +62,7 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (c.animationProgress.StateNameContains("RunningSlide"))
+                    if (c.GetBool(typeof(StateNameContains), "RunningSlide"))//.StateNameContains("RunningSlide"))
                     {
                         continue;
                     }
