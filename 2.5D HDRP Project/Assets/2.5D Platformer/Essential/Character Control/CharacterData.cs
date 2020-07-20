@@ -114,6 +114,12 @@ namespace Roundbeargames
 
             };
 
+            attackData = new AttackData
+            {
+                AttackButtonIsReset = false,
+                AttackTriggered = false,
+            };
+
             SubComponent[] arr = control.gameObject.GetComponentsInChildren<SubComponent>();
             foreach(SubComponent s in arr)
             {

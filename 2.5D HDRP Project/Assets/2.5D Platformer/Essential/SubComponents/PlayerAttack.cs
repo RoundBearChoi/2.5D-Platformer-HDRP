@@ -6,17 +6,8 @@ namespace Roundbeargames
 {
     public class PlayerAttack : SubComponent
     {
-        public AttackData attackData;
-
-        private void Start()
+        public override void InitComponent()
         {
-            attackData = new AttackData
-            {
-                AttackButtonIsReset = false,
-                AttackTriggered = false,
-            };
-
-            control.characterData.attackData = attackData;
             subComponentProcessor.ArrSubComponents[(int)SubComponentType.PLAYER_ATTACK] = this;
         }
 
@@ -30,16 +21,16 @@ namespace Roundbeargames
 
             if (control.Attack)
             {
-                if (attackData.AttackButtonIsReset)
+                if (control.ATTACK_DATA.AttackButtonIsReset)
                 {
-                    attackData.AttackTriggered = true;
-                    attackData.AttackButtonIsReset = false;
+                    control.ATTACK_DATA.AttackTriggered = true;
+                    control.ATTACK_DATA.AttackButtonIsReset = false;
                 }
             }
             else
             {
-                attackData.AttackButtonIsReset = true;
-                attackData.AttackTriggered = false;
+                control.ATTACK_DATA.AttackButtonIsReset = true;
+                control.ATTACK_DATA.AttackTriggered = false;
             }
         }
     }
