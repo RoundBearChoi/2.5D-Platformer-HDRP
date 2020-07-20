@@ -72,7 +72,7 @@ namespace Roundbeargames
 
         public void DropWeapon()
         {
-            MeleeWeapon w = control.animationProgress.HoldingWeapon;
+            MeleeWeapon w = control.WEAPON_DATA.HoldingWeapon;
 
             if (w != null)
             {
@@ -91,7 +91,7 @@ namespace Roundbeargames
 
                 w.transform.position = control.transform.position + (Vector3.up * 0.0225f);
 
-                control.animationProgress.HoldingWeapon = null;
+                control.WEAPON_DATA.HoldingWeapon = null;
                 control = null;
                 w.triggerDetector.control = null;
             }
@@ -99,7 +99,7 @@ namespace Roundbeargames
 
         public void ThrowWeapon()
         {
-            MeleeWeapon w = control.animationProgress.HoldingWeapon;
+            MeleeWeapon w = control.WEAPON_DATA.HoldingWeapon;
 
             if (w != null)
             {
@@ -120,7 +120,7 @@ namespace Roundbeargames
                 w.transform.position += (control.transform.forward * ThrowOffset.z);
 
                 Thrower = control;
-                control.animationProgress.HoldingWeapon = null;
+                control.WEAPON_DATA.HoldingWeapon = null;
                 control = null;
                 w.triggerDetector.control = null;
 

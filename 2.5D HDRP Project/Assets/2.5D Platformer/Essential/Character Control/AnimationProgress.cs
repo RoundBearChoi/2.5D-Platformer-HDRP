@@ -9,9 +9,6 @@ namespace Roundbeargames
         public bool CameraShaken;
         public List<PoolObjectType> SpawnedObjList = new List<PoolObjectType>();
         
-        [Header("Weapon")]
-        public MeleeWeapon HoldingWeapon;
-
         private CharacterControl control;
 
         private void Awake()

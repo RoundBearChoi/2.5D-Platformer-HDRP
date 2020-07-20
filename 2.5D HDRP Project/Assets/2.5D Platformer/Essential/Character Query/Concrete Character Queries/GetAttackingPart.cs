@@ -26,7 +26,7 @@ namespace Roundbeargames
             }
             else if (attackPartType == AttackPartType.MELEE_WEAPON)
             {
-                return control.animationProgress.HoldingWeapon.triggerDetector.gameObject;
+                return control.WEAPON_DATA.HoldingWeapon.triggerDetector.gameObject;
             }
 
             return null;

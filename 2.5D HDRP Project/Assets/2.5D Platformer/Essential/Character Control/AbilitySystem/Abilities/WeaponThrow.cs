@@ -18,10 +18,9 @@ namespace Roundbeargames
         {
             if (stateInfo.normalizedTime > ThrowTiming)
             {
-                if (characterState.characterControl.animationProgress.HoldingWeapon != null)
+                if (characterState.WEAPON_DATA.HoldingWeapon != null)
                 {
-                    characterState.characterControl.animationProgress.HoldingWeapon.ThrowWeapon();
-                    //characterState.characterControl.animationProgress.HoldingWeapon.DropWeapon();
+                    characterState.WEAPON_DATA.HoldingWeapon.ThrowWeapon();
                 }
             }
         }

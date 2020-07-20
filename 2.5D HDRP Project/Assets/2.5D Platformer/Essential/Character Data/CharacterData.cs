@@ -22,6 +22,7 @@ namespace Roundbeargames
         [Space(15)] public AttackData attackData;
         [Space(15)] public AnimationData animationData;
         [Space(15)] public CollidingObjData collidingObjData;
+        [Space(15)] public WeaponData weaponData;
 
         private void Start()
         {
@@ -122,6 +123,10 @@ namespace Roundbeargames
             animationData = new AnimationData
             {
                 InstantTransitionMade = false,
+                LatestMoveForward = null,
+                LatestMoveUp = null,
+                LockTransition = false,
+                IsIgnoreCharacterTime = false,
                 CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
             };
 
@@ -129,6 +134,11 @@ namespace Roundbeargames
             {
                 CollidingBodyParts = new Dictionary<TriggerDetector, List<Collider>>(),
                 CollidingWeapons = new Dictionary<TriggerDetector, List<Collider>>(),
+            };
+
+            weaponData = new WeaponData
+            {
+                HoldingWeapon = null,
             };
 
             InitAllCharacterUpdates();

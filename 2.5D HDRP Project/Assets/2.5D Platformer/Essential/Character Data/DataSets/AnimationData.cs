@@ -11,7 +11,6 @@ namespace Roundbeargames
         public MoveUp LatestMoveUp;
         public bool LockTransition;
         public bool IsIgnoreCharacterTime;
-
         public Dictionary<CharacterAbility, int> CurrentRunningAbilities = new Dictionary<CharacterAbility, int>();
 
         public delegate bool bool_type(System.Type type);

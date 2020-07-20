@@ -246,7 +246,7 @@ namespace Roundbeargames
                         {
                             if (control.COLLIDING_OBJ_DATA.CollidingWeapons.Count == 0)
                             {
-                                if (control.animationProgress.HoldingWeapon == null)
+                                if (control.WEAPON_DATA.HoldingWeapon == null)
                                 {
                                     return false;
                                 }
@@ -255,12 +255,12 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.HOLDING_AXE:
                         {
-                            if (control.animationProgress.HoldingWeapon == null)
+                            if (control.WEAPON_DATA.HoldingWeapon == null)
                             {
                                 return false;
                             }
 
-                            if (!control.animationProgress.HoldingWeapon.name.Contains("Axe"))
+                            if (!control.WEAPON_DATA.HoldingWeapon.name.Contains("Axe"))
                             {
                                 return false;
                             }

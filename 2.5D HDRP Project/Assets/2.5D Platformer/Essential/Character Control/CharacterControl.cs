@@ -54,6 +54,7 @@ namespace Roundbeargames
         public AttackData ATTACK_DATA => characterData.attackData;
         public AnimationData ANIMATION_DATA => characterData.animationData;
         public CollidingObjData COLLIDING_OBJ_DATA => characterData.collidingObjData;
+        public WeaponData WEAPON_DATA => characterData.weaponData;
 
         [Header("Setup")]
         public PlayableCharacterType playableCharacterType;

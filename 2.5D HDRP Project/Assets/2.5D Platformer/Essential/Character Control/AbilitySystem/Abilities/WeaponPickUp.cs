@@ -11,7 +11,7 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.animationProgress.HoldingWeapon =
+            characterState.WEAPON_DATA.HoldingWeapon =
                 characterState.characterControl.animationProgress.GetTouchingWeapon();
         }
 
@@ -19,9 +19,9 @@ namespace Roundbeargames
         {
             if (stateInfo.normalizedTime > PickUpTiming)
             {
-                if (characterState.characterControl.animationProgress.HoldingWeapon.control == null)
+                if (characterState.WEAPON_DATA.HoldingWeapon.control == null)
                 {
-                    MeleeWeapon w = characterState.characterControl.animationProgress.HoldingWeapon;
+                    MeleeWeapon w = characterState.WEAPON_DATA.HoldingWeapon;
 
                     w.transform.parent = characterState.characterControl.RightHand_Attack.transform;
                     w.transform.localPosition = w.CustomPosition;
