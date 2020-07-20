@@ -10,6 +10,7 @@ namespace Roundbeargames
         public MoveForward LatestMoveForward;
         public MoveUp LatestMoveUp;
         public bool LockTransition;
+        public bool IsIgnoreCharacterTime;
 
         public Dictionary<CharacterAbility, int> CurrentRunningAbilities = new Dictionary<CharacterAbility, int>();
 

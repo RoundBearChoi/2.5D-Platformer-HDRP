@@ -209,17 +209,17 @@ namespace Roundbeargames
         {
             if (!IgnoreCharacterBox)
             {
-                control.animationProgress.IsIgnoreCharacterTime = false;
+                control.ANIMATION_DATA.IsIgnoreCharacterTime = false;
             }
 
             if (stateInfo.normalizedTime > IgnoreStartTime &&
                 stateInfo.normalizedTime < IgnoreEndTime)
             {
-                control.animationProgress.IsIgnoreCharacterTime = true;
+                control.ANIMATION_DATA.IsIgnoreCharacterTime = true;
             }
             else
             {
-                control.animationProgress.IsIgnoreCharacterTime = false;
+                control.ANIMATION_DATA.IsIgnoreCharacterTime = false;
             }
         }
            
