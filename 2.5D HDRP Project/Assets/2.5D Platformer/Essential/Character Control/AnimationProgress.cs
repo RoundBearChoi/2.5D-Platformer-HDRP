@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class AnimationProgress : MonoBehaviour
     {
-        public List<PoolObjectType> SpawnedObjList = new List<PoolObjectType>();
         private CharacterControl control;
 
         private void Awake()

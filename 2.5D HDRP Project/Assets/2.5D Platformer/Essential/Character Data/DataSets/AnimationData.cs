@@ -12,9 +12,9 @@ namespace Roundbeargames
         public bool LockTransition;
         public bool IsIgnoreCharacterTime;
         public Dictionary<CharacterAbility, int> CurrentRunningAbilities = new Dictionary<CharacterAbility, int>();
+        public List<PoolObjectType> SpawnedObjList = new List<PoolObjectType>();
 
         public delegate bool bool_type(System.Type type);
-
         public bool_type IsRunning;
     }
 }
