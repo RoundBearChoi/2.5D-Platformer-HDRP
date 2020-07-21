@@ -13,9 +13,9 @@ namespace Roundbeargames
         List<GameObject> FrontBlockingObjsList = new List<GameObject>();
 
         GameObject[] FrontSpheresArray;
-        float DirBlock;
-        Vector3 RayDirection = new Vector3();
-        float RayLength = 0f;
+        float FrontDirectionMultiplier;
+        Vector3 FrontRayDirection = new Vector3();
+        float FrontRayLength = 0f;
 
         public override void InitComponent()
         {
@@ -28,13 +28,6 @@ namespace Roundbeargames
             {
                 CheckFrontBlocking();
             }
-            //else
-            //{
-            //    if (control.BLOCKING_DATA.FrontBlockingObjs.Count != 0)
-            //    {
-            //        control.BLOCKING_DATA.FrontBlockingObjs.Clear();
-            //    }
-            //}
 
             // checking while ledge grabbing
             if (control.ANIMATION_DATA.IsRunning(typeof(MoveUp)))
@@ -58,7 +51,7 @@ namespace Roundbeargames
 
                         if (c == null)
                         {
-                            control.RunFunction(typeof(ClearUpVelocity));//.NullifyUpVelocity();
+                            control.RunFunction(typeof(ClearUpVelocity));
                             break;
                         }
                         else
@@ -66,7 +59,7 @@ namespace Roundbeargames
                             if (control.transform.position.y + control.boxCollider.center.y <
                                 c.transform.position.y)
                             {
-                                control.RunFunction(typeof(ClearUpVelocity));//.NullifyUpVelocity();
+                                control.RunFunction(typeof(ClearUpVelocity));
                                 break;
                             }
                         }
@@ -161,21 +154,21 @@ namespace Roundbeargames
             if (!control.GetBool(typeof(ForwardReversed)))
             {
                 FrontSpheresArray = control.COLLISION_SPHERE_DATA.FrontSpheres;
-                DirBlock = 1f;
+                FrontDirectionMultiplier = 1f;
             }
             else
             {
                 FrontSpheresArray = control.COLLISION_SPHERE_DATA.BackSpheres;
-                DirBlock = -1f;
+                FrontDirectionMultiplier = -1f;
             }
 
-            RayDirection = this.transform.forward * DirBlock;
-            RayLength = control.ANIMATION_DATA.LatestMoveForward.BlockDistance;
+            FrontRayDirection = this.transform.forward * FrontDirectionMultiplier;
+            FrontRayLength = control.ANIMATION_DATA.LatestMoveForward.BlockDistance;
 
             for (int i = 0; i < FrontSpheresArray.Length; i++)
             {
                 RaycastHit[] hits;
-                hits = Physics.RaycastAll(FrontSpheresArray[i].transform.position, RayDirection, RayLength);
+                hits = Physics.RaycastAll(FrontSpheresArray[i].transform.position, FrontRayDirection, FrontRayLength);
 
                 foreach(RaycastHit h in hits)
                 {
