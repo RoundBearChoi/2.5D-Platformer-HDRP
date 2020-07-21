@@ -119,7 +119,8 @@ namespace Roundbeargames
         private void MoveOnMomentum(CharacterControl control, AnimatorStateInfo stateInfo)
         {
             float speed = SpeedGraph.Evaluate(stateInfo.normalizedTime) * Speed * Time.deltaTime;
-            control.MOMENTUM_DATA.CalculateMomentum(speed, MaxMomentum);
+
+            control.RunFunction(typeof(CalculateMomentum), speed, MaxMomentum);
 
             if (control.MOMENTUM_DATA.Momentum > 0f)
             {

@@ -17,6 +17,7 @@ namespace Roundbeargames
             AddFunction(typeof(SpawnHitParticles));
             AddFunction(typeof(AddForceToDamagedPart));
             AddFunction(typeof(MoveTransformForward));
+            AddFunction(typeof(CalculateMomentum));
         }
 
         void AddFunction(System.Type type)
