@@ -22,7 +22,6 @@ namespace Roundbeargames
             AddUpdater(typeof(BlockingObj));
             AddUpdater(typeof(BoxColliderUpdater));
             AddUpdater(typeof(VerticalVelocity));
-            AddUpdater(typeof(MomentumCalculator));
             AddUpdater(typeof(PlayerRotation));
             AddUpdater(typeof(PlayerJump));
             AddUpdater(typeof(PlayerGround));
