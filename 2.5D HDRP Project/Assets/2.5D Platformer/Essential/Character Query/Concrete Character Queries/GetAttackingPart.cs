@@ -10,19 +10,19 @@ namespace Roundbeargames
         {
             if (attackPartType == AttackPartType.LEFT_HAND)
             {
-                return control.LeftHand_Attack;
+                return control.LEFT_HAND_ATTACK;
             }
             else if (attackPartType == AttackPartType.RIGHT_HAND)
             {
-                return control.RightHand_Attack;
+                return control.RIGHT_HAND_ATTACK;
             }
             else if (attackPartType == AttackPartType.LEFT_FOOT)
             {
-                return control.LeftFoot_Attack;
+                return control.LEFT_FOOT_ATTACK;
             }
             else if (attackPartType == AttackPartType.RIGHT_FOOT)
             {
-                return control.RightFoot_Attack;
+                return control.RIGHT_FOOT_ATTACK;
             }
             else if (attackPartType == AttackPartType.MELEE_WEAPON)
             {

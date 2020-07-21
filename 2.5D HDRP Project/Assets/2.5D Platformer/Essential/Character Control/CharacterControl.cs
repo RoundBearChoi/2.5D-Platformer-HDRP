@@ -36,6 +36,11 @@ namespace Roundbeargames
         public CharacterUpdateProcessor characterUpdateProcessor;
         public CharacterQueryProcessor characterQueryProcessor;
 
+        public GameObject RIGHT_HAND_ATTACK => characterSetup.attackPartSetup.RightHand_Attack;
+        public GameObject LEFT_HAND_ATTACK => characterSetup.attackPartSetup.LeftHand_Attack;
+        public GameObject RIGHT_FOOT_ATTACK => characterSetup.attackPartSetup.RightFoot_Attack;
+        public GameObject LEFT_FOOT_ATTACK => characterSetup.attackPartSetup.LeftFoot_Attack;
+
         public BlockingObjData BLOCKING_DATA => characterData.blockingData;
         public LedgeGrabData LEDGE_GRAB_DATA => characterData.ledgeGrabData;
         public RagdollData RAGDOLL_DATA => characterData.ragdollData;
@@ -58,10 +63,6 @@ namespace Roundbeargames
         [Header("Setup")]
         public PlayableCharacterType playableCharacterType;
         public Animator SkinnedMeshAnimator;
-        public GameObject LeftHand_Attack;
-        public GameObject RightHand_Attack;
-        public GameObject LeftFoot_Attack;
-        public GameObject RightFoot_Attack;
         
         private Rigidbody rigid;
 

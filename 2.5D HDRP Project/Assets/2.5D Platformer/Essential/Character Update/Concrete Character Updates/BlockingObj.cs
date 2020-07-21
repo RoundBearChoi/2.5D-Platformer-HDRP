@@ -116,7 +116,7 @@ namespace Roundbeargames
                         control,
                         c.DAMAGE_DATA.MarioStompAttack,
                         randomPart,
-                        control.RightFoot_Attack,
+                        control.RIGHT_FOOT_ATTACK,
                         Vector3.zero);
 
                     c.DAMAGE_DATA.TakeDamage(info);

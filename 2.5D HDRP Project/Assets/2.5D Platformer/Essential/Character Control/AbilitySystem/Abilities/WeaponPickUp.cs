@@ -23,7 +23,7 @@ namespace Roundbeargames
                 {
                     MeleeWeapon w = characterState.WEAPON_DATA.HoldingWeapon;
 
-                    w.transform.parent = characterState.characterControl.RightHand_Attack.transform;
+                    w.transform.parent = characterState.RIGHT_HAND_ATTACK.transform;
                     w.transform.localPosition = w.CustomPosition;
                     w.transform.localRotation = Quaternion.Euler(w.CustomRotation);
 

@@ -13,6 +13,11 @@ namespace Roundbeargames
         [Space(10)]
         public CharacterAbility[] ArrAbilities;
 
+        public GameObject RIGHT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.RightHand_Attack;
+        //public GameObject LEFT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.LeftHand_Attack;
+        //public GameObject RIGHT_FOOT_ATTACK => characterControl.characterSetup.attackPartSetup.RightFoot_Attack;
+        //public GameObject LEFT_FOOT_ATTACK => characterControl.characterSetup.attackPartSetup.LeftFoot_Attack;
+
         public BlockingObjData BLOCKING_DATA => characterControl.characterData.blockingData;
         public RagdollData RAGDOLL_DATA => characterControl.characterData.ragdollData;
         public BoxColliderData BOX_COLLIDER_DATA => characterControl.characterData.boxColliderData;

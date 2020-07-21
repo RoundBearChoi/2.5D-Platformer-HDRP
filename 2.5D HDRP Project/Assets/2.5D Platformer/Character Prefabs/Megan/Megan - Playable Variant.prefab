@@ -41,7 +41,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000020954758, y: 0.42863113, z: 0.0000000037252903}
+  m_ConnectedAnchor: {x: 0.0000000020954758, y: 0.42863113, z: 0.000000018626451}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -145,7 +145,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.08899668, y: -0.049697217, z: -0.007815764}
+  m_ConnectedAnchor: {x: -0.08899668, y: -0.049697217, z: -0.007815749}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -295,7 +295,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.15639934, y: 0.20863426, z: -0.0015151716}
+  m_ConnectedAnchor: {x: 0.15639934, y: 0.20863414, z: -0.0015151753}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -370,7 +370,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000000011641532, y: 0.25508928, z: 0.000000059604645}
+  m_ConnectedAnchor: {x: -0.00000001792796, y: 0.25508928, z: -0.000000044703484}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -445,7 +445,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.15639918, y: 0.20862898, z: -0.0013742644}
+  m_ConnectedAnchor: {x: -0.15639918, y: 0.20862898, z: -0.0013742495}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -520,7 +520,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.08899668, y: -0.049697217, z: -0.0095390575}
+  m_ConnectedAnchor: {x: 0.08899668, y: -0.049697217, z: -0.009539072}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -668,7 +668,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000027955734, y: 0.19394183, z: -0.0062105437}
+  m_ConnectedAnchor: {x: -0.0000027955734, y: 0.19394183, z: -0.0062105292}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -743,7 +743,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000030500814, y: 0.25510338, z: -0.000000007450581}
+  m_ConnectedAnchor: {x: 0.000000015599653, y: 0.25510338, z: -0.000000007450581}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -977,6 +977,21 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.00000019890625
       objectReference: {fileID: 0}
+    - target: {fileID: 2121292281474815754, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488882716699088169, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003741121789620009, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3146719918546229390, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -1032,6 +1047,16 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.03521791
       objectReference: {fileID: 0}
+    - target: {fileID: 5270871602945179848, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130939171168384431, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6192335856940832577, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -1057,6 +1082,26 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.020576414
       objectReference: {fileID: 0}
+    - target: {fileID: 8934075230018984475, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: attackPartSetup.LeftHand_Attack
+      value: 
+      objectReference: {fileID: 8219152218056654458}
+    - target: {fileID: 8934075230018984475, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: attackPartSetup.RightHand_Attack
+      value: 
+      objectReference: {fileID: 3647676506693118678}
+    - target: {fileID: 8934075230018984475, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: attackPartSetup.LeftFoot_Attack
+      value: 
+      objectReference: {fileID: 1717882899973553137}
+    - target: {fileID: 8934075230018984475, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
+        type: 3}
+      propertyPath: attackPartSetup.RightFoot_Attack
+      value: 
+      objectReference: {fileID: 757459732002533727}
     - target: {fileID: 9121508171078132951, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1065,12 +1110,12 @@ PrefabInstance:
     - target: {fileID: 9121508171078132951, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.528
       objectReference: {fileID: 0}
     - target: {fileID: 9121508171078132951, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 9121508171078132951, guid: c24ecf896a9f1dc40904a24f03f4d4d8,
         type: 3}
