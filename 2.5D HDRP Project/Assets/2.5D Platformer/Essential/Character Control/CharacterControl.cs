@@ -73,6 +73,18 @@ namespace Roundbeargames
             }
         }
 
+        public CharacterUpdate GetUpdater(System.Type UpdaterType)
+        {
+            if (characterUpdateProcessor.DicUpdaters.ContainsKey(UpdaterType))
+            {
+                return characterUpdateProcessor.DicUpdaters[UpdaterType];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         private void Awake()
         {
             characterUpdateProcessor = GetComponentInChildren<CharacterUpdateProcessor>();

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,13 +15,11 @@ namespace Roundbeargames
             control.INSTA_KILL_DATA.Animation_A = Assassination_A;
             control.INSTA_KILL_DATA.Animation_B = Assassination_B;
             control.INSTA_KILL_DATA.DeathByInstaKill = DeathByInstaKill;
-
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.INSTA_KILL] = this;
         }
 
         public override void OnFixedUpdate()
         {
-            if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] != null)
+            if (control.GetUpdater(typeof(ManualInput)))
             {
                 return;
             }
@@ -42,7 +41,7 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (c.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] == null)
+                    if (c.GetUpdater(typeof(ManualInput)) == null)
                     {
                         continue;
                     }

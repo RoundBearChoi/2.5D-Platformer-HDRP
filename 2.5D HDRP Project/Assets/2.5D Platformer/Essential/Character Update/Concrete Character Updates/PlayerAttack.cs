@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override void InitComponent()
         {
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.PLAYER_ATTACK] = this;
+
         }
 
         public override void OnFixedUpdate()

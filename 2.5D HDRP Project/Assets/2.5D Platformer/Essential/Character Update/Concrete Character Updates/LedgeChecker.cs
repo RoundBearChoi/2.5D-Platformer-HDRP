@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override void InitComponent()
         {
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.LEDGECHECKER] = this;
+
         }
 
         public override void OnUpdate()

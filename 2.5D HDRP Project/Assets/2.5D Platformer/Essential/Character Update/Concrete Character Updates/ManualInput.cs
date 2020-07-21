@@ -14,8 +14,6 @@ namespace Roundbeargames
         {
             control.MANUAL_INPUT_DATA.DoubleTapDown = IsDoubleTap_Down;
             control.MANUAL_INPUT_DATA.DoubleTapUp = IsDoubleTap_Up;
-
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] = this;
         }
 
         public override void OnFixedUpdate()

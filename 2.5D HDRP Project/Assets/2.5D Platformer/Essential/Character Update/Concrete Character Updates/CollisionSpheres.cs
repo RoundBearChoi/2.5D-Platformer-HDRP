@@ -19,8 +19,6 @@ namespace Roundbeargames
             control.COLLISION_SPHERE_DATA.Reposition_BackSpheres = Reposition_BackSpheres;
             control.COLLISION_SPHERE_DATA.Reposition_UpSpheres = Reposition_UpSpheres;
 
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.COLLISION_SPHERES] = this;
-
             if (Front == null)
             {
                 SetParents();

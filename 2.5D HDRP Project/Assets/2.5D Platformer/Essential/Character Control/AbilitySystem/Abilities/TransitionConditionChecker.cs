@@ -200,14 +200,10 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.DOUBLE_TAP_UP:
                         {
-                            if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] == null)
+                            if (control.GetUpdater(typeof(ManualInput)) == null)
                             {
                                 return false;
                             }
-                            //if (!control.subComponentProcessor.ComponentsDic.ContainsKey(SubComponentType.MANUALINPUT))
-                            //{
-                            //    return false;
-                            //}
 
                             if (!control.MANUAL_INPUT_DATA.DoubleTapUp())
                             {
@@ -217,14 +213,10 @@ namespace Roundbeargames
                         break;
                     case TransitionConditionType.DOUBLE_TAP_DOWN:
                         {
-                            if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] == null)
+                            if (control.GetUpdater(typeof(ManualInput)) == null)
                             {
                                 return false;
                             }
-                            //if (!control.subComponentProcessor.ComponentsDic.ContainsKey(SubComponentType.MANUALINPUT))
-                            //{
-                            //    return false;
-                            //}
 
                             if (!control.MANUAL_INPUT_DATA.DoubleTapDown())
                             {

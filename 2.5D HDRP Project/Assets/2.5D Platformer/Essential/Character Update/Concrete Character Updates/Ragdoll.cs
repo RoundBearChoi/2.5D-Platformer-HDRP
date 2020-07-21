@@ -9,7 +9,6 @@ namespace Roundbeargames
         public override void InitComponent()
         {
             SetupBodyParts();
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.RAGDOLL] = this;
         }
 
         public override void OnFixedUpdate()

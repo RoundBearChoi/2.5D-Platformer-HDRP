@@ -17,7 +17,7 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.BLOCKINGOBJECTS] = this;
+
         }
 
         public override void OnFixedUpdate()

@@ -51,14 +51,10 @@ namespace Roundbeargames
         {
             foreach (CharacterControl control in Characters)
             {
-                if (control.characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.MANUALINPUT] != null)
+                if (control.GetUpdater(typeof(ManualInput)) != null)
                 {
                     return control;
                 }
-                //if (control.subComponentProcessor.ComponentsDic.ContainsKey(SubComponentType.MANUALINPUT))
-                //{
-                //    return control;
-                //}
             }
 
             return null;

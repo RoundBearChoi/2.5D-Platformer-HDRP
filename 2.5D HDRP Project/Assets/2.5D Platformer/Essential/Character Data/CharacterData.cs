@@ -171,17 +171,7 @@ namespace Roundbeargames
                 CameraShaken = false,
             };
 
-            InitAllCharacterUpdates();
-        }
-
-        void InitAllCharacterUpdates()
-        {
-            CharacterUpdate[] arr = this.gameObject.transform.root.gameObject.GetComponentsInChildren<CharacterUpdate>();
-
-            foreach (CharacterUpdate s in arr)
-            {
-                s.InitComponent();
-            }
+            control.characterUpdateProcessor.InitUpdaters();
         }
     }
 }

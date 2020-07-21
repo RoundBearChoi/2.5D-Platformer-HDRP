@@ -9,8 +9,6 @@ namespace Roundbeargames
         public override void InitComponent()
         {
             control.ANIMATION_DATA.IsRunning = IsRunning;
-
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.PLAYER_ANIMATION] = this;
         }
 
         public override void OnFixedUpdate()

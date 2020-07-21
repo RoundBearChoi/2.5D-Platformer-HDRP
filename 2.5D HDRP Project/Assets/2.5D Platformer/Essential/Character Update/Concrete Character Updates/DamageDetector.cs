@@ -12,8 +12,6 @@ namespace Roundbeargames
         {
             control.DAMAGE_DATA.IsDead = IsDead;
             control.DAMAGE_DATA.TakeDamage = ProcessDamage;
-
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.DAMAGE_DETECTOR] = this;
         }
 
         public override void OnFixedUpdate()

@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override void InitComponent()
         {
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.VERTICAL_VELOCITY] = this;
+
         }
 
         public override void OnFixedUpdate()

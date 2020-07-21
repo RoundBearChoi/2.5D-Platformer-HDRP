@@ -12,8 +12,6 @@ namespace Roundbeargames
         {
             control.ROTATION_DATA.FaceForward = FaceForward;
             control.ROTATION_DATA.IsFacingForward = IsFacingForward;
-
-            characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.PLAYER_ROTATION] = this;
         }
 
         public override void OnFixedUpdate()

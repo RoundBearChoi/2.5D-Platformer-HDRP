@@ -6,48 +6,92 @@ namespace Roundbeargames
 {
     public class CharacterUpdateProcessor : MonoBehaviour
     {
-        public CharacterUpdate[] ArrCharacterUpdate;
+        public Dictionary<System.Type, CharacterUpdate> DicUpdaters = new Dictionary<System.Type, CharacterUpdate>();
         public CharacterControl control;
 
         private void Awake()
         {
-            ArrCharacterUpdate = new CharacterUpdate[(int)CharacterUpdateType.COUNT];
             control = GetComponentInParent<CharacterControl>();
+        }
+
+        public void InitUpdaters()
+        {
+            AddUpdater(typeof(LedgeChecker));
+            AddUpdater(typeof(DamageDetector));
+            AddUpdater(typeof(Ragdoll));
+            AddUpdater(typeof(BlockingObj));
+            AddUpdater(typeof(BoxColliderUpdater));
+            AddUpdater(typeof(VerticalVelocity));
+            AddUpdater(typeof(MomentumCalculator));
+            AddUpdater(typeof(PlayerRotation));
+            AddUpdater(typeof(PlayerJump));
+            AddUpdater(typeof(PlayerGround));
+            AddUpdater(typeof(PlayerAttack));
+            AddUpdater(typeof(PlayerAnimation));
+            AddUpdater(typeof(CollisionSpheres));
+            AddUpdater(typeof(InstaKill));
+
+            if (control.characterSetup.playableCharacterType != PlayableCharacterType.NONE)
+            {
+                AddUpdater(typeof(ManualInput));
+            }
+        }
+
+        void AddUpdater(System.Type UpdaterType)
+        {
+            if (UpdaterType.IsSubclassOf(typeof(CharacterUpdate)))
+            {
+                _AddUpdater(UpdaterType);
+            }
+        }
+
+        void _AddUpdater(System.Type UpdaterType)
+        {
+            GameObject obj = new GameObject();
+            obj.name = UpdaterType.ToString();
+            obj.name = obj.name = obj.name.Replace("Roundbeargames.", "");
+            obj.transform.parent = this.transform;
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
+            CharacterUpdate u = obj.AddComponent(UpdaterType) as CharacterUpdate;
+            DicUpdaters.Add(UpdaterType, u);
+
+            u.InitComponent();
         }
 
         public void RunCharacterFixedUpdate()
         {
-            CharacterFixedUpdate(CharacterUpdateType.LEDGECHECKER);
-            CharacterFixedUpdate(CharacterUpdateType.RAGDOLL);
-            CharacterFixedUpdate(CharacterUpdateType.BLOCKINGOBJECTS);
-            CharacterFixedUpdate(CharacterUpdateType.BOX_COLLIDER_UPDATER);
-            CharacterFixedUpdate(CharacterUpdateType.VERTICAL_VELOCITY);
-            CharacterFixedUpdate(CharacterUpdateType.COLLISION_SPHERES);
-            CharacterFixedUpdate(CharacterUpdateType.INSTA_KILL);
-            CharacterFixedUpdate(CharacterUpdateType.DAMAGE_DETECTOR);
-            CharacterFixedUpdate(CharacterUpdateType.PLAYER_ROTATION);
+            CharacterFixedUpdate(typeof(LedgeChecker));// CharacterUpdateType.LEDGECHECKER);
+            CharacterFixedUpdate(typeof(Ragdoll));// CharacterUpdateType.RAGDOLL);
+            CharacterFixedUpdate(typeof(BlockingObj));// CharacterUpdateType.BLOCKINGOBJECTS);
+            CharacterFixedUpdate(typeof(BoxColliderUpdater));// CharacterUpdateType.BOX_COLLIDER_UPDATER);
+            CharacterFixedUpdate(typeof(VerticalVelocity));// CharacterUpdateType.VERTICAL_VELOCITY);
+            CharacterFixedUpdate(typeof(CollisionSpheres));// CharacterUpdateType.COLLISION_SPHERES);
+            CharacterFixedUpdate(typeof(InstaKill));// CharacterUpdateType.INSTA_KILL);
+            CharacterFixedUpdate(typeof(DamageDetector));// CharacterUpdateType.DAMAGE_DETECTOR);
+            CharacterFixedUpdate(typeof(PlayerRotation));// CharacterUpdateType.PLAYER_ROTATION);
         }
 
         public void RunCharacterUpdate()
         {
-            CharacterUpdate(CharacterUpdateType.MANUALINPUT);
-            CharacterUpdate(CharacterUpdateType.PLAYER_ATTACK);
-            CharacterUpdate(CharacterUpdateType.PLAYER_ANIMATION);
+            CharacterUpdate(typeof(ManualInput));// CharacterUpdateType.MANUALINPUT);
+            CharacterUpdate(typeof(PlayerAttack));// CharacterUpdateType.PLAYER_ATTACK);
+            CharacterUpdate(typeof(PlayerAnimation));// CharacterUpdateType.PLAYER_ANIMATION);
         }
 
-        void CharacterUpdate(CharacterUpdateType type)
+        void CharacterUpdate(System.Type UpdaterType)
         {
-            if (ArrCharacterUpdate[(int)type] != null)
+            if (control.characterUpdateProcessor.DicUpdaters.ContainsKey(UpdaterType))
             {
-                ArrCharacterUpdate[(int)type].OnUpdate();
+                control.characterUpdateProcessor.DicUpdaters[UpdaterType].OnUpdate();
             }
         }
 
-        void CharacterFixedUpdate(CharacterUpdateType type)
+        void CharacterFixedUpdate(System.Type UpdaterType)
         {
-            if (ArrCharacterUpdate[(int)type] != null)
+            if (control.characterUpdateProcessor.DicUpdaters.ContainsKey(UpdaterType))
             {
-                ArrCharacterUpdate[(int)type].OnFixedUpdate();
+                control.characterUpdateProcessor.DicUpdaters[UpdaterType].OnFixedUpdate();
             }
         }
     }
