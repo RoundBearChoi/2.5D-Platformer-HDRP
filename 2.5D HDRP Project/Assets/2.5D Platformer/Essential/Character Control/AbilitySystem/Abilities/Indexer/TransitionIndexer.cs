@@ -12,7 +12,7 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (TransitionConditionChecker.MakeTransition(characterState.characterControl, transitionConditions))
+            if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
             {
                 animator.SetInteger(HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex], Index);
             }
@@ -26,7 +26,7 @@ namespace Roundbeargames
             {
                 if (!characterState.ANIMATION_DATA.LockTransition)
                 {
-                    if (TransitionConditionChecker.MakeTransition(characterState.characterControl, transitionConditions))
+                    if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
                     {
                         animator.SetInteger(HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex], Index);
                     }

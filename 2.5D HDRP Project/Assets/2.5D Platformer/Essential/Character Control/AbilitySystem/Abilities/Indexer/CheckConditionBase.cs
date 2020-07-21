@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public abstract class CheckCondition : MonoBehaviour
+    public abstract class CheckConditionBase : MonoBehaviour
     {
         public abstract bool MeetsCondition(CharacterControl control);
     }

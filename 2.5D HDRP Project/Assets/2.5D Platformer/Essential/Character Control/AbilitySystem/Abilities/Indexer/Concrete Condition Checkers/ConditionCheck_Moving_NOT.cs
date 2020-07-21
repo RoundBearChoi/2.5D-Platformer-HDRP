@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_Moving_NOT : CheckCondition
+    public class ConditionCheck_Moving_NOT : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {

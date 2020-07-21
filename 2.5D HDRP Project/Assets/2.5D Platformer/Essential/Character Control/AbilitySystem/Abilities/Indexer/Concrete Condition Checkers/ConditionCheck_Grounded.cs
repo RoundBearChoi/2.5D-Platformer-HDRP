@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_Grounded : CheckCondition
+    public class ConditionCheck_Grounded : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_TouchingWeapon : CheckCondition
+    public class ConditionCheck_TouchingWeapon : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {

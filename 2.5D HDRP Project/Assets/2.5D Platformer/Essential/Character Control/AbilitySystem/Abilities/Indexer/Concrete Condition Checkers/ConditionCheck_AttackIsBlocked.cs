@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_AttackIsBlocked : CheckCondition
+    public class ConditionCheck_AttackIsBlocked : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {

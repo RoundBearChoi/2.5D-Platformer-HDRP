@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_CanWallJump : CheckCondition
+    public class ConditionCheck_CanWallJump : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {

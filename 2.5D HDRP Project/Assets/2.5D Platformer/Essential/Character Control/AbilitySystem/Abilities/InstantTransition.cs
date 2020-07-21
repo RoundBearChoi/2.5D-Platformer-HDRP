@@ -24,7 +24,7 @@ namespace Roundbeargames
         {
             if (!Interfered(characterState.characterControl))
             {
-                if (TransitionConditionChecker.MakeTransition(characterState.characterControl, transitionConditions))
+                if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
                 {
                     characterState.ANIMATION_DATA.InstantTransitionMade = true;
                     MakeInstantTransition(characterState.characterControl);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_DoubleTap_Right : CheckCondition
+    public class ConditionCheck_DoubleTap_Right : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {

@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public static class TransitionConditionChecker
+    public static class IndexChecker
     {
         public static bool MakeTransition(CharacterControl control, List<TransitionConditionType> transitionConditions)
         {
             foreach (TransitionConditionType c in transitionConditions)
             {
-                CheckCondition check = GetConditionChecker.GET(c);
+                CheckConditionBase check = GetConditionChecker.GET(c);
 
                 if (!check.MeetsCondition(control))
                 {

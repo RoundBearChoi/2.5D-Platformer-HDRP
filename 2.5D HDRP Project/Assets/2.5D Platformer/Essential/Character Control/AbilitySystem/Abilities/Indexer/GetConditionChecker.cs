@@ -6,10 +6,10 @@ namespace Roundbeargames
 {
     public static class GetConditionChecker
     {
-        static Dictionary<TransitionConditionType, CheckCondition> DicCheckers;
+        static Dictionary<TransitionConditionType, CheckConditionBase> DicCheckers;
         static GameObject Conditions = null;
 
-        public static CheckCondition GET(TransitionConditionType conditionType)
+        public static CheckConditionBase GET(TransitionConditionType conditionType)
         {
             if (DicCheckers == null)
             {
@@ -21,7 +21,7 @@ namespace Roundbeargames
 
         public static void InitDic()
         {
-            DicCheckers = new Dictionary<TransitionConditionType, CheckCondition>();
+            DicCheckers = new Dictionary<TransitionConditionType, CheckConditionBase>();
 
             _Add(TransitionConditionType.UP, typeof(ConditionCheck_Up));
             _Add(TransitionConditionType.DOWN, typeof(ConditionCheck_Down));
@@ -64,7 +64,7 @@ namespace Roundbeargames
                 Conditions.transform.rotation = Quaternion.identity;
             }
 
-            if (CheckConditionType.IsSubclassOf(typeof(CheckCondition)))
+            if (CheckConditionType.IsSubclassOf(typeof(CheckConditionBase)))
             {
                 GameObject obj = new GameObject();
                 obj.transform.parent = Conditions.transform;
@@ -73,7 +73,7 @@ namespace Roundbeargames
                 obj.name = CheckConditionType.ToString();
                 obj.name = obj.name.Replace("Roundbeargames.", "");
 
-                CheckCondition c = obj.AddComponent(CheckConditionType) as CheckCondition;
+                CheckConditionBase c = obj.AddComponent(CheckConditionType) as CheckConditionBase;
                 DicCheckers.Add(transitionConditionType, c);
             }
         }
