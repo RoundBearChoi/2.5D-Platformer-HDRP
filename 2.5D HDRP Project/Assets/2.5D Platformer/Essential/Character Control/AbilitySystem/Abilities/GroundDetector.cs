@@ -33,6 +33,7 @@ namespace Roundbeargames
 
         bool IsGrounded(CharacterControl control)
         {
+            // physics check
             if (control.GROUND_DATA.BoxColliderContacts != null)
             {
                 foreach (ContactPoint c in control.GROUND_DATA.BoxColliderContacts)
@@ -57,25 +58,28 @@ namespace Roundbeargames
                 }
             }
 
+            // raycast check
             if (control.RIGID_BODY.velocity.y < 0f)
             {
                 foreach (GameObject o in control.COLLISION_SPHERE_DATA.BottomSpheres)
                 {
-                    GameObject blockingObj = CollisionDetection.GetCollidingObject(control, o, -Vector3.up, Distance,
-                        ref control.BLOCKING_DATA.RaycastContact);
+                    RaycastHit[] hits = Physics.RaycastAll(o.transform.position, Vector3.down, Distance);
 
-                    if (blockingObj != null)
+                    foreach(RaycastHit h in hits)
                     {
-                        CharacterControl c = CharacterManager.Instance.GetCharacter(blockingObj.transform.root.gameObject);
-
-                        if (c == null)
+                        if (!CollisionDetection.IgnoreCollision(control, h))
                         {
-                            control.GROUND_DATA.Ground = blockingObj.transform.root.gameObject;
-                            control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
-                                0f,
-                                control.BLOCKING_DATA.RaycastContact.y,
-                                control.BLOCKING_DATA.RaycastContact.z);
-                            return true;
+                            CharacterControl c = CharacterManager.Instance.GetCharacter(h.transform.root.gameObject);
+
+                            if (c == null)
+                            {
+                                control.GROUND_DATA.Ground = h.transform.root.gameObject;
+                                control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
+                                    0f,
+                                    h.point.y,
+                                    h.point.z);
+                                return true;
+                            }
                         }
                     }
                 }
