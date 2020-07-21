@@ -6,6 +6,11 @@ namespace Roundbeargames
 {
     public class CollisionSpheres : CharacterUpdate
     {
+        GameObject Front = null;
+        GameObject Back = null;
+        GameObject Bottom = null;
+        GameObject Up = null;
+
         public override void InitComponent()
         {
             control.COLLISION_SPHERE_DATA.FrontOverlapCheckerContains = FrontOverlapCheckerContains;
@@ -15,6 +20,11 @@ namespace Roundbeargames
             control.COLLISION_SPHERE_DATA.Reposition_UpSpheres = Reposition_UpSpheres;
 
             characterUpdateProcessor.ArrCharacterUpdate[(int)CharacterUpdateType.COLLISION_SPHERES] = this;
+
+            if (Front == null)
+            {
+                SetParents();
+            }
 
             SetColliderSpheres();
         }
@@ -38,6 +48,23 @@ namespace Roundbeargames
                     Vector3.zero, Quaternion.identity) as GameObject;
         }
 
+        void SetParents()
+        {
+            CreateParentObj(ref Front, "Front");
+            CreateParentObj(ref Back, "Back");
+            CreateParentObj(ref Bottom, "Bottom");
+            CreateParentObj(ref Up, "Up");
+        }
+
+        void CreateParentObj(ref GameObject obj, string name)
+        {
+            obj = new GameObject();
+            obj.transform.parent = this.transform;
+            obj.name = name;
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
+        }
+
         void SetColliderSpheres()
         {
             // bottom
@@ -47,7 +74,7 @@ namespace Roundbeargames
                 GameObject obj = LoadCollisionSphere();
 
                 control.COLLISION_SPHERE_DATA.BottomSpheres[i] = obj;
-                obj.transform.parent = this.transform.Find("Bottom");
+                obj.transform.parent = Bottom.transform;
             }
 
             Reposition_BottomSpheres();
@@ -59,7 +86,7 @@ namespace Roundbeargames
                 GameObject obj = LoadCollisionSphere();
 
                 control.COLLISION_SPHERE_DATA.UpSpheres[i] = obj;
-                obj.transform.parent = this.transform.Find("Up");
+                obj.transform.parent = Up.transform;
             }
 
             Reposition_UpSpheres();
@@ -73,7 +100,7 @@ namespace Roundbeargames
                 control.COLLISION_SPHERE_DATA.FrontSpheres[i] = obj;
                 control.COLLISION_SPHERE_DATA.FrontOverlapCheckers[i] = obj.GetComponent<OverlapChecker>();
 
-                obj.transform.parent = this.transform.Find("Front");
+                obj.transform.parent = Front.transform;
             }
 
             Reposition_FrontSpheres();
@@ -85,7 +112,7 @@ namespace Roundbeargames
                 GameObject obj = LoadCollisionSphere();
 
                 control.COLLISION_SPHERE_DATA.BackSpheres[i] = obj;
-                obj.transform.parent = this.transform.Find("Back");
+                obj.transform.parent = Back.transform;
             }
 
             Reposition_BackSpheres();
