@@ -3930,7 +3930,6 @@ MonoBehaviour:
   characterUpdateProcessor: {fileID: 0}
   characterQueryProcessor: {fileID: 0}
   playableCharacterType: 1
-  SkinnedMeshAnimator: {fileID: 3363093133717548819}
 --- !u!114 &7199473640970729132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5005,3 +5004,4 @@ MonoBehaviour:
     LeftFoot_Attack: {fileID: 7213782182656917228}
     RightFoot_Attack: {fileID: 8596709973711031587}
   SkinnedMeshAnimator: {fileID: 3363093133717548819}
+  playableCharacterType: 1

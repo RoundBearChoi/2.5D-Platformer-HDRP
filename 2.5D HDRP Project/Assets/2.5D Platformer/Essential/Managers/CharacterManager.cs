@@ -12,7 +12,7 @@ namespace Roundbeargames
         {
             foreach(CharacterControl control in Characters)
             {
-                if (control.playableCharacterType == playableCharacterType)
+                if (control.characterSetup.playableCharacterType == playableCharacterType)
                 {
                     return control;
                 }
