@@ -184,18 +184,19 @@ namespace Roundbeargames
 
         void CheckDownBlocking()
         {
-            foreach (GameObject o in control.COLLISION_SPHERE_DATA.BottomSpheres)
-            {
-                GameObject blockingObj = CollisionDetection.GetCollidingObject(control, o, Vector3.down, 0.1f,
-                    ref control.BLOCKING_DATA.RaycastContact);
+            DownBlockingObjs.Clear();
 
-                if (blockingObj != null)
+            foreach (GameObject obj in control.COLLISION_SPHERE_DATA.BottomSpheres)
+            {
+                RaycastHit[] hits;
+                hits = Physics.RaycastAll(obj.transform.position, Vector3.down, 0.1f);
+
+                foreach (RaycastHit h in hits)
                 {
-                    AddBlockingObjToDic(DownBlockingObjs, o, blockingObj);
-                }
-                else
-                {
-                    RemoveBlockingObjFromDic(DownBlockingObjs, o);
+                    if (!CollisionDetection.IgnoreCollision(control, h))
+                    {
+                        AddBlockingObjToDic(DownBlockingObjs, obj, h.collider.transform.root.gameObject);
+                    }
                 }
             }
         }
