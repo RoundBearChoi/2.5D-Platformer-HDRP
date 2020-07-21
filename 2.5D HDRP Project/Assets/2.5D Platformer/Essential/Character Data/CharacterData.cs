@@ -27,6 +27,8 @@ namespace Roundbeargames
 
         private void Start()
         {
+            CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
+
             blockingData = new BlockingObjData
             {
                 FrontBlockingObjs = new Dictionary<GameObject, GameObject>(),
@@ -35,9 +37,28 @@ namespace Roundbeargames
                 UpBlockingDicCount = 0,
             };
 
+            LedgeCollider[] col_arr = this.transform.root.gameObject.GetComponentsInChildren<LedgeCollider>();
+            LedgeCollider c1 = null;
+            LedgeCollider c2 = null;
+
+            foreach(LedgeCollider c in col_arr)
+            {
+                if (c.gameObject.name.Contains("1"))
+                {
+                    c1 = c;
+                }
+
+                if (c.gameObject.name.Contains("2"))
+                {
+                    c2 = c;
+                }
+            }
+
             ledgeGrabData = new LedgeGrabData
             {
                 isGrabbingLedge = false,
+                collider1 = c1,
+                collider2 = c2,
             };
 
             ragdollData = new RagdollData
@@ -75,6 +96,9 @@ namespace Roundbeargames
                 BlockedAttack = null,
                 hp = 1f,
                 damageTaken = new DamageTaken(null, null, null, null, Vector3.zero),
+
+                MarioStompAttack = control.characterSetup.MarioStompAttack,
+                AxeThrow = control.characterSetup.AxeThrow,
             };
 
             momentumData = new MomentumData

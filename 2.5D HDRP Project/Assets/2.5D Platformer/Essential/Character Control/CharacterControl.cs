@@ -30,6 +30,7 @@ namespace Roundbeargames
         public BoxCollider boxCollider;
         public NavMeshObstacle navMeshObstacle;
 
+        public CharacterSetup characterSetup;
         public CharacterData characterData;
         public CharacterFunctionProcessor characterFunctionProcessor;
         public CharacterUpdateProcessor characterUpdateProcessor;
@@ -94,6 +95,7 @@ namespace Roundbeargames
                 }
             }
 
+            characterSetup = GetComponentInChildren<CharacterSetup>();
             characterData = GetComponentInChildren<CharacterData>();
             characterFunctionProcessor = GetComponentInChildren<CharacterFunctionProcessor>();
             characterQueryProcessor = GetComponentInChildren<CharacterQueryProcessor>();

@@ -5,10 +5,8 @@ using UnityEngine;
 namespace Roundbeargames
 {
     [System.Serializable]
-    public class LedgeGrabData
+    public class LedgeSetup
     {
-        public bool isGrabbingLedge;
-        public LedgeCollider collider1;
-        public LedgeCollider collider2;
+        public Vector3 LedgeCalibration = new Vector3();
     }
 }

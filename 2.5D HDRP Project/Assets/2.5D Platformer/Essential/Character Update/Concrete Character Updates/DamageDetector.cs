@@ -6,18 +6,10 @@ namespace Roundbeargames
 {
     public class DamageDetector : CharacterUpdate
     {
-        [Header("Damage Setup")]
-        [SerializeField]
-        Attack MarioStompAttack;
-        [SerializeField]
-        Attack AxeThrow;
-
         static string VFX = "VFX";
 
         public override void InitComponent()
         {
-            control.DAMAGE_DATA.MarioStompAttack = MarioStompAttack;
-            control.DAMAGE_DATA.AxeThrow = AxeThrow;
             control.DAMAGE_DATA.IsDead = IsDead;
             control.DAMAGE_DATA.TakeDamage = ProcessDamage;
 

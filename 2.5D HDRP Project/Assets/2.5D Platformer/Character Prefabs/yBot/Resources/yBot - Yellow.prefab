@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7198515055300973108}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4792439104514448865
 MonoBehaviour:
@@ -49,8 +49,8 @@ MonoBehaviour:
     UpBlockingDicCount: 0
   ledgeGrabData:
     isGrabbingLedge: 0
-    Collider1: {fileID: 0}
-    Collider2: {fileID: 0}
+    collider1: {fileID: 0}
+    collider2: {fileID: 0}
   ragdollData:
     RagdollTriggered: 0
     ArrBodyParts: []
@@ -133,6 +133,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4272207952895712254}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &191857764735784362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6076972028342482475}
+  m_Layer: 9
+  m_Name: Ledge Detectors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6076972028342482475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191857764735784362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2313432416435127714}
+  - {fileID: 6078944732893157102}
+  m_Father: {fileID: 7198515055300973108}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200231192366558023
 GameObject:
@@ -1926,7 +1958,7 @@ Transform:
   - {fileID: 2349239871843678024}
   - {fileID: 8174262158065827851}
   m_Father: {fileID: 7198515055300973108}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5063233347889680670
 MonoBehaviour:
@@ -2320,11 +2352,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3790056840609095029}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.309, z: 0.23099995}
+  m_LocalScale: {x: 2, y: 0.2, z: 0.2}
   m_Children: []
-  m_Father: {fileID: 8413069498202938682}
+  m_Father: {fileID: 6076972028342482475}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7129830449041843930
@@ -2989,9 +3021,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.309, z: 0.23099995}
   m_LocalScale: {x: 2, y: 0.2, z: 0.2}
-  m_Children:
-  - {fileID: 2313432416435127714}
-  - {fileID: 6078944732893157102}
+  m_Children: []
   m_Father: {fileID: 8457966283628990782}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3007,9 +3037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894bdb8c91ebe594395957cbb32d7090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LedgeCalibration: {x: 0, y: -2.3, z: -0.1}
-  Collider1: {fileID: 6935082071955424662}
-  Collider2: {fileID: 18895733413753873}
 --- !u!1 &5729298009361987041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3658,7 +3685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7198515055300973108}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1299090964154803930
 MonoBehaviour:
@@ -3843,6 +3870,8 @@ Transform:
   m_Children:
   - {fileID: 4622409157308220009}
   - {fileID: 5468082568320784520}
+  - {fileID: 6076972028342482475}
+  - {fileID: 3809823965039008202}
   - {fileID: 8457966283628990782}
   - {fileID: 5216611642064733004}
   - {fileID: 4610016632639464394}
@@ -3891,14 +3920,14 @@ MonoBehaviour:
   Jump: 0
   Attack: 0
   Block: 0
-  characterUpdateProcessor: {fileID: 0}
-  animationProgress: {fileID: 0}
   aiProgress: {fileID: 0}
   aiController: {fileID: 0}
   boxCollider: {fileID: 0}
   navMeshObstacle: {fileID: 0}
+  characterSetup: {fileID: 0}
   characterData: {fileID: 0}
   characterFunctionProcessor: {fileID: 0}
+  characterUpdateProcessor: {fileID: 0}
   characterQueryProcessor: {fileID: 0}
   playableCharacterType: 1
   SkinnedMeshAnimator: {fileID: 3363093133717548819}
@@ -4164,11 +4193,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7560492571556014558}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.511, z: 0.23099995}
+  m_LocalScale: {x: 2, y: 0.2, z: 0.2}
   m_Children: []
-  m_Father: {fileID: 8413069498202938682}
+  m_Father: {fileID: 6076972028342482475}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8047302035901356834
@@ -4288,7 +4317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7198515055300973108}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8263110156966060659
 MonoBehaviour:
@@ -4407,8 +4436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5779ac7ef543f4c8ec4af11375e035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarioStompAttack: {fileID: 11400000, guid: 92ce7c8391eaac44d87d389d84d90066, type: 2}
-  AxeThrow: {fileID: 11400000, guid: 053e61407dc88804e92699c3fb3162be, type: 2}
 --- !u!1 &8213854393442678034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,3 +4956,50 @@ Transform:
   m_Father: {fileID: 1529389770045987502}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9006280440134901791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3809823965039008202}
+  - component: {fileID: 7389402041271889144}
+  m_Layer: 9
+  m_Name: Character Setup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3809823965039008202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006280440134901791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7198515055300973108}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7389402041271889144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006280440134901791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915512bcf37fd614a94ab3edec8cae36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ledgeSetup:
+    LedgeCalibration: {x: 0, y: -2.3, z: -0.1}
+  MarioStompAttack: {fileID: 11400000, guid: 92ce7c8391eaac44d87d389d84d90066, type: 2}
+  AxeThrow: {fileID: 11400000, guid: 053e61407dc88804e92699c3fb3162be, type: 2}
