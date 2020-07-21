@@ -24,20 +24,20 @@ namespace Roundbeargames
             {
                 if (control.ANIMATION_DATA.LockTransition)
                 {
-                    control.SkinnedMeshAnimator.
+                    control.characterSetup.SkinnedMeshAnimator.
                         SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.LockTransition],
                         true);
                 }
                 else
                 {
-                    control.SkinnedMeshAnimator.
+                    control.characterSetup.SkinnedMeshAnimator.
                         SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.LockTransition],
                         false);
                 }
             }
             else
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.LockTransition],
                     false);
             }

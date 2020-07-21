@@ -33,7 +33,7 @@ namespace Roundbeargames
                 return;
             }
 
-            if (!control.SkinnedMeshAnimator.enabled)
+            if (!control.characterSetup.SkinnedMeshAnimator.enabled)
             {
                 return;
             }
@@ -71,7 +71,8 @@ namespace Roundbeargames
             {
                 if (control.ROTATION_DATA.LockTurn)
                 {
-                    AnimatorStateInfo info = control.SkinnedMeshAnimator.GetCurrentAnimatorStateInfo(0);
+                    AnimatorStateInfo info = control.characterSetup.
+                        SkinnedMeshAnimator.GetCurrentAnimatorStateInfo(0);
 
                     if (info.normalizedTime >= control.ROTATION_DATA.UnlockTiming)
                     {

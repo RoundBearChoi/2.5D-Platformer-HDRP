@@ -248,7 +248,11 @@ namespace Roundbeargames
             else
             {
                 int randomIndex = Random.Range(0, (int)Hit_Reaction_States.COUNT);
-                control.SkinnedMeshAnimator.Play(HashManager.Instance.DicHitReactionStates[(Hit_Reaction_States)randomIndex], 0, 0f);
+
+                control.characterSetup.
+                    SkinnedMeshAnimator.Play(
+                    HashManager.Instance.DicHitReactionStates[
+                        (Hit_Reaction_States)randomIndex], 0, 0f);
             }
 
             ProcessFlyingRagdoll(info);

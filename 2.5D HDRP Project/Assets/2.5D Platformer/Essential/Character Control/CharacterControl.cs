@@ -62,7 +62,6 @@ namespace Roundbeargames
         //temp
         [Header("Setup")]
         public PlayableCharacterType playableCharacterType;
-        public Animator SkinnedMeshAnimator;
         
         private Rigidbody rigid;
 
@@ -102,7 +101,7 @@ namespace Roundbeargames
             characterQueryProcessor = GetComponentInChildren<CharacterQueryProcessor>();
 
             RegisterCharacter();
-            InitCharacterStates(SkinnedMeshAnimator);
+            InitCharacterStates(characterSetup.SkinnedMeshAnimator);
         }
 
 

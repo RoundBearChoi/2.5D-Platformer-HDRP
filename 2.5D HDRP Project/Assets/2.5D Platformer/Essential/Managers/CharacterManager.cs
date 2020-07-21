@@ -25,7 +25,7 @@ namespace Roundbeargames
         {
             foreach (CharacterControl control in Characters)
             {
-                if (control.SkinnedMeshAnimator == animator)
+                if (control.characterSetup.SkinnedMeshAnimator == animator)
                 {
                     return control;
                 }

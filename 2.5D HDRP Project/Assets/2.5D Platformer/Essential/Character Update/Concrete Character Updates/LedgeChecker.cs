@@ -18,7 +18,7 @@ namespace Roundbeargames
 
         public override void OnFixedUpdate()
         {
-            if (control.SkinnedMeshAnimator.
+            if (control.characterSetup.SkinnedMeshAnimator.
                 GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
                 if (control.RIGID_BODY.useGravity)
@@ -42,7 +42,7 @@ namespace Roundbeargames
 
             for (int i = 0; i < HashManager.Instance.ArrLedgeTriggerStates.Length; i++)
             {
-                AnimatorStateInfo info = control.SkinnedMeshAnimator.GetCurrentAnimatorStateInfo(0);
+                AnimatorStateInfo info = control.characterSetup.SkinnedMeshAnimator.GetCurrentAnimatorStateInfo(0);
                 if (info.shortNameHash == HashManager.Instance.ArrLedgeTriggerStates[i])
                 {
                     return true;
@@ -54,7 +54,7 @@ namespace Roundbeargames
 
         void ProcLedgeGrab()
         {
-            if (!control.SkinnedMeshAnimator.GetBool(
+            if (!control.characterSetup.SkinnedMeshAnimator.GetBool(
                 HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
                 foreach (GameObject obj in control.LEDGE_GRAB_DATA.collider1.CollidedObjects)

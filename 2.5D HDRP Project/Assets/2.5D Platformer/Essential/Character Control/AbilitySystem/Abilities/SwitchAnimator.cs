@@ -19,7 +19,7 @@ namespace Roundbeargames
         {
             if (stateInfo.normalizedTime >= SwitchTiming)
             {
-                characterState.characterControl.SkinnedMeshAnimator.runtimeAnimatorController = TargetAnimator;
+                characterState.characterControl.characterSetup.SkinnedMeshAnimator.runtimeAnimatorController = TargetAnimator;
             }
         }
 

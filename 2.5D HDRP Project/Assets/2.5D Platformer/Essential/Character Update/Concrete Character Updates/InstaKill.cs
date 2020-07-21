@@ -25,7 +25,7 @@ namespace Roundbeargames
                 return;
             }
 
-            if (!control.SkinnedMeshAnimator.
+            if (!control.characterSetup.SkinnedMeshAnimator.
                 GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
                 return;
@@ -47,7 +47,8 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (!c.SkinnedMeshAnimator.GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
+                    if (!c.characterSetup.SkinnedMeshAnimator.
+                        GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
                     {
                         continue;
                     }
@@ -97,11 +98,13 @@ namespace Roundbeargames
 
             control.RIGID_BODY.useGravity = false;
             control.boxCollider.enabled = false;
-            control.SkinnedMeshAnimator.runtimeAnimatorController = control.INSTA_KILL_DATA.Animation_B;
+            control.characterSetup.
+                SkinnedMeshAnimator.runtimeAnimatorController = control.INSTA_KILL_DATA.Animation_B;
 
             attacker.RIGID_BODY.useGravity = false;
             attacker.boxCollider.enabled = false;
-            attacker.SkinnedMeshAnimator.runtimeAnimatorController = control.INSTA_KILL_DATA.Animation_A;
+            attacker.characterSetup.
+                SkinnedMeshAnimator.runtimeAnimatorController = control.INSTA_KILL_DATA.Animation_A;
 
             Vector3 dir = control.transform.position - attacker.transform.position;
 

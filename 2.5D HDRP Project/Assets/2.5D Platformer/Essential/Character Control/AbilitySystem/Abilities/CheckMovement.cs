@@ -44,45 +44,45 @@ namespace Roundbeargames
         {
             if (control.MoveLeft)
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Left], true);
             }
             else
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Left], false);
             }
 
             if (control.MoveRight)
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Right], true);
             }
             else
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Right], false);
             }
 
             if (control.MoveUp)
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Up], true);
             }
             else
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Up], false);
             }
 
             if (control.MoveDown)
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Down], true);
             }
             else
             {
-                control.SkinnedMeshAnimator.
+                control.characterSetup.SkinnedMeshAnimator.
                     SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Down], false);
             }
         }

@@ -3931,10 +3931,6 @@ MonoBehaviour:
   characterQueryProcessor: {fileID: 0}
   playableCharacterType: 1
   SkinnedMeshAnimator: {fileID: 3363093133717548819}
-  LeftHand_Attack: {fileID: 382542608833660889}
-  RightHand_Attack: {fileID: 877859058002271199}
-  LeftFoot_Attack: {fileID: 7213782182656917228}
-  RightFoot_Attack: {fileID: 8596709973711031587}
 --- !u!114 &7199473640970729132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5008,3 +5004,4 @@ MonoBehaviour:
     RightHand_Attack: {fileID: 877859058002271199}
     LeftFoot_Attack: {fileID: 7213782182656917228}
     RightFoot_Attack: {fileID: 8596709973711031587}
+  SkinnedMeshAnimator: {fileID: 3363093133717548819}
