@@ -130,7 +130,7 @@ namespace Roundbeargames
                 control.ROTATION_DATA.FaceForward(false);
             }
 
-            if (!control.GetBool(typeof(FrontIsBlocked)))// IsBlocked(control))
+            if (!control.GetBool(typeof(FrontIsBlocked)))
             {
                 control.RunFunction(typeof(MoveTransformForward),
                     Speed,
@@ -140,11 +140,11 @@ namespace Roundbeargames
 
         private void ConstantMove(CharacterControl control, AnimatorStateInfo stateInfo)
         {
-            if (!control.GetBool(typeof(FrontIsBlocked)))// IsBlocked(control))
+            if (!control.GetBool(typeof(FrontIsBlocked)))
             {
                 if (MoveOnHit)
                 {
-                    if (!control.GetBool(typeof(FacingAttacker)))// animationProgress.IsFacingAttacker())
+                    if (!control.GetBool(typeof(FacingAttacker)))
                     {
                         control.RunFunction(typeof(MoveTransformForward),
                             Speed,
@@ -180,7 +180,7 @@ namespace Roundbeargames
 
             if (control.MoveRight)
             {
-                if (!control.GetBool(typeof(FrontIsBlocked)))// IsBlocked(control))
+                if (!control.GetBool(typeof(FrontIsBlocked)))
                 {
                     control.RunFunction(typeof(MoveTransformForward),
                         Speed,
@@ -190,7 +190,7 @@ namespace Roundbeargames
 
             if (control.MoveLeft)
             {
-                if (!control.GetBool(typeof(FrontIsBlocked)))// IsBlocked(control))
+                if (!control.GetBool(typeof(FrontIsBlocked)))
                 {
                     control.RunFunction(typeof(MoveTransformForward),
                         Speed,
