@@ -6,6 +6,20 @@ namespace Roundbeargames
 {
     public class CollisionDetection : MonoBehaviour
     {
+        public static bool IgnoreCollision(CharacterControl control, RaycastHit hit)
+        {
+            if (IsBodyPart(control, hit.collider) ||
+                    IsIgnoringCharacter(control, hit.collider) ||
+                    Ledge.IsLedgeChecker(hit.collider.gameObject) ||
+                    MeleeWeapon.IsWeapon(hit.collider.gameObject) ||
+                    TrapSpikes.IsTrap(hit.collider.gameObject))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static GameObject GetCollidingObject(CharacterControl control, GameObject start, Vector3 dir,
             float blockDistance, ref Vector3 collisionPoint)
         {

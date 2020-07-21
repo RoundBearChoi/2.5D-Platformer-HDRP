@@ -14,6 +14,8 @@ namespace Roundbeargames
 
         GameObject[] FrontSpheresArray;
         float DirBlock;
+        Vector3 RayDirection = new Vector3();
+        float RayLength = 0f;
 
         public override void InitComponent()
         {
@@ -26,13 +28,13 @@ namespace Roundbeargames
             {
                 CheckFrontBlocking();
             }
-            else
-            {
-                if (control.BLOCKING_DATA.FrontBlockingObjs.Count != 0)
-                {
-                    control.BLOCKING_DATA.FrontBlockingObjs.Clear();
-                }
-            }
+            //else
+            //{
+            //    if (control.BLOCKING_DATA.FrontBlockingObjs.Count != 0)
+            //    {
+            //        control.BLOCKING_DATA.FrontBlockingObjs.Clear();
+            //    }
+            //}
 
             // checking while ledge grabbing
             if (control.ANIMATION_DATA.IsRunning(typeof(MoveUp)))
@@ -154,47 +156,35 @@ namespace Roundbeargames
 
         void CheckFrontBlocking()
         {
+            control.BLOCKING_DATA.FrontBlockingObjs.Clear();
+
             if (!control.GetBool(typeof(ForwardReversed)))
             {
                 FrontSpheresArray = control.COLLISION_SPHERE_DATA.FrontSpheres;
                 DirBlock = 1f;
-
-                foreach (GameObject s in control.COLLISION_SPHERE_DATA.BackSpheres)
-                {
-                    if (control.BLOCKING_DATA.FrontBlockingObjs.ContainsKey(s))
-                    {
-                        control.BLOCKING_DATA.FrontBlockingObjs.Remove(s);
-                    }
-                }
             }
             else
             {
                 FrontSpheresArray = control.COLLISION_SPHERE_DATA.BackSpheres;
                 DirBlock = -1f;
-
-                foreach (GameObject s in control.COLLISION_SPHERE_DATA.FrontSpheres)
-                {
-                    if (control.BLOCKING_DATA.FrontBlockingObjs.ContainsKey(s))
-                    {
-                        control.BLOCKING_DATA.FrontBlockingObjs.Remove(s);
-                    }
-                }
             }
+
+            RayDirection = this.transform.forward * DirBlock;
+            RayLength = control.ANIMATION_DATA.LatestMoveForward.BlockDistance;
 
             for (int i = 0; i < FrontSpheresArray.Length; i++)
             {
-                GameObject blockingObj = CollisionDetection.GetCollidingObject(
-                    control, FrontSpheresArray[i], this.transform.forward * DirBlock,
-                    control.ANIMATION_DATA.LatestMoveForward.BlockDistance,
-                    ref control.BLOCKING_DATA.RaycastContact);
+                RaycastHit[] hits;
+                hits = Physics.RaycastAll(FrontSpheresArray[i].transform.position, RayDirection, RayLength);
 
-                if (blockingObj != null)
+                foreach(RaycastHit h in hits)
                 {
-                    AddBlockingObjToDic(control.BLOCKING_DATA.FrontBlockingObjs, FrontSpheresArray[i], blockingObj);
-                }
-                else
-                {
-                    RemoveBlockingObjFromDic(control.BLOCKING_DATA.FrontBlockingObjs, FrontSpheresArray[i]);
+                    if (!CollisionDetection.IgnoreCollision(control, h))
+                    {
+                        AddBlockingObjToDic(control.BLOCKING_DATA.FrontBlockingObjs,
+                            FrontSpheresArray[i],
+                            h.collider.transform.root.gameObject);
+                    }
                 }
             }
         }
