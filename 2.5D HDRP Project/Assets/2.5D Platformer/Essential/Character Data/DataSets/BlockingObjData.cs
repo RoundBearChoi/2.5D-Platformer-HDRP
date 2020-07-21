@@ -11,6 +11,7 @@ namespace Roundbeargames
 
         public Dictionary<GameObject, GameObject> FrontBlockingObjs;
         public Dictionary<GameObject, GameObject> DownBlockingObjs;
+        public Dictionary<GameObject, GameObject> UpBlockingObjs;
 
         public int FrontBlockingDicCount;
         public int UpBlockingDicCount;

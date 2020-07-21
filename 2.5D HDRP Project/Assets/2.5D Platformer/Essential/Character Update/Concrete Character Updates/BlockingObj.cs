@@ -6,11 +6,7 @@ namespace Roundbeargames
 {
     public class BlockingObj : CharacterUpdate
     {
-        Dictionary<GameObject, GameObject> UpBlockingObjs = new Dictionary<GameObject, GameObject>();
-        
-
         List<CharacterControl> MarioStompTargets = new List<CharacterControl>();
-        List<GameObject> FrontBlockingObjsList = new List<GameObject>();
 
         GameObject[] FrontSpheresArray;
         float FrontDirectionMultiplier;
@@ -34,7 +30,7 @@ namespace Roundbeargames
             {
                 if (control.ANIMATION_DATA.LatestMoveUp.Speed > 0f)
                 {
-                    CheckUpBlocking();
+                    control.RunFunction(typeof(CheckUpBlocking), 0.3f);
                 }
             }
             else
@@ -42,9 +38,9 @@ namespace Roundbeargames
                 // checking while jumping up
                 if (control.RIGID_BODY.velocity.y > 0.001f)
                 {
-                    CheckUpBlocking();
+                    control.RunFunction(typeof(CheckUpBlocking), 0.3f);
 
-                    foreach (KeyValuePair<GameObject, GameObject> data in UpBlockingObjs)
+                    foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.UpBlockingObjs)
                     {
                         CharacterControl c = CharacterManager.Instance.GetCharacter(
                             data.Value.transform.root.gameObject);
@@ -65,19 +61,12 @@ namespace Roundbeargames
                         }
                     }
                 }
-                else
-                {
-                    if (UpBlockingObjs.Count != 0)
-                    {
-                        UpBlockingObjs.Clear();
-                    }
-                }
             }
 
             CheckMarioStomp();
 
             control.BLOCKING_DATA.FrontBlockingDicCount = control.BLOCKING_DATA.FrontBlockingObjs.Count;
-            control.BLOCKING_DATA.UpBlockingDicCount = UpBlockingObjs.Count;
+            control.BLOCKING_DATA.UpBlockingDicCount = control.BLOCKING_DATA.UpBlockingObjs.Count;
         }
 
         public override void OnUpdate()
@@ -180,47 +169,6 @@ namespace Roundbeargames
                     }
                 }
             }
-        }
-
-        void CheckUpBlocking()
-        {
-            foreach (GameObject o in control.COLLISION_SPHERE_DATA.UpSpheres)
-            {
-                GameObject blockingObj = CollisionDetection.GetCollidingObject(control, o, this.transform.up, 0.3f,
-                    ref control.BLOCKING_DATA.RaycastContact);
-
-                if (blockingObj != null)
-                {
-                    AddObjToDictionary.Add(UpBlockingObjs, o, blockingObj);
-                }
-                else
-                {
-                    RemoveBlockingObjFromDic(UpBlockingObjs, o);
-                }
-            }
-        }
-
-        void RemoveBlockingObjFromDic(Dictionary<GameObject, GameObject> dic, GameObject key)
-        {
-            if (dic.ContainsKey(key))
-            {
-                dic.Remove(key);
-            }
-        }
-
-        List<GameObject> GetFrontBlockingObjList()
-        {
-            FrontBlockingObjsList.Clear();
-
-            foreach(KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
-            {
-                if (!FrontBlockingObjsList.Contains(data.Value))
-                {
-                    FrontBlockingObjsList.Add(data.Value);
-                }
-            }
-
-            return FrontBlockingObjsList;
         }
     }
 }
