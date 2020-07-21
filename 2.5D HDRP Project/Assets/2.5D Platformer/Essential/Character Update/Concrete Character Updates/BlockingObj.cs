@@ -7,7 +7,7 @@ namespace Roundbeargames
     public class BlockingObj : CharacterUpdate
     {
         Dictionary<GameObject, GameObject> UpBlockingObjs = new Dictionary<GameObject, GameObject>();
-        Dictionary<GameObject, GameObject> DownBlockingObjs = new Dictionary<GameObject, GameObject>();
+        
 
         List<CharacterControl> MarioStompTargets = new List<CharacterControl>();
         List<GameObject> FrontBlockingObjsList = new List<GameObject>();
@@ -90,7 +90,7 @@ namespace Roundbeargames
             if (control.RIGID_BODY.velocity.y >= 0f)
             {
                 MarioStompTargets.Clear();
-                DownBlockingObjs.Clear();
+                control.BLOCKING_DATA.DownBlockingObjs.Clear();
                 return;
             }
 
@@ -123,9 +123,9 @@ namespace Roundbeargames
 
             CheckDownBlocking();
 
-            if (DownBlockingObjs.Count > 0)
+            if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
             {
-                foreach (KeyValuePair<GameObject, GameObject> data in DownBlockingObjs)
+                foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.DownBlockingObjs)
                 {
                     CharacterControl c = CharacterManager.Instance.
                         GetCharacter(data.Value.transform.root.gameObject);
@@ -184,7 +184,7 @@ namespace Roundbeargames
 
         void CheckDownBlocking()
         {
-            DownBlockingObjs.Clear();
+            control.BLOCKING_DATA.DownBlockingObjs.Clear();
 
             foreach (GameObject obj in control.COLLISION_SPHERE_DATA.BottomSpheres)
             {
@@ -195,7 +195,9 @@ namespace Roundbeargames
                 {
                     if (!CollisionDetection.IgnoreCollision(control, h))
                     {
-                        AddBlockingObjToDic(DownBlockingObjs, obj, h.collider.transform.root.gameObject);
+                        AddBlockingObjToDic(control.BLOCKING_DATA.DownBlockingObjs,
+                            obj,
+                            h.collider.transform.root.gameObject);
                     }
                 }
             }
