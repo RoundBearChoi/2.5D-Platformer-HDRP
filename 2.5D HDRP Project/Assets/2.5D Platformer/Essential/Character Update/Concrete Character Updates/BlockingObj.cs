@@ -121,7 +121,7 @@ namespace Roundbeargames
                 return;
             }
 
-            CheckDownBlocking();
+            control.RunFunction(typeof(CheckDownBlocking));
 
             if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
             {
@@ -174,29 +174,8 @@ namespace Roundbeargames
                 {
                     if (!CollisionDetection.IgnoreCollision(control, h))
                     {
-                        AddBlockingObjToDic(control.BLOCKING_DATA.FrontBlockingObjs,
+                        AddObjToDictionary.Add(control.BLOCKING_DATA.FrontBlockingObjs,
                             FrontSpheresArray[i],
-                            h.collider.transform.root.gameObject);
-                    }
-                }
-            }
-        }
-
-        void CheckDownBlocking()
-        {
-            control.BLOCKING_DATA.DownBlockingObjs.Clear();
-
-            foreach (GameObject obj in control.COLLISION_SPHERE_DATA.BottomSpheres)
-            {
-                RaycastHit[] hits;
-                hits = Physics.RaycastAll(obj.transform.position, Vector3.down, 0.1f);
-
-                foreach (RaycastHit h in hits)
-                {
-                    if (!CollisionDetection.IgnoreCollision(control, h))
-                    {
-                        AddBlockingObjToDic(control.BLOCKING_DATA.DownBlockingObjs,
-                            obj,
                             h.collider.transform.root.gameObject);
                     }
                 }
@@ -212,24 +191,12 @@ namespace Roundbeargames
 
                 if (blockingObj != null)
                 {
-                    AddBlockingObjToDic(UpBlockingObjs, o, blockingObj);
+                    AddObjToDictionary.Add(UpBlockingObjs, o, blockingObj);
                 }
                 else
                 {
                     RemoveBlockingObjFromDic(UpBlockingObjs, o);
                 }
-            }
-        }
-
-        void AddBlockingObjToDic(Dictionary<GameObject, GameObject> dic, GameObject key, GameObject value)
-        {
-            if (dic.ContainsKey(key))
-            {
-                dic[key] = value;
-            }
-            else
-            {
-                dic.Add(key, value);
             }
         }
 
