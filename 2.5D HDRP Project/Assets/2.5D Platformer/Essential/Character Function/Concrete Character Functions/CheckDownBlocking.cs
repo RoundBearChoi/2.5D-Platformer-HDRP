@@ -6,14 +6,14 @@ namespace Roundbeargames
 {
     public class CheckDownBlocking : CharacterFunction
     {
-        public override void RunFunction()
+        public override void RunFunction(float RayDistance)
         {
             control.BLOCKING_DATA.DownBlockingObjs.Clear();
 
             foreach (GameObject obj in control.COLLISION_SPHERE_DATA.BottomSpheres)
             {
                 RaycastHit[] hits;
-                hits = Physics.RaycastAll(obj.transform.position, Vector3.down, 0.1f);
+                hits = Physics.RaycastAll(obj.transform.position, Vector3.down, RayDistance);
 
                 foreach (RaycastHit h in hits)
                 {

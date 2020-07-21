@@ -151,6 +151,11 @@ namespace Roundbeargames
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
         }
 
+        public void RunFunction(System.Type CharacterFunctionType, float float1)
+        {
+            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(float1);
+        }
+
         public void RunFunction(System.Type CharacterFunctionType, float float1, float float2)
         {
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(float1, float2);

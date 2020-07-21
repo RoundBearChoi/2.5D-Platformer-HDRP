@@ -121,7 +121,7 @@ namespace Roundbeargames
                 return;
             }
 
-            control.RunFunction(typeof(CheckDownBlocking));
+            control.RunFunction(typeof(CheckDownBlocking), 0.1f);
 
             if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
             {

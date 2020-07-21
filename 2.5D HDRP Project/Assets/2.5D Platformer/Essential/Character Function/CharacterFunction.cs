@@ -13,6 +13,11 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
+        public virtual void RunFunction(float float1)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public virtual void RunFunction(float float1, float float2)
         {
             throw new System.NotImplementedException();
