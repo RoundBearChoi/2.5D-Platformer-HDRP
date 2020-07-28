@@ -994,7 +994,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 0
           m_Value:
             serializedVersion: 2
-            key0: {r: 1, g: 1, b: 1, a: 0}
+            key0: {r: 1.6055588, g: 1.6055588, b: 1.6055588, a: 0}
             key1: {r: 1, g: 1, b: 1, a: 0.21568628}
             key2: {r: 0, g: 0, b: 0, a: 0}
             key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614688}
   - {fileID: 8926484042661615083}
   - {fileID: 8926484042661614626}
-  m_UIPosition: {x: -1221, y: -397}
+  m_UIPosition: {x: -1215, y: -445}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2459,7 +2459,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0117647061124444},{"alpha":0.21568627655506135,"time":0.19412527978420258},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.6055587530136109,"g":1.6055587530136109,"b":1.6055587530136109,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0117647061124444},{"alpha":0.21568627655506135,"time":0.19412527978420258},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color

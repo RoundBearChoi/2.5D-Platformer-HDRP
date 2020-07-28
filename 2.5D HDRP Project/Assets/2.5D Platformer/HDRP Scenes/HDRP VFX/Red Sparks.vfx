@@ -18,10 +18,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -359
-    y: -648
-    width: 442
-    height: 1868
+    x: -749
+    y: -716
+    width: 1904
+    height: 587
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -669,7 +669,7 @@ VisualEffectResource:
       = attributes.position;\r\n#endif\r\n#if HAS_STRIPS\r\n            const StripData
       stripData = GetStripDataFromParticleIndex(index, PARTICLE_PER_STRIP_COUNT);\r\n           
       InitStripAttributes(index, attributes, stripData);\r\n#endif\r\n\t\t\t\r\n\t\t\t{\n\t\t\t   
-      Gravity( /*inout */attributes.velocity, float3(0, -8, 0), deltaTime_a);\n\t\t\t}\n\t\t\tEulerIntegration(
+      Gravity( /*inout */attributes.velocity, float3(0, -6.5, 0), deltaTime_a);\n\t\t\t}\n\t\t\tEulerIntegration(
       /*inout */attributes.position, attributes.velocity, deltaTime_a);\n\t\t\tAge(
       /*inout */attributes.age, deltaTime_a);\n\t\t\tReap(attributes.age, attributes.lifetime, 
       /*inout */attributes.alive);\n\t\t\t\n\r\n\r\n\t\t\tif (attributes.alive)\r\n\t\t\t{\r\n\t\t\t\tattributeBuffer.Store3((index
@@ -698,7 +698,7 @@ VisualEffectResource:
       HAS_STRIPS\r\n        const StripData stripData = GetStripDataFromParticleIndex(index,
       PARTICLE_PER_STRIP_COUNT);\r\n        InitStripAttributes(index, attributes,
       stripData);\r\n#endif\r\n\t\t\r\n\t\t{\n\t\t    Gravity( /*inout */attributes.velocity,
-      float3(0, -8, 0), deltaTime_a);\n\t\t}\n\t\tEulerIntegration( /*inout */attributes.position,
+      float3(0, -6.5, 0), deltaTime_a);\n\t\t}\n\t\tEulerIntegration( /*inout */attributes.position,
       attributes.velocity, deltaTime_a);\n\t\tAge( /*inout */attributes.age, deltaTime_a);\n\t\tReap(attributes.age,
       attributes.lifetime,  /*inout */attributes.alive);\n\t\t\n\r\n\t\tattributeBuffer.Store3((index
       * 0x4 + 0x0) << 2,asuint(attributes.velocity));\n\t\tattributeBuffer.Store3((index
@@ -877,7 +877,7 @@ VisualEffectResource:
       m_Vector3f:
         m_Array:
         - m_ExpressionIndex: 3
-          m_Value: {x: 0, y: -8, z: 0}
+          m_Value: {x: 0, y: -6.5, z: 0}
         - m_ExpressionIndex: 13
           m_Value: {x: -7, y: -7, z: -7}
         - m_ExpressionIndex: 14
@@ -960,17 +960,17 @@ VisualEffectResource:
         - m_ExpressionIndex: 2
           m_Value:
             serializedVersion: 2
-            key0: {r: 49.588993, g: 0, b: 0, a: 0.47058824}
-            key1: {r: 60.418774, g: 40.281258, b: 0, a: 0.47058824}
-            key2: {r: 0, g: 0, b: 0, a: 0}
+            key0: {r: 95.87451, g: 0, b: 0, a: 0.47058824}
+            key1: {r: 95.87451, g: 0, b: 0, a: 0.47058824}
+            key2: {r: 1.5660378, g: 1.1640086, b: 0.3471876, a: 0}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
             key6: {r: 0, g: 0, b: 0, a: 0}
             key7: {r: 0, g: 0, b: 0, a: 0}
             ctime0: 0
-            ctime1: 65535
-            ctime2: 0
+            ctime1: 6554
+            ctime2: 65535
             ctime3: 0
             ctime4: 0
             ctime5: 0
@@ -985,7 +985,7 @@ VisualEffectResource:
             atime6: 0
             atime7: 0
             m_Mode: 0
-            m_NumColorKeys: 2
+            m_NumColorKeys: 3
             m_NumAlphaKeys: 3
       m_NamedObject:
         m_Array:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614596}
-  m_UIPosition: {x: -341, y: -648}
+  m_UIPosition: {x: -749, y: -716}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614612}
   - {fileID: 8926484042661614623}
   - {fileID: 8926484042661614630}
-  m_UIPosition: {x: -359, y: -307}
+  m_UIPosition: {x: -234, y: -708}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614638}
   - {fileID: 8926484042661614642}
   - {fileID: 8926484042661614660}
-  m_UIPosition: {x: -359, y: 637}
+  m_UIPosition: {x: 731, y: -712}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2805,7 +2805,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":49.588993072509769,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":60.41877365112305,"g":40.28125762939453,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.47058823704719546,"time":0.0},{"alpha":0.47058823704719546,"time":0.37059587240219118},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":95.87451171875,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":95.87451171875,"g":0.0,"b":0.0,"a":1.0},"time":0.10000763088464737},{"color":{"r":1.5660377740859986,"g":1.164008617401123,"b":0.3471876084804535,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.47058823704719546,"time":0.0},{"alpha":0.47058823704719546,"time":0.37059587240219118},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614646}
-  m_UIPosition: {x: -347, y: 351}
+  m_UIPosition: {x: 230, y: -548}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -2895,7 +2895,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":0.0,"y":-8.0,"z":0.0}}'
+      m_SerializableObject: '{"vector":{"x":0.0,"y":-6.5,"z":0.0}}'
     m_Space: 0
   m_Property:
     name: Force

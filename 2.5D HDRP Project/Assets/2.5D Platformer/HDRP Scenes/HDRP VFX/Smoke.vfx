@@ -21,7 +21,7 @@ MonoBehaviour:
     x: -364
     y: -696
     width: 445
-    height: 2213
+    height: 2136
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,8 +150,8 @@ VisualEffectResource:
       /*inout */attributes.velocity,  /*inout */attributes.seed, float3(1, 1, 1),
       float3(-1, -1, -1));\n        }\n        AttributeFromCurve_ED587DED( /*inout
       */attributes.lifetime,  /*inout */attributes.seed, Lifetime_d);\n        {\n           
-      float tmp_ba = Rand(attributes.seed);\n            float tmp_bb = (float)0.0315777063
-      * tmp_ba;\n            float tmp_bc = (float)0.968422294 + tmp_bb;\n           
+      float tmp_ba = Rand(attributes.seed);\n            float tmp_bb = (float)0.00318062305
+      * tmp_ba;\n            float tmp_bc = (float)0.996819377 + tmp_bb;\n           
       float tmp_be = pow(tmp_bc, (float)0.5);\n            float tmp_bf = tmp_be
       * (float)0.5;\n            float tmp_bh = Rand(attributes.seed);\n           
       float tmp_bi = (float)6.28318548 * tmp_bh;\n            float tmp_bj = sin(tmp_bi);\n           
@@ -276,7 +276,7 @@ VisualEffectResource:
       1\n\t\t#define HDRP_USE_BASE_COLOR 1\n\t\t#define FORCE_NORMAL_VARYING 1\n\t\t#define
       VFX_PRIMITIVE_QUAD 1\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t#define
       VFX_LOCAL_SPACE 1\n\t\t#include \"Packages/com.unity.render-pipelines.high-definition/Runtime/VFXGraph/Shaders/VFXDefines.hlsl\"\n\t\t\n\n\t\tCBUFFER_START(parameters)\n\t\t   
-      float4 Size_d;\n\t\t    float Color_c;\n\t\t    uint3 PADDING_0;\n\t\tCBUFFER_END\n\t\t\n\t\tstruct
+      float4 Size_c;\n\t\t    float Color_b;\n\t\t    uint3 PADDING_0;\n\t\tCBUFFER_END\n\t\t\n\t\tstruct
       Attributes\n\t\t{\n\t\t    float scaleX;\n\t\t    float scaleY;\n\t\t    float
       angleZ;\n\t\t    float lifetime;\n\t\t    float3 position;\n\t\t    float texIndex;\n\t\t   
       float3 color;\n\t\t    float alpha;\n\t\t    bool alive;\n\t\t    float3 axisX;\n\t\t   
@@ -333,8 +333,6 @@ VisualEffectResource:
       VFX_VARYING_PS_INPUTS, VFX_VARYING_POSCS and VFX_VARYING_UV must be defined.\n\t\t\t#endif\n\t\t\t\n\t\t\t#include
       \"Packages/com.unity.render-pipelines.high-definition/Runtime/VFXGraph/Shaders/VFXCommon.hlsl\"\n\t\t\t#include
       \"Packages/com.unity.visualeffectgraph/Shaders/VFXCommon.hlsl\"\n\t\t\t\n\n\t\t\tvoid
-      SetAttribute_39EE3455(inout float size, float Size) /*attribute:size Composition:Multiply
-      Source:Slot Random:Off channels:XYZ */\n\t\t\t{\n\t\t\t    size *= Size;\n\t\t\t}\n\t\t\tvoid
       Orient_4(inout float3 axisX, inout float3 axisY, inout float3 axisZ) /*mode:FaceCameraPlane
       axes:ZY */\n\t\t\t{\n\t\t\t    \n\t\t\t    float3x3 viewRot = GetVFXToViewRotMatrix();\n\t\t\t   
       axisX = viewRot[0].xyz;\n\t\t\t    axisY = viewRot[1].xyz;\n\t\t\t    #if VFX_LOCAL_SPACE
@@ -415,12 +413,11 @@ VisualEffectResource:
       = (float)0.100000001;\n\t\t\t\t\t\tattributes.scaleZ = (float)1;\n\t\t\t\t\t\tattributes.age
       = asfloat(attributeBuffer.Load((index * 0x3 + 0x272) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t\t\t//
       Initialize built-in needed attributes\n\t\t\t\t\t\t#if HAS_STRIPS\n\t\t\t\t\t\tInitStripAttributes(index,
-      attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\t\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_39EE3455( /*inout */attributes.size, (float)10);\n\t\t\t\t}\n\t\t\t\tOrient_4(
+      attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\t\n\t\t\t\tOrient_4(
       /*inout */attributes.axisX,  /*inout */attributes.axisY,  /*inout */attributes.axisZ);\n\t\t\t\tAttributeFromCurve_48A86161(
       /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
-      Color_c);\n\t\t\t\tAttributeFromCurve_45ABB909( /*inout */attributes.size,
-      attributes.age, attributes.lifetime, Size_d);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      Color_b);\n\t\t\t\tAttributeFromCurve_45ABB909( /*inout */attributes.size,
+      attributes.age, attributes.lifetime, Size_c);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
@@ -627,8 +624,6 @@ VisualEffectResource:
       VFX_VARYING_PS_INPUTS, VFX_VARYING_POSCS and VFX_VARYING_UV must be defined.\n\t\t\t#endif\n\t\t\t\n\t\t\t#include
       \"Packages/com.unity.render-pipelines.high-definition/Runtime/VFXGraph/Shaders/VFXCommon.hlsl\"\n\t\t\t#include
       \"Packages/com.unity.visualeffectgraph/Shaders/VFXCommon.hlsl\"\n\t\t\t\n\n\t\t\tvoid
-      SetAttribute_39EE3455(inout float size, float Size) /*attribute:size Composition:Multiply
-      Source:Slot Random:Off channels:XYZ */\n\t\t\t{\n\t\t\t    size *= Size;\n\t\t\t}\n\t\t\tvoid
       Orient_4(inout float3 axisX, inout float3 axisY, inout float3 axisZ) /*mode:FaceCameraPlane
       axes:ZY */\n\t\t\t{\n\t\t\t    \n\t\t\t    float3x3 viewRot = GetVFXToViewRotMatrix();\n\t\t\t   
       axisX = viewRot[0].xyz;\n\t\t\t    axisY = viewRot[1].xyz;\n\t\t\t    #if VFX_LOCAL_SPACE
@@ -709,12 +704,11 @@ VisualEffectResource:
       = (float)0.100000001;\n\t\t\t\t\t\tattributes.scaleZ = (float)1;\n\t\t\t\t\t\tattributes.age
       = asfloat(attributeBuffer.Load((index * 0x3 + 0x272) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t\t\t//
       Initialize built-in needed attributes\n\t\t\t\t\t\t#if HAS_STRIPS\n\t\t\t\t\t\tInitStripAttributes(index,
-      attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\t\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_39EE3455( /*inout */attributes.size, (float)10);\n\t\t\t\t}\n\t\t\t\tOrient_4(
+      attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\t\n\t\t\t\tOrient_4(
       /*inout */attributes.axisX,  /*inout */attributes.axisY,  /*inout */attributes.axisZ);\n\t\t\t\tAttributeFromCurve_48A86161(
       /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
-      Color_c);\n\t\t\t\tAttributeFromCurve_45ABB909( /*inout */attributes.size,
-      attributes.age, attributes.lifetime, Size_d);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      Color_b);\n\t\t\t\tAttributeFromCurve_45ABB909( /*inout */attributes.size,
+      attributes.age, attributes.lifetime, Size_c);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
@@ -965,24 +959,24 @@ VisualEffectResource:
         data[1]: -1
         data[2]: -1
         data[3]: 2
-      - op: 56
+      - op: 1
         valueIndex: 11
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 56
+        valueIndex: 12
         data[0]: 4
         data[1]: -1
         data[2]: -1
         data[3]: 0
       - op: 57
-        valueIndex: 15
+        valueIndex: 16
         data[0]: 5
         data[1]: -1
         data[2]: -1
         data[3]: 0
-      - op: 1
-        valueIndex: 16
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
       - op: 6
         valueIndex: 17
         data[0]: -1
@@ -1074,14 +1068,14 @@ VisualEffectResource:
       m_Float:
         m_Array:
         - m_ExpressionIndex: 0
-          m_Value: 0.031577706
+          m_Value: 0.003180623
         - m_ExpressionIndex: 1
-          m_Value: 0.9684223
+          m_Value: 0.9968194
         - m_ExpressionIndex: 2
           m_Value: 6.2831855
         - m_ExpressionIndex: 3
           m_Value: 0.5
-        - m_ExpressionIndex: 11
+        - m_ExpressionIndex: 9
           m_Value: 10
         - m_ExpressionIndex: 13
           m_Value: 4
@@ -1127,7 +1121,7 @@ VisualEffectResource:
             m_Curve:
             - serializedVersion: 3
               time: 0
-              value: 0.5
+              value: 0.3
               inSlope: 0
               outSlope: 0
               tangentMode: 0
@@ -1135,10 +1129,10 @@ VisualEffectResource:
               inWeight: 0
               outWeight: 0
             - serializedVersion: 3
-              time: 0.4175879
-              value: 0.6585941
-              inSlope: 0.022724083
-              outSlope: 0.022724083
+              time: 0.030773045
+              value: 0.63188523
+              inSlope: 0.7572663
+              outSlope: 0.7572663
               tangentMode: 0
               weightedMode: 0
               inWeight: 0
@@ -1185,7 +1179,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 5
           m_Value:
             serializedVersion: 2
-            key0: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 0}
+            key0: {r: 1.7814789, g: 1.7814789, b: 1.7814789, a: 0}
             key1: {r: 1, g: 1, b: 1, a: 0.047058824}
             key2: {r: 0, g: 0, b: 0, a: 0}
             key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1469,10 +1463,10 @@ VisualEffectResource:
         index: 3
       temporaryBuffers: []
       values:
-      - nameId: Color_c
+      - nameId: Color_b
+        index: 11
+      - nameId: Size_c
         index: 10
-      - nameId: Size_d
-        index: 9
       - nameId: baseColorMap
         index: 24
       params:
@@ -2931,7 +2925,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 114350483966674976}
   m_Children:
-  - {fileID: 8926484042661614669}
   - {fileID: 8926484042661614672}
   - {fileID: 8926484042661614683}
   - {fileID: 8926484042661614685}
@@ -3263,72 +3256,6 @@ MonoBehaviour:
       m_RegexMaxLength: 0
   m_Direction: 0
   m_LinkedSlots: []
---- !u!114 &8926484042661614669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a971fa2e110a0ac42ac1d8dae408704b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 8926484042661614659}
-  m_Children: []
-  m_UIPosition: {x: -1358.2014, y: -527.56537}
-  m_UICollapsed: 0
-  m_UISuperCollapsed: 0
-  m_InputSlots:
-  - {fileID: 8926484042661614670}
-  m_OutputSlots: []
-  m_Disabled: 0
-  attribute: size
-  Composition: 2
-  Source: 0
-  Random: 0
-  channels: 6
---- !u!114 &8926484042661614670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f780aa281814f9842a7c076d436932e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614670}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614669}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
-    m_Space: 2147483647
-  m_Property:
-    name: Size
-    m_serializedType:
-      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-    attributes:
-    - m_Type: 3
-      m_Min: -Infinity
-      m_Max: Infinity
-      m_Tooltip: The uniform size of the particle.
-      m_Regex: 
-      m_RegexMaxLength: 0
-  m_Direction: 0
-  m_LinkedSlots: []
 --- !u!114 &8926484042661614671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3422,7 +3349,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.4980392456054688,"g":1.4980392456054688,"b":1.4980392456054688,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.0470588244497776,"time":0.3000076413154602},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.7814788818359376,"g":1.7814788818359376,"b":1.7814788818359376,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.0470588244497776,"time":0.3000076413154602},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -3484,7 +3411,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.5,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.41758790612220766,"value":0.6585940718650818,"inTangent":0.022724082693457605,"outTangent":0.022724082693457605,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.30000001192092898,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.30000001192092898,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.030773045495152475,"value":0.6318852305412293,"inTangent":0.7572662830352783,"outTangent":0.7572662830352783,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.30000001192092898,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -3856,7 +3783,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.1
+      m_SerializableObject: 0.01
     m_Space: 2147483647
   m_Property:
     name: Thickness
