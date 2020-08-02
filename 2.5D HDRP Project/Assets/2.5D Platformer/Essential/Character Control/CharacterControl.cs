@@ -113,12 +113,12 @@ namespace Roundbeargames
         }
 
 
-        private void Update()
+        public void CharacterUpdate()
         {
             characterUpdateProcessor.RunCharacterUpdate();
         }
 
-        private void FixedUpdate()
+        public void CharacterFixedUpdate()
         {
             characterUpdateProcessor.RunCharacterFixedUpdate();
         }

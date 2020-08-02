@@ -8,13 +8,49 @@ namespace Roundbeargames
     {
         public List<CharacterControl> Characters = new List<CharacterControl>();
 
+        [SerializeField]
+        CharacterControl[] ArrCharacters = null;
+
+        private void Update()
+        {
+            InitCharacterArray();
+
+            for (int i = 0; i < ArrCharacters.Length; i++)
+            {
+                ArrCharacters[i].CharacterUpdate();
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            InitCharacterArray();
+
+            for (int i = 0; i < ArrCharacters.Length; i++)
+            {
+                ArrCharacters[i].CharacterFixedUpdate();
+            }
+        }
+
+        void InitCharacterArray()
+        {
+            if (ArrCharacters == null)
+            {
+                ArrCharacters = new CharacterControl[Characters.Count];
+
+                for (int i = 0; i < Characters.Count; i++)
+                {
+                    ArrCharacters[i] = Characters[i];
+                }
+            }
+        }
+
         public CharacterControl GetCharacter(PlayableCharacterType playableCharacterType)
         {
-            foreach(CharacterControl control in Characters)
+            for (int i = 0; i < ArrCharacters.Length; i++)
             {
-                if (control.characterSetup.playableCharacterType == playableCharacterType)
+                if (ArrCharacters[i].characterSetup.playableCharacterType == playableCharacterType)
                 {
-                    return control;
+                    return ArrCharacters[i];
                 }
             }
 
@@ -23,11 +59,11 @@ namespace Roundbeargames
 
         public CharacterControl GetCharacter(Animator animator)
         {
-            foreach (CharacterControl control in Characters)
+            for (int i = 0; i < ArrCharacters.Length; i++)
             {
-                if (control.characterSetup.SkinnedMeshAnimator == animator)
+                if (ArrCharacters[i].characterSetup.SkinnedMeshAnimator == animator)
                 {
-                    return control;
+                    return ArrCharacters[i];
                 }
             }
 
@@ -36,11 +72,11 @@ namespace Roundbeargames
 
         public CharacterControl GetCharacter(GameObject obj)
         {
-            foreach (CharacterControl control in Characters)
+            for (int i = 0; i < ArrCharacters.Length; i++)
             {
-                if (control.gameObject == obj)
+                if (ArrCharacters[i].gameObject == obj)
                 {
-                    return control;
+                    return ArrCharacters[i];
                 }
             }
 
@@ -49,11 +85,11 @@ namespace Roundbeargames
 
         public CharacterControl GetPlayableCharacter()
         {
-            foreach (CharacterControl control in Characters)
+            for (int i = 0; i < ArrCharacters.Length; i++)
             {
-                if (control.GetUpdater(typeof(ManualInput)) != null)
+                if (ArrCharacters[i].GetUpdater(typeof(ManualInput)) != null)
                 {
-                    return control;
+                    return ArrCharacters[i];
                 }
             }
 
