@@ -13,15 +13,18 @@ namespace Roundbeargames
         {
             objList.Clear();
 
-            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
-                CharacterControl c = CharacterManager.Instance.GetCharacter(data.Value.transform.root.gameObject);
-
-                if (c != null)
+                foreach(GameObject obj in data.Value)
                 {
-                    if (!objList.Contains(c.gameObject))
+                    CharacterControl c = CharacterManager.Instance.GetCharacter(obj.transform.root.gameObject);
+
+                    if (c != null)
                     {
-                        objList.Add(c.gameObject);
+                        if (!objList.Contains(c.gameObject))
+                        {
+                            objList.Add(c.gameObject);
+                        }
                     }
                 }
             }

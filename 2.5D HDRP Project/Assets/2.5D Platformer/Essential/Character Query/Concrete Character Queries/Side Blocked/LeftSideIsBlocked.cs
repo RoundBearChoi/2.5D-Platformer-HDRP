@@ -8,11 +8,14 @@ namespace Roundbeargames
     {
         public override bool ReturnBool()
         {
-            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
-                if ((data.Value.transform.position - control.transform.position).z < 0f)
+                foreach(GameObject obj in data.Value)
                 {
-                    return true;
+                    if ((obj.transform.position - control.transform.position).z < 0f)
+                    {
+                        return true;
+                    }
                 }
             }
 

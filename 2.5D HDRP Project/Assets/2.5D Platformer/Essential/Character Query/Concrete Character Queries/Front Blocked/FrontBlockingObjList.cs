@@ -13,11 +13,14 @@ namespace Roundbeargames
         {
             ObjList.Clear();
 
-            foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.FrontBlockingObjs)
             {
-                if (!ObjList.Contains(data.Value))
+                foreach(GameObject obj in data.Value)
                 {
-                    ObjList.Add(data.Value);
+                    if (!ObjList.Contains(obj))
+                    {
+                        ObjList.Add(obj);
+                    }
                 }
             }
 
