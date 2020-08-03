@@ -40,23 +40,26 @@ namespace Roundbeargames
                 {
                     control.RunFunction(typeof(CheckUpBlocking), 0.3f);
 
-                    foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.UpBlockingObjs)
+                    foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.UpBlockingObjs)
                     {
-                        CharacterControl c = CharacterManager.Instance.GetCharacter(
-                            data.Value.transform.root.gameObject);
+                        foreach(GameObject obj in data.Value)
+                        {
+                            CharacterControl c = CharacterManager.Instance.
+                                GetCharacter(obj.transform.root.gameObject);
 
-                        if (c == null)
-                        {
-                            control.RunFunction(typeof(ClearUpVelocity));
-                            break;
-                        }
-                        else
-                        {
-                            if (control.transform.position.y + control.boxCollider.center.y <
-                                c.transform.position.y)
+                            if (c == null)
                             {
                                 control.RunFunction(typeof(ClearUpVelocity));
                                 break;
+                            }
+                            else
+                            {
+                                if (control.transform.position.y + control.boxCollider.center.y <
+                                    c.transform.position.y)
+                                {
+                                    control.RunFunction(typeof(ClearUpVelocity));
+                                    break;
+                                }
                             }
                         }
                     }
@@ -114,20 +117,23 @@ namespace Roundbeargames
 
             if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
             {
-                foreach (KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.DownBlockingObjs)
+                foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
                 {
-                    CharacterControl c = CharacterManager.Instance.
-                        GetCharacter(data.Value.transform.root.gameObject);
-
-                    if (c != null)
+                    foreach(GameObject obj in data.Value)
                     {
-                        if (c.boxCollider.center.y + c.transform.position.y < control.transform.position.y)
+                        CharacterControl c = CharacterManager.Instance.
+                            GetCharacter(obj.transform.root.gameObject);
+
+                        if (c != null)
                         {
-                            if (c != control)
+                            if (c.boxCollider.center.y + c.transform.position.y < control.transform.position.y)
                             {
-                                if (!MarioStompTargets.Contains(c))
+                                if (c != control)
                                 {
-                                    MarioStompTargets.Add(c);
+                                    if (!MarioStompTargets.Contains(c))
+                                    {
+                                        MarioStompTargets.Add(c);
+                                    }
                                 }
                             }
                         }

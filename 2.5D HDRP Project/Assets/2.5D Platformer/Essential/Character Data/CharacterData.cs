@@ -32,8 +32,8 @@ namespace Roundbeargames
             blockingData = new BlockingObjData
             {
                 FrontBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
-                DownBlockingObjs = new Dictionary<GameObject, GameObject>(),
-                UpBlockingObjs = new Dictionary<GameObject, GameObject>(),
+                DownBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
+                UpBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
 
                 FrontBlockingDicCount = 0,
                 UpBlockingDicCount = 0,

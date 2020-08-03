@@ -10,8 +10,8 @@ namespace Roundbeargames
         public Vector3 RaycastContact = new Vector3();
 
         public Dictionary<GameObject, List<GameObject>> FrontBlockingObjs;
-        public Dictionary<GameObject, GameObject> DownBlockingObjs;
-        public Dictionary<GameObject, GameObject> UpBlockingObjs;
+        public Dictionary<GameObject, List<GameObject>> DownBlockingObjs;
+        public Dictionary<GameObject, List<GameObject>> UpBlockingObjs;
 
         public int FrontBlockingDicCount;
         public int UpBlockingDicCount;
