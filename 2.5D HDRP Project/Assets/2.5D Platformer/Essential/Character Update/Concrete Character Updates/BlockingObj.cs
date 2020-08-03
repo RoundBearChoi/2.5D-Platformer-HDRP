@@ -166,6 +166,8 @@ namespace Roundbeargames
                 RaycastHit[] hits;
                 hits = Physics.RaycastAll(FrontSpheresArray[i].transform.position, FrontRayDirection, FrontRayLength);
 
+                Debug.DrawLine(FrontSpheresArray[i].transform.position, FrontSpheresArray[i].transform.position + (FrontRayDirection * FrontRayLength), Color.green);
+
                 foreach(RaycastHit h in hits)
                 {
                     if (!CollisionDetection.IgnoreCollision(control, h))
