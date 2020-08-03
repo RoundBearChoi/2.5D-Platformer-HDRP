@@ -60,15 +60,15 @@ namespace Roundbeargames
 
         public void RunCharacterFixedUpdate()
         {
-            CharacterFixedUpdate(typeof(LedgeChecker));// CharacterUpdateType.LEDGECHECKER);
-            CharacterFixedUpdate(typeof(Ragdoll));// CharacterUpdateType.RAGDOLL);
-            CharacterFixedUpdate(typeof(BlockingObj));// CharacterUpdateType.BLOCKINGOBJECTS);
-            CharacterFixedUpdate(typeof(BoxColliderUpdater));// CharacterUpdateType.BOX_COLLIDER_UPDATER);
-            CharacterFixedUpdate(typeof(VerticalVelocity));// CharacterUpdateType.VERTICAL_VELOCITY);
-            CharacterFixedUpdate(typeof(CollisionSpheres));// CharacterUpdateType.COLLISION_SPHERES);
-            CharacterFixedUpdate(typeof(InstaKill));// CharacterUpdateType.INSTA_KILL);
-            CharacterFixedUpdate(typeof(DamageDetector));// CharacterUpdateType.DAMAGE_DETECTOR);
-            CharacterFixedUpdate(typeof(PlayerRotation));// CharacterUpdateType.PLAYER_ROTATION);
+            CharacterFixedUpdate(typeof(LedgeChecker));
+            CharacterFixedUpdate(typeof(Ragdoll));
+            CharacterFixedUpdate(typeof(BlockingObj));
+            CharacterFixedUpdate(typeof(BoxColliderUpdater));
+            CharacterFixedUpdate(typeof(VerticalVelocity));
+            CharacterFixedUpdate(typeof(InstaKill));
+            CharacterFixedUpdate(typeof(DamageDetector));
+            CharacterFixedUpdate(typeof(PlayerRotation));
+            //CharacterFixedUpdate(typeof(CollisionSpheres));
         }
 
         public void RunCharacterUpdate()

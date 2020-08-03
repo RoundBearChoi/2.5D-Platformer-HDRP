@@ -8,22 +8,14 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            bool AllIsOverlapping = true;
-
-            for (int i = 0; i < control.COLLISION_SPHERE_DATA.FrontOverlapCheckers.Length; i++)
+            if (!ConditionCheck_BlockedByWall.IsTrue(control))
             {
-                if (!control.COLLISION_SPHERE_DATA.FrontOverlapCheckers[i].ObjIsOverlapping)
-                {
-                    AllIsOverlapping = false;
-                }
+                return true;
             }
-
-            if (AllIsOverlapping)
+            else
             {
                 return false;
             }
-
-            return true;
         }
     }
 }

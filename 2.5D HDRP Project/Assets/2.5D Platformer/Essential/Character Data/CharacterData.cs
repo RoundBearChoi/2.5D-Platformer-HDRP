@@ -127,8 +127,6 @@ namespace Roundbeargames
                 FrontSpheres = new GameObject[10],
                 BackSpheres = new GameObject[10],
                 UpSpheres = new GameObject[5],
-
-                FrontOverlapCheckers = new OverlapChecker[10],
             };
 
             instaKillData = new InstaKillData

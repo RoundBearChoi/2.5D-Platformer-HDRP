@@ -13,7 +13,6 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            control.COLLISION_SPHERE_DATA.FrontOverlapCheckerContains = FrontOverlapCheckerContains;
             control.COLLISION_SPHERE_DATA.Reposition_FrontSpheres = Reposition_FrontSpheres;
             control.COLLISION_SPHERE_DATA.Reposition_BottomSpheres = Reposition_BottomSpheres;
             control.COLLISION_SPHERE_DATA.Reposition_BackSpheres = Reposition_BackSpheres;
@@ -29,10 +28,10 @@ namespace Roundbeargames
 
         public override void OnFixedUpdate()
         {
-            for (int i = 0; i < control.COLLISION_SPHERE_DATA.AllOverlapCheckers.Length; i++)
-            {
-                control.COLLISION_SPHERE_DATA.AllOverlapCheckers[i].UpdateChecker();
-            }
+            //for (int i = 0; i < control.COLLISION_SPHERE_DATA.AllOverlapCheckers.Length; i++)
+            //{
+            //    control.COLLISION_SPHERE_DATA.AllOverlapCheckers[i].UpdateChecker();
+            //}
         }
 
         public override void OnUpdate()
@@ -96,8 +95,6 @@ namespace Roundbeargames
                 GameObject obj = LoadCollisionSphere();
 
                 control.COLLISION_SPHERE_DATA.FrontSpheres[i] = obj;
-                control.COLLISION_SPHERE_DATA.FrontOverlapCheckers[i] = obj.GetComponent<OverlapChecker>();
-
                 obj.transform.parent = Front.transform;
             }
 
@@ -114,11 +111,6 @@ namespace Roundbeargames
             }
 
             Reposition_BackSpheres();
-
-            // add everything
-
-            OverlapChecker[] arr = this.gameObject.GetComponentsInChildren<OverlapChecker>();
-            control.COLLISION_SPHERE_DATA.AllOverlapCheckers = arr;
         }
 
         void Reposition_FrontSpheres()
@@ -203,19 +195,6 @@ namespace Roundbeargames
                 control.COLLISION_SPHERE_DATA.UpSpheres[i].transform.localPosition =
                     new Vector3(0f, top, back + (interval * (i - 1))) - control.transform.position;
             }
-        }
-
-        bool FrontOverlapCheckerContains(OverlapChecker checker)
-        {
-            for (int i = 0; i < control.COLLISION_SPHERE_DATA.FrontOverlapCheckers.Length; i++)
-            {
-                if (control.COLLISION_SPHERE_DATA.FrontOverlapCheckers[i] == checker)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }

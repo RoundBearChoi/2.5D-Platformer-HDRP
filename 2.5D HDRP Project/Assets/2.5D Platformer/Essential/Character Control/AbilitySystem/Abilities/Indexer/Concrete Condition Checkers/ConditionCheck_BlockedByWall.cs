@@ -8,16 +8,47 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            //foreach(KeyValuePair<GameObject, GameObject> data in control.BLOCKING_DATA.FrontBlockingObjs)
-            //{
-            //    foreach(GameObject obj in data.Value)
-            //}
+            return IsTrue(control);
+        }
 
-            for (int i = 0; i < control.COLLISION_SPHERE_DATA.FrontOverlapCheckers.Length; i++)
+        public static bool IsTrue(CharacterControl control)
+        {
+            if (control.BLOCKING_DATA.FrontBlockingObjs.Count != control.COLLISION_SPHERE_DATA.FrontSpheres.Length)
             {
-                if (!control.COLLISION_SPHERE_DATA.FrontOverlapCheckers[i].ObjIsOverlapping)
+                return false;
+            }
+
+            foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.FrontBlockingObjs)
+            {
+                if (data.Value == null)
                 {
                     return false;
+                }
+
+                if (data.Value.Count == 0)
+                {
+                    return false;
+                }
+
+                foreach (GameObject obj in data.Value)
+                {
+                    bool isWall = false;
+
+                    if (CharacterManager.Instance.GetCharacter(obj.transform.root.gameObject) == null)
+                    {
+                        if (!MeleeWeapon.IsWeapon(obj))
+                        {
+                            if (!TrapSpikes.IsTrap(obj))
+                            {
+                                isWall = true;
+                            }
+                        }
+                    }
+
+                    if (!isWall)
+                    {
+                        return false;
+                    }
                 }
             }
 
