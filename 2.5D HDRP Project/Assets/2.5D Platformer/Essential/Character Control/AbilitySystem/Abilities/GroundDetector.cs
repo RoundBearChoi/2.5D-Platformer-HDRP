@@ -47,11 +47,7 @@ namespace Roundbeargames
                         if (Mathf.Abs(control.RIGID_BODY.velocity.y) < 0.001f)
                         {
                             control.GROUND_DATA.Ground = c.otherCollider.transform.root.gameObject;
-                            control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
-                                0f,
-                                c.point.y,
-                                c.point.z);
-
+                            SetLandingPosition(control, c.point);
                             return true;
                         }
                     }
@@ -74,10 +70,7 @@ namespace Roundbeargames
                             if (c == null)
                             {
                                 control.GROUND_DATA.Ground = h.transform.root.gameObject;
-                                control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
-                                    0f,
-                                    h.point.y,
-                                    h.point.z);
+                                SetLandingPosition(control, h.point);
                                 return true;
                             }
                         }
@@ -87,6 +80,19 @@ namespace Roundbeargames
 
             control.GROUND_DATA.Ground = null;
             return false;
+        }
+
+        void SetLandingPosition(CharacterControl control, Vector3 pos)
+        {
+            control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
+                0f,
+                pos.y,
+                pos.z);
+
+            foreach(KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
+            {
+
+            }
         }
     }
 }

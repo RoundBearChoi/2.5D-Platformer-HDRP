@@ -27,11 +27,14 @@ namespace Roundbeargames
 
                 if (control.BOX_COLLIDER_DATA.IsLanding)
                 {
-                    //Debug.Log("repositioning y");
+                    Debug.Log("repositioning y");
+
                     control.RIGID_BODY.MovePosition(new Vector3(
                         0f,
                         control.BOX_COLLIDER_DATA.LandingPosition.y,
                         this.transform.position.z));
+
+                    control.RIGID_BODY.velocity = Vector3.zero;
                 }
             }
         }
