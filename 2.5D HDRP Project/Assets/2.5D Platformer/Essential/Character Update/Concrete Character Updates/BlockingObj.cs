@@ -67,7 +67,18 @@ namespace Roundbeargames
                 }
             }
 
-            CheckMarioStomp();
+            // check down blocking objs
+            if (control.RIGID_BODY.velocity.y < 0f)
+            {
+                control.RunFunction(typeof(CheckDownBlocking), 0.1f);
+                CheckMarioStomp();
+            }
+            else
+            {
+                MarioStompTargets.Clear();
+                control.BLOCKING_DATA.DownBlockingObjs.Clear();
+            }
+            
 
             control.BLOCKING_DATA.FrontBlockingDicCount = control.BLOCKING_DATA.FrontBlockingObjs.Count;
             control.BLOCKING_DATA.UpBlockingDicCount = control.BLOCKING_DATA.UpBlockingObjs.Count;
@@ -80,13 +91,6 @@ namespace Roundbeargames
 
         void CheckMarioStomp()
         {
-            if (control.RIGID_BODY.velocity.y >= 0f)
-            {
-                MarioStompTargets.Clear();
-                control.BLOCKING_DATA.DownBlockingObjs.Clear();
-                return;
-            }
-
             if (MarioStompTargets.Count > 0)
             {
                 control.RIGID_BODY.velocity = Vector3.zero;
@@ -113,8 +117,6 @@ namespace Roundbeargames
                 MarioStompTargets.Clear();
                 return;
             }
-
-            control.RunFunction(typeof(CheckDownBlocking), 0.1f);
 
             if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
             {
