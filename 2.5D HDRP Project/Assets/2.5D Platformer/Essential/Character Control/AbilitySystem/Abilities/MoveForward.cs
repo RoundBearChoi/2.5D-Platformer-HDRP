@@ -118,24 +118,29 @@ namespace Roundbeargames
 
         private void MoveOnMomentum(CharacterControl control, AnimatorStateInfo stateInfo)
         {
-            float speed = SpeedGraph.Evaluate(stateInfo.normalizedTime) * Speed * Time.deltaTime;
-
-            control.RunFunction(typeof(CalculateMomentum), speed, MaxMomentum);
-
-            if (control.MOMENTUM_DATA.Momentum > 0f)
+            // move only in air
+            if (!control.characterSetup.SkinnedMeshAnimator.
+                GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
-                control.ROTATION_DATA.FaceForward(true);
-            }
-            else if (control.MOMENTUM_DATA.Momentum < 0f)
-            {
-                control.ROTATION_DATA.FaceForward(false);
-            }
+                float speed = SpeedGraph.Evaluate(stateInfo.normalizedTime) * Speed * Time.deltaTime;
 
-            if (!control.GetBool(typeof(FrontIsBlocked)))
-            {
-                control.RunFunction(typeof(MoveTransformForward),
-                    Speed,
-                    Mathf.Abs(control.MOMENTUM_DATA.Momentum));
+                control.RunFunction(typeof(CalculateMomentum), speed, MaxMomentum);
+
+                if (control.MOMENTUM_DATA.Momentum > 0f)
+                {
+                    control.ROTATION_DATA.FaceForward(true);
+                }
+                else if (control.MOMENTUM_DATA.Momentum < 0f)
+                {
+                    control.ROTATION_DATA.FaceForward(false);
+                }
+
+                if (!control.GetBool(typeof(FrontIsBlocked)))
+                {
+                    control.RunFunction(typeof(MoveTransformForward),
+                        Speed,
+                        Mathf.Abs(control.MOMENTUM_DATA.Momentum));
+                }
             }
         }
 

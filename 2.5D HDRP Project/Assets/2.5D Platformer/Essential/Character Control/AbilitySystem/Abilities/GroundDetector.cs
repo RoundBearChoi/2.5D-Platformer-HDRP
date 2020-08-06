@@ -105,13 +105,13 @@ namespace Roundbeargames
                 {
                     if (data.Key.transform.position.z < control.transform.position.z)
                     {
-                        control.transform.position -= Vector3.forward * 0.02f;
+                        control.transform.position -= Vector3.forward * 0.01f;
                         break;
                     }
 
                     if (data.Key.transform.position.z > control.transform.position.z)
                     {
-                        control.transform.position += Vector3.forward * 0.02f;
+                        control.transform.position += Vector3.forward * 0.01f;
                         break;
                     }
                 }

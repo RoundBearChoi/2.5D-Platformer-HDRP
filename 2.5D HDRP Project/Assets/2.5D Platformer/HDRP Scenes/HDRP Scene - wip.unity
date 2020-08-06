@@ -2798,7 +2798,7 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1565521808
+--- !u!114 &1790324442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2909,17 +2909,22 @@ PrefabInstance:
     - target: {fileID: 1629337477901173508, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0000001452387
+      value: 0.00000014523873
       objectReference: {fileID: 0}
     - target: {fileID: 1629337477901173508, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.000000109499275
+      value: 0.00000034791785
       objectReference: {fileID: 0}
     - target: {fileID: 2305079526707240710, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00000021203098
+      value: -0.000000026387594
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305079526707240710, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.0000002408318
       objectReference: {fileID: 0}
     - target: {fileID: 2510165419609396255, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
@@ -2964,7 +2969,7 @@ PrefabInstance:
     - target: {fileID: 3692781688583289903, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00000017322596
+      value: -0.00000006519262
       objectReference: {fileID: 0}
     - target: {fileID: 3726469961131861803, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
@@ -3014,12 +3019,12 @@ PrefabInstance:
     - target: {fileID: 7198515055300973108, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.05
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7198515055300973108, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.94
+      value: -3.507
       objectReference: {fileID: 0}
     - target: {fileID: 7198515055300973108, guid: 50f426c0cc43c0c43b72737d9fd8b1f2,
         type: 3}
@@ -3746,7 +3751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: 0d29f614cc650a54f848f7859e4bb1ef, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 1565521808}
+  m_SkySettings: {fileID: 1790324442}
   m_SkySettingsFromProfile: {fileID: 2518178054138981115, guid: 0d29f614cc650a54f848f7859e4bb1ef,
     type: 2}
 --- !u!4 &2025772087
