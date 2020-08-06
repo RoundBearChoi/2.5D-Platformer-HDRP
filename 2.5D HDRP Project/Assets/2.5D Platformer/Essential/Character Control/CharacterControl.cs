@@ -123,6 +123,11 @@ namespace Roundbeargames
             characterUpdateProcessor.RunCharacterFixedUpdate();
         }
 
+        public void CharacterLateUpdate()
+        {
+            characterUpdateProcessor.RunCharacterLateUpdate();
+        }
+
         private void OnCollisionStay(Collision collision)
         {
             GROUND_DATA.BoxColliderContacts = collision.contacts;

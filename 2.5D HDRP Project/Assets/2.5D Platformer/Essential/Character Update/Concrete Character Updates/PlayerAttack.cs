@@ -33,5 +33,10 @@ namespace Roundbeargames
                 control.ATTACK_DATA.AttackTriggered = false;
             }
         }
+
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -27,6 +27,11 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
         bool AttackIsValid(AttackCondition info)
         {
             if (info == null)

@@ -73,9 +73,14 @@ namespace Roundbeargames
 
         public void RunCharacterUpdate()
         {
-            CharacterUpdate(typeof(ManualInput));// CharacterUpdateType.MANUALINPUT);
-            CharacterUpdate(typeof(PlayerAttack));// CharacterUpdateType.PLAYER_ATTACK);
-            CharacterUpdate(typeof(PlayerAnimation));// CharacterUpdateType.PLAYER_ANIMATION);
+            CharacterUpdate(typeof(ManualInput));
+            CharacterUpdate(typeof(PlayerAttack));
+            CharacterUpdate(typeof(PlayerAnimation));
+        }
+
+        public void RunCharacterLateUpdate()
+        {
+            CharacterLateUpdate(typeof(BlockingObj));
         }
 
         void CharacterUpdate(System.Type UpdaterType)
@@ -91,6 +96,14 @@ namespace Roundbeargames
             if (control.characterUpdateProcessor.DicUpdaters.ContainsKey(UpdaterType))
             {
                 control.characterUpdateProcessor.DicUpdaters[UpdaterType].OnFixedUpdate();
+            }
+        }
+
+        void CharacterLateUpdate(System.Type UpdaterType)
+        {
+            if (control.characterUpdateProcessor.DicUpdaters.ContainsKey(UpdaterType))
+            {
+                control.characterUpdateProcessor.DicUpdaters[UpdaterType].OnLateUpdate();
             }
         }
     }

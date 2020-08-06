@@ -39,6 +39,11 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
         GameObject LoadCollisionSphere()
         {
             return Instantiate(Resources.Load("CollisionSphere", typeof(GameObject)),

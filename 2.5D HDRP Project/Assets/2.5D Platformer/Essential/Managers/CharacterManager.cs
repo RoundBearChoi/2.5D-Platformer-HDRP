@@ -31,6 +31,16 @@ namespace Roundbeargames
             }
         }
 
+        private void LateUpdate()
+        {
+            InitCharacterArray();
+
+            for (int i = 0; i < ArrCharacters.Length; i++)
+            {
+                ArrCharacters[i].CharacterLateUpdate();
+            }
+        }
+
         void InitCharacterArray()
         {
             if (ArrCharacters == null)

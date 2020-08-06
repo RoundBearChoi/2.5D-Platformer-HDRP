@@ -41,6 +41,11 @@ namespace Roundbeargames
             }
         }
 
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
         bool IsRunning(System.Type type)
         {
             foreach (KeyValuePair<CharacterAbility, int> data in control.ANIMATION_DATA.CurrentRunningAbilities)

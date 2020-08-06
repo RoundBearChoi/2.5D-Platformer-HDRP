@@ -137,6 +137,11 @@ namespace Roundbeargames
             }
         }
 
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
         bool IsDoubleTap_Up()
         {
             if (DoubleTaps.Contains(InputKeyType.KEY_MOVE_UP))

@@ -33,6 +33,11 @@ namespace Roundbeargames
             }
         }
 
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
         bool IsLedgeGrabCondition()
         {
             if (!control.Jump)

@@ -20,5 +20,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

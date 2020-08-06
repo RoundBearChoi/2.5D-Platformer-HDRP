@@ -8,8 +8,6 @@ namespace Roundbeargames
     {
         public override void RunFunction(float RayDistance)
         {
-            control.BLOCKING_DATA.DownBlockingObjs.Clear();
-
             foreach (GameObject obj in control.COLLISION_SPHERE_DATA.BottomSpheres)
             {
                 RaycastHit[] hits;

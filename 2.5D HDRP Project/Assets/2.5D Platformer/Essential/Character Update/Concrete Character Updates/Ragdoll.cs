@@ -24,6 +24,11 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
+        public override void OnLateUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void SetupBodyParts()
         {
             List<Collider> BodyParts = new List<Collider>();

@@ -71,13 +71,7 @@ namespace Roundbeargames
                 control.RunFunction(typeof(CheckDownBlocking), 0.1f);
                 control.RunFunction(typeof(CheckMarioStomp));
             }
-            else
-            {
-                control.BLOCKING_DATA.MarioStompTargets.Clear();
-                control.BLOCKING_DATA.DownBlockingObjs.Clear();
-            }
             
-
             control.BLOCKING_DATA.FrontBlockingDicCount = control.BLOCKING_DATA.FrontBlockingObjs.Count;
             control.BLOCKING_DATA.UpBlockingDicCount = control.BLOCKING_DATA.UpBlockingObjs.Count;
         }
@@ -86,7 +80,16 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
-                
+
+        public override void OnLateUpdate()
+        {
+            if (control.RIGID_BODY.velocity.y >= 0f)
+            {
+                control.BLOCKING_DATA.MarioStompTargets.Clear();
+                control.BLOCKING_DATA.DownBlockingObjs.Clear();
+            }  
+        }
+
         void CheckFrontBlocking()
         {
             control.BLOCKING_DATA.FrontBlockingObjs.Clear();
