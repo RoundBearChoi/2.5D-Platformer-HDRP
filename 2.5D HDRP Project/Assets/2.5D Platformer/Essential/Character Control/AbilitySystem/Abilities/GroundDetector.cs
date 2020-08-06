@@ -89,18 +89,19 @@ namespace Roundbeargames
                 pos.y,
                 pos.z);
 
-            if (control.BLOCKING_DATA.DownBlockingObjs.Count < 5 &&
-                control.BLOCKING_DATA.DownBlockingObjs.Count != 0)
+            if (control.BLOCKING_DATA.DownBlockingObjs.Count == 1)
             {
                 foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
                 {
                     if (data.Key.transform.position.z < control.transform.position.z)
                     {
+                        control.transform.position -= Vector3.forward * 0.02f;
                         break;
                     }
 
                     if (data.Key.transform.position.z > control.transform.position.z)
                     {
+                        control.transform.position += Vector3.forward * 0.02f;
                         break;
                     }
                 }
