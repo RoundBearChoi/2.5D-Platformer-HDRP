@@ -129,7 +129,7 @@ namespace Roundbeargames
                 control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.isKinematic = false;
             }
 
-            control.RunFunction(typeof(ClearAllVelocity));
+            control.RunFunction(typeof(ClearRagdollVelocity));
             
             if (control.DAMAGE_DATA.damageTaken != null)
             {

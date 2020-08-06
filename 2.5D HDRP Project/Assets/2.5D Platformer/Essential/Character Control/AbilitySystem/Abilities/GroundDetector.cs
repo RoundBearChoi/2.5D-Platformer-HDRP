@@ -84,12 +84,22 @@ namespace Roundbeargames
 
         void SetLandingPosition(CharacterControl control, Vector3 pos)
         {
+            if (control.characterSetup.SkinnedMeshAnimator.
+                GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]) == false)
+            {
+                _setlandingposition(control, pos);
+            }
+        }
+
+        void _setlandingposition(CharacterControl control, Vector3 pos)
+        {
             control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
                 0f,
                 pos.y,
                 pos.z);
 
-            if (control.BLOCKING_DATA.DownBlockingObjs.Count == 1)
+            if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0 &&
+                control.BLOCKING_DATA.DownBlockingObjs.Count < 5)
             {
                 foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
                 {

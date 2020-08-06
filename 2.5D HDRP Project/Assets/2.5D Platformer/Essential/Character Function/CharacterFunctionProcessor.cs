@@ -11,7 +11,7 @@ namespace Roundbeargames
         private void Start()
         {
             AddFunction(typeof(LedgeCollidersOff));
-            AddFunction(typeof(ClearAllVelocity));
+            AddFunction(typeof(ClearRagdollVelocity));
             AddFunction(typeof(ClearUpVelocity));
             AddFunction(typeof(CheckDownBlocking));
             AddFunction(typeof(CheckUpBlocking));

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ClearAllVelocity : CharacterFunction
+    public class ClearRagdollVelocity : CharacterFunction
     {
         public override void RunFunction()
         {
