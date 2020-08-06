@@ -35,6 +35,8 @@ namespace Roundbeargames
                 DownBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
                 UpBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
 
+                MarioStompTargets = new List<CharacterControl>(),
+
                 FrontBlockingDicCount = 0,
                 UpBlockingDicCount = 0,
             };

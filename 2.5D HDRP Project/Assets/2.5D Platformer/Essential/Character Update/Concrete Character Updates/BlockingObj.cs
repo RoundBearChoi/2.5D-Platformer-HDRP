@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class BlockingObj : CharacterUpdate
     {
-        List<CharacterControl> MarioStompTargets = new List<CharacterControl>();
-
         GameObject[] FrontSpheresArray;
         float FrontDirectionMultiplier;
         Vector3 FrontRayDirection = new Vector3();
@@ -71,11 +69,11 @@ namespace Roundbeargames
             if (control.RIGID_BODY.velocity.y < 0f)
             {
                 control.RunFunction(typeof(CheckDownBlocking), 0.1f);
-                CheckMarioStomp();
+                control.RunFunction(typeof(CheckMarioStomp));
             }
             else
             {
-                MarioStompTargets.Clear();
+                control.BLOCKING_DATA.MarioStompTargets.Clear();
                 control.BLOCKING_DATA.DownBlockingObjs.Clear();
             }
             
@@ -88,63 +86,7 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
-
-        void CheckMarioStomp()
-        {
-            if (MarioStompTargets.Count > 0)
-            {
-                control.RIGID_BODY.velocity = Vector3.zero;
-                control.RIGID_BODY.AddForce(Vector3.up * 250f);
-
-                foreach (CharacterControl c in MarioStompTargets)
-                {
-                    AttackCondition info = new AttackCondition();
-                    info.CopyInfo(c.DAMAGE_DATA.MarioStompAttack, control);
-
-                    int index = Random.Range(0, c.RAGDOLL_DATA.ArrBodyParts.Length);
-                    TriggerDetector randomPart = c.RAGDOLL_DATA.ArrBodyParts[index].GetComponent<TriggerDetector>();
-
-                    c.DAMAGE_DATA.damageTaken = new DamageTaken(
-                        control,
-                        c.DAMAGE_DATA.MarioStompAttack,
-                        randomPart,
-                        control.RIGHT_FOOT_ATTACK,
-                        Vector3.zero);
-
-                    c.DAMAGE_DATA.TakeDamage(info);
-                }
-
-                MarioStompTargets.Clear();
-                return;
-            }
-
-            if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
-            {
-                foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
-                {
-                    foreach(GameObject obj in data.Value)
-                    {
-                        CharacterControl c = CharacterManager.Instance.
-                            GetCharacter(obj.transform.root.gameObject);
-
-                        if (c != null)
-                        {
-                            if (c.boxCollider.center.y + c.transform.position.y < control.transform.position.y)
-                            {
-                                if (c != control)
-                                {
-                                    if (!MarioStompTargets.Contains(c))
-                                    {
-                                        MarioStompTargets.Add(c);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
+                
         void CheckFrontBlocking()
         {
             control.BLOCKING_DATA.FrontBlockingObjs.Clear();

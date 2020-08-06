@@ -15,6 +15,7 @@ namespace Roundbeargames
             AddFunction(typeof(ClearUpVelocity));
             AddFunction(typeof(CheckDownBlocking));
             AddFunction(typeof(CheckUpBlocking));
+            AddFunction(typeof(CheckMarioStomp));
 
             AddFunction(typeof(SpawnHitParticles));
             AddFunction(typeof(AddForceToDamagedPart));

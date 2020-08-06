@@ -13,6 +13,8 @@ namespace Roundbeargames
         public Dictionary<GameObject, List<GameObject>> DownBlockingObjs;
         public Dictionary<GameObject, List<GameObject>> UpBlockingObjs;
 
+        public List<CharacterControl> MarioStompTargets;
+
         public int FrontBlockingDicCount;
         public int UpBlockingDicCount;
     }
