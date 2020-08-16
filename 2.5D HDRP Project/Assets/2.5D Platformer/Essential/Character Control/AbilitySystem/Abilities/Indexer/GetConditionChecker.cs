@@ -43,6 +43,7 @@ namespace Roundbeargames
             _Add(TransitionConditionType.TOUCHING_WEAPON, typeof(ConditionCheck_TouchingWeapon));
             _Add(TransitionConditionType.HOLDING_AXE, typeof(ConditionCheck_HoldingAxe));
             _Add(TransitionConditionType.MOVING, typeof(ConditionCheck_Moving));
+            _Add(TransitionConditionType.TURBO, typeof(ConditionCheck_Turbo));
             _Add(TransitionConditionType.RUN, typeof(ConditionCheck_Running));
             _Add(TransitionConditionType.BLOCKING, typeof(ConditionCheck_Blocking));
             _Add(TransitionConditionType.ATTACK_IS_BLOCKED, typeof(ConditionCheck_AttackIsBlocked));

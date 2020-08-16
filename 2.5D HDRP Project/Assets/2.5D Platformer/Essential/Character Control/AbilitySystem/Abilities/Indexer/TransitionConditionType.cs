@@ -14,7 +14,9 @@ namespace Roundbeargames
         LEFT_OR_RIGHT = 7,
         MOVE_FORWARD = 9,
         RUN = 23,
+
         MOVING = 100,
+        TURBO = 200,
 
         DOUBLE_TAP_UP = 16,
         DOUBLE_TAP_DOWN = 17,

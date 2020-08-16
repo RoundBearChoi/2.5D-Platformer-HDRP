@@ -45,19 +45,26 @@ namespace Roundbeargames
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            for (int i = 0; i < ArrAbilities.Length; i++)
+            //try
             {
-                ArrAbilities[i].OnEnter(this, animator, stateInfo);
+                for (int i = 0; i < ArrAbilities.Length; i++)
+                {
+                    ArrAbilities[i].OnEnter(this, animator, stateInfo);
 
-                if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(ArrAbilities[i]))
-                {
-                    characterControl.ANIMATION_DATA.CurrentRunningAbilities[ArrAbilities[i]] += 1;
-                }
-                else
-                {
-                    characterControl.ANIMATION_DATA.CurrentRunningAbilities.Add(ArrAbilities[i], 1);
+                    if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(ArrAbilities[i]))
+                    {
+                        characterControl.ANIMATION_DATA.CurrentRunningAbilities[ArrAbilities[i]] += 1;
+                    }
+                    else
+                    {
+                        characterControl.ANIMATION_DATA.CurrentRunningAbilities.Add(ArrAbilities[i], 1);
+                    }
                 }
             }
+            //catch(System.Exception e)
+            //{
+            //    Debug.Log(e);
+            //}
         }
 
         public void UpdateAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

@@ -11,6 +11,7 @@ namespace Roundbeargames
 
         public Instant_Transition_States TransitionTo;
         public List<TransitionConditionType> transitionConditions = new List<TransitionConditionType>();
+        public List<TransitionConditionType> notConditions = new List<TransitionConditionType>();
         public float CrossFade;
         public float Offset;
         public bool IgnoreAttackAbility;
@@ -26,8 +27,11 @@ namespace Roundbeargames
             {
                 if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
                 {
-                    characterState.ANIMATION_DATA.InstantTransitionMade = true;
-                    MakeInstantTransition(characterState.characterControl);
+                    if (!IndexChecker.NotCondition(characterState.characterControl, notConditions))
+                    {
+                        characterState.ANIMATION_DATA.InstantTransitionMade = true;
+                        MakeInstantTransition(characterState.characterControl);
+                    }
                 }
             }
         }
