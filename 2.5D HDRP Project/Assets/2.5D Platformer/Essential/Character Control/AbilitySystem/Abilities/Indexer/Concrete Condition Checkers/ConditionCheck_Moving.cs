@@ -1,11 +1,10 @@
-﻿using System.CodeDom;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class ConditionCheck_Moving_NOT : CheckConditionBase
+    public class ConditionCheck_Moving : CheckConditionBase
     {
         public override bool MeetsCondition(CharacterControl control)
         {
@@ -13,11 +12,11 @@ namespace Roundbeargames
             {
                 if (!(control.MoveLeft && control.MoveRight))
                 {
-                    return false;
+                    return true;
                 }
             }
 
-            return true;
+            return false;
         }
     }
 }

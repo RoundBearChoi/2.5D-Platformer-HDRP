@@ -9,6 +9,7 @@ namespace Roundbeargames
     {
         public int Index;
         public List<TransitionConditionType> transitionConditions = new List<TransitionConditionType>();
+        public List<TransitionConditionType> not_conditions = new List<TransitionConditionType>();
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
@@ -28,7 +29,10 @@ namespace Roundbeargames
                 {
                     if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
                     {
-                        animator.SetInteger(HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex], Index);
+                        if (!IndexChecker.NotCondition(characterState.characterControl, not_conditions))
+                        {
+                            animator.SetInteger(HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex], Index);
+                        }
                     }
                 }
             }
@@ -43,8 +47,15 @@ namespace Roundbeargames
         {
             foreach(TransitionConditionType t in transitionConditions)
             {
-                if (t == TransitionConditionType.BLOCKED_BY_WALL ||
-                    t == TransitionConditionType.NOT_BLOCKED_BY_WALL)
+                if (t == TransitionConditionType.BLOCKED_BY_WALL)
+                {
+                    return true;
+                }
+            }
+
+            foreach(TransitionConditionType t in not_conditions)
+            {
+                if (t == TransitionConditionType.BLOCKED_BY_WALL)
                 {
                     return true;
                 }

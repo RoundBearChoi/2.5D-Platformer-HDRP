@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player_Indexer_AxeRun_AxeIdle_1
   m_EditorClassIdentifier: 
   Index: 1
-  transitionConditions: 18000000
+  transitionConditions: 
+  not_conditions: 17000000

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player_Indexer_Walking_Idle_4
   m_EditorClassIdentifier: 
   Index: 4
-  transitionConditions: 16000000
+  transitionConditions: 
+  not_conditions: 64000000

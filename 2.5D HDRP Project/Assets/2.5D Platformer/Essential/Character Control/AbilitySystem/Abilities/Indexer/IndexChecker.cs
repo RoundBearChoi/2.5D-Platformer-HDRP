@@ -20,5 +20,20 @@ namespace Roundbeargames
 
             return true;
         }
+
+        public static bool NotCondition(CharacterControl control, List<TransitionConditionType> notConditions)
+        {
+            foreach (TransitionConditionType c in notConditions)
+            {
+                CheckConditionBase check = GetConditionChecker.GET(c);
+
+                if (check.MeetsCondition(control))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

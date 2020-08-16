@@ -30,13 +30,10 @@ namespace Roundbeargames
             _Add(TransitionConditionType.ATTACK, typeof(ConditionCheck_Attack));
             _Add(TransitionConditionType.JUMP, typeof(ConditionCheck_Jump));
             _Add(TransitionConditionType.GRABBING_LEDGE, typeof(ConditionCheck_GrabbingLedge));
-            _Add(TransitionConditionType.NOT_GRABBING_LEDGE, typeof(ConditionCheck_GrabbingLedge_NOT));
             _Add(TransitionConditionType.LEFT_OR_RIGHT, typeof(ConditionCheck_Left_or_Right));
             _Add(TransitionConditionType.GROUNDED, typeof(ConditionCheck_Grounded));
-            _Add(TransitionConditionType.NOT_GROUNDED, typeof(ConditionCheck_Grounded_NOT));
             _Add(TransitionConditionType.MOVE_FORWARD, typeof(ConditionCheck_MoveForward));
             _Add(TransitionConditionType.BLOCKED_BY_WALL, typeof(ConditionCheck_BlockedByWall));
-            _Add(TransitionConditionType.NOT_BLOCKED_BY_WALL, typeof(ConditionCheck_BlockedByWall_NOT));
             _Add(TransitionConditionType.CAN_WALLJUMP, typeof(ConditionCheck_CanWallJump));
             _Add(TransitionConditionType.MOVING_TO_BLOCKING_OBJ, typeof(ConditionCheck_MovingToBlockingObj));
             _Add(TransitionConditionType.DOUBLE_TAP_UP, typeof(ConditionCheck_DoubleTap_Up));
@@ -45,13 +42,10 @@ namespace Roundbeargames
             _Add(TransitionConditionType.DOUBLE_TAP_RIGHT, typeof(ConditionCheck_DoubleTap_Right));
             _Add(TransitionConditionType.TOUCHING_WEAPON, typeof(ConditionCheck_TouchingWeapon));
             _Add(TransitionConditionType.HOLDING_AXE, typeof(ConditionCheck_HoldingAxe));
-            _Add(TransitionConditionType.NOT_MOVING, typeof(ConditionCheck_Moving_NOT));
+            _Add(TransitionConditionType.MOVING, typeof(ConditionCheck_Moving));
             _Add(TransitionConditionType.RUN, typeof(ConditionCheck_Running));
-            _Add(TransitionConditionType.NOT_RUNNING, typeof(ConditionCheck_Running_NOT));
             _Add(TransitionConditionType.BLOCKING, typeof(ConditionCheck_Blocking));
-            _Add(TransitionConditionType.NOT_BLOCKING, typeof(ConditionCheck_Blocking_NOT));
             _Add(TransitionConditionType.ATTACK_IS_BLOCKED, typeof(ConditionCheck_AttackIsBlocked));
-            _Add(TransitionConditionType.NOT_TURBO, typeof(ConditionCheck_Turbo_NOT));
         }
 
         static void _Add(TransitionConditionType transitionConditionType, System.Type CheckConditionType)

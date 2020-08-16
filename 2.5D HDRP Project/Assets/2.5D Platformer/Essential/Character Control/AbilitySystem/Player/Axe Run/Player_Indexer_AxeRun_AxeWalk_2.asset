@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player_Indexer_AxeRun_AxeWalk_2
   m_EditorClassIdentifier: 
   Index: 2
-  transitionConditions: 0700000018000000
+  transitionConditions: 07000000
+  not_conditions: 17000000

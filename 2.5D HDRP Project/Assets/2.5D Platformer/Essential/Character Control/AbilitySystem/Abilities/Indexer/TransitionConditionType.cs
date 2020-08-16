@@ -14,9 +14,7 @@ namespace Roundbeargames
         LEFT_OR_RIGHT = 7,
         MOVE_FORWARD = 9,
         RUN = 23,
-        NOT_RUNNING = 24,
-        NOT_MOVING = 22,
-        NOT_TURBO = 28,
+        MOVING = 100,
 
         DOUBLE_TAP_UP = 16,
         DOUBLE_TAP_DOWN = 17,
@@ -26,13 +24,10 @@ namespace Roundbeargames
         ATTACK = 4,
 
         GROUNDED = 8,
-        NOT_GROUNDED = 10,
 
         GRABBING_LEDGE = 6,
-        NOT_GRABBING_LEDGE = 13,
 
         BLOCKED_BY_WALL = 11,
-        NOT_BLOCKED_BY_WALL = 14,
         CAN_WALLJUMP = 12,
 
         MOVING_TO_BLOCKING_OBJ = 15,
@@ -41,7 +36,6 @@ namespace Roundbeargames
         HOLDING_AXE = 21,
 
         BLOCKING = 25,
-        NOT_BLOCKING = 26,
         ATTACK_IS_BLOCKED = 27,
     }
 }

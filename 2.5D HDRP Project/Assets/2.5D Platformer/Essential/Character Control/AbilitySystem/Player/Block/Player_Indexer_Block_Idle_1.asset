@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player_Indexer_Block_Idle_1
   m_EditorClassIdentifier: 
   Index: 1
-  transitionConditions: 1a000000
+  transitionConditions: 
+  not_conditions: 19000000

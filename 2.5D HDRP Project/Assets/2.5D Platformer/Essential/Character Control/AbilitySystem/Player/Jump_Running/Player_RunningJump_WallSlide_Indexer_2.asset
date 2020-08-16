@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Player_RunningJump_WallSlide_Indexer_2
   m_EditorClassIdentifier: 
   Index: 2
-  transitionConditions: 0a0000000b0000000d0000000f000000
+  transitionConditions: 0b0000000f000000
+  not_conditions: 0800000006000000
