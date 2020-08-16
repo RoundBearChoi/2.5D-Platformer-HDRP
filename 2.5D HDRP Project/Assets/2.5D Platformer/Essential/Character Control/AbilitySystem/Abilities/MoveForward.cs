@@ -122,25 +122,30 @@ namespace Roundbeargames
             if (!control.characterSetup.SkinnedMeshAnimator.
                 GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
-                float speed = SpeedGraph.Evaluate(stateInfo.normalizedTime) * Speed * Time.deltaTime;
+                Momentum_Move(control, stateInfo);
+            }
+        }
 
-                control.RunFunction(typeof(CalculateMomentum), speed, MaxMomentum);
+        void Momentum_Move(CharacterControl control, AnimatorStateInfo stateInfo)
+        {
+            float speed = SpeedGraph.Evaluate(stateInfo.normalizedTime) * Speed * Time.deltaTime;
 
-                if (control.MOMENTUM_DATA.Momentum > 0f)
-                {
-                    control.ROTATION_DATA.FaceForward(true);
-                }
-                else if (control.MOMENTUM_DATA.Momentum < 0f)
-                {
-                    control.ROTATION_DATA.FaceForward(false);
-                }
+            control.RunFunction(typeof(CalculateMomentum), speed, MaxMomentum);
 
-                if (!control.GetBool(typeof(FrontIsBlocked)))
-                {
-                    control.RunFunction(typeof(MoveTransformForward),
-                        Speed,
-                        Mathf.Abs(control.MOMENTUM_DATA.Momentum));
-                }
+            if (control.MOMENTUM_DATA.Momentum > 0f)
+            {
+                control.ROTATION_DATA.FaceForward(true);
+            }
+            else if (control.MOMENTUM_DATA.Momentum < 0f)
+            {
+                control.ROTATION_DATA.FaceForward(false);
+            }
+
+            if (!control.GetBool(typeof(FrontIsBlocked)))
+            {
+                control.RunFunction(typeof(MoveTransformForward),
+                    Speed,
+                    Mathf.Abs(control.MOMENTUM_DATA.Momentum));
             }
         }
 
