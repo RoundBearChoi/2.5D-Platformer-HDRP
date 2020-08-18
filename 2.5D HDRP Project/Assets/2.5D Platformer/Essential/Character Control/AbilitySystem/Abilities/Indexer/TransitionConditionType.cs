@@ -13,6 +13,7 @@ namespace Roundbeargames
         JUMP = 5,
         LEFT_OR_RIGHT = 7,
         MOVE_FORWARD = 9,
+        MOVE_BACK = 300,
         RUN = 23,
 
         MOVING = 100,

@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aaa15fe22ac533449f9fbc8a3839e09, type: 3}
-  m_Name: General_Turn180
+  m_Script: {fileID: 11500000, guid: 4dfc3080ff22eac4da6ff3c00a39e808, type: 3}
+  m_Name: Player_Indexer_Idle_Turn_10
   m_EditorClassIdentifier: 
-  TurnOnEnter: 1
-  TurnOnExit: 0
+  Index: 10
+  transitionConditions: 2c010000
+  not_conditions: 

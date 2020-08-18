@@ -33,6 +33,7 @@ namespace Roundbeargames
             _Add(TransitionConditionType.LEFT_OR_RIGHT, typeof(ConditionCheck_Left_or_Right));
             _Add(TransitionConditionType.GROUNDED, typeof(ConditionCheck_Grounded));
             _Add(TransitionConditionType.MOVE_FORWARD, typeof(ConditionCheck_MoveForward));
+            _Add(TransitionConditionType.MOVE_BACK, typeof(ConditionCheck_MoveBack));
             _Add(TransitionConditionType.BLOCKED_BY_WALL, typeof(ConditionCheck_BlockedByWall));
             _Add(TransitionConditionType.CAN_WALLJUMP, typeof(ConditionCheck_CanWallJump));
             _Add(TransitionConditionType.MOVING_TO_BLOCKING_OBJ, typeof(ConditionCheck_MovingToBlockingObj));
