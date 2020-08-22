@@ -46,7 +46,7 @@ namespace Roundbeargames
                     {
                         if (Mathf.Abs(control.RIGID_BODY.velocity.y) < 0.001f)
                         {
-                            control.GROUND_DATA.Ground = c.otherCollider.transform.root.gameObject;
+                            control.GROUND_DATA.Ground = c.otherCollider.gameObject;
                             SetLandingPosition(control, c.point);
                             return true;
                         }
@@ -69,7 +69,7 @@ namespace Roundbeargames
 
                             if (c == null)
                             {
-                                control.GROUND_DATA.Ground = h.transform.root.gameObject;
+                                control.GROUND_DATA.Ground = h.transform.gameObject;
                                 SetLandingPosition(control, h.point);
                                 return true;
                             }
