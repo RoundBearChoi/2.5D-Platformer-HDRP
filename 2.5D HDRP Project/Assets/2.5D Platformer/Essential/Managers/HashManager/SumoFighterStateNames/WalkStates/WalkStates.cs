@@ -3,6 +3,6 @@
     public enum WalkStateNames
     {
         Walk_Fwd,
-        Walk_Fwd_In_Place,
+        Walk_Fwd_InPlace,
     }
 }

@@ -19,6 +19,8 @@ namespace Roundbeargames
         public CharacterAbility[] ArrTransition;
         [Space(10)]
         public CharacterAbility[] ArrAttack;
+        [Space(10)]
+        public CharacterAbility[] ArrOther;
 
         public GameObject RIGHT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.RightHand_Attack;
         //public GameObject LEFT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.LeftHand_Attack;
@@ -57,6 +59,7 @@ namespace Roundbeargames
             EnterAll(this, animator, stateInfo, ArrMove);
             EnterAll(this, animator, stateInfo, ArrTransition);
             EnterAll(this, animator, stateInfo, ArrAttack);
+            EnterAll(this, animator, stateInfo, ArrOther);
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -66,6 +69,7 @@ namespace Roundbeargames
             UpdateAll(this, animator, stateInfo, ArrMove);
             UpdateAll(this, animator, stateInfo, ArrTransition);
             UpdateAll(this, animator, stateInfo, ArrAttack);
+            UpdateAll(this, animator, stateInfo, ArrOther);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -75,6 +79,7 @@ namespace Roundbeargames
             ExitAll(this, animator, stateInfo, ArrMove);
             ExitAll(this, animator, stateInfo, ArrTransition);
             ExitAll(this, animator, stateInfo, ArrAttack);
+            ExitAll(this, animator, stateInfo, ArrOther);
         }
 
         public void EnterAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo, CharacterAbility[] AbilityList)

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
-  m_Name: Walk_Transition_Idle
+  m_Name: Idle_Transition_Pivot
   m_EditorClassIdentifier: 
   transitionTo:
-    nonMovingState: 00000000
+    nonMovingState: 03000000
     walkState: 
-  transitionConditions: 
-  notConditions: 09000000
+  transitionConditions: 2c010000
+  notConditions: 
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
-  CrossFade: 0.08
+  CrossFade: 0.03
   Offset: 0

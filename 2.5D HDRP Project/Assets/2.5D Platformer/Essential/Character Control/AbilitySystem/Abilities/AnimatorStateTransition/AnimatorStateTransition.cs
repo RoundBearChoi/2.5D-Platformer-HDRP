@@ -12,8 +12,15 @@ namespace Roundbeargames
         [SerializeField] TransitionTarget transitionTo;
         int TargetStateNameHash = 0;
 
+        [Space(10)]
         public List<TransitionConditionType> transitionConditions = new List<TransitionConditionType>();
+        [Space(5)]
         public List<TransitionConditionType> notConditions = new List<TransitionConditionType>();
+
+        [Space(10)]
+        [SerializeField] ExitTimeTransition exitTimeTransition;
+
+        [Space(10)]
         public float CrossFade;
         public float Offset;
 
@@ -26,9 +33,20 @@ namespace Roundbeargames
         {
             if (!Interfered(characterState.characterControl))
             {
-                if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
+                if (!exitTimeTransition.UseExitTime)
                 {
-                    if (!IndexChecker.NotCondition(characterState.characterControl, notConditions))
+                    if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
+                    {
+                        if (!IndexChecker.NotCondition(characterState.characterControl, notConditions))
+                        {
+                            characterState.ANIMATION_DATA.InstantTransitionMade = true;
+                            MakeInstantTransition(characterState.characterControl);
+                        }
+                    }
+                }
+                else
+                {
+                    if (exitTimeTransition.TransitionTime <= stateInfo.normalizedTime)
                     {
                         characterState.ANIMATION_DATA.InstantTransitionMade = true;
                         MakeInstantTransition(characterState.characterControl);
