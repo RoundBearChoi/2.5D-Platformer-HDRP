@@ -20,5 +20,15 @@
 
             return 0;
         }
+
+        public MirrorParameterType GetNextMirrorType()
+        {
+            if (nonMovingState.Length > 0)
+            {
+                return MirrorParameter.GetMirrorParameter(nonMovingState[0]);
+            }
+
+            return MirrorParameterType.none;
+        }
     }
 }

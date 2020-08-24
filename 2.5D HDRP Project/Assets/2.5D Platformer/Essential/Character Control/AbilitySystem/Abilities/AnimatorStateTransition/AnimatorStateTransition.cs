@@ -62,6 +62,8 @@ namespace Roundbeargames
 
         void MakeInstantTransition(CharacterControl control)
         {
+            SetMirror(control);
+
             if (CrossFade <= 0f)
             {
                 control.characterSetup.SkinnedMeshAnimator.Play(TargetStateNameHash, 0);
@@ -110,6 +112,25 @@ namespace Roundbeargames
             }
 
             return false;
+        }
+
+        void SetMirror(CharacterControl control)
+        {
+            MirrorParameterType mirrorParamType = transitionTo.GetNextMirrorType();
+
+            if (mirrorParamType == MirrorParameterType.idle_mirror)
+            {
+                if (control.GetBool(typeof(RightFootIsForward)))
+                {
+                    control.characterSetup.SkinnedMeshAnimator.SetBool(
+                        HashManager.Instance.ArrMirrorParameters[(int)mirrorParamType], true);
+                }
+                else
+                {
+                    control.characterSetup.SkinnedMeshAnimator.SetBool(
+                        HashManager.Instance.ArrMirrorParameters[(int)mirrorParamType], false);
+                }
+            }
         }
     }
 }

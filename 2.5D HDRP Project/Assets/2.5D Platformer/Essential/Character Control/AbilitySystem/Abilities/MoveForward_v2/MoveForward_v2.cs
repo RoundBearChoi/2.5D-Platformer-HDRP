@@ -27,6 +27,13 @@ namespace Roundbeargames
                 return;
             }
 
+            AnimatorStateInfo nextStateInfo = animator.GetNextAnimatorStateInfo(0);
+
+            if (nextStateInfo.shortNameHash == HashManager.Instance.ArrNonMovingStates[(int)NonMovingStateNames.Idle_000])
+            {
+                return;
+            }
+
             ConstantMove(characterState.characterControl, stateInfo);
         }
 
