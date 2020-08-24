@@ -20,5 +20,5 @@ MonoBehaviour:
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
-  CrossFade: 0.03
+  CrossFade: 0.05
   Offset: 0

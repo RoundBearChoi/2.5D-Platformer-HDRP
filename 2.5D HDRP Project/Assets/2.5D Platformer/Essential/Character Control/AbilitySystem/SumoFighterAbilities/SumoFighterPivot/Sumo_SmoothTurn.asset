@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5c7b5cbcebbea438f7bbd4927c4df0, type: 3}
   m_Name: Sumo_SmoothTurn
   m_EditorClassIdentifier: 
-  Speed: 6
+  Speed: 8.5
