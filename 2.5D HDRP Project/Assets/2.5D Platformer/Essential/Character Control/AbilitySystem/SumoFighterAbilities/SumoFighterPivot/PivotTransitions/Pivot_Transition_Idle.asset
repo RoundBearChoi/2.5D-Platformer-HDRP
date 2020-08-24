@@ -19,6 +19,6 @@ MonoBehaviour:
   notConditions: 
   exitTimeTransition:
     UseExitTime: 1
-    TransitionTime: 0.55
-  CrossFade: 0.1
+    TransitionTime: 0.35
+  CrossFade: 0.2
   Offset: 0

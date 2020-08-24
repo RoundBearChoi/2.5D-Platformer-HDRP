@@ -16,19 +16,31 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-
+            if (characterState.TURN_DATA.StartedForward)
+            {
+                MakeTurn(characterState.characterControl, -180f);
+            }
+            else
+            {
+                MakeTurn(characterState.characterControl, 0f);
+            }
         }
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             if (characterState.TURN_DATA.StartedForward)
             {
-
+                characterState.characterControl.RunFunction(typeof(FaceForward), false);
             }
             else
             {
-
+                characterState.characterControl.RunFunction(typeof(FaceForward), true);
             }
+        }
+
+        void MakeTurn(CharacterControl control, float target)
+        {
+            control.transform.rotation = Quaternion.Lerp(control.transform.rotation, Quaternion.Euler(0f, target, 0f), Speed * Time.deltaTime);
         }
     }
 }
