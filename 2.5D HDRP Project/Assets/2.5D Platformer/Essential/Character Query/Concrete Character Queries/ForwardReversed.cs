@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool ReturnBool()
         {
-            if (control.ANIMATION_DATA.LatestMoveForward.MoveOnHit)
+            if (control.ANIMATION_DATA.LatestMoveForward.IsMoveOnHit())
             {
                 if (control.GetBool(typeof(FacingAttacker)))
                 {
@@ -20,11 +20,11 @@ namespace Roundbeargames
                 }
             }
 
-            if (control.ANIMATION_DATA.LatestMoveForward.Speed > 0f)
+            if (control.ANIMATION_DATA.LatestMoveForward.GetMoveSpeed() > 0f)
             {
                 return false;
             }
-            else if (control.ANIMATION_DATA.LatestMoveForward.Speed < 0f)
+            else if (control.ANIMATION_DATA.LatestMoveForward.GetMoveSpeed() < 0f)
             {
                 return true;
             }

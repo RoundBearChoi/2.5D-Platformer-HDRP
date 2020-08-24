@@ -7,6 +7,8 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/MoveForward")]
     public class MoveForward : CharacterAbility
     {
+        public MoveForwardComponent moveForwardComponent;
+
         public bool debug;
 
         public bool AllowEarlyTurn;
@@ -33,7 +35,15 @@ namespace Roundbeargames
         
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.ANIMATION_DATA.LatestMoveForward = this;
+            if (moveForwardComponent == null)
+            {
+                moveForwardComponent = new MoveForwardComponent();
+                moveForwardComponent.GetBlockDistance = ReturnBlockDistance;
+                moveForwardComponent.GetMoveSpeed = ReturnMoveSpeed;
+                moveForwardComponent.IsMoveOnHit = ReturnMoveOnHit;
+            }
+
+            characterState.ANIMATION_DATA.LatestMoveForward = moveForwardComponent;
 
             if (AllowEarlyTurn)
             {
@@ -70,7 +80,7 @@ namespace Roundbeargames
                 Debug.Log(stateInfo.normalizedTime);
             }
 
-            if (characterState.ANIMATION_DATA.LatestMoveForward != this)
+            if (characterState.ANIMATION_DATA.LatestMoveForward != moveForwardComponent)
             {
                 return;
             }
@@ -244,6 +254,21 @@ namespace Roundbeargames
             {
                 control.ANIMATION_DATA.IsIgnoreCharacterTime = false;
             }
+        }
+
+        public float ReturnBlockDistance()
+        {
+            return BlockDistance;
+        }
+
+        public float ReturnMoveSpeed()
+        {
+            return Speed;
+        }
+
+        public bool ReturnMoveOnHit()
+        {
+            return MoveOnHit;
         }
     }
 }

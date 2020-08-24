@@ -106,7 +106,7 @@ namespace Roundbeargames
             }
 
             FrontRayDirection = this.transform.forward * FrontDirectionMultiplier;
-            FrontRayLength = control.ANIMATION_DATA.LatestMoveForward.BlockDistance;
+            FrontRayLength = control.ANIMATION_DATA.LatestMoveForward.GetBlockDistance();
 
             for (int i = 0; i < FrontSpheresArray.Length; i++)
             {
