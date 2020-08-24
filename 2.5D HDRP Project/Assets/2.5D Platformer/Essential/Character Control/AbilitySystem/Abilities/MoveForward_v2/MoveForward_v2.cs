@@ -53,7 +53,7 @@ namespace Roundbeargames
 
         public bool ReturnMoveOnHit()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         void SetStartingMomentum(CharacterState characterState)

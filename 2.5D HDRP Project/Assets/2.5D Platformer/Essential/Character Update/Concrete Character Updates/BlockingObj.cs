@@ -19,6 +19,7 @@ namespace Roundbeargames
         public override void OnFixedUpdate()
         {
             if (control.ANIMATION_DATA.IsRunning(typeof(MoveForward)) ||
+                control.ANIMATION_DATA.IsRunning(typeof(MoveForward_v2)) ||
                 control.ANIMATION_DATA.IsRunning(typeof(WallSlide)))
             {
                 CheckFrontBlocking();

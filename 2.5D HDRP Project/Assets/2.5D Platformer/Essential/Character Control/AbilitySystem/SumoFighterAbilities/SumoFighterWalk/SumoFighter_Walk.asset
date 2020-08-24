@@ -38,4 +38,10 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     Speed: 1
-    BlockDistance: 0.1
+    BlockDistance: 0.15
+  momentumOptions:
+    UseMomentum: 0
+    StartingMomentum: 0
+    MaxMomentum: 0
+    StartFromPreviousMomentum: 0
+    ClearMomentumOnExit: 0
