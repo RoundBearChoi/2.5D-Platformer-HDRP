@@ -22,7 +22,7 @@ namespace Roundbeargames
                 ZoomOutOffsetX = DefaultOffsetX * 10f;
             }
 
-            for (int i = 0; i < (int)CameraTrigger.COUNT; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(CameraTrigger)); i++)
             {
                 CameraManager.Instance.CAM_CONTROLLER.ANIMATOR.
                     ResetTrigger(HashManager.Instance.ArrCameraParams[(int)i]);

@@ -19,16 +19,12 @@ namespace Roundbeargames
         Turbo,
         Turn,
         LockTransition,
-
-        COUNT,
     }
 
     public enum CameraTrigger
     {
         Default,
         Shake,
-
-        COUNT,
     }
 
     public enum AI_Transition
@@ -36,24 +32,18 @@ namespace Roundbeargames
         start_walking,
         jump_platform,
         fall_platform,
-
-        COUNT,
     }
 
     public enum AI_State_Name
     {
         SendPathfindingAgent,
         AI_Attack,
-
-        COUNT,
     }
 
     public enum Hit_Reaction_States
     {
         Head_Hit,
         Zombie_Death,
-
-        COUNT,
     }
 
     public enum Instant_Transition_States
@@ -70,8 +60,6 @@ namespace Roundbeargames
         Run_Stop_InPlace = 7,
 
         AirCombo_Smash = 8,
-
-        COUNT,
     }
 
     public enum Ledge_Trigger_States
@@ -90,8 +78,6 @@ namespace Roundbeargames
         Fall,
         WallSlide,
         WallJump,
-
-        COUNT,
     }
 
     public enum Camera_States
@@ -102,16 +88,15 @@ namespace Roundbeargames
 
     public class HashManager : Singleton<HashManager>
     {
-        public int[] ArrMainParams = new int[(int)MainParameterType.COUNT];
-        public int[] ArrCameraParams = new int[(int)CameraTrigger.COUNT];
-        public int[] ArrAITransitionParams = new int[(int)AI_Transition.COUNT];
-        public int[] ArrAIStateNames = new int[(int)AI_State_Name.COUNT];
+        public int[] ArrMainParams = new int[HashTool.GetMaxValue(typeof(MainParameterType))];
+        public int[] ArrCameraParams = new int[HashTool.GetMaxValue(typeof(CameraTrigger))];
+        public int[] ArrAITransitionParams = new int[HashTool.GetMaxValue(typeof(AI_Transition))];
+        public int[] ArrAIStateNames = new int[HashTool.GetMaxValue(typeof(AI_State_Name))];
+        public int[] ArrInstantTransitionStates = new int[HashTool.GetMaxValue(typeof(Instant_Transition_States))];
+        public int[] ArrLedgeTriggerStates = new int[HashTool.GetMaxValue(typeof(Ledge_Trigger_States))];
 
         public Dictionary<Hit_Reaction_States, int> DicHitReactionStates =
             new Dictionary<Hit_Reaction_States, int>();
-
-        public int[] ArrInstantTransitionStates = new int[(int)Instant_Transition_States.COUNT];
-        public int[] ArrLedgeTriggerStates = new int[(int)Ledge_Trigger_States.COUNT];
 
         public Dictionary<Camera_States, int> DicCameraStates =
             new Dictionary<Camera_States, int>();
@@ -119,25 +104,25 @@ namespace Roundbeargames
         private void Awake()
         {
             // animation transitions
-            for (int i = 0; i < (int)MainParameterType.COUNT; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(MainParameterType)); i++)
             {
                 ArrMainParams[i] = Animator.StringToHash(((MainParameterType)i).ToString());
             }
 
             // camera transitions
-            for (int i = 0; i < (int)CameraTrigger.COUNT; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(CameraTrigger)); i++)
             {
                 ArrCameraParams[i] = Animator.StringToHash(((CameraTrigger)i).ToString());
             }
 
             // ai transitions
-            for (int i = 0; i < (int)AI_Transition.COUNT; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(AI_Transition)); i++)
             {
                 ArrAITransitionParams[i] = Animator.StringToHash(((AI_Transition)i).ToString());
             }
 
             // ai states
-            for (int i = 0; i < (int)AI_State_Name.COUNT; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(AI_State_Name)); i++)
             {
                 ArrAIStateNames[i] = Animator.StringToHash(((AI_State_Name)i).ToString());
             }
@@ -152,13 +137,13 @@ namespace Roundbeargames
             }
 
             // instant transition states
-            for (int i = 0; i < ArrInstantTransitionStates.Length; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(Instant_Transition_States)); i++)
             {
                 ArrInstantTransitionStates[i] = Animator.StringToHash(((Instant_Transition_States)i).ToString());
             }
 
             // ledge trigger states
-            for (int i = 0; i < ArrLedgeTriggerStates.Length; i++)
+            for (int i = 0; i < HashTool.GetMaxValue(typeof(Ledge_Trigger_States)); i++)
             {
                 ArrLedgeTriggerStates[i] = Animator.StringToHash(((Ledge_Trigger_States)i).ToString());
             }
