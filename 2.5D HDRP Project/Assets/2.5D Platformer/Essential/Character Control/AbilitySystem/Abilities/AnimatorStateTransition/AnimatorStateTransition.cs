@@ -7,8 +7,6 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/AnimatorStateTransition")]
     public class AnimatorStateTransition : CharacterAbility
     {
-        static bool DebugTransitionTiming = true;
-
         [SerializeField] TransitionTarget transitionTo;
         int TargetStateNameHash = 0;
 
@@ -35,33 +33,24 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!TransitionIsLocked(characterState.characterControl, stateInfo))
+            if (!TransitionIsLocked(characterState.characterControl) &&
+                !NextAnimatorStateIsDecided(characterState.characterControl) &&
+                !BelowMinimumProgress(stateInfo))
             {
                 if (!exitTimeTransition.UseExitTime)
                 {
-                    if (IndexChecker.MakeTransition(characterState.characterControl, transitionConditions))
-                    {
-                        if (!IndexChecker.NotCondition(characterState.characterControl, notConditions))
-                        {
-                            characterState.ANIMATION_DATA.InstantTransitionMade = true;
-                            MakeInstantTransition(characterState.characterControl);
-                        }
-                    }
+                    ConditionBase(characterState.characterControl);
                 }
                 else
                 {
-                    if (exitTimeTransition.TransitionTime <= stateInfo.normalizedTime)
-                    {
-                        characterState.ANIMATION_DATA.InstantTransitionMade = true;
-                        MakeInstantTransition(characterState.characterControl);
-                    }
+                    ExitTimeBase(characterState.characterControl, stateInfo);
                 }
             }
         }
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.ANIMATION_DATA.InstantTransitionMade = false;
+            //characterState.ANIMATION_DATA.InstantTransitionMade = false;
         }
 
         void MakeInstantTransition(CharacterControl control)
@@ -74,11 +63,6 @@ namespace Roundbeargames
             }
             else
             {
-                if (DebugTransitionTiming)
-                {
-                    //Debug.Log("Instant transition to: " + TransitionTo.ToString() + " - CrossFade: " + CrossFade);
-                }
-
                 if (Offset <= 0f)
                 {
                     control.characterSetup.SkinnedMeshAnimator.CrossFade(TargetStateNameHash, CrossFade, 0);
@@ -90,17 +74,17 @@ namespace Roundbeargames
             }
         }
 
-        bool TransitionIsLocked(CharacterControl control, AnimatorStateInfo stateInfo)
+        bool TransitionIsLocked(CharacterControl control)
         {
             if (control.ANIMATION_DATA.LockTransition)
             {
                 return true;
             }
 
-            if (control.ANIMATION_DATA.InstantTransitionMade)
-            {
-                return true;
-            }
+            //if (control.ANIMATION_DATA.InstantTransitionMade)
+            //{
+            //    return true;
+            //}
 
             if (control.characterSetup.SkinnedMeshAnimator.GetInteger(
                 HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex]) != 0)
@@ -108,22 +92,40 @@ namespace Roundbeargames
                 return true;
             }
 
+            return false;
+        }
+
+        bool NextAnimatorStateIsDecided(CharacterControl control)
+        {
             AnimatorStateInfo nextInfo = control.characterSetup.SkinnedMeshAnimator.GetNextAnimatorStateInfo(0);
 
-            if (nextInfo.shortNameHash == TargetStateNameHash)
+            if (nextInfo.shortNameHash != 0)
             {
                 return true;
             }
+            else
+            {
+                return false;
+            }
+        }
 
+        bool BelowMinimumProgress(AnimatorStateInfo stateInfo)
+        {
             if (MinimumProgress > 0f)
             {
                 if (stateInfo.normalizedTime < MinimumProgress)
                 {
                     return true;
                 }
+                else
+                {
+                    return false;
+                }
             }
-
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         void SetMirror(CharacterControl control)
@@ -142,6 +144,27 @@ namespace Roundbeargames
                     control.characterSetup.SkinnedMeshAnimator.SetBool(
                         HashManager.Instance.ArrMirrorParameters[(int)mirrorParamType], false);
                 }
+            }
+        }
+
+        void ConditionBase(CharacterControl control)
+        {
+            if (IndexChecker.MakeTransition(control, transitionConditions))
+            {
+                if (!IndexChecker.NotCondition(control, notConditions))
+                {
+                    //control.ANIMATION_DATA.InstantTransitionMade = true;
+                    MakeInstantTransition(control);
+                }
+            }
+        }
+
+        void ExitTimeBase(CharacterControl control, AnimatorStateInfo stateInfo)
+        {
+            if (exitTimeTransition.TransitionTime <= stateInfo.normalizedTime)
+            {
+                //control.ANIMATION_DATA.InstantTransitionMade = true;
+                MakeInstantTransition(control);
             }
         }
     }
