@@ -12,6 +12,11 @@ namespace Roundbeargames
         public List<CharacterAbility> ListAbilityData = new List<CharacterAbility>();
         [Space(10)]
         public CharacterAbility[] ArrAbilities;
+        [Space(20)]
+        [Header("Separated Arrays")]
+        public CharacterAbility[] ArrMove;
+        public CharacterAbility[] ArrTransition;
+        public CharacterAbility[] ArrAttack;
 
         public GameObject RIGHT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.RightHand_Attack;
         //public GameObject LEFT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.LeftHand_Attack;
@@ -46,16 +51,28 @@ namespace Roundbeargames
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             EnterAll(this, animator, stateInfo, ArrAbilities);
+
+            EnterAll(this, animator, stateInfo, ArrMove);
+            EnterAll(this, animator, stateInfo, ArrTransition);
+            EnterAll(this, animator, stateInfo, ArrAttack);
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             UpdateAll(this, animator, stateInfo, ArrAbilities);
+
+            UpdateAll(this, animator, stateInfo, ArrMove);
+            UpdateAll(this, animator, stateInfo, ArrTransition);
+            UpdateAll(this, animator, stateInfo, ArrAttack);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             ExitAll(this, animator, stateInfo, ArrAbilities);
+
+            ExitAll(this, animator, stateInfo, ArrMove);
+            ExitAll(this, animator, stateInfo, ArrTransition);
+            ExitAll(this, animator, stateInfo, ArrAttack);
         }
 
         public void EnterAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo, CharacterAbility[] AbilityList)
