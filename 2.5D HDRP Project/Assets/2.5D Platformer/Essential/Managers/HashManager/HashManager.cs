@@ -13,6 +13,10 @@ namespace Roundbeargames
         public int[] ArrInstantTransitionStates = new int[HashTool.GetLength(typeof(Instant_Transition_States))];
         public int[] ArrLedgeTriggerStates = new int[HashTool.GetLength(typeof(Ledge_Trigger_States))];
 
+        //sumo fighter
+        public int[] ArrNonMovingStates = new int[HashTool.GetLength(typeof(NonMovingStateNames))];
+        public int[] ArrWalkStates = new int[HashTool.GetLength(typeof(WalkStateNames))];
+
         public Dictionary<Hit_Reaction_States, int> DicHitReactionStates =
             new Dictionary<Hit_Reaction_States, int>();
 
@@ -27,6 +31,10 @@ namespace Roundbeargames
             HashTool.AddNameHashToArray(typeof(AI_State_Name), ArrAIStateNames);
             HashTool.AddNameHashToArray(typeof(Instant_Transition_States), ArrInstantTransitionStates);
             HashTool.AddNameHashToArray(typeof(Ledge_Trigger_States), ArrLedgeTriggerStates);
+
+            // sumo fighter
+            HashTool.AddNameHashToArray(typeof(NonMovingStateNames), ArrNonMovingStates);
+            HashTool.AddNameHashToArray(typeof(WalkStateNames), ArrWalkStates);
 
             // hit reaction states
             Hit_Reaction_States[] arrHitReactionStates = System.Enum.GetValues(typeof(Hit_Reaction_States))

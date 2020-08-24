@@ -15,7 +15,9 @@ namespace Roundbeargames
         [Space(20)]
         [Header("Separated Arrays")]
         public CharacterAbility[] ArrMove;
+        [Space(10)]
         public CharacterAbility[] ArrTransition;
+        [Space(10)]
         public CharacterAbility[] ArrAttack;
 
         public GameObject RIGHT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.RightHand_Attack;
