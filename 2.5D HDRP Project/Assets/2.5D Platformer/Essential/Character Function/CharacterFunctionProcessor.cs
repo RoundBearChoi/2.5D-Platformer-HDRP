@@ -21,6 +21,7 @@ namespace Roundbeargames
             AddFunction(typeof(AddForceToDamagedPart));
             AddFunction(typeof(MoveTransformForward));
             AddFunction(typeof(CalculateMomentum));
+            AddFunction(typeof(FaceForward));
         }
 
         void AddFunction(System.Type type)

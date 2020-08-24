@@ -9,8 +9,5 @@ namespace Roundbeargames
     {
         public bool LockTurn;
         public float UnlockTiming;
-
-        public delegate void DoSomething(bool faceForward);
-        public DoSomething FaceForward;
     }
 }

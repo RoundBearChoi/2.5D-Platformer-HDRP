@@ -49,11 +49,11 @@ namespace Roundbeargames
             {
                 if (characterState.characterControl.MoveLeft)
                 {
-                    characterState.ROTATION_DATA.FaceForward(false);
+                    characterState.characterControl.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
                 }
                 if (characterState.characterControl.MoveRight)
                 {
-                    characterState.ROTATION_DATA.FaceForward(true);
+                    characterState.characterControl.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
                 }
             }
 
@@ -144,11 +144,11 @@ namespace Roundbeargames
 
             if (control.MOMENTUM_DATA.Momentum > 0f)
             {
-                control.ROTATION_DATA.FaceForward(true);
+                control.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
             }
             else if (control.MOMENTUM_DATA.Momentum < 0f)
             {
-                control.ROTATION_DATA.FaceForward(false);
+                control.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
             }
 
             if (!control.GetBool(typeof(FrontIsBlocked)))
@@ -228,12 +228,12 @@ namespace Roundbeargames
             {
                 if (control.MoveRight)
                 {
-                    control.ROTATION_DATA.FaceForward(true);
+                    control.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
                 }
 
                 if (control.MoveLeft)
                 {
-                    control.ROTATION_DATA.FaceForward(false);
+                    control.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
                 }
             }
         }

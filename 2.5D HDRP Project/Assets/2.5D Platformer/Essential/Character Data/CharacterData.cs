@@ -24,6 +24,7 @@ namespace Roundbeargames
         [Space(15)] public CollidingObjData collidingObjData;
         [Space(15)] public WeaponData weaponData;
         [Space(15)] public CameraData cameraData;
+        [Space(15)] public TurnData turnData;
 
 
         private void Start()
@@ -172,6 +173,11 @@ namespace Roundbeargames
             cameraData = new CameraData
             {
                 CameraShaken = false,
+            };
+
+            turnData = new TurnData
+            {
+                StartedForward = true,
             };
 
             control.characterUpdateProcessor.InitUpdaters();

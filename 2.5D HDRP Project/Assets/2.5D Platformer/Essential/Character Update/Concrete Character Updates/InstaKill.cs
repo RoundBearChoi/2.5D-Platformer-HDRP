@@ -114,11 +114,11 @@ namespace Roundbeargames
 
             if (dir.z < 0f)
             {
-                attacker.ROTATION_DATA.FaceForward(false);
+                attacker.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
             }
             else if (dir.z > 0f)
             {
-                attacker.ROTATION_DATA.FaceForward(true);
+                attacker.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
             }
 
             control.transform.LookAt(control.transform.position + (attacker.transform.forward * 5f), Vector3.up);
