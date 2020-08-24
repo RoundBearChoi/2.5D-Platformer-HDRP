@@ -14,6 +14,7 @@ namespace Roundbeargames
             AddQuery(typeof(RightSideIsBlocked));
             AddQuery(typeof(FacingAttacker));
             AddQuery(typeof(ForwardReversed));
+            AddQuery(typeof(FacingForward));
 
             AddQuery(typeof(FrontBlockingCharacterList));
             AddQuery(typeof(FrontBlockingObjList));

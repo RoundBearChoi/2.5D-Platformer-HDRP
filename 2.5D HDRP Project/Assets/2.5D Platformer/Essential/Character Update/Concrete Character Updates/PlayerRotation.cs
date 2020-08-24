@@ -11,7 +11,6 @@ namespace Roundbeargames
         public override void InitComponent()
         {
             control.ROTATION_DATA.FaceForward = FaceForward;
-            control.ROTATION_DATA.IsFacingForward = IsFacingForward;
         }
 
         public override void OnFixedUpdate()
@@ -53,18 +52,6 @@ namespace Roundbeargames
             else
             {
                 control.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            }
-        }
-
-        bool IsFacingForward()
-        {
-            if (control.transform.forward.z > 0f)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 

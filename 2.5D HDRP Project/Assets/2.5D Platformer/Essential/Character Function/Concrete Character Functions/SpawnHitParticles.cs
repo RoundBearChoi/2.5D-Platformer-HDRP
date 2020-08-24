@@ -15,7 +15,7 @@ namespace Roundbeargames
 
             vfx.SetActive(true);
 
-            if (attacker.ROTATION_DATA.IsFacingForward())
+            if (attacker.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 vfx.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }

@@ -15,7 +15,7 @@ namespace Roundbeargames
 
             characterState.characterControl.RIGID_BODY.velocity = Vector3.zero;
 
-            if (characterState.ROTATION_DATA.IsFacingForward())
+            if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 characterState.ROTATION_DATA.FaceForward(false);
             }

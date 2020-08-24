@@ -14,7 +14,7 @@ namespace Roundbeargames
         {
             if (TurnOnEnter)
             {
-                if (characterState.ROTATION_DATA.IsFacingForward())
+                if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
                 {
                     characterState.ROTATION_DATA.FaceForward(false);
                 }
@@ -34,7 +34,7 @@ namespace Roundbeargames
         {
             if (TurnOnExit)
             {
-                if (characterState.ROTATION_DATA.IsFacingForward())
+                if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
                 {
                     characterState.ROTATION_DATA.FaceForward(false);
                 }

@@ -183,14 +183,14 @@ namespace Roundbeargames
 
                 if (dir.z > 0f)
                 {
-                    if (control.ROTATION_DATA.IsFacingForward())
+                    if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
                     {
                         return true;
                     }
                 }
                 else if (dir.z < 0f)
                 {
-                    if (!control.ROTATION_DATA.IsFacingForward())
+                    if (!control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
                     {
                         return true;
                     }

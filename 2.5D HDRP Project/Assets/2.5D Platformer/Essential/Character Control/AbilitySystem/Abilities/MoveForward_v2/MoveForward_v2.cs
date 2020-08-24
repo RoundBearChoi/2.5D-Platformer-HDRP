@@ -64,7 +64,7 @@ namespace Roundbeargames
                 {
                     if (momentumOptions.StartingMomentum > 0.001f)
                     {
-                        if (characterState.ROTATION_DATA.IsFacingForward())
+                        if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
                         {
                             characterState.MOMENTUM_DATA.Momentum = momentumOptions.StartingMomentum;
                         }

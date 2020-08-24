@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (control.ROTATION_DATA.IsFacingForward())
+            if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 if (control.MoveLeft)
                 {

@@ -108,7 +108,7 @@ namespace Roundbeargames
 
             float y, z;
             y = platform.transform.position.y + (boxCollider.size.y / 2f);
-            if (control.ROTATION_DATA.IsFacingForward())
+            if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 z = platform.transform.position.z - (boxCollider.size.z / 2f);
             }
@@ -120,7 +120,7 @@ namespace Roundbeargames
             Vector3 platformEdge = new Vector3(0f, y, z);
             Vector3 ledgeCalibration = control.characterSetup.ledgeSetup.LedgeCalibration;
 
-            if (control.ROTATION_DATA.IsFacingForward())
+            if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 control.RIGID_BODY.MovePosition(
                     platformEdge + ledgeCalibration);

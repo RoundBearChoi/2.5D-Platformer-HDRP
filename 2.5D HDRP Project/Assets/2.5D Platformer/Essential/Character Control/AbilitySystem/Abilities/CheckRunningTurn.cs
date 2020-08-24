@@ -20,7 +20,7 @@ namespace Roundbeargames
                 return;
             }
 
-            if (characterState.ROTATION_DATA.IsFacingForward())
+            if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 if (characterState.characterControl.MoveLeft)
                 {
@@ -28,7 +28,7 @@ namespace Roundbeargames
                 }
             }
 
-            if (!characterState.ROTATION_DATA.IsFacingForward())
+            if (!characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
                 if (characterState.characterControl.MoveRight)
                 {

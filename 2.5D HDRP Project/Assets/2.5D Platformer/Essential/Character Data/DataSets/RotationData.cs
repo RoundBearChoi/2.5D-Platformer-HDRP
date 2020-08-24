@@ -10,10 +10,7 @@ namespace Roundbeargames
         public bool LockTurn;
         public float UnlockTiming;
 
-        public delegate bool ReturnBool();
         public delegate void DoSomething(bool faceForward);
-
-        public ReturnBool IsFacingForward;
         public DoSomething FaceForward;
     }
 }
