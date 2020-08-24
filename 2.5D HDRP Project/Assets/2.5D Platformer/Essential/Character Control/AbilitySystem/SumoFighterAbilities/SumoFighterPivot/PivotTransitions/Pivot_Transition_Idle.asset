@@ -17,6 +17,7 @@ MonoBehaviour:
     walkState: 
   transitionConditions: 
   notConditions: 
+  MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 1
     TransitionTime: 0.2

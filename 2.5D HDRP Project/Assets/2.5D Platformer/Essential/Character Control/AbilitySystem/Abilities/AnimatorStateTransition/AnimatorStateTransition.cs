@@ -18,6 +18,10 @@ namespace Roundbeargames
         public List<TransitionConditionType> notConditions = new List<TransitionConditionType>();
 
         [Space(10)]
+        [Range(0f, 1f)]
+        public float MinimumProgress;
+
+        [Space(10)]
         [SerializeField] ExitTimeTransition exitTimeTransition;
 
         [Space(10)]
@@ -31,7 +35,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!Interfered(characterState.characterControl))
+            if (!TransitionIsLocked(characterState.characterControl, stateInfo))
             {
                 if (!exitTimeTransition.UseExitTime)
                 {
@@ -86,7 +90,7 @@ namespace Roundbeargames
             }
         }
 
-        bool Interfered(CharacterControl control)
+        bool TransitionIsLocked(CharacterControl control, AnimatorStateInfo stateInfo)
         {
             if (control.ANIMATION_DATA.LockTransition)
             {
@@ -109,6 +113,14 @@ namespace Roundbeargames
             if (nextInfo.shortNameHash == TargetStateNameHash)
             {
                 return true;
+            }
+
+            if (MinimumProgress > 0f)
+            {
+                if (stateInfo.normalizedTime < MinimumProgress)
+                {
+                    return true;
+                }
             }
 
             return false;
