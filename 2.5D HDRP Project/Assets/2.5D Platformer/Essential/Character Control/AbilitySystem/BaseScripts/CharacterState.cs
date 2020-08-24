@@ -45,62 +45,58 @@ namespace Roundbeargames
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            //try
-            {
-                for (int i = 0; i < ArrAbilities.Length; i++)
-                {
-                    ArrAbilities[i].OnEnter(this, animator, stateInfo);
-
-                    if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(ArrAbilities[i]))
-                    {
-                        characterControl.ANIMATION_DATA.CurrentRunningAbilities[ArrAbilities[i]] += 1;
-                    }
-                    else
-                    {
-                        characterControl.ANIMATION_DATA.CurrentRunningAbilities.Add(ArrAbilities[i], 1);
-                    }
-                }
-            }
-            //catch(System.Exception e)
-            //{
-            //    Debug.Log(e);
-            //}
-        }
-
-        public void UpdateAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
-        {
-            for (int i = 0; i < ArrAbilities.Length; i++)
-            {
-                ArrAbilities[i].UpdateAbility(characterState, animator, stateInfo);
-            }
+            EnterAll(this, animator, stateInfo, ArrAbilities);
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            UpdateAll(this, animator, stateInfo);
+            UpdateAll(this, animator, stateInfo, ArrAbilities);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            for (int i = 0; i < ArrAbilities.Length; i++)
+            ExitAll(this, animator, stateInfo, ArrAbilities);
+        }
+
+        public void EnterAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo, CharacterAbility[] AbilityList)
+        {
+            for (int i = 0; i < AbilityList.Length; i++)
             {
-                try
+                AbilityList[i].OnEnter(characterState, animator, stateInfo);
+
+                if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
                 {
-                    ArrAbilities[i].OnExit(this, animator, stateInfo);
-
-                    if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(ArrAbilities[i]))
-                    {
-                        characterControl.ANIMATION_DATA.CurrentRunningAbilities[ArrAbilities[i]] -= 1;
-
-                        if (characterControl.ANIMATION_DATA.CurrentRunningAbilities[ArrAbilities[i]] <= 0)
-                        {
-                            characterControl.ANIMATION_DATA.CurrentRunningAbilities.Remove(ArrAbilities[i]);
-                        }
-                    }
+                    characterControl.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] += 1;
                 }
-                catch (System.Exception e)
+                else
                 {
-                    Debug.Log(e);
+                    characterControl.ANIMATION_DATA.CurrentRunningAbilities.Add(AbilityList[i], 1);
+                }
+            }
+        }
+
+        public void UpdateAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo, CharacterAbility[] AbilityList)
+        {
+            for (int i = 0; i < AbilityList.Length; i++)
+            {
+                AbilityList[i].UpdateAbility(characterState, animator, stateInfo);
+            }
+        }
+
+        public void ExitAll(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo, CharacterAbility[] AbilityList)
+        {
+            for (int i = 0; i < AbilityList.Length; i++)
+            {
+                AbilityList[i].OnExit(characterState, animator, stateInfo);
+
+                if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
+                {
+                    characterControl.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] -= 1;
+
+                    if (characterControl.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] <= 0)
+                    {
+                        characterControl.ANIMATION_DATA.CurrentRunningAbilities.Remove(AbilityList[i]);
+                    }
                 }
             }
         }
