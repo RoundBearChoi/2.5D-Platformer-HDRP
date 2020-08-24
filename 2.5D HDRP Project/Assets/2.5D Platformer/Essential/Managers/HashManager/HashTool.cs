@@ -6,17 +6,18 @@ namespace Roundbeargames
 {
     public static class HashTool
     {
-        public static void Add(System.Enum e, int[] intArray)
+        public static void AddNameHashToArray(System.Type enumType, int[] intArray)
         {
-            int count = System.Enum.GetValues(e.GetType()).Length;
+            int count = GetLength(enumType);
 
             for (int i = 0; i < count; i++)
             {
-                intArray[i] = Animator.StringToHash(((MainParameterType)i).ToString());
+                string str = System.Enum.GetName(enumType, i);
+                intArray[i] = Animator.StringToHash(str);
             }
         }
 
-        public static int GetMaxValue(System.Type enumType)
+        public static int GetLength(System.Type enumType)
         {
             return System.Enum.GetValues(enumType).Length;
         }

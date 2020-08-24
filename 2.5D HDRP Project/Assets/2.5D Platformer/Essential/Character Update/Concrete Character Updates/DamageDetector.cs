@@ -250,7 +250,7 @@ namespace Roundbeargames
             }
             else
             {
-                int randomIndex = Random.Range(0, HashTool.GetMaxValue(typeof(Hit_Reaction_States)));
+                int randomIndex = Random.Range(0, HashTool.GetLength(typeof(Hit_Reaction_States)));
 
                 control.characterSetup.
                     SkinnedMeshAnimator.Play(
