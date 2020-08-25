@@ -33,18 +33,6 @@ namespace Roundbeargames
                     ToggleMirror(control, mirrorParamType, false);
                 }
             }
-
-            if (mirrorParamType == MirrorParameterType.walk_mirror)
-            {
-                if (control.GetBool(typeof(RightFootIsForward)))
-                {
-                    ToggleMirror(control, mirrorParamType, false);
-                }
-                else
-                {
-                    ToggleMirror(control, mirrorParamType, true);
-                }
-            }
         }
 
         static void ToggleMirror(CharacterControl control, MirrorParameterType mirrorParamType, bool toogle)

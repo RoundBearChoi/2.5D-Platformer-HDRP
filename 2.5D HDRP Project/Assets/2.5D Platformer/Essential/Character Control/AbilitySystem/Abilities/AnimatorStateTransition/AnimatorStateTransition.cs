@@ -23,6 +23,9 @@ namespace Roundbeargames
         [SerializeField] ExitTimeTransition exitTimeTransition;
 
         [Space(10)]
+        [SerializeField] OffsetOnFoot offsetOnFoot;
+
+        [Space(10)]
         public float CrossFade;
         public float Offset;
 
@@ -56,6 +59,18 @@ namespace Roundbeargames
         void MakeInstantTransition(CharacterControl control)
         {
             MirrorSetter.SetMirrorParameter(control, transitionTo);
+
+            if (offsetOnFoot.UseOffsetOnFoot)
+            {
+                if (control.GetBool(typeof(RightFootIsForward)))
+                {
+                    Offset = offsetOnFoot.RightFootForward_Offset;
+                }
+                else
+                {
+                    Offset = offsetOnFoot.LeftFootForward_Offset;
+                }
+            }
 
             if (CrossFade <= 0f)
             {

@@ -21,5 +21,9 @@ MonoBehaviour:
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
-  CrossFade: 0.03
-  Offset: 0.18
+  offsetOnFoot:
+    UseOffsetOnFoot: 1
+    LeftFootForward_Offset: 0.626
+    RightFootForward_Offset: 0.167
+  CrossFade: 0.035
+  Offset: 0.167

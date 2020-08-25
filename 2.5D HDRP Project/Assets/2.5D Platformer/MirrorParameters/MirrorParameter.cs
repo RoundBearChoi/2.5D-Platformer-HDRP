@@ -9,8 +9,6 @@ namespace Roundbeargames
         none,
 
         idle_mirror,
-        walk_mirror,
-    
         idlepivot_mirror,
     }
 
@@ -35,7 +33,7 @@ namespace Roundbeargames
         {
             if (walkStateType == WalkStateNames.Walk_Fwd_InPlace)
             {
-                return MirrorParameterType.walk_mirror;
+
             }
 
             return MirrorParameterType.none;
