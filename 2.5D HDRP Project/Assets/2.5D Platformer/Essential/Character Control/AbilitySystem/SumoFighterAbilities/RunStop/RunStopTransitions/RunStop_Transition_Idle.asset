@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: RunStop_Transition_Idle
   m_EditorClassIdentifier: 
   transitionTo:
-    nonMovingState: 
+    nonMovingState: 00000000
     walkState: 
     runState: 
   transitionConditions: 
   notConditions: 
   MinimumProgress: 0
   exitTimeTransition:
-    UseExitTime: 0
-    TransitionTime: 0
+    UseExitTime: 1
+    TransitionTime: 0.3
   offsetOnFoot:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0
     RightFootForward_Offset: 0
-  CrossFade: 0
+  CrossFade: 0.15
   Offset: 0
