@@ -11,6 +11,7 @@ namespace Roundbeargames
         idle_mirror,
         idlepivot_mirror,
         runstart_mirror,
+        runstop_mirror,
     }
 
     public static class MirrorParameter
@@ -45,6 +46,11 @@ namespace Roundbeargames
             if (runStateType == RunStateNames.Run_Fwd_Start_InPlace)
             {
                 return MirrorParameterType.runstart_mirror;
+            }
+
+            if (runStateType == RunStateNames.Run_Stop_InPlace)
+            {
+                return MirrorParameterType.runstop_mirror;
             }
 
             return MirrorParameterType.none;
