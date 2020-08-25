@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
-  m_Name: IdlePivot_Transition_Idle
+  m_Name: RunPivot_Transition_RunStart
   m_EditorClassIdentifier: 
   transitionTo:
-    nonMovingState: 00000000
+    nonMovingState: 
     walkState: 
-    runState: 
-  transitionConditions: 
-  notConditions: 07000000
+    runState: 00000000
+  transitionConditions: c8000000
+  notConditions: 
   MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 1
-    TransitionTime: 0.2
+    TransitionTime: 0.7
   offsetOnFoot:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0
     RightFootForward_Offset: 0
-  CrossFade: 0.15
-  Offset: 0
+  CrossFade: 0.25
+  Offset: 0.2
