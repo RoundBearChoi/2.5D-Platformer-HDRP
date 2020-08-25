@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
-  m_Name: Idle_Transition_Walk
+  m_Name: Idle_Transition_RunStart
   m_EditorClassIdentifier: 
   transitionTo:
     nonMovingState: 
-    walkState: 01000000
-    runState: 
-  transitionConditions: 09000000
-  notConditions: c8000000
+    walkState: 
+    runState: 00000000
+  transitionConditions: c800000009000000
+  notConditions: 
   MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
   offsetOnFoot:
-    UseOffsetOnFoot: 1
-    LeftFootForward_Offset: 0.626
-    RightFootForward_Offset: 0.167
-  CrossFade: 0.035
-  Offset: 0.626
+    UseOffsetOnFoot: 0
+    LeftFootForward_Offset: 0
+    RightFootForward_Offset: 0
+  CrossFade: 0.03
+  Offset: 0
