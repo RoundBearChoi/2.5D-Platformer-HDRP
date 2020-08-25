@@ -50,12 +50,12 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            //characterState.ANIMATION_DATA.InstantTransitionMade = false;
+
         }
 
         void MakeInstantTransition(CharacterControl control)
         {
-            SetMirror(control);
+            MirrorSetter.SetMirrorParameter(control, transitionTo);
 
             if (CrossFade <= 0f)
             {
@@ -80,11 +80,6 @@ namespace Roundbeargames
             {
                 return true;
             }
-
-            //if (control.ANIMATION_DATA.InstantTransitionMade)
-            //{
-            //    return true;
-            //}
 
             if (control.characterSetup.SkinnedMeshAnimator.GetInteger(
                 HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex]) != 0)
@@ -128,32 +123,12 @@ namespace Roundbeargames
             }
         }
 
-        void SetMirror(CharacterControl control)
-        {
-            MirrorParameterType mirrorParamType = transitionTo.GetNextMirrorType();
-
-            if (mirrorParamType == MirrorParameterType.idle_mirror)
-            {
-                if (control.GetBool(typeof(RightFootIsForward)))
-                {
-                    control.characterSetup.SkinnedMeshAnimator.SetBool(
-                        HashManager.Instance.ArrMirrorParameters[(int)mirrorParamType], true);
-                }
-                else
-                {
-                    control.characterSetup.SkinnedMeshAnimator.SetBool(
-                        HashManager.Instance.ArrMirrorParameters[(int)mirrorParamType], false);
-                }
-            }
-        }
-
         void ConditionBase(CharacterControl control)
         {
             if (IndexChecker.MakeTransition(control, transitionConditions))
             {
                 if (!IndexChecker.NotCondition(control, notConditions))
                 {
-                    //control.ANIMATION_DATA.InstantTransitionMade = true;
                     MakeInstantTransition(control);
                 }
             }
@@ -163,7 +138,6 @@ namespace Roundbeargames
         {
             if (exitTimeTransition.TransitionTime <= stateInfo.normalizedTime)
             {
-                //control.ANIMATION_DATA.InstantTransitionMade = true;
                 MakeInstantTransition(control);
             }
         }

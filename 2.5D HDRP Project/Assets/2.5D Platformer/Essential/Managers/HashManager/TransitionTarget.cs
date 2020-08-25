@@ -28,6 +28,11 @@
                 return MirrorParameter.GetMirrorParameter(nonMovingState[0]);
             }
 
+            if (walkState.Length > 0)
+            {
+                return MirrorParameter.GetMirrorParameter(walkState[0]);
+            }    
+
             return MirrorParameterType.none;
         }
     }
