@@ -17,8 +17,9 @@ MonoBehaviour:
     walkState: 01000000
   transitionConditions: 09000000
   notConditions: 
+  MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
   CrossFade: 0.035
-  Offset: 0.3
+  Offset: 0.25
