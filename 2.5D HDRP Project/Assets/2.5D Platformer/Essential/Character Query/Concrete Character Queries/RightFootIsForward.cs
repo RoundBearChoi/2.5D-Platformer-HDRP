@@ -21,13 +21,13 @@ namespace Roundbeargames
             }
             else
             {
-                if (!RightFootHasHigherZ())
+                if (RightFootHasHigherZ())
                 {
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }
         }
