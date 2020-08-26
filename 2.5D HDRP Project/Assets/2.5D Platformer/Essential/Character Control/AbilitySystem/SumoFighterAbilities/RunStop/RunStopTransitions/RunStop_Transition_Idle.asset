@@ -16,8 +16,9 @@ MonoBehaviour:
     nonMovingState: 00000000
     walkState: 
     runState: 
+    combo01State: 
   transitionConditions: 
-  notConditions: 
+  notConditions: 09000000
   MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 1

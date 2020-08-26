@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
-  m_Name: Idle_Transition_Walk
+  m_Name: RunStop_Transition_Walk
   m_EditorClassIdentifier: 
   transitionTo:
     nonMovingState: 
@@ -18,14 +18,14 @@ MonoBehaviour:
     runState: 
     combo01State: 
   transitionConditions: 09000000
-  notConditions: c8000000
+  notConditions: 
   MinimumProgress: 0
   exitTimeTransition:
-    UseExitTime: 0
-    TransitionTime: 0
+    UseExitTime: 1
+    TransitionTime: 0.3
   offsetOnFoot:
     UseOffsetOnFoot: 1
     LeftFootForward_Offset: 0.6
     RightFootForward_Offset: 0.15
-  CrossFade: 0.035
+  CrossFade: 0.1
   Offset: 0.15
