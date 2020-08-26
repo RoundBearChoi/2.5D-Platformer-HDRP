@@ -36,18 +36,13 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!TransitionIsLocked(characterState.characterControl) &&
+            if (!PreConditionsNotMet(characterState.characterControl) &&
                 !NextAnimatorStateIsDecided(characterState.characterControl) &&
-                !BelowMinimumProgress(stateInfo))
+                !BelowMinimumProgress(stateInfo) &&
+                !BelowExitTimeRequirement(stateInfo) &&
+                !ConditionsNotMet(characterState.characterControl))
             {
-                if (!exitTimeTransition.UseExitTime)
-                {
-                    ConditionBase(characterState.characterControl);
-                }
-                else
-                {
-                    ExitTimeBase(characterState.characterControl, stateInfo);
-                }
+                MakeInstantTransition(characterState.characterControl);
             }
         }
 
@@ -89,15 +84,9 @@ namespace Roundbeargames
             }
         }
 
-        bool TransitionIsLocked(CharacterControl control)
+        bool PreConditionsNotMet(CharacterControl control)
         {
             if (control.ANIMATION_DATA.LockTransition)
-            {
-                return true;
-            }
-
-            if (control.characterSetup.SkinnedMeshAnimator.GetInteger(
-                HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex]) != 0)
             {
                 return true;
             }
@@ -138,23 +127,34 @@ namespace Roundbeargames
             }
         }
 
-        void ConditionBase(CharacterControl control)
+        bool BelowExitTimeRequirement(AnimatorStateInfo stateInfo)
+        {
+            if (!exitTimeTransition.UseExitTime)
+            {
+                return false;
+            }
+
+            if (stateInfo.normalizedTime < exitTimeTransition.TransitionTime)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        bool ConditionsNotMet(CharacterControl control)
         {
             if (IndexChecker.MakeTransition(control, transitionConditions))
             {
                 if (!IndexChecker.NotCondition(control, notConditions))
                 {
-                    MakeInstantTransition(control);
+                    return false;
                 }
             }
-        }
 
-        void ExitTimeBase(CharacterControl control, AnimatorStateInfo stateInfo)
-        {
-            if (exitTimeTransition.TransitionTime <= stateInfo.normalizedTime)
-            {
-                MakeInstantTransition(control);
-            }
+            return true;
         }
     }
 }
