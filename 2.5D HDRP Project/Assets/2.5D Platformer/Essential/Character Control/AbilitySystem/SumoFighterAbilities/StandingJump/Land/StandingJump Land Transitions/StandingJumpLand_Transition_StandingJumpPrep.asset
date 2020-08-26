@@ -21,11 +21,11 @@ MonoBehaviour:
   transitionConditions: 0500000008000000
   notConditions: 
   exitTimeTransition:
-    UseExitTime: 0
-    TransitionTime: 0.6
+    UseExitTime: 1
+    TransitionTime: 0.15
   offsetOnFoot:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0
     RightFootForward_Offset: 0
   CrossFade: 0.25
-  Offset: 0.2
+  Offset: 0.8
