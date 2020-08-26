@@ -70,7 +70,8 @@ namespace Roundbeargames
         public static MirrorParameterType GetMirrorParameter(StandingJumpStateNames standingJumpStateType)
         {
             if (standingJumpStateType == StandingJumpStateNames.Jump_3m_sumo_prep ||
-                standingJumpStateType == StandingJumpStateNames.Jump_3m_sumo_air)
+                standingJumpStateType == StandingJumpStateNames.Jump_3m_sumo_air ||
+                standingJumpStateType == StandingJumpStateNames.Jump_3m_sumo_land)
             {
                 return MirrorParameterType.standingjump_mirror;
             }
