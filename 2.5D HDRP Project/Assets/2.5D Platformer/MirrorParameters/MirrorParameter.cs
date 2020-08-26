@@ -12,6 +12,7 @@ namespace Roundbeargames
         idlepivot_mirror,
         runstart_mirror,
         runstop_mirror,
+        standingjump_mirror,
     }
 
     public static class MirrorParameter
@@ -61,6 +62,17 @@ namespace Roundbeargames
             if (combo01StateType == Combo01StateNames.Frank_RPG_Fighter_Combo01_2)
             {
 
+            }
+
+            return MirrorParameterType.none;
+        }
+
+        public static MirrorParameterType GetMirrorParameter(StandingJumpStateNames standingJumpStateType)
+        {
+            if (standingJumpStateType == StandingJumpStateNames.Jump_3m_sumo_prep ||
+                standingJumpStateType == StandingJumpStateNames.Jump_3m_sumo_air)
+            {
+                return MirrorParameterType.standingjump_mirror;
             }
 
             return MirrorParameterType.none;

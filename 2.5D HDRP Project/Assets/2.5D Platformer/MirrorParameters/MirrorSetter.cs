@@ -57,6 +57,18 @@ namespace Roundbeargames
                     ToggleMirror(control, mirrorParamType, true);
                 }
             }
+
+            if (mirrorParamType == MirrorParameterType.standingjump_mirror)
+            {
+                if (control.GetBool(typeof(RightFootIsForward)))
+                {
+                    ToggleMirror(control, mirrorParamType, true);
+                }
+                else
+                {
+                    ToggleMirror(control, mirrorParamType, false);
+                }
+            }
         }
 
         static void ToggleMirror(CharacterControl control, MirrorParameterType mirrorParamType, bool toogle)
