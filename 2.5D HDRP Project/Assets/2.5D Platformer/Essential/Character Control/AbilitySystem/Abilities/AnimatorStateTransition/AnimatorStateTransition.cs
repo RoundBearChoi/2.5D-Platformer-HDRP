@@ -11,6 +11,7 @@ namespace Roundbeargames
         int TargetStateNameHash = 0;
 
         [Space(10)]
+        [Header("All conditions must be met")]
         public List<TransitionConditionType> transitionConditions = new List<TransitionConditionType>();
         [Space(5)]
         public List<TransitionConditionType> notConditions = new List<TransitionConditionType>();

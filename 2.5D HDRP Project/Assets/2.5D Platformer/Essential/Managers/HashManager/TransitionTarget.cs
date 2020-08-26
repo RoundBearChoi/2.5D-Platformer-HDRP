@@ -6,6 +6,7 @@
         public NonMovingStateNames[] nonMovingState;
         public WalkStateNames[] walkState;
         public RunStateNames[] runState;
+        public Combo01StateNames[] combo01State;
 
         public int GetHashID()
         {
@@ -22,6 +23,11 @@
             if (runState.Length > 0)
             {
                 return HashManager.Instance.ArrRunStates[(int)runState[0]];
+            }
+
+            if (combo01State.Length > 0)
+            {
+                return HashManager.Instance.ArrCombo01States[(int)combo01State[0]];
             }
 
             return 0;
@@ -42,6 +48,11 @@
             if (runState.Length > 0)
             {
                 return MirrorParameter.GetMirrorParameter(runState[0]);
+            }
+
+            if (combo01State.Length > 0)
+            {
+                return MirrorParameter.GetMirrorParameter(combo01State[0]);
             }
 
             return MirrorParameterType.none;

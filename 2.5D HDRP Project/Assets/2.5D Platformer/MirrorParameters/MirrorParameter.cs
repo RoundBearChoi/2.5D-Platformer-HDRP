@@ -55,5 +55,15 @@ namespace Roundbeargames
 
             return MirrorParameterType.none;
         }
+
+        public static MirrorParameterType GetMirrorParameter(Combo01StateNames combo01StateType)
+        {
+            if (combo01StateType == Combo01StateNames.Frank_RPG_Fighter_Combo01_2)
+            {
+
+            }
+
+            return MirrorParameterType.none;
+        }
     }
 }
