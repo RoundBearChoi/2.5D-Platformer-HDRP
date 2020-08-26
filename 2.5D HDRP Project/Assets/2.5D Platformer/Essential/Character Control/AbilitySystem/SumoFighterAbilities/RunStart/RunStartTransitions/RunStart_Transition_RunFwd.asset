@@ -16,9 +16,9 @@ MonoBehaviour:
     nonMovingState: 
     walkState: 
     runState: 01000000
+    combo01State: 
   transitionConditions: c8000000
   notConditions: 
-  MinimumProgress: 0.3
   exitTimeTransition:
     UseExitTime: 1
     TransitionTime: 0.35
@@ -27,4 +27,4 @@ MonoBehaviour:
     LeftFootForward_Offset: 0.3
     RightFootForward_Offset: 0.8
   CrossFade: 0.175
-  Offset: 0.8
+  Offset: 0.3

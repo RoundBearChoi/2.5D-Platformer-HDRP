@@ -19,10 +19,9 @@ MonoBehaviour:
     combo01State: 
   transitionConditions: 
   notConditions: 04000000
-  MinimumProgress: 0.85
   exitTimeTransition:
-    UseExitTime: 0
-    TransitionTime: 0
+    UseExitTime: 1
+    TransitionTime: 0.85
   offsetOnFoot:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0

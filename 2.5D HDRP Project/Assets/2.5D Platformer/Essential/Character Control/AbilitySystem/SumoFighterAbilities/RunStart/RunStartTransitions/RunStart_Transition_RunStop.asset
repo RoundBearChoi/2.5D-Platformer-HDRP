@@ -16,12 +16,12 @@ MonoBehaviour:
     nonMovingState: 
     walkState: 
     runState: 02000000
+    combo01State: 
   transitionConditions: 
   notConditions: c8000000
-  MinimumProgress: 0.075
   exitTimeTransition:
-    UseExitTime: 0
-    TransitionTime: 0
+    UseExitTime: 1
+    TransitionTime: 0.075
   offsetOnFoot:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0

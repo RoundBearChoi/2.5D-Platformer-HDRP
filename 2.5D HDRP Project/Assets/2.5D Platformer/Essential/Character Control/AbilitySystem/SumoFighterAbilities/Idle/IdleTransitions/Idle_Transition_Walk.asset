@@ -19,13 +19,12 @@ MonoBehaviour:
     combo01State: 
   transitionConditions: 09000000
   notConditions: c8000000
-  MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
   offsetOnFoot:
     UseOffsetOnFoot: 1
-    LeftFootForward_Offset: 0.6
+    LeftFootForward_Offset: 0.63
     RightFootForward_Offset: 0.15
   CrossFade: 0.035
   Offset: 0.15

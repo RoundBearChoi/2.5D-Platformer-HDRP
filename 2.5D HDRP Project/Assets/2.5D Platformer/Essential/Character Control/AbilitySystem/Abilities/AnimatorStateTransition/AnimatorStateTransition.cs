@@ -17,10 +17,6 @@ namespace Roundbeargames
         public List<TransitionConditionType> notConditions = new List<TransitionConditionType>();
 
         [Space(10)]
-        [Range(0f, 1f)]
-        public float MinimumProgress;
-
-        [Space(10)]
         [SerializeField] ExitTimeTransition exitTimeTransition;
 
         [Space(10)]
@@ -39,7 +35,6 @@ namespace Roundbeargames
         {
             if (!PreConditionsNotMet(characterState.characterControl) &&
                 !NextAnimatorStateIsDecided(characterState.characterControl) &&
-                !BelowMinimumProgress(stateInfo) &&
                 !BelowExitTimeRequirement(stateInfo) &&
                 !ConditionsNotMet(characterState.characterControl))
             {
@@ -102,25 +97,6 @@ namespace Roundbeargames
             if (nextInfo.shortNameHash != 0)
             {
                 return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        bool BelowMinimumProgress(AnimatorStateInfo stateInfo)
-        {
-            if (MinimumProgress > 0f)
-            {
-                if (stateInfo.normalizedTime < MinimumProgress)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
             }
             else
             {
