@@ -58,7 +58,9 @@ namespace Roundbeargames
         public AnimationData ANIMATION_DATA => characterData.animationData;
         public CollidingObjData COLLIDING_OBJ_DATA => characterData.collidingObjData;
         public WeaponData WEAPON_DATA => characterData.weaponData;
-        
+        public TurnData TURN_DATA => characterData.turnData;
+
+
         private Rigidbody rigid;
 
         public Rigidbody RIGID_BODY
