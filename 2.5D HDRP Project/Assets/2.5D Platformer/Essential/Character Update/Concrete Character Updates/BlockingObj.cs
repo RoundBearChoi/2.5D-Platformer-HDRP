@@ -38,7 +38,7 @@ namespace Roundbeargames
                 // checking while jumping up
                 if (control.RIGID_BODY.velocity.y > 0.001f)
                 {
-                    control.RunFunction(typeof(CheckUpBlocking), 0.3f);
+                    control.RunFunction(typeof(CheckUpBlocking), 0.125f);
 
                     foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.UpBlockingObjs)
                     {

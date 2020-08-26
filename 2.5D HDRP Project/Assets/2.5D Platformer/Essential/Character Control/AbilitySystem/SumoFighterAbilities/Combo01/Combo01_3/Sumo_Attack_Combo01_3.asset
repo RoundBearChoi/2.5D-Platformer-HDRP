@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sumo_Attack_Combo01_3
   m_EditorClassIdentifier: 
   debug: 1
-  StartAttackTime: 0.25
+  StartAttackTime: 0.2
   EndAttackTime: 0.55
   AttackParts: 01000000
   MustCollide: 1
