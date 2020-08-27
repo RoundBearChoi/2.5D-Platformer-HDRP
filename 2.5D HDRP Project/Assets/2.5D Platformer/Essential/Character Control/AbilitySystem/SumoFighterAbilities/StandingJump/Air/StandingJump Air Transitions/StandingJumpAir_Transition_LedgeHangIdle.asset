@@ -19,6 +19,7 @@ MonoBehaviour:
     combo01State: 
     standingJumpState: 
     ledgeState: 00000000
+    fallState: 
   transitionConditions: 06000000
   notConditions: 08000000
   exitTimeTransition:
@@ -28,5 +29,5 @@ MonoBehaviour:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0
     RightFootForward_Offset: 0
-  CrossFade: 0.1
+  CrossFade: 0.135
   Offset: 0
