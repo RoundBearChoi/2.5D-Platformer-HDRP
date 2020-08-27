@@ -27,7 +27,7 @@ namespace Roundbeargames
                 }
             }
 
-            if (IsLedgeGrabCondition())
+            if (IsLedgeGrabTriggerState())
             {
                 ProcLedgeGrab();
             }
@@ -38,7 +38,7 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
-        bool IsLedgeGrabCondition()
+        bool IsLedgeGrabTriggerState()
         {
             if (!control.Jump)
             {
@@ -66,7 +66,7 @@ namespace Roundbeargames
                 {
                     if (!control.LEDGE_GRAB_DATA.collider2.CollidedObjects.Contains(obj))
                     {
-                        if (OffsetPosition(obj))
+                        if (_ProcLedgeGrab(obj))
                         {
                             break;
                         }
@@ -88,7 +88,7 @@ namespace Roundbeargames
             }
         }
 
-        bool OffsetPosition(GameObject platform)
+        bool _ProcLedgeGrab(GameObject platform)
         {
             BoxCollider boxCollider = platform.GetComponent<BoxCollider>();
 
@@ -108,7 +108,7 @@ namespace Roundbeargames
 
             float y, z;
             y = platform.transform.position.y + (boxCollider.size.y / 2f);
-            if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (control.GetBool(typeof(FacingForward)))
             {
                 z = platform.transform.position.z - (boxCollider.size.z / 2f);
             }

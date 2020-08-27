@@ -40,5 +40,7 @@ namespace Roundbeargames
 
         BLOCKING = 25,
         ATTACK_IS_BLOCKED = 27,
+
+        VELOCITY_GOING_UP = 400,
     }
 }

@@ -8,6 +8,7 @@
         public RunStateNames[] runState;
         public Combo01StateNames[] combo01State;
         public StandingJumpStateNames[] standingJumpState;
+        public LedgeStateNames[] ledgeState;
 
         public int GetHashID()
         {
@@ -34,6 +35,11 @@
             if (standingJumpState.Length > 0)
             {
                 return HashManager.Instance.ArrStandingJumpStates[(int)standingJumpState[0]];
+            }
+
+            if (ledgeState.Length > 0)
+            {
+                return HashManager.Instance.ArrLedgeStates[(int)ledgeState[0]];
             }
 
             return 0;

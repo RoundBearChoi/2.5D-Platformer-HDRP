@@ -48,6 +48,7 @@ namespace Roundbeargames
             _Add(TransitionConditionType.RUN, typeof(ConditionCheck_Running));
             _Add(TransitionConditionType.BLOCKING, typeof(ConditionCheck_Blocking));
             _Add(TransitionConditionType.ATTACK_IS_BLOCKED, typeof(ConditionCheck_AttackIsBlocked));
+            _Add(TransitionConditionType.VELOCITY_GOING_UP, typeof(ConditionCheck_VelocityGoingUp));
         }
 
         static void _Add(TransitionConditionType transitionConditionType, System.Type CheckConditionType)

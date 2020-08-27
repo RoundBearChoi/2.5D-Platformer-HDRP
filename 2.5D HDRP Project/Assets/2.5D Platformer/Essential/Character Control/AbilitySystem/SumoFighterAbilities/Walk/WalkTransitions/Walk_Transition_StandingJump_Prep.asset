@@ -27,5 +27,5 @@ MonoBehaviour:
     UseOffsetOnFoot: 0
     LeftFootForward_Offset: 0
     RightFootForward_Offset: 0
-  CrossFade: 0.1
+  CrossFade: 0.05
   Offset: 0

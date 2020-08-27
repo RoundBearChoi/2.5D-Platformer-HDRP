@@ -18,8 +18,9 @@ MonoBehaviour:
     runState: 
     combo01State: 
     standingJumpState: 02000000
+    ledgeState: 
   transitionConditions: 08000000
-  notConditions: 
+  notConditions: 90010000
   exitTimeTransition:
     UseExitTime: 1
     TransitionTime: 0.03

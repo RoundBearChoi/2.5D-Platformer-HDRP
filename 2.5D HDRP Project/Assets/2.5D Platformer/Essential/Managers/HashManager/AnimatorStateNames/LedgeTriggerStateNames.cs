@@ -16,5 +16,8 @@
         Fall,
         WallSlide,
         WallJump,
+
+        // sumo
+        Jump_3m_sumo_air,
     }
 }
