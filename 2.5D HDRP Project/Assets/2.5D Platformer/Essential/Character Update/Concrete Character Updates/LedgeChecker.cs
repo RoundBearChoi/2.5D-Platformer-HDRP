@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class LedgeChecker : CharacterUpdate
     {
-        GameObject TargetLedge;
-
         public override void InitComponent()
         {
 
@@ -35,7 +33,7 @@ namespace Roundbeargames
                 {
                     if (!control.LEDGE_GRAB_DATA.isGrabbingLedge)
                     {
-                        control.RunFunction(typeof(DoLedgeGrab), TargetLedge);
+                        control.RunFunction(typeof(DoLedgeGrab));
                         control.LEDGE_GRAB_DATA.isGrabbingLedge = true;
                     }
                 }
@@ -76,17 +74,17 @@ namespace Roundbeargames
             {
                 if (!control.LEDGE_GRAB_DATA.collider2.CollidedObjects.Contains(obj))
                 {
-                    TargetLedge = obj;
+                    control.LEDGE_GRAB_DATA.TargetLedge = obj;
                     return true;
                 }
                 else
                 {
-                    TargetLedge = null;
+                    control.LEDGE_GRAB_DATA.TargetLedge = null;
                     return false;
                 }
             }
 
-            TargetLedge = null;
+            control.LEDGE_GRAB_DATA.TargetLedge = null;
             return false;
         }
     }

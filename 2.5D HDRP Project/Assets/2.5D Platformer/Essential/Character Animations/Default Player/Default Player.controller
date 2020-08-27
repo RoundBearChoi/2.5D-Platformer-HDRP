@@ -184,6 +184,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-8276002011138476967
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -291,6 +292,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &-7729331089680972700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,6 +317,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &-7640859494455542032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,6 +340,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1107 &-7625159035814375960
 AnimatorStateMachine:
   serializedVersion: 5
@@ -529,6 +533,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-6874146865464500502
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -577,6 +582,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-6658422526155990217
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -793,6 +799,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &-5795479670082645676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -812,6 +819,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-5523689420092585325
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -958,6 +966,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-4837645383293069807
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1274,6 +1283,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &-3386777214466997611
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1298,6 +1308,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &-3283890736479632598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1322,6 +1333,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-3241996308563554126
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1511,6 +1523,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1102 &-2635285102302778005
 AnimatorState:
   serializedVersion: 5
@@ -1631,6 +1644,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-2194145399761546776
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1857,6 +1871,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1102 &-1371278340426685929
 AnimatorState:
   serializedVersion: 5
@@ -2039,6 +2054,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-1116864772823872664
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2241,6 +2257,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &-34253425699244950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2261,6 +2278,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &-5683510282443844
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -2407,6 +2425,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &10311518702507266
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -2506,6 +2525,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &114334630466715768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2531,6 +2551,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &114335745575066044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2553,6 +2574,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &114485883369870116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2576,6 +2598,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &114567564550565704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2598,6 +2621,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &114866192603171084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2623,6 +2647,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &114907193628521876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2654,6 +2679,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &162616196101899265
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2675,6 +2701,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1102 &203026060880321463
 AnimatorState:
   serializedVersion: 5
@@ -2778,6 +2805,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &420823004118302124
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3769,6 +3797,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &1831879520812541925
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3788,6 +3817,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &1833268473785332818
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -3863,6 +3893,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &1907681907060277755
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4344,6 +4375,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &3603914891203930696
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4697,6 +4729,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &4732018156440115432
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -4777,6 +4810,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &5219064416609906169
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4871,6 +4905,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &5818134547238503457
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4922,6 +4957,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1102 &5918502982548731602
 AnimatorState:
   serializedVersion: 5
@@ -5003,6 +5039,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &6210499699364915198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5024,6 +5061,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &6322386552334133271
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -5122,6 +5160,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &6640822736907818932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5142,6 +5181,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &6711301998562788969
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5164,6 +5204,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!114 &6729933901124014206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5185,6 +5226,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1107 &6740401492042937527
 AnimatorStateMachine:
   serializedVersion: 5
@@ -5271,6 +5313,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1102 &6914570542323647438
 AnimatorState:
   serializedVersion: 5
@@ -5765,6 +5808,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1102 &8401419994286598128
 AnimatorState:
   serializedVersion: 5
@@ -5839,6 +5883,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &8666762361786550283
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -5965,6 +6010,7 @@ MonoBehaviour:
   ArrMove: []
   ArrTransition: []
   ArrAttack: []
+  ArrOther: []
 --- !u!1101 &9200702958519528950
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

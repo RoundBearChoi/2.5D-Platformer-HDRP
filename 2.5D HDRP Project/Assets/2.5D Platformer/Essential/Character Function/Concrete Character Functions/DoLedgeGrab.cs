@@ -6,13 +6,16 @@ namespace Roundbeargames
 {
     public class DoLedgeGrab : CharacterFunction
     {
-        public override void RunFunction(GameObject targetLedge)
+        public override void RunFunction()
         {
-            BoxCollider boxCollider = targetLedge.GetComponent<BoxCollider>();
-
-            if (boxCollider != null)
+            if (control.LEDGE_GRAB_DATA.TargetLedge != null)
             {
-                _doLedgeGrab(targetLedge, boxCollider);
+                BoxCollider boxCollider = control.LEDGE_GRAB_DATA.TargetLedge.GetComponent<BoxCollider>();
+
+                if (boxCollider != null)
+                {
+                    _doLedgeGrab(control.LEDGE_GRAB_DATA.TargetLedge, boxCollider);
+                }
             }
         }
 

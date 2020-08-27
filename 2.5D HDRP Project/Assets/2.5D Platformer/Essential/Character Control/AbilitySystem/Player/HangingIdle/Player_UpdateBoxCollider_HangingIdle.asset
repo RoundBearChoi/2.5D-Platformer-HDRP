@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e8412c66aaa63a4aa9ab86f213eb40e, type: 3}
-  m_Name: Player_HangingIdle_UpdateBoxCollider
+  m_Name: Player_UpdateBoxCollider_HangingIdle
   m_EditorClassIdentifier: 
   TargetCenter: {x: 0, y: 1.1, z: 0}
   CenterUpdateSpeed: 10

@@ -10,5 +10,6 @@ namespace Roundbeargames
         public bool isGrabbingLedge;
         public LedgeCollider collider1;
         public LedgeCollider collider2;
+        public GameObject TargetLedge;
     }
 }
