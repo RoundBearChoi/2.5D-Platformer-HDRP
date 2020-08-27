@@ -37,5 +37,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual void RunFunction(GameObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace Roundbeargames
                 {
                     if (!control.LEDGE_GRAB_DATA.isGrabbingLedge)
                     {
-                        DoLedgeGrab(TargetLedge);
+                        control.RunFunction(typeof(DoLedgeGrab), TargetLedge);
                         control.LEDGE_GRAB_DATA.isGrabbingLedge = true;
                     }
                 }
@@ -88,46 +88,6 @@ namespace Roundbeargames
 
             TargetLedge = null;
             return false;
-        }
-
-        bool DoLedgeGrab(GameObject platform)
-        {
-            BoxCollider boxCollider = platform.GetComponent<BoxCollider>();
-
-            if (boxCollider == null)
-            {
-                return false;
-            }
-
-            control.RIGID_BODY.useGravity = false;
-            control.RIGID_BODY.velocity = Vector3.zero;
-
-            float y, z;
-            y = platform.transform.position.y + (boxCollider.size.y / 2f);
-            if (control.GetBool(typeof(FacingForward)))
-            {
-                z = platform.transform.position.z - (boxCollider.size.z / 2f);
-            }
-            else
-            {
-                z = platform.transform.position.z + (boxCollider.size.z / 2f);
-            }
-
-            Vector3 platformEdge = new Vector3(0f, y, z);
-            Vector3 ledgeCalibration = control.characterSetup.ledgeSetup.LedgeCalibration;
-
-            if (control.GetBool(typeof(FacingForward)))
-            {
-                control.RIGID_BODY.MovePosition(
-                    platformEdge + ledgeCalibration);
-            }
-            else
-            {
-                control.RIGID_BODY.MovePosition(
-                    platformEdge + new Vector3(0f, ledgeCalibration.y, -ledgeCalibration.z));
-            }
-
-            return true;
         }
     }
 }

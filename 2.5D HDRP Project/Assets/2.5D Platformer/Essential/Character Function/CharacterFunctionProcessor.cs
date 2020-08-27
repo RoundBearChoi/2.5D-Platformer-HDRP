@@ -22,6 +22,7 @@ namespace Roundbeargames
             AddFunction(typeof(MoveTransformForward));
             AddFunction(typeof(CalculateMomentum));
             AddFunction(typeof(FaceForward));
+            AddFunction(typeof(DoLedgeGrab));
         }
 
         void AddFunction(System.Type type)
