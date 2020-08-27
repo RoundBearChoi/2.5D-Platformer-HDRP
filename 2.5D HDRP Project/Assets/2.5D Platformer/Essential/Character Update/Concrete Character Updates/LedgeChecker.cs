@@ -6,6 +6,8 @@ namespace Roundbeargames
 {
     public class LedgeChecker : CharacterUpdate
     {
+        GameObject TargetLedge;
+
         public override void InitComponent()
         {
 
@@ -29,7 +31,18 @@ namespace Roundbeargames
 
             if (IsLedgeGrabTriggerState())
             {
-                ProcLedgeGrab();
+                if (LedgeCollidersInPosition())
+                {
+                    if (!control.LEDGE_GRAB_DATA.isGrabbingLedge)
+                    {
+                        DoLedgeGrab(TargetLedge);
+                        control.LEDGE_GRAB_DATA.isGrabbingLedge = true;
+                    }
+                }
+                else
+                {
+                    control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
+                }
             }
         }
 
@@ -57,38 +70,27 @@ namespace Roundbeargames
             return false;
         }
 
-        void ProcLedgeGrab()
+        bool LedgeCollidersInPosition()
         {
-            if (!control.characterSetup.SkinnedMeshAnimator.GetBool(
-                HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
+            foreach (GameObject obj in control.LEDGE_GRAB_DATA.collider1.CollidedObjects)
             {
-                foreach (GameObject obj in control.LEDGE_GRAB_DATA.collider1.CollidedObjects)
+                if (!control.LEDGE_GRAB_DATA.collider2.CollidedObjects.Contains(obj))
                 {
-                    if (!control.LEDGE_GRAB_DATA.collider2.CollidedObjects.Contains(obj))
-                    {
-                        if (_ProcLedgeGrab(obj))
-                        {
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
-                    }
+                    TargetLedge = obj;
+                    return true;
+                }
+                else
+                {
+                    TargetLedge = null;
+                    return false;
                 }
             }
-            else
-            {
-                control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
-            }
 
-            if (control.LEDGE_GRAB_DATA.collider1.CollidedObjects.Count == 0)
-            {
-                control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
-            }
+            TargetLedge = null;
+            return false;
         }
 
-        bool _ProcLedgeGrab(GameObject platform)
+        bool DoLedgeGrab(GameObject platform)
         {
             BoxCollider boxCollider = platform.GetComponent<BoxCollider>();
 
@@ -97,12 +99,6 @@ namespace Roundbeargames
                 return false;
             }
 
-            if (control.LEDGE_GRAB_DATA.isGrabbingLedge)
-            {
-                return false;
-            }
-
-            control.LEDGE_GRAB_DATA.isGrabbingLedge = true;
             control.RIGID_BODY.useGravity = false;
             control.RIGID_BODY.velocity = Vector3.zero;
 
@@ -120,7 +116,7 @@ namespace Roundbeargames
             Vector3 platformEdge = new Vector3(0f, y, z);
             Vector3 ledgeCalibration = control.characterSetup.ledgeSetup.LedgeCalibration;
 
-            if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (control.GetBool(typeof(FacingForward)))
             {
                 control.RIGID_BODY.MovePosition(
                     platformEdge + ledgeCalibration);

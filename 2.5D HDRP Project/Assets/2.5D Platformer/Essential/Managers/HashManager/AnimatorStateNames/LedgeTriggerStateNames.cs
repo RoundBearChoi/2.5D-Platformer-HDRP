@@ -18,6 +18,6 @@
         WallJump,
 
         // sumo
-        Jump_3m_sumo_air,
+        //Jump_3m_sumo_air,
     }
 }
