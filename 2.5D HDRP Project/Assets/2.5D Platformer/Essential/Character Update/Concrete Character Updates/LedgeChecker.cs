@@ -29,7 +29,8 @@ namespace Roundbeargames
 
             if (IsLedgeGrabTriggerState())
             {
-                if (LedgeCollidersInPosition())
+                if (LedgeCollidersInPosition() &&
+                    control.Jump)
                 {
                     if (!control.LEDGE_GRAB_DATA.isGrabbingLedge)
                     {

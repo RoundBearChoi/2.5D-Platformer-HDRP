@@ -78,5 +78,15 @@ namespace Roundbeargames
 
             return MirrorParameterType.none;
         }
+
+        public static MirrorParameterType GetMirrorParameter(FallStateNames fallStateType)
+        {
+            if (fallStateType == FallStateNames.Jump_Cycle_3_InPlace_FreeFall)
+            {
+
+            }
+
+            return MirrorParameterType.none;
+        }
     }
 }

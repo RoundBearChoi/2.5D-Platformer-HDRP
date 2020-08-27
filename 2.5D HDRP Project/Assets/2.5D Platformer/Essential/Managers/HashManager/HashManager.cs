@@ -21,6 +21,7 @@ namespace Roundbeargames
         public int[] ArrCombo01States = new int[HashTool.GetLength(typeof(Combo01StateNames))];
         public int[] ArrStandingJumpStates = new int[HashTool.GetLength(typeof(StandingJumpStateNames))];
         public int[] ArrLedgeStates = new int[HashTool.GetLength(typeof(LedgeStateNames))];
+        public int[] ArrFallStates = new int[HashTool.GetLength(typeof(FallStateNames))];
 
         public Dictionary<Hit_Reaction_States, int> DicHitReactionStates =
             new Dictionary<Hit_Reaction_States, int>();
@@ -45,6 +46,7 @@ namespace Roundbeargames
             HashTool.AddNameHashToArray(typeof(Combo01StateNames), ArrCombo01States);
             HashTool.AddNameHashToArray(typeof(StandingJumpStateNames), ArrStandingJumpStates);
             HashTool.AddNameHashToArray(typeof(LedgeStateNames), ArrLedgeStates);
+            HashTool.AddNameHashToArray(typeof(FallStateNames), ArrFallStates);
 
             // hit reaction states
             Hit_Reaction_States[] arrHitReactionStates = System.Enum.GetValues(typeof(Hit_Reaction_States))

@@ -9,6 +9,7 @@
         public Combo01StateNames[] combo01State;
         public StandingJumpStateNames[] standingJumpState;
         public LedgeStateNames[] ledgeState;
+        public FallStateNames[] fallState;
 
         public int GetHashID()
         {
@@ -42,6 +43,11 @@
                 return HashManager.Instance.ArrLedgeStates[(int)ledgeState[0]];
             }
 
+            if (fallState.Length > 0)
+            {
+                return HashManager.Instance.ArrFallStates[(int)fallState[0]];
+            }
+
             return 0;
         }
 
@@ -70,6 +76,11 @@
             if (standingJumpState.Length > 0)
             {
                 return MirrorParameter.GetMirrorParameter(standingJumpState[0]);
+            }
+
+            if (fallState.Length > 0)
+            {
+                return MirrorParameter.GetMirrorParameter(fallState[0]);
             }
 
             return MirrorParameterType.none;
