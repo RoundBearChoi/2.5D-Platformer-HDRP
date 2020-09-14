@@ -155,36 +155,6 @@ namespace Roundbeargames
             return false;
         }
 
-        bool IsBlocked(AttackCondition info)
-        {
-            if (info == control.DAMAGE_DATA.BlockedAttack && control.DAMAGE_DATA.BlockedAttack != null)
-            {
-                return true;
-            }
-
-            if (control.UpdatingAbility(typeof(Block)))
-            {
-                Vector3 dir = info.Attacker.transform.position - control.transform.position;
-
-                if (dir.z > 0f)
-                {
-                    if (control.GetBool(typeof(FacingForward)))
-                    {
-                        return true;
-                    }
-                }
-                else if (dir.z < 0f)
-                {
-                    if (!control.GetBool(typeof(FacingForward)))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
         void ProcessDamage(AttackCondition info)
         {
             if (control.GetBool(typeof(CharacterDead)))
@@ -193,7 +163,7 @@ namespace Roundbeargames
             }
             else
             {
-                if (!IsBlocked(info))
+                if (!control.GetBool(typeof(BlockedAttack), info))
                 {
                     control.RunFunction(typeof(TakeDamage), info);
                 }

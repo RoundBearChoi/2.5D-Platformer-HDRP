@@ -29,6 +29,7 @@ namespace Roundbeargames
             AddQuery(typeof(GetTouchingMeleeWeapon));
             AddQuery(typeof(CurrentAbility));
             AddQuery(typeof(ShouldShowHitParticles));
+            AddQuery(typeof(BlockedAttack));
         }
 
         void AddQuery(System.Type type)
