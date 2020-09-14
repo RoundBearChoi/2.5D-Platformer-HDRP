@@ -209,7 +209,7 @@ namespace Roundbeargames
                 if (info.AttackAbility.collateralDamageInfo.CreateCollateral)
                 {
                     control.RunFunction(typeof(SpawnHitParticles), info.Attacker, info.AttackAbility.ParticleType);
-                    ProcessFlyingRagdoll(info);
+                    control.RunFunction(typeof(TurnIntoFlyingRagdoll), info);
                 }
 
                 info.RegisteredTargets.Add(this.control);
@@ -217,8 +217,6 @@ namespace Roundbeargames
                 control.RunFunction(typeof(ClearRagdollVelocity));
                 control.RunFunction(typeof(AddForceToDamagedPart), RagdollPushType.DEAD_BODY);
             }
-
-            return;
         }
 
         void TakeDamage(AttackCondition info)
@@ -245,7 +243,7 @@ namespace Roundbeargames
                         (Hit_Reaction_States)randomIndex], 0, 0f);
             }
 
-            ProcessFlyingRagdoll(info);
+            control.RunFunction(typeof(TurnIntoFlyingRagdoll), info);
 
             if (!info.RegisteredTargets.Contains(this.control))
             {
@@ -266,16 +264,6 @@ namespace Roundbeargames
                         control.RunFunction(typeof(SpawnHitParticles), info.Attacker, info.AttackAbility.ParticleType);
                     }
                 }
-            }
-        }
-
-
-        void ProcessFlyingRagdoll(AttackCondition info)
-        {
-            if (info.AttackAbility.collateralDamageInfo.CreateCollateral)
-            {
-                control.RAGDOLL_DATA.flyingRagdollData.IsTriggered = true;
-                control.RAGDOLL_DATA.flyingRagdollData.Attacker = info.Attacker;
             }
         }
     }
