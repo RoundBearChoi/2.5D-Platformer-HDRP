@@ -13,7 +13,7 @@ namespace Roundbeargames
                 return false;
             }
 
-            if (!control.MANUAL_INPUT_DATA.DoubleTapDown())
+            if (!control.GetBool(typeof(DoubleTapDown)))
             {
                 return false;
             }

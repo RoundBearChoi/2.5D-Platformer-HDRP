@@ -7,9 +7,6 @@ namespace Roundbeargames
     //[System.Serializable]
     public class ManualInputData
     {
-        public delegate bool ReturnBool();
-
-        public ReturnBool DoubleTapUp;
-        public ReturnBool DoubleTapDown;
+        public List<InputKeyType> DoubleTaps = new List<InputKeyType>();
     }
 }

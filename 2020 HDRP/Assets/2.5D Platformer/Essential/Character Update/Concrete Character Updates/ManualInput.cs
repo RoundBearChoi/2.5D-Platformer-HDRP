@@ -6,14 +6,20 @@ namespace Roundbeargames
 {
     public class ManualInput : CharacterUpdate
     {
-        List<InputKeyType> DoubleTaps = new List<InputKeyType>();
         List<InputKeyType> UpKeys = new List<InputKeyType>();
         Dictionary<InputKeyType, float> DicDoubleTapTimings = new Dictionary<InputKeyType, float>();
 
+        public ManualInputData INPUT_DATA
+        {
+            get
+            {
+                return control.MANUAL_INPUT_DATA;
+            }
+        }
+
         public override void InitComponent()
         {
-            control.MANUAL_INPUT_DATA.DoubleTapDown = IsDoubleTap_Down;
-            control.MANUAL_INPUT_DATA.DoubleTapUp = IsDoubleTap_Up;
+
         }
 
         public override void OnFixedUpdate()
@@ -112,8 +118,8 @@ namespace Roundbeargames
             }
 
             //double tap running
-            if (DoubleTaps.Contains(InputKeyType.KEY_MOVE_RIGHT) ||
-                DoubleTaps.Contains(InputKeyType.KEY_MOVE_LEFT))
+            if (INPUT_DATA.DoubleTaps.Contains(InputKeyType.KEY_MOVE_RIGHT) ||
+                INPUT_DATA.DoubleTaps.Contains(InputKeyType.KEY_MOVE_LEFT))
             {
                 control.Turbo = true;
             }
@@ -121,17 +127,17 @@ namespace Roundbeargames
             //double tap running turn
             if (control.MoveRight && control.MoveLeft)
             {
-                if (DoubleTaps.Contains(InputKeyType.KEY_MOVE_RIGHT) ||
-                    DoubleTaps.Contains(InputKeyType.KEY_MOVE_LEFT))
+                if (INPUT_DATA.DoubleTaps.Contains(InputKeyType.KEY_MOVE_RIGHT) ||
+                    INPUT_DATA.DoubleTaps.Contains(InputKeyType.KEY_MOVE_LEFT))
                 {
-                    if (!DoubleTaps.Contains(InputKeyType.KEY_MOVE_RIGHT))
+                    if (!INPUT_DATA.DoubleTaps.Contains(InputKeyType.KEY_MOVE_RIGHT))
                     {
-                        DoubleTaps.Add(InputKeyType.KEY_MOVE_RIGHT);
+                        INPUT_DATA.DoubleTaps.Add(InputKeyType.KEY_MOVE_RIGHT);
                     }
 
-                    if (!DoubleTaps.Contains(InputKeyType.KEY_MOVE_LEFT))
+                    if (!INPUT_DATA.DoubleTaps.Contains(InputKeyType.KEY_MOVE_LEFT))
                     {
-                        DoubleTaps.Add(InputKeyType.KEY_MOVE_LEFT);
+                        INPUT_DATA.DoubleTaps.Add(InputKeyType.KEY_MOVE_LEFT);
                     }
                 }
             }
@@ -140,30 +146,6 @@ namespace Roundbeargames
         public override void OnLateUpdate()
         {
             throw new System.NotImplementedException();
-        }
-
-        bool IsDoubleTap_Up()
-        {
-            if (DoubleTaps.Contains(InputKeyType.KEY_MOVE_UP))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        bool IsDoubleTap_Down()
-        {
-            if (DoubleTaps.Contains(InputKeyType.KEY_MOVE_DOWN))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         void ProcDoubleTap(InputKeyType keyType)
@@ -178,9 +160,9 @@ namespace Roundbeargames
             {
                 if (Time.time < DicDoubleTapTimings[keyType])
                 {
-                    if (!DoubleTaps.Contains(keyType))
+                    if (!INPUT_DATA.DoubleTaps.Contains(keyType))
                     {
-                        DoubleTaps.Add(keyType);
+                        INPUT_DATA.DoubleTaps.Add(keyType);
                     }
                 }
 
@@ -195,9 +177,9 @@ namespace Roundbeargames
 
         void RemoveDoubleTap(InputKeyType keyType)
         {
-            if (DoubleTaps.Contains(keyType))
+            if (INPUT_DATA.DoubleTaps.Contains(keyType))
             {
-                DoubleTaps.Remove(keyType);
+                INPUT_DATA.DoubleTaps.Remove(keyType);
             }
 
             if (!UpKeys.Contains(keyType))

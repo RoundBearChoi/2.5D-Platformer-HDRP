@@ -50,9 +50,9 @@ namespace Roundbeargames
         {
             PossibleKeys = System.Enum.GetValues(typeof(KeyCode)) as KeyCode[];
 
-            Object obj = Resources.Load("PlayerInput", typeof(GameObject));
-            GameObject pi = Instantiate(obj) as GameObject;
-            playerInput = pi.GetComponent<PlayerInput>();
+            Object obj = Resources.Load<GameObject>("PlayerInput"); //strange  
+            GameObject p = Instantiate(obj) as GameObject;
+            playerInput = p.GetComponent<PlayerInput>();
         }
 
         public void LoadKeys()
