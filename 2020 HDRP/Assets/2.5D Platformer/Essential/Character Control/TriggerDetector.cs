@@ -103,7 +103,7 @@ namespace Roundbeargames
                         null,
                         Vector3.zero);
 
-                    control.DAMAGE_DATA.TakeDamage(info);
+                    control.RunFunction(typeof(DamageReaction), info);
 
                     if (w.FlyForward)
                     {

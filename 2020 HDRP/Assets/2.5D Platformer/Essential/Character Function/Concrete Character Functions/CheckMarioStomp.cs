@@ -42,7 +42,7 @@ namespace Roundbeargames
                     control.RIGHT_FOOT_ATTACK,
                     Vector3.zero);
 
-                c.DAMAGE_DATA.TakeDamage(info);
+                c.RunFunction(typeof(DamageReaction), info);
             }
 
             targets.Clear();

@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override void InitComponent()
         {
-            control.DAMAGE_DATA.TakeDamage = ProcessDamage;
+
         }
 
         public override void OnFixedUpdate()
@@ -41,7 +41,7 @@ namespace Roundbeargames
                         {
                             if (control.GetBool(typeof(IsCollidingWithAttack), info))
                             {
-                                ProcessDamage(info);
+                                control.RunFunction(typeof(DamageReaction), info);
                             }
                         }
                     }
@@ -49,7 +49,7 @@ namespace Roundbeargames
                     {
                         if (IsInLethalRange(info))
                         {
-                            ProcessDamage(info);
+                            control.RunFunction(typeof(DamageReaction), info);
                         }
                     }
                 }
@@ -80,21 +80,6 @@ namespace Roundbeargames
             }
 
             return false;
-        }
-
-        void ProcessDamage(AttackCondition info)
-        {
-            if (control.GetBool(typeof(CharacterDead)))
-            {
-                control.RunFunction(typeof(GetPushedAsRagdoll), info);
-            }
-            else
-            {
-                if (!control.GetBool(typeof(BlockedAttack), info))
-                {
-                    control.RunFunction(typeof(TakeDamage), info);
-                }
-            }
         }
     }
 }

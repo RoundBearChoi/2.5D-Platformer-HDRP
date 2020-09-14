@@ -13,9 +13,6 @@ namespace Roundbeargames
         public Attack AxeThrow;
 
         public DamageTaken damageTaken;
-
-        public delegate void DoSomething(AttackCondition info);
-        public DoSomething TakeDamage;
     }
 
     [System.Serializable]
