@@ -31,6 +31,7 @@ namespace Roundbeargames
             AddQuery(typeof(ShouldShowHitParticles));
             AddQuery(typeof(BlockedAttack));
             AddQuery(typeof(AttackIsValid));
+            AddQuery(typeof(IsCollidingWithAttack));
         }
 
         void AddQuery(System.Type type)
