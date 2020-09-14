@@ -85,7 +85,7 @@ namespace Roundbeargames
                 return;
             }
 
-            if (characterState.ANIMATION_DATA.IsRunning(typeof(WallSlide)))
+            if (characterState.UpdatingAbility(typeof(WallSlide)))
             {
                 return;
             }

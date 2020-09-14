@@ -153,6 +153,11 @@ namespace Roundbeargames
             }
         }
 
+        public bool UpdatingAbility(System.Type abilityType)
+        {
+            return GetBool(typeof(CurrentAbility), abilityType);
+        }
+
         public void RunFunction(System.Type CharacterFunctionType)
         {
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
@@ -196,6 +201,11 @@ namespace Roundbeargames
         public bool GetBool(System.Type CharacterQueryType, string str)
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool(str);
+        }
+
+        public bool GetBool(System.Type CharacterQueryType, System.Type paramType)
+        {
+            return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool(paramType);
         }
 
         public List<GameObject> GetGameObjList(System.Type CharacterQueryType)

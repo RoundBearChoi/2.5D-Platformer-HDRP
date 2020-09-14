@@ -8,7 +8,7 @@ namespace Roundbeargames
 
         public override void RunFunction(float Speed, float SpeedGraph)
         {
-            if (!control.ANIMATION_DATA.IsRunning(typeof(SmoothTurn)))
+            if (!control.UpdatingAbility(typeof(SmoothTurn)))
             {
                 control.transform.Translate(Vector3.forward * Speed * SpeedGraph * Time.deltaTime);
             }

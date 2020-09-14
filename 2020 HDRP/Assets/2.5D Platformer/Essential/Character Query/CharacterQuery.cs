@@ -18,6 +18,11 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
+        public virtual bool ReturnBool(System.Type type)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public virtual List<GameObject> ReturnGameObjList()
         {
             throw new System.NotImplementedException();

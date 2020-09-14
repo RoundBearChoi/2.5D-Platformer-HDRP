@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override void InitComponent()
         {
-            control.ANIMATION_DATA.IsRunning = IsRunning;
+
         }
 
         public override void OnFixedUpdate()
@@ -18,7 +18,7 @@ namespace Roundbeargames
 
         public override void OnUpdate()
         {
-            if (IsRunning(typeof(LockTransition)))
+            if (control.UpdatingAbility(typeof(LockTransition)))
             {
                 if (control.ANIMATION_DATA.LockTransition)
                 {
@@ -44,19 +44,6 @@ namespace Roundbeargames
         public override void OnLateUpdate()
         {
             throw new System.NotImplementedException();
-        }
-
-        bool IsRunning(System.Type type)
-        {
-            foreach (KeyValuePair<CharacterAbility, int> data in control.ANIMATION_DATA.CurrentRunningAbilities)
-            {
-                if (data.Key.GetType() == type)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }

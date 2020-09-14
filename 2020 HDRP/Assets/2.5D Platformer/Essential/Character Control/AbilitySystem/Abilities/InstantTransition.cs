@@ -90,7 +90,7 @@ namespace Roundbeargames
 
             if (!IgnoreAttackAbility)
             {
-                if (control.ANIMATION_DATA.IsRunning(typeof(Attack)))
+                if (control.UpdatingAbility(typeof(Attack)))
                 {
                     return true;
                 }

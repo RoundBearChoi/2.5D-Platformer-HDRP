@@ -22,7 +22,7 @@ namespace Roundbeargames
             }
             else
             {
-                if (!characterState.ANIMATION_DATA.IsRunning(typeof(Jump)))
+                if (!characterState.UpdatingAbility(typeof(Jump)))
                 {
                     characterState.JUMP_DATA.DicJumped.Clear();
                 }

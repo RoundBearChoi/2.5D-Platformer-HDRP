@@ -30,7 +30,7 @@ namespace Roundbeargames
 
         void ClearTurnLock()
         {
-            if (!control.ANIMATION_DATA.IsRunning(typeof(LockTurn)))
+            if (!control.UpdatingAbility(typeof(LockTurn)))
             {
                 if (control.ROTATION_DATA.LockTurn)
                 {

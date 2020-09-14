@@ -51,7 +51,7 @@ namespace Roundbeargames
 
         public void UpdateBoxCollider_Size()
         {
-            if (!control.ANIMATION_DATA.IsRunning(typeof(UpdateBoxCollider)))
+            if (!control.UpdatingAbility(typeof(UpdateBoxCollider)))
             {
                 return;
             }
@@ -68,7 +68,7 @@ namespace Roundbeargames
 
         public void UpdateBoxCollider_Center()
         {
-            if (!control.ANIMATION_DATA.IsRunning(typeof(UpdateBoxCollider)))
+            if (!control.UpdatingAbility(typeof(UpdateBoxCollider)))
             {
                 return;
             }

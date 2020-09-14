@@ -18,15 +18,15 @@ namespace Roundbeargames
 
         public override void OnFixedUpdate()
         {
-            if (control.ANIMATION_DATA.IsRunning(typeof(MoveForward)) ||
-                control.ANIMATION_DATA.IsRunning(typeof(MoveForward_v2)) ||
-                control.ANIMATION_DATA.IsRunning(typeof(WallSlide)))
+            if (control.UpdatingAbility(typeof(MoveForward)) ||
+                control.UpdatingAbility(typeof(MoveForward_v2)) ||
+                control.UpdatingAbility(typeof(WallSlide)))
             {
                 CheckFrontBlocking();
             }
 
             // checking while ledge grabbing
-            if (control.ANIMATION_DATA.IsRunning(typeof(MoveUp)))
+            if (control.UpdatingAbility(typeof(MoveUp)))
             {
                 if (control.ANIMATION_DATA.LatestMoveUp.Speed > 0f)
                 {

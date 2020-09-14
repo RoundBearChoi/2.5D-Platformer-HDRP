@@ -52,12 +52,12 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (c.ANIMATION_DATA.IsRunning(typeof(Attack)))
+                    if (c.UpdatingAbility(typeof(Attack)))
                     {
                         continue;
                     }
 
-                    if (control.ANIMATION_DATA.IsRunning(typeof(Attack)))
+                    if (control.UpdatingAbility(typeof(Attack)))
                     {
                         continue;
                     }

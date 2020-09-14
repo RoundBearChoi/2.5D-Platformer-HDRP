@@ -25,7 +25,7 @@ namespace Roundbeargames
                 characterState.AI_CONTROLLER.InitializeAI();
             }
 
-            if (characterState.ANIMATION_DATA.IsRunning(typeof(Landing)))
+            if (characterState.UpdatingAbility(typeof(Landing)))
             {
                 characterState.characterControl.Turbo = false;
                 characterState.characterControl.Jump = false;
@@ -80,8 +80,8 @@ namespace Roundbeargames
             {
                 if (characterState.GROUND_DATA.Ground != null)
                 {
-                    if (!characterState.ANIMATION_DATA.IsRunning(typeof(Jump)) &&
-                        !characterState.ANIMATION_DATA.IsRunning(typeof(JumpPrep)))
+                    if (!characterState.UpdatingAbility(typeof(Jump)) &&
+                        !characterState.UpdatingAbility(typeof(JumpPrep)))
                     {
                         characterState.characterControl.Turbo = false;
                         characterState.characterControl.Jump = false;
@@ -96,8 +96,8 @@ namespace Roundbeargames
 
             //startsphere height
             if (characterState.GROUND_DATA.Ground != null &&
-                !characterState.ANIMATION_DATA.IsRunning(typeof(Jump)) &&
-                !characterState.ANIMATION_DATA.IsRunning(typeof(WallJumpPrep)))
+                !characterState.UpdatingAbility(typeof(Jump)) &&
+                !characterState.UpdatingAbility(typeof(WallJumpPrep)))
             {
                 if (characterState.characterControl.aiProgress.GetStartSphereHeight() > 0.1f)
                 {
@@ -119,7 +119,7 @@ namespace Roundbeargames
 
         bool AIIsOnGround(CharacterControl control)
         {
-            if (control.ANIMATION_DATA.IsRunning(typeof(MoveUp)))
+            if (control.UpdatingAbility(typeof(MoveUp)))
             {
                 return false;
             }

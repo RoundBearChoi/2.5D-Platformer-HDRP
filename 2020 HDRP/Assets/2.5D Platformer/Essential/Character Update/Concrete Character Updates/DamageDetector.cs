@@ -177,20 +177,20 @@ namespace Roundbeargames
                 return true;
             }
 
-            if (control.ANIMATION_DATA.IsRunning(typeof(Block)))
+            if (control.UpdatingAbility(typeof(Block)))
             {
                 Vector3 dir = info.Attacker.transform.position - control.transform.position;
 
                 if (dir.z > 0f)
                 {
-                    if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+                    if (control.GetBool(typeof(FacingForward)))
                     {
                         return true;
                     }
                 }
                 else if (dir.z < 0f)
                 {
-                    if (!control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+                    if (!control.GetBool(typeof(FacingForward)))
                     {
                         return true;
                     }
