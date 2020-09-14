@@ -8,14 +8,23 @@ namespace Roundbeargames
     {
         public Dictionary<System.Type, CharacterFunction> DicFunctions = new Dictionary<System.Type, CharacterFunction>();
 
-        private void Start()
+        private void Awake()
         {
+            //if (this.gameObject.transform.root.name.Contains("Sumo"))
+            //{
+            //    Debug.Log("starting sumo");
+            //}
+
             AddFunction(typeof(LedgeCollidersOff));
             AddFunction(typeof(ClearRagdollVelocity));
             AddFunction(typeof(ClearUpVelocity));
             AddFunction(typeof(CheckDownBlocking));
             AddFunction(typeof(CheckUpBlocking));
             AddFunction(typeof(CheckMarioStomp));
+            AddFunction(typeof(Reposition_Front_Spheres));
+            AddFunction(typeof(Reposition_Back_Spheres));
+            AddFunction(typeof(Reposition_Bottom_Spheres));
+            AddFunction(typeof(Reposition_Up_Spheres));
 
             AddFunction(typeof(SpawnHitParticles));
             AddFunction(typeof(AddForceToDamagedPart));

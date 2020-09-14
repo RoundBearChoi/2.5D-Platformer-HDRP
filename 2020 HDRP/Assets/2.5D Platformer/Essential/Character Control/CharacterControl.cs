@@ -160,7 +160,15 @@ namespace Roundbeargames
 
         public void RunFunction(System.Type CharacterFunctionType)
         {
-            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
+            //if (this.gameObject.name.Contains("Sumo"))
+            //{
+            //    Debug.Log("updating sumo");
+            //}
+
+            if (characterFunctionProcessor.DicFunctions.Count > 0)
+            {
+                characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
+            }
         }
 
         public void RunFunction(System.Type CharacterFunctionType, float float1)

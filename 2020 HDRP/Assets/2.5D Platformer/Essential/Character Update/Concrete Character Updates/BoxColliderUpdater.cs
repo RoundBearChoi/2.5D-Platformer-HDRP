@@ -20,10 +20,10 @@ namespace Roundbeargames
 
             if (control.BOX_COLLIDER_DATA.IsUpdatingSpheres)
             {
-                control.COLLISION_SPHERE_DATA.Reposition_FrontSpheres();
-                control.COLLISION_SPHERE_DATA.Reposition_BottomSpheres();
-                control.COLLISION_SPHERE_DATA.Reposition_BackSpheres();
-                control.COLLISION_SPHERE_DATA.Reposition_UpSpheres();
+                control.RunFunction(typeof(Reposition_Front_Spheres));
+                control.RunFunction(typeof(Reposition_Bottom_Spheres));
+                control.RunFunction(typeof(Reposition_Back_Spheres));
+                control.RunFunction(typeof(Reposition_Up_Spheres));
 
                 if (control.BOX_COLLIDER_DATA.IsLanding)
                 {

@@ -17,7 +17,6 @@ namespace Roundbeargames
         {
             if (OnStart)
             {
-                //CharacterControl control = characterState.GetCharacterControl(animator);
                 ToggleBoxCol(characterState.characterControl);
             }
         }
@@ -31,7 +30,6 @@ namespace Roundbeargames
         {
             if (OnEnd)
             {
-                //CharacterControl control = characterState.GetCharacterControl(animator);
                 ToggleBoxCol(characterState.characterControl);
             }
         }
@@ -43,10 +41,10 @@ namespace Roundbeargames
 
             if (RepositionSpheres)
             {
-                control.COLLISION_SPHERE_DATA.Reposition_FrontSpheres();
-                control.COLLISION_SPHERE_DATA.Reposition_BottomSpheres();
-                control.COLLISION_SPHERE_DATA.Reposition_BackSpheres();
-                control.COLLISION_SPHERE_DATA.Reposition_UpSpheres();
+                control.RunFunction(typeof(Reposition_Front_Spheres));
+                control.RunFunction(typeof(Reposition_Bottom_Spheres));
+                control.RunFunction(typeof(Reposition_Back_Spheres));
+                control.RunFunction(typeof(Reposition_Up_Spheres));
             }
         }
     }

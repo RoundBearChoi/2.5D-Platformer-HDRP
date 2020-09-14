@@ -413,8 +413,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -7456515334581197416, guid: 1fde60ddf602e4841aceed73d676a341,
-    type: 2}
+  m_DstState: {fileID: -7456515334581197416, guid: 1fde60ddf602e4841aceed73d676a341, type: 2}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -959,8 +958,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -2540793194687320489, guid: f8173f94fbcc5144ea70d64c6b0662b3,
-    type: 2}
+  m_DstState: {fileID: -2540793194687320489, guid: f8173f94fbcc5144ea70d64c6b0662b3, type: 2}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0

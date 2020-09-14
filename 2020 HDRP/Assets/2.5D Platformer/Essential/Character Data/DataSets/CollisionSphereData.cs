@@ -11,12 +11,5 @@ namespace Roundbeargames
         public GameObject[] FrontSpheres;
         public GameObject[] BackSpheres;
         public GameObject[] UpSpheres;
-
-        public delegate void DoSomething();
-
-        public DoSomething Reposition_FrontSpheres;
-        public DoSomething Reposition_BottomSpheres;
-        public DoSomething Reposition_BackSpheres;
-        public DoSomething Reposition_UpSpheres;
     }
 }
