@@ -33,6 +33,7 @@ namespace Roundbeargames
             AddFunction(typeof(FaceForward));
             AddFunction(typeof(DoLedgeGrab));
             AddFunction(typeof(TurnIntoFlyingRagdoll));
+            AddFunction(typeof(GetPushedAsRagdoll));
         }
 
         void AddFunction(System.Type type)

@@ -191,7 +191,7 @@ namespace Roundbeargames
         {
             if (control.GetBool(typeof(CharacterDead)))
             {
-                PushDeadBody(info);
+                control.RunFunction(typeof(GetPushedAsRagdoll), info);
             }
             else
             {
@@ -199,23 +199,6 @@ namespace Roundbeargames
                 {
                     TakeDamage(info);
                 }
-            }
-        }
-
-        void PushDeadBody(AttackCondition info)
-        {
-            if (!info.RegisteredTargets.Contains(this.control))
-            {
-                if (info.AttackAbility.collateralDamageInfo.CreateCollateral)
-                {
-                    control.RunFunction(typeof(SpawnHitParticles), info.Attacker, info.AttackAbility.ParticleType);
-                    control.RunFunction(typeof(TurnIntoFlyingRagdoll), info);
-                }
-
-                info.RegisteredTargets.Add(this.control);
-
-                control.RunFunction(typeof(ClearRagdollVelocity));
-                control.RunFunction(typeof(AddForceToDamagedPart), RagdollPushType.DEAD_BODY);
             }
         }
 
