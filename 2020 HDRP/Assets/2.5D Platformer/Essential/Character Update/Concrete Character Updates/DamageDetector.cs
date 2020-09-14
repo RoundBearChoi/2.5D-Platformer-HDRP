@@ -10,7 +10,6 @@ namespace Roundbeargames
 
         public override void InitComponent()
         {
-            control.DAMAGE_DATA.IsDead = IsDead;
             control.DAMAGE_DATA.TakeDamage = ProcessDamage;
         }
 
@@ -158,18 +157,6 @@ namespace Roundbeargames
             return false;
         }
 
-        bool IsDead()
-        {
-            if (control.DAMAGE_DATA.hp <= 0f)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         bool IsBlocked(AttackCondition info)
         {
             if (info == control.DAMAGE_DATA.BlockedAttack && control.DAMAGE_DATA.BlockedAttack != null)
@@ -202,7 +189,7 @@ namespace Roundbeargames
 
         void ProcessDamage(AttackCondition info)
         {
-            if (IsDead())
+            if (control.GetBool(typeof(CharacterDead)))
             {
                 PushDeadBody(info);
             }
@@ -244,7 +231,7 @@ namespace Roundbeargames
             AttackManager.Instance.ForceDeregister(control);
             control.ANIMATION_DATA.CurrentRunningAbilities.Clear();
 
-            if (IsDead())
+            if (control.GetBool(typeof(CharacterDead)))
             {
                 control.RAGDOLL_DATA.RagdollTriggered = true;
             }

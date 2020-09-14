@@ -60,7 +60,7 @@ namespace Roundbeargames
                 return false;
             }
 
-            if (target.DAMAGE_DATA.IsDead())
+            if (target.GetBool(typeof(CharacterDead)))
             {
                 return true;
             }

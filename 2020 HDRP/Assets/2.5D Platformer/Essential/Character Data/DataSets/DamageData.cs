@@ -14,10 +14,7 @@ namespace Roundbeargames
 
         public DamageTaken damageTaken;
 
-        public delegate bool ReturnBool();
         public delegate void DoSomething(AttackCondition info);
-
-        public ReturnBool IsDead;
         public DoSomething TakeDamage;
     }
 

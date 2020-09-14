@@ -67,12 +67,12 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (c.DAMAGE_DATA.IsDead())
+                    if (c.GetBool(typeof(CharacterDead)))
                     {
                         continue;
                     }
 
-                    if (control.DAMAGE_DATA.IsDead())
+                    if (control.GetBool(typeof(CharacterDead)))
                     {
                         continue;
                     }

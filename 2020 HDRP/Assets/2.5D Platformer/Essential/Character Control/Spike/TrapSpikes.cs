@@ -35,7 +35,7 @@ namespace Roundbeargames
             {
                 foreach(CharacterControl control in ListCharacters)
                 {
-                    if (!control.DAMAGE_DATA.IsDead())
+                    if (!control.GetBool(typeof(CharacterDead)))
                     {
                         if (SpikeTriggerRoutine == null && SpikesReloaded)
                         {
