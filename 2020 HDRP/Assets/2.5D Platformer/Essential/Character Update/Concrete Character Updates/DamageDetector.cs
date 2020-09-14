@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class DamageDetector : CharacterUpdate
     {
-        static string VFX = "VFX";
-
         public override void InitComponent()
         {
             control.DAMAGE_DATA.TakeDamage = ProcessDamage;
@@ -204,7 +202,10 @@ namespace Roundbeargames
 
         void TakeDamage(AttackCondition info)
         {
-            ProcessHitParticles(info);
+            if (control.GetBool(typeof(ShouldShowHitParticles), info))
+            {
+                control.RunFunction(typeof(SpawnHitParticles), info.Attacker, info.AttackAbility.ParticleType);
+            }
 
             info.CurrentHits++;
             control.DAMAGE_DATA.hp -= info.AttackAbility.Damage;
@@ -231,22 +232,6 @@ namespace Roundbeargames
             if (!info.RegisteredTargets.Contains(this.control))
             {
                 info.RegisteredTargets.Add(this.control);
-            }
-        }
-
-        void ProcessHitParticles(AttackCondition info)
-        {
-            if (info.MustCollide)
-            {
-                CameraManager.Instance.ShakeCamera(0.3f);
-
-                if (info.AttackAbility.UseDeathParticles)
-                {
-                    if (info.AttackAbility.ParticleType.ToString().Contains(VFX))
-                    {
-                        control.RunFunction(typeof(SpawnHitParticles), info.Attacker, info.AttackAbility.ParticleType);
-                    }
-                }
             }
         }
     }
