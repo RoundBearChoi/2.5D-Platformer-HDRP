@@ -9,9 +9,5 @@ namespace Roundbeargames
     {
         public RuntimeAnimatorController Animation_A;
         public RuntimeAnimatorController Animation_B;
-
-        public delegate void DoSomething(CharacterControl control);
-
-        public DoSomething DeathByInstaKill;
     }
 }

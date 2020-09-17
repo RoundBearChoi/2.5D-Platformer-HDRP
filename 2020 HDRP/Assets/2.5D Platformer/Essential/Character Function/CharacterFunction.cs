@@ -52,5 +52,10 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual void RunFunction(CharacterControl control)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

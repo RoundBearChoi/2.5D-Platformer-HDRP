@@ -216,6 +216,11 @@ namespace Roundbeargames
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(col, triggerDetector);
         }
 
+        public void RunFunction(System.Type CharacterFunctionType, CharacterControl control)
+        {
+            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(control);
+        }
+
         public bool GetBool(System.Type CharacterQueryType)
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool();

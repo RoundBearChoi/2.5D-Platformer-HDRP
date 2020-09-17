@@ -39,6 +39,7 @@ namespace Roundbeargames
             AddFunction(typeof(TakeDamageFromThrownWeapon));
             AddFunction(typeof(ProcessMeleeWeaponContact));
             AddFunction(typeof(ProcessMeleeWeaponExit));
+            //AddFunction(typeof(ProcessDeathByInstaKill));
         }
 
         void AddFunction(System.Type type)
