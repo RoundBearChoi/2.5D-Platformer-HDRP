@@ -206,6 +206,16 @@ namespace Roundbeargames
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(info);
         }
 
+        public void RunFunction(System.Type CharacterFunctionType, MeleeWeapon weapon, TriggerDetector triggerDetector)
+        {
+            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(weapon, triggerDetector);
+        }
+
+        public void RunFunction(System.Type CharacterFunctionType, Collider col, TriggerDetector triggerDetector)
+        {
+            characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(col, triggerDetector);
+        }
+
         public bool GetBool(System.Type CharacterQueryType)
         {
             return characterQueryProcessor.DicQueries[CharacterQueryType].ReturnBool();

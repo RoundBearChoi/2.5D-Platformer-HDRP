@@ -19,18 +19,25 @@ namespace Roundbeargames
         {
             if (stateInfo.normalizedTime > PickUpTiming)
             {
-                if (characterState.WEAPON_DATA.HoldingWeapon.control == null)
+                try
                 {
-                    MeleeWeapon w = characterState.WEAPON_DATA.HoldingWeapon;
+                    if (characterState.WEAPON_DATA.HoldingWeapon.control == null)
+                    {
+                        MeleeWeapon w = characterState.WEAPON_DATA.HoldingWeapon;
 
-                    w.transform.parent = characterState.RIGHT_HAND_ATTACK.transform;
-                    w.transform.localPosition = w.CustomPosition;
-                    w.transform.localRotation = Quaternion.Euler(w.CustomRotation);
+                        w.transform.parent = characterState.RIGHT_HAND_ATTACK.transform;
+                        w.transform.localPosition = w.CustomPosition;
+                        w.transform.localRotation = Quaternion.Euler(w.CustomRotation);
 
-                    w.control = characterState.characterControl;
-                    w.triggerDetector.control = characterState.characterControl;
+                        w.control = characterState.characterControl;
+                        w.triggerDetector.control = characterState.characterControl;
 
-                    w.RemoveWeaponFromDictionary(characterState.characterControl);
+                        w.RemoveWeaponFromDictionary(characterState.characterControl);
+                    }
+                }
+                catch(System.Exception e)
+                {
+                    Debug.LogError(e);
                 }
             }
         }

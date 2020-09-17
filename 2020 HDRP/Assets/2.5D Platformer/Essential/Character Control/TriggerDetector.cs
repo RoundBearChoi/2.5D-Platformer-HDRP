@@ -28,14 +28,19 @@ namespace Roundbeargames
             {
                 TakeCollateralDamage(attacker, col);
             }
-        
-            CheckCollidingWeapons(col);
+
+            // weapon also has trigger detector
+            if (control != null)
+            {
+                control.RunFunction(typeof(ProcessMeleeWeaponContact), col, this);
+            }
         }
 
         private void OnTriggerExit(Collider col)
         {
             CheckExitingBodyParts(col);
-            CheckExitingWeapons(col);
+
+            control.RunFunction(typeof(ProcessMeleeWeaponExit), col, this);
         }
 
         CharacterControl CheckCollidingBodyParts(Collider col)
@@ -80,61 +85,6 @@ namespace Roundbeargames
             return attacker;
         }
 
-        void CheckCollidingWeapons(Collider col)
-        {
-            MeleeWeapon w = col.transform.root.gameObject.GetComponent<MeleeWeapon>();
-
-            if (w == null)
-            {
-                return;
-            }
-
-            if (w.IsThrown)
-            {
-                if (w.Thrower != control)
-                {
-                    AttackCondition info = new AttackCondition();
-                    info.CopyInfo(control.DAMAGE_DATA.AxeThrow, control);
-
-                    control.DAMAGE_DATA.damageTaken = new DamageTaken(
-                        w.Thrower,
-                        control.DAMAGE_DATA.AxeThrow,
-                        this,
-                        null,
-                        Vector3.zero);
-
-                    control.RunFunction(typeof(DamageReaction), info);
-
-                    if (w.FlyForward)
-                    {
-                        w.transform.rotation = Quaternion.Euler(0f, 90f, 45f);
-                    }
-                    else
-                    {
-                        w.transform.rotation = Quaternion.Euler(0f, -90f, 45f);
-                    }
-
-                    w.transform.parent = this.transform;
-
-                    Vector3 offset = this.transform.position - w.AxeTip.transform.position;
-                    w.transform.position += offset;
-
-                    w.IsThrown = false;
-                    return;
-                }
-            }
-                       
-            if (!control.COLLIDING_OBJ_DATA.CollidingWeapons.ContainsKey(this))
-            {
-                control.COLLIDING_OBJ_DATA.CollidingWeapons.Add(this, new List<Collider>());
-            }
-
-            if (!control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Contains(col))
-            {
-                control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Add(col);
-            }
-        }
-
         void CheckExitingBodyParts(Collider col)
         {
             if (control == null)
@@ -152,27 +102,6 @@ namespace Roundbeargames
                 if (control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Count == 0)
                 {
                     control.COLLIDING_OBJ_DATA.CollidingBodyParts.Remove(this);
-                }
-            }
-        }
-
-        void CheckExitingWeapons(Collider col)
-        {
-            if (control == null)
-            {
-                return;
-            }
-
-            if (control.COLLIDING_OBJ_DATA.CollidingWeapons.ContainsKey(this))
-            {
-                if (control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Contains(col))
-                {
-                    control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Remove(col);
-                }
-
-                if (control.COLLIDING_OBJ_DATA.CollidingWeapons[this].Count == 0)
-                {
-                    control.COLLIDING_OBJ_DATA.CollidingWeapons.Remove(this);
                 }
             }
         }

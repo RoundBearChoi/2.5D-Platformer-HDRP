@@ -36,6 +36,9 @@ namespace Roundbeargames
             AddFunction(typeof(GetPushedAsRagdoll));
             AddFunction(typeof(TakeDamage));
             AddFunction(typeof(DamageReaction));
+            AddFunction(typeof(TakeDamageFromThrownWeapon));
+            AddFunction(typeof(ProcessMeleeWeaponContact));
+            AddFunction(typeof(ProcessMeleeWeaponExit));
         }
 
         void AddFunction(System.Type type)

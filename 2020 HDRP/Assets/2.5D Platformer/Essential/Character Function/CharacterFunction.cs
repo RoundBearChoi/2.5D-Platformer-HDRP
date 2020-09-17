@@ -42,5 +42,15 @@ namespace Roundbeargames
         {
             throw new System.NotImplementedException();
         }
+
+        public virtual void RunFunction(MeleeWeapon weapon, TriggerDetector triggerDetector)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void RunFunction(Collider col, TriggerDetector triggerDetector)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
