@@ -10,9 +10,6 @@ namespace Roundbeargames
         public bool RagdollTriggered;
         public Collider[] ArrBodyParts;
         public FlyingRagdollData flyingRagdollData;
-
-        public delegate Collider GetCollider(string name);
-        public GetCollider GetBody;
     }
 
     [System.Serializable]
