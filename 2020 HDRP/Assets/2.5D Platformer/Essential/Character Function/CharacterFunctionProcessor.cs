@@ -40,6 +40,10 @@ namespace Roundbeargames
             AddFunction(typeof(ProcessMeleeWeaponContact));
             AddFunction(typeof(ProcessMeleeWeaponExit));
             //AddFunction(typeof(ProcessDeathByInstaKill));
+            AddFunction(typeof(InitCharacter));
+
+            CharacterControl control = this.gameObject.GetComponentInParent<CharacterControl>();
+            control.InitalizeCharacter();
         }
 
         void AddFunction(System.Type type)

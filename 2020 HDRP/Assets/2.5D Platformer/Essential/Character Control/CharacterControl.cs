@@ -60,7 +60,6 @@ namespace Roundbeargames
         public WeaponData WEAPON_DATA => characterData.weaponData;
         public TurnData TURN_DATA => characterData.turnData;
 
-
         private Rigidbody rigid;
 
         public Rigidbody RIGID_BODY
@@ -87,31 +86,9 @@ namespace Roundbeargames
             }
         }
 
-        private void Awake()
+        public void InitalizeCharacter()
         {
-            characterUpdateProcessor = GetComponentInChildren<CharacterUpdateProcessor>();
-
-            // temp
-            aiProgress = GetComponentInChildren<AIProgress>();
-            boxCollider = GetComponent<BoxCollider>();
-            navMeshObstacle = GetComponent<NavMeshObstacle>();
-
-            aiController = GetComponentInChildren<AIController>();
-            if (aiController == null)
-            {
-                if (navMeshObstacle != null)
-                {
-                    navMeshObstacle.carving = true;
-                }
-            }
-
-            characterSetup = GetComponentInChildren<CharacterSetup>();
-            characterData = GetComponentInChildren<CharacterData>();
-            characterFunctionProcessor = GetComponentInChildren<CharacterFunctionProcessor>();
-            characterQueryProcessor = GetComponentInChildren<CharacterQueryProcessor>();
-
-            RegisterCharacter();
-            InitCharacterStates(characterSetup.SkinnedMeshAnimator);
+            RunFunction(typeof(InitCharacter), this);
         }
 
 
@@ -135,24 +112,6 @@ namespace Roundbeargames
             GROUND_DATA.BoxColliderContacts = collision.contacts;
         }
 
-        void InitCharacterStates(Animator animator)
-        {
-            CharacterState[] arr = animator.GetBehaviours<CharacterState>();
-
-            foreach(CharacterState c in arr)
-            {
-                c.characterControl = this;
-            }
-        }
-
-        void RegisterCharacter()
-        {
-            if (!CharacterManager.Instance.Characters.Contains(this))
-            {
-                CharacterManager.Instance.Characters.Add(this);
-            }
-        }
-
         public bool UpdatingAbility(System.Type abilityType)
         {
             return GetBool(typeof(CurrentAbility), abilityType);
@@ -160,11 +119,6 @@ namespace Roundbeargames
 
         public void RunFunction(System.Type CharacterFunctionType)
         {
-            //if (this.gameObject.name.Contains("Sumo"))
-            //{
-            //    Debug.Log("updating sumo");
-            //}
-
             if (characterFunctionProcessor.DicFunctions.Count > 0)
             {
                 characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction();
@@ -218,6 +172,11 @@ namespace Roundbeargames
 
         public void RunFunction(System.Type CharacterFunctionType, CharacterControl control)
         {
+            if (characterFunctionProcessor == null)
+            {
+                characterFunctionProcessor = this.gameObject.GetComponentInChildren<CharacterFunctionProcessor>();
+            }
+
             characterFunctionProcessor.DicFunctions[CharacterFunctionType].RunFunction(control);
         }
 
