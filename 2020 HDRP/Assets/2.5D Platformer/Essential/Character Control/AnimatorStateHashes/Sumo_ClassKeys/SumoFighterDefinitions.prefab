@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1501527355664284481}
-  - component: {fileID: 3670212139238456434}
+  - component: {fileID: -1264252024624522949}
   m_Layer: 0
   m_Name: SumoFighterDefinitions
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3670212139238456434
+--- !u!114 &-1264252024624522949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3de2efed09c1414e889789c75efec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HashTypes: 
-  StateNames: []
-  btest1: 0
-  btest2: 0
+  HashTypes:
+  - classKey: {fileID: 11400000, guid: b21e08666f180e742b5b9bed64c1eae8, type: 2}
+    StateName: somename
+    ShortNameHash: 12345
+  - classKey: {fileID: 11400000, guid: 26770693469c34f4aa5bf8de1ebf8faa, type: 2}
+    StateName: somename2
+    ShortNameHash: 123456
+  - classKey: {fileID: 0}
+    StateName: 
+    ShortNameHash: 0
+  - classKey: {fileID: 0}
+    StateName: 
+    ShortNameHash: 0

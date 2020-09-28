@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class AnimatorStateHashes : MonoBehaviour
     {
-        public StateTypes[] HashTypes;
-        public string[] StateNames;
+        public HashData[] HashTypes;
     }
 }
