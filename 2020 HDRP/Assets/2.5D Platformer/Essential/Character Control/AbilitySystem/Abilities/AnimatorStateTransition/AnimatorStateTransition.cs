@@ -30,13 +30,6 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             TargetStateNameHash = transitionTo.GetHashID();
-
-            if (transitionKey != null)
-            {
-                int key = HashManager.Instance.HASH_INITIALIZER.DicHashes[transitionKey];
-                Debug.Log("transition key: " + key);
-                Debug.Log("transition to: " + TargetStateNameHash + " / " + transitionKey.name);
-            }
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -46,6 +39,13 @@ namespace Roundbeargames
                 !BelowExitTimeRequirement(stateInfo) &&
                 !ConditionsNotMet(characterState.characterControl))
             {
+                if (transitionKey != null)
+                {
+                    int key = HashManager.Instance.HASH_INITIALIZER.DicHashes[transitionKey];
+                    Debug.Log("transition key: " + key);
+                    Debug.Log("transition to: " + TargetStateNameHash + " / " + transitionKey.name);
+                }
+
                 MakeInstantTransition(characterState.characterControl);
             }
         }
