@@ -7,6 +7,7 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/AnimatorStateTransition")]
     public class AnimatorStateTransition : CharacterAbility
     {
+        [SerializeField] HashClassKey transitionKey;
         [SerializeField] TransitionTarget transitionTo;
         int TargetStateNameHash = 0;
 
@@ -29,6 +30,13 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             TargetStateNameHash = transitionTo.GetHashID();
+
+            if (transitionKey != null)
+            {
+                int key = HashManager.Instance.HASH_INITIALIZER.DicHashes[transitionKey];
+                Debug.Log("transition key: " + key);
+                Debug.Log("transition to: " + TargetStateNameHash + " / " + transitionKey.name);
+            }
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

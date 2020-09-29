@@ -6,6 +6,28 @@ namespace Roundbeargames
 {
     public class HashManager : Singleton<HashManager>
     {
+        HashInitializer hashInitializer = null;
+
+        public HashInitializer HASH_INITIALIZER
+        {
+            get
+            {
+                if (hashInitializer == null)
+                {
+                    hashInitializer = Instantiate(
+                        Resources.Load("HashInitializer",
+                        typeof(HashInitializer)))
+                        as HashInitializer;
+
+                    hashInitializer.name = typeof(HashInitializer).ToString();
+                    hashInitializer.transform.position = Vector3.zero;
+                    hashInitializer.transform.rotation = Quaternion.identity;
+                }
+
+                return hashInitializer;
+            }
+        }
+
         public int[] ArrMainParams = new int[HashTool.GetLength(typeof(MainParameterType))];
         public int[] ArrCameraParams = new int[HashTool.GetLength(typeof(CameraTrigger))];
         public int[] ArrAITransitionParams = new int[HashTool.GetLength(typeof(AI_Transition))];
@@ -31,6 +53,8 @@ namespace Roundbeargames
 
         private void Awake()
         {
+            HASH_INITIALIZER.Testing();
+
             HashTool.AddNameHashToArray(typeof(MainParameterType), ArrMainParams);
             HashTool.AddNameHashToArray(typeof(CameraTrigger), ArrCameraParams);
             HashTool.AddNameHashToArray(typeof(AI_Transition), ArrAITransitionParams);

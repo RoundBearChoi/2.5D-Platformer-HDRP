@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
   m_Name: Idle_Transition_Pivot
   m_EditorClassIdentifier: 
+  transitionKey: {fileID: 11400000, guid: b21e08666f180e742b5b9bed64c1eae8, type: 2}
   transitionTo:
     nonMovingState: 03000000
     walkState: 
+    runState: 
+    combo01State: 
+    standingJumpState: 
+    ledgeState: 
+    fallState: 
   transitionConditions: 2c010000
   notConditions: 
-  MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0

@@ -7,6 +7,6 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New Key", menuName = "Roundbeargames/AnimatorStateKey/AnimatorStateKey")]
     public class HashClassKey : ScriptableObject
     {
-
+        public int ShortNameHash;
     }
 }
