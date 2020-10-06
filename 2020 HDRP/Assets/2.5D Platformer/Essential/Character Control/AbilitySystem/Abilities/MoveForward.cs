@@ -49,11 +49,11 @@ namespace Roundbeargames
             {
                 if (characterState.characterControl.MoveLeft)
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
+                    characterState.characterControl.RunFunction(typeof(FaceForward), false);
                 }
                 if (characterState.characterControl.MoveRight)
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
+                    characterState.characterControl.RunFunction(typeof(FaceForward), true);
                 }
             }
 
@@ -61,7 +61,7 @@ namespace Roundbeargames
             {
                 if (StartingMomentum > 0.001f)
                 {
-                    if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+                    if (characterState.characterControl.GetBool(typeof(FacingForward)))
                     {
                         characterState.MOMENTUM_DATA.Momentum = StartingMomentum;
                     }

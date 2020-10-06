@@ -24,6 +24,9 @@ namespace Roundbeargames
         public bool Attack;
         public bool Block;
 
+        [Header("Disable Turning")]
+        public bool DisableTurning;
+
         // temp
         public AIProgress aiProgress;
         public AIController aiController;
