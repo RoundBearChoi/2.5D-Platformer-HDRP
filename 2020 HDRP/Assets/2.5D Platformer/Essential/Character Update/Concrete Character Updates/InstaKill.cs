@@ -61,10 +61,10 @@ namespace Roundbeargames
                         continue;
                     }
 
-                    if (c.GetBool(typeof(StateNameContains), "RunningSlide"))
-                    {
-                        continue;
-                    }
+                    //if (c.GetBool(typeof(StateNameContains), "RunningSlide"))
+                    //{
+                    //    continue;
+                    //}
 
                     if (c.GetBool(typeof(CharacterDead)))
                     {

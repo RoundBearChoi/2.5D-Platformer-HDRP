@@ -7,6 +7,7 @@ namespace Roundbeargames
     public class HashManager : Singleton<HashManager>
     {
         HashInitializer hashInitializer = null;
+        HashKeyGetter hashKeyGetter = null;
 
         public HashInitializer HASH_INITIALIZER
         {
@@ -25,6 +26,22 @@ namespace Roundbeargames
                 }
 
                 return hashInitializer;
+            }
+        }
+
+        public HashKeyGetter HASH_KEY_GETTER
+        {
+            get
+            {
+                if (hashKeyGetter == null)
+                {
+                    hashKeyGetter = Instantiate(
+                        Resources.Load("HashKeyGetter",
+                        typeof(HashKeyGetter)))
+                        as HashKeyGetter;
+                }
+
+                return hashKeyGetter;
             }
         }
 

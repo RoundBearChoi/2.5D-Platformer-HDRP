@@ -25,13 +25,14 @@ namespace Roundbeargames
             AddQuery(typeof(FrontIsBlocked));
             AddQuery(typeof(GetAttackingPart));
             AddQuery(typeof(GetChildObj));
-            AddQuery(typeof(StateNameContains));
+            //AddQuery(typeof(StateNameContains));
             AddQuery(typeof(GetTouchingMeleeWeapon));
             AddQuery(typeof(CurrentAbility));
             AddQuery(typeof(ShouldShowHitParticles));
             AddQuery(typeof(BlockedAttack));
             AddQuery(typeof(AttackIsValid));
             AddQuery(typeof(IsCollidingWithAttack));
+            AddQuery(typeof(StateNameMatches));
         }
 
         void AddQuery(System.Type type)

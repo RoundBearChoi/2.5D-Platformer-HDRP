@@ -28,6 +28,11 @@ namespace Roundbeargames
             throw new System.NotImplementedException();
         }
 
+        public virtual bool ReturnBool(HashClassKey key, int hashInt)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public virtual List<GameObject> ReturnGameObjList()
         {
             throw new System.NotImplementedException();
