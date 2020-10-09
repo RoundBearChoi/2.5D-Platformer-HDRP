@@ -7,7 +7,6 @@ namespace Roundbeargames
     public class HashInitializer : MonoBehaviour
     {
         public List<AnimatorStateHashes> HashPrefabs = new List<AnimatorStateHashes>();
-        public Dictionary<HashClassKey, int> DicHashes = new Dictionary<HashClassKey, int>();
 
         private void Start()
         {
@@ -22,7 +21,7 @@ namespace Roundbeargames
                 {
                     data.ShortNameHash = Animator.StringToHash(data.StateName);
                     data.classKey.ShortNameHash = Animator.StringToHash(data.StateName);
-                    DicHashes.Add(data.classKey, data.ShortNameHash);
+                    HashManager.Instance.DicHashes.Add(data.classKey, data.ShortNameHash);
                 }
             }
         }

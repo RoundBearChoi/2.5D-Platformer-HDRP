@@ -6,6 +6,8 @@ namespace Roundbeargames
 {
     public class HashManager : Singleton<HashManager>
     {
+        public Dictionary<HashClassKey, int> DicHashes = new Dictionary<HashClassKey, int>();
+
         HashInitializer hashInitializer = null;
         HashKeyGetter hashKeyGetter = null;
 

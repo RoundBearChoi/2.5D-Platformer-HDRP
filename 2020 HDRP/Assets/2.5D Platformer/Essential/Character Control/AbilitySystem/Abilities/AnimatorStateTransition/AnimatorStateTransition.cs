@@ -41,7 +41,7 @@ namespace Roundbeargames
             {
                 if (transitionKey != null)
                 {
-                    int key = HashManager.Instance.HASH_INITIALIZER.DicHashes[transitionKey];
+                    int key = HashManager.Instance.DicHashes[transitionKey];
                     Debug.Log("transition key: " + key);
                     Debug.Log("transition to: " + TargetStateNameHash + " / " + transitionKey.name);
                 }

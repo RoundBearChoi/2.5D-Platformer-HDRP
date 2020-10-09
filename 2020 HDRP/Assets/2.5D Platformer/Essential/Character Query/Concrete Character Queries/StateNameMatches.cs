@@ -8,9 +8,9 @@ namespace Roundbeargames
     {
         public override bool ReturnBool(HashClassKey key, int hashInt)
         {
-            if (HashManager.Instance.HASH_INITIALIZER.DicHashes.ContainsKey(key))
+            if (HashManager.Instance.DicHashes.ContainsKey(key))
             {
-                if (HashManager.Instance.HASH_INITIALIZER.DicHashes[key].Equals(hashInt))
+                if (HashManager.Instance.DicHashes[key].Equals(hashInt))
                 {
                     return true;
                 }
