@@ -9,7 +9,7 @@ namespace Roundbeargames
     {
         [SerializeField] HashClassKey transitionKey;
         [SerializeField] TransitionTarget transitionTo;
-        int TargetStateNameHash = 0;
+        [SerializeField] int TargetStateNameHash = 0;
 
         [Space(10)]
         [Header("All conditions must be met")]
@@ -30,6 +30,16 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             TargetStateNameHash = transitionTo.GetHashID();
+
+            if (transitionKey != null)
+            {
+                int k = HashManager.Instance.DicHashes[transitionKey];
+
+                if (!k.Equals(TargetStateNameHash))
+                {
+                    Debug.LogError("shortname hash not matching! " + this.name);
+                }
+            }
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

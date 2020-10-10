@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &87868839371112780
+--- !u!1 &8729442684081238308
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7388346683930796702}
-  - component: {fileID: 3871118586034626242}
+  - component: {fileID: 1501527355664284481}
+  - component: {fileID: -1264252024624522949}
   m_Layer: 0
-  m_Name: HashInitializer
+  m_Name: Sumo_Walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7388346683930796702
+--- !u!4 &1501527355664284481
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87868839371112780}
+  m_GameObject: {fileID: 8729442684081238308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,19 +31,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3871118586034626242
+--- !u!114 &-1264252024624522949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87868839371112780}
+  m_GameObject: {fileID: 8729442684081238308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593d84eb362ff284abafad5972944ff9, type: 3}
+  m_Script: {fileID: 11500000, guid: f3de2efed09c1414e889789c75efec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HashPrefabs:
-  - {fileID: -1264252024624522949, guid: 15a61338db1453741b01fc03e6bff8fe, type: 3}
-  - {fileID: -1264252024624522949, guid: 70bfd7f7d7e38b04b94274144365ea88, type: 3}
-  - {fileID: -1264252024624522949, guid: 01a87d4f91c916e49a4de73f82f19a41, type: 3}
+  HashTypes:
+  - classKey: {fileID: 11400000, guid: c3c40909b53b3ad42b0ba154560a2e7b, type: 2}
+    StateName: Walk_Fwd
+    ShortNameHash: 0
+  - classKey: {fileID: 11400000, guid: 81c8e190da5ac80449a32d42d11914f1, type: 2}
+    StateName: Walk_Fwd_InPlace
+    ShortNameHash: 0
