@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
   m_Name: Walk_Transition_StandingJump_Prep
   m_EditorClassIdentifier: 
+  transitionKey: {fileID: 11400000, guid: 62ddb2f010108d84ebe784e493074c3e, type: 2}
   transitionTo:
     nonMovingState: 
     walkState: 
     runState: 
     combo01State: 
     standingJumpState: 00000000
+    ledgeState: 
+    fallState: 
+  TargetStateNameHash: 0
   transitionConditions: 05000000
   notConditions: 
   exitTimeTransition:

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
   m_Name: StandingJumpAir_Transition_Land
   m_EditorClassIdentifier: 
+  transitionKey: {fileID: 11400000, guid: 2a83d49f4a5c7a744a448c51b2404671, type: 2}
   transitionTo:
     nonMovingState: 
     walkState: 
@@ -19,6 +20,8 @@ MonoBehaviour:
     combo01State: 
     standingJumpState: 02000000
     ledgeState: 
+    fallState: 
+  TargetStateNameHash: 0
   transitionConditions: 08000000
   notConditions: 90010000
   exitTimeTransition:
