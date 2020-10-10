@@ -27,10 +27,7 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (HashManager.Instance.HASH_INITIALIZER == null)
-            {
-                // init all hash keys
-            }
+            HashManager.Instance.SetupHashInitializer();
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

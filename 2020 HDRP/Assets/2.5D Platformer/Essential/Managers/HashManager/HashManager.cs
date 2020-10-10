@@ -11,25 +11,20 @@ namespace Roundbeargames
         HashInitializer hashInitializer = null;
         HashKeyGetter hashKeyGetter = null;
 
-        public HashInitializer HASH_INITIALIZER
+        public void SetupHashInitializer()
         {
-            get
+            if (hashInitializer == null)
             {
-                if (hashInitializer == null)
-                {
-                    hashInitializer = Instantiate(
-                        Resources.Load("HashInitializer",
-                        typeof(HashInitializer)))
-                        as HashInitializer;
+                hashInitializer = Instantiate(
+                    Resources.Load("HashInitializer",
+                    typeof(HashInitializer)))
+                    as HashInitializer;
 
-                    hashInitializer.name = typeof(HashInitializer).ToString();
-                    hashInitializer.transform.position = Vector3.zero;
-                    hashInitializer.transform.rotation = Quaternion.identity;
+                hashInitializer.name = typeof(HashInitializer).ToString();
+                hashInitializer.transform.position = Vector3.zero;
+                hashInitializer.transform.rotation = Quaternion.identity;
 
-                    hashInitializer.InitAllHashKeys();
-                }
-
-                return hashInitializer;
+                hashInitializer.InitAllHashKeys();
             }
         }
 
