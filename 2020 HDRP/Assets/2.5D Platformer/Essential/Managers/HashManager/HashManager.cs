@@ -25,6 +25,8 @@ namespace Roundbeargames
                     hashInitializer.name = typeof(HashInitializer).ToString();
                     hashInitializer.transform.position = Vector3.zero;
                     hashInitializer.transform.rotation = Quaternion.identity;
+
+                    hashInitializer.InitAllHashKeys();
                 }
 
                 return hashInitializer;
@@ -72,8 +74,6 @@ namespace Roundbeargames
 
         private void Awake()
         {
-            HASH_INITIALIZER.Testing();
-
             HashTool.AddNameHashToArray(typeof(MainParameterType), ArrMainParams);
             HashTool.AddNameHashToArray(typeof(CameraTrigger), ArrCameraParams);
             HashTool.AddNameHashToArray(typeof(AI_Transition), ArrAITransitionParams);

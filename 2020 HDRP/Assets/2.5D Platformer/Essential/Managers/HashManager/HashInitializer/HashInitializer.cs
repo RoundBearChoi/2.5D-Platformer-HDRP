@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public List<AnimatorStateHashes> HashPrefabs = new List<AnimatorStateHashes>();
 
-        private void Start()
+        public void InitAllHashKeys()
         {
             foreach(AnimatorStateHashes prefab in HashPrefabs)
             {
@@ -24,11 +24,6 @@ namespace Roundbeargames
                     HashManager.Instance.DicHashes.Add(data.classKey, data.ShortNameHash);
                 }
             }
-        }
-
-        public void Testing()
-        {
-
         }
     }
 }

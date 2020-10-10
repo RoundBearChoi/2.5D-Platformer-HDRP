@@ -29,15 +29,18 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            TargetStateNameHash = transitionTo.GetHashID();
-
-            if (transitionKey != null)
+            if (HashManager.Instance.HASH_INITIALIZER != null)
             {
-                int k = HashManager.Instance.DicHashes[transitionKey];
+                TargetStateNameHash = transitionTo.GetHashID();
 
-                if (!k.Equals(TargetStateNameHash))
+                if (transitionKey != null)
                 {
-                    Debug.LogError("shortname hash not matching! " + this.name);
+                    int k = HashManager.Instance.DicHashes[transitionKey];
+
+                    if (!k.Equals(TargetStateNameHash))
+                    {
+                        Debug.LogError("shortname hash not matching! " + this.name);
+                    }
                 }
             }
         }

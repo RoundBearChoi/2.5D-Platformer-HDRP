@@ -12,14 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
   m_Name: Walk_Transition_WalkPivot
   m_EditorClassIdentifier: 
+  transitionKey: {fileID: 11400000, guid: b21e08666f180e742b5b9bed64c1eae8, type: 2}
   transitionTo:
     nonMovingState: 03000000
     walkState: 
+    runState: 
+    combo01State: 
+    standingJumpState: 
+    ledgeState: 
+    fallState: 
+  TargetStateNameHash: 243837397
   transitionConditions: 2c010000
   notConditions: 
-  MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 0
     TransitionTime: 0
+  offsetOnFoot:
+    UseOffsetOnFoot: 0
+    LeftFootForward_Offset: 0
+    RightFootForward_Offset: 0
   CrossFade: 0.05
   Offset: 0
