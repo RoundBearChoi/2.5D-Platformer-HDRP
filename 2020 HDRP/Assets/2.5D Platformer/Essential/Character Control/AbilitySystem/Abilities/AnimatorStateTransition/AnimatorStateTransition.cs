@@ -42,6 +42,10 @@ namespace Roundbeargames
                         Debug.LogError("shortname hash not matching! " + this.name);
                     }
                 }
+                else
+                {
+                    Debug.LogError("missing next transition " + this.name);
+                }
             }
         }
 

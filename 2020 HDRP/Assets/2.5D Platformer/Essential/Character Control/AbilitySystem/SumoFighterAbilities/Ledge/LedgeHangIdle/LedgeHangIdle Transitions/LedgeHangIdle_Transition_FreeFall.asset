@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
   m_Name: LedgeHangIdle_Transition_FreeFall
   m_EditorClassIdentifier: 
+  transitionKey: {fileID: 11400000, guid: 415b439238f4ae44cb2cebdfe3663e1e, type: 2}
   transitionTo:
     nonMovingState: 
     walkState: 
@@ -20,6 +21,7 @@ MonoBehaviour:
     standingJumpState: 
     ledgeState: 
     fallState: 00000000
+  TargetStateNameHash: 1235708951
   transitionConditions: 01000000
   notConditions: 
   exitTimeTransition:
