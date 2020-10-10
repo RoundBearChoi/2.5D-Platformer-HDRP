@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e798d424dd401a4891e134098ad697c, type: 3}
   m_Name: RunPivot_Transition_RunStart
   m_EditorClassIdentifier: 
+  transitionKey: {fileID: 11400000, guid: b1d31cc00f505564386151165103afb6, type: 2}
   transitionTo:
     nonMovingState: 
     walkState: 
     runState: 00000000
+    combo01State: 
+    standingJumpState: 
+    ledgeState: 
+    fallState: 
+  TargetStateNameHash: 0
   transitionConditions: c8000000
   notConditions: 
-  MinimumProgress: 0
   exitTimeTransition:
     UseExitTime: 1
     TransitionTime: 0.7
