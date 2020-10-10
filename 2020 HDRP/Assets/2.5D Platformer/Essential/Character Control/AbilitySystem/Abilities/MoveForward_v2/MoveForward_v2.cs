@@ -12,9 +12,16 @@ namespace Roundbeargames
         [SerializeField] BasicMovementOptions basicMovementOptions;
         [Space(10)]
         [SerializeField] MomentumMovementOptions momentumOptions;
+        [Space(10)]
+        [SerializeField] HashClassKey IdleKey;
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
+            if (IdleKey == null)
+            {
+                Debug.LogError("idle key missing: " + this.name);
+            }
+
             SetCommonMoveComponent();
             characterState.ANIMATION_DATA.LatestMoveForward = moveForwardComponent;
             SetStartingMomentum(characterState);
@@ -29,7 +36,7 @@ namespace Roundbeargames
 
             AnimatorStateInfo nextStateInfo = animator.GetNextAnimatorStateInfo(0);
 
-            if (nextStateInfo.shortNameHash == HashManager.Instance.ArrNonMovingStates[(int)NonMovingStateNames.Idle_000])
+            if (nextStateInfo.shortNameHash == HashManager.Instance.DicHashes[IdleKey])
             {
                 return;
             }

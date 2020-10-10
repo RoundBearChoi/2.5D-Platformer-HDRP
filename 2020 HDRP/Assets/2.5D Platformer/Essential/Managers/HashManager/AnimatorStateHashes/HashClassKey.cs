@@ -8,5 +8,6 @@ namespace Roundbeargames
     public class HashClassKey : ScriptableObject
     {
         public int ShortNameHash;
+        public MirrorParameterType MirrorType;
     }
 }

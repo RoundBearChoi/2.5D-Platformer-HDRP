@@ -63,3 +63,4 @@ MonoBehaviour:
     MaxMomentum: 0
     StartFromPreviousMomentum: 0
     ClearMomentumOnExit: 0
+  IdleKey: {fileID: 11400000, guid: 94a27e47dcb49aa40b7cc656ac05129a, type: 2}

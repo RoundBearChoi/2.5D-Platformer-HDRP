@@ -6,9 +6,9 @@ namespace Roundbeargames
 {
     public static class MirrorSetter
     {
-        public static void SetMirrorParameter(CharacterControl control, TransitionTarget transitionTo)
+        public static void SetMirrorParameter(CharacterControl control, HashClassKey key)
         {
-            MirrorParameterType mirrorParamType = transitionTo.GetNextMirrorType();
+            MirrorParameterType mirrorParamType = key.MirrorType;
 
             if (mirrorParamType == MirrorParameterType.idle_mirror)
             {

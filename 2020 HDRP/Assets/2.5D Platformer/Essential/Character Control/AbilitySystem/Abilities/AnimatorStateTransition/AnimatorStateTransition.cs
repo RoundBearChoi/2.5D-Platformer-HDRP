@@ -8,8 +8,6 @@ namespace Roundbeargames
     public class AnimatorStateTransition : CharacterAbility
     {
         [SerializeField] HashClassKey transitionKey;
-        [SerializeField] TransitionTarget transitionTo;
-        [SerializeField] int TargetStateNameHash = 0;
 
         [Space(10)]
         [Header("All conditions must be met")]
@@ -29,23 +27,9 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (HashManager.Instance.HASH_INITIALIZER != null)
+            if (HashManager.Instance.HASH_INITIALIZER == null)
             {
-                TargetStateNameHash = transitionTo.GetHashID();
-
-                if (transitionKey != null)
-                {
-                    int k = HashManager.Instance.DicHashes[transitionKey];
-
-                    if (!k.Equals(TargetStateNameHash))
-                    {
-                        Debug.LogError("shortname hash not matching! " + this.name);
-                    }
-                }
-                else
-                {
-                    Debug.LogError("missing next transition " + this.name);
-                }
+                // init all hash keys
             }
         }
 
@@ -56,13 +40,6 @@ namespace Roundbeargames
                 !BelowExitTimeRequirement(stateInfo) &&
                 !ConditionsNotMet(characterState.characterControl))
             {
-                if (transitionKey != null)
-                {
-                    int key = HashManager.Instance.DicHashes[transitionKey];
-                    Debug.Log("transition key: " + key);
-                    Debug.Log("transition to: " + TargetStateNameHash + " / " + transitionKey.name);
-                }
-
                 MakeInstantTransition(characterState.characterControl);
             }
         }
@@ -74,7 +51,7 @@ namespace Roundbeargames
 
         void MakeInstantTransition(CharacterControl control)
         {
-            MirrorSetter.SetMirrorParameter(control, transitionTo);
+            MirrorSetter.SetMirrorParameter(control, transitionKey);
 
             if (offsetOnFoot.UseOffsetOnFoot)
             {
@@ -90,17 +67,20 @@ namespace Roundbeargames
 
             if (CrossFade <= 0f)
             {
-                control.characterSetup.SkinnedMeshAnimator.Play(TargetStateNameHash, 0);
+                control.characterSetup.SkinnedMeshAnimator.
+                    Play(HashManager.Instance.DicHashes[transitionKey], 0);
             }
             else
             {
                 if (Offset <= 0f)
                 {
-                    control.characterSetup.SkinnedMeshAnimator.CrossFade(TargetStateNameHash, CrossFade, 0);
+                    control.characterSetup.SkinnedMeshAnimator.
+                        CrossFade(HashManager.Instance.DicHashes[transitionKey], CrossFade, 0);
                 }
                 else
                 {
-                    control.characterSetup.SkinnedMeshAnimator.CrossFade(TargetStateNameHash, CrossFade, 0, Offset);
+                    control.characterSetup.SkinnedMeshAnimator.
+                        CrossFade(HashManager.Instance.DicHashes[transitionKey], CrossFade, 0, Offset);
                 }
             }
         }

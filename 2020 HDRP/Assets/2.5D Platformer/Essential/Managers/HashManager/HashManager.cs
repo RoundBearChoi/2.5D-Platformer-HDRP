@@ -58,13 +58,13 @@ namespace Roundbeargames
         public int[] ArrMirrorParameters = new int[HashTool.GetLength(typeof(MirrorParameterType))];
 
         //sumo fighter
-        public int[] ArrNonMovingStates = new int[HashTool.GetLength(typeof(NonMovingStateNames))];
-        public int[] ArrWalkStates = new int[HashTool.GetLength(typeof(WalkStateNames))];
-        public int[] ArrRunStates = new int[HashTool.GetLength(typeof(RunStateNames))];
-        public int[] ArrCombo01States = new int[HashTool.GetLength(typeof(Combo01StateNames))];
-        public int[] ArrStandingJumpStates = new int[HashTool.GetLength(typeof(StandingJumpStateNames))];
-        public int[] ArrLedgeStates = new int[HashTool.GetLength(typeof(LedgeStateNames))];
-        public int[] ArrFallStates = new int[HashTool.GetLength(typeof(FallStateNames))];
+        //public int[] ArrNonMovingStates = new int[HashTool.GetLength(typeof(NonMovingStateNames))];
+        //public int[] ArrWalkStates = new int[HashTool.GetLength(typeof(WalkStateNames))];
+        //public int[] ArrRunStates = new int[HashTool.GetLength(typeof(RunStateNames))];
+        //public int[] ArrCombo01States = new int[HashTool.GetLength(typeof(Combo01StateNames))];
+        //public int[] ArrStandingJumpStates = new int[HashTool.GetLength(typeof(StandingJumpStateNames))];
+        //public int[] ArrLedgeStates = new int[HashTool.GetLength(typeof(LedgeStateNames))];
+        //public int[] ArrFallStates = new int[HashTool.GetLength(typeof(FallStateNames))];
 
         public Dictionary<Hit_Reaction_States, int> DicHitReactionStates =
             new Dictionary<Hit_Reaction_States, int>();
@@ -83,13 +83,13 @@ namespace Roundbeargames
             HashTool.AddNameHashToArray(typeof(MirrorParameterType), ArrMirrorParameters);
 
             // sumo fighter
-            HashTool.AddNameHashToArray(typeof(NonMovingStateNames), ArrNonMovingStates);
-            HashTool.AddNameHashToArray(typeof(WalkStateNames), ArrWalkStates);
-            HashTool.AddNameHashToArray(typeof(RunStateNames), ArrRunStates);
-            HashTool.AddNameHashToArray(typeof(Combo01StateNames), ArrCombo01States);
-            HashTool.AddNameHashToArray(typeof(StandingJumpStateNames), ArrStandingJumpStates);
-            HashTool.AddNameHashToArray(typeof(LedgeStateNames), ArrLedgeStates);
-            HashTool.AddNameHashToArray(typeof(FallStateNames), ArrFallStates);
+            //HashTool.AddNameHashToArray(typeof(NonMovingStateNames), ArrNonMovingStates);
+            //HashTool.AddNameHashToArray(typeof(WalkStateNames), ArrWalkStates);
+            //HashTool.AddNameHashToArray(typeof(RunStateNames), ArrRunStates);
+            //HashTool.AddNameHashToArray(typeof(Combo01StateNames), ArrCombo01States);
+            //HashTool.AddNameHashToArray(typeof(StandingJumpStateNames), ArrStandingJumpStates);
+            //HashTool.AddNameHashToArray(typeof(LedgeStateNames), ArrLedgeStates);
+            //HashTool.AddNameHashToArray(typeof(FallStateNames), ArrFallStates);
 
             // hit reaction states
             Hit_Reaction_States[] arrHitReactionStates = System.Enum.GetValues(typeof(Hit_Reaction_States))

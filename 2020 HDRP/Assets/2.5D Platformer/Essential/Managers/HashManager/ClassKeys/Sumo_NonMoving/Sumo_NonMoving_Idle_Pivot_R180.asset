@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd4b554dc95aca41b3e9287663c1dca, type: 3}
   m_Name: Sumo_NonMoving_Idle_Pivot_R180
   m_EditorClassIdentifier: 
+  ShortNameHash: 819722272
+  MirrorType: 0
