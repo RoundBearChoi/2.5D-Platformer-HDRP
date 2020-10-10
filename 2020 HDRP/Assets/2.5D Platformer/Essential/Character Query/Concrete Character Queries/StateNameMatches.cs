@@ -8,16 +8,9 @@ namespace Roundbeargames
     {
         public override bool ReturnBool(HashClassKey key, int hashInt)
         {
-            if (HashManager.Instance.DicHashes.ContainsKey(key))
+            if (key.ShortNameHash.Equals(hashInt))
             {
-                if (HashManager.Instance.DicHashes[key].Equals(hashInt))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
             {

@@ -65,19 +65,19 @@ namespace Roundbeargames
             if (CrossFade <= 0f)
             {
                 control.characterSetup.SkinnedMeshAnimator.
-                    Play(HashManager.Instance.DicHashes[transitionKey], 0);
+                    Play(transitionKey.ShortNameHash, 0);
             }
             else
             {
                 if (Offset <= 0f)
                 {
                     control.characterSetup.SkinnedMeshAnimator.
-                        CrossFade(HashManager.Instance.DicHashes[transitionKey], CrossFade, 0);
+                        CrossFade(transitionKey.ShortNameHash, CrossFade, 0);
                 }
                 else
                 {
                     control.characterSetup.SkinnedMeshAnimator.
-                        CrossFade(HashManager.Instance.DicHashes[transitionKey], CrossFade, 0, Offset);
+                        CrossFade(transitionKey.ShortNameHash, CrossFade, 0, Offset);
                 }
             }
         }

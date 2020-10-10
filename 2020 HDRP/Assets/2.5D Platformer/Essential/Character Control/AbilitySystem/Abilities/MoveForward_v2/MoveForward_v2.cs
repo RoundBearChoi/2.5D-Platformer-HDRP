@@ -36,7 +36,7 @@ namespace Roundbeargames
 
             AnimatorStateInfo nextStateInfo = animator.GetNextAnimatorStateInfo(0);
 
-            if (nextStateInfo.shortNameHash == HashManager.Instance.DicHashes[IdleKey])
+            if (nextStateInfo.shortNameHash == IdleKey.ShortNameHash)
             {
                 return;
             }

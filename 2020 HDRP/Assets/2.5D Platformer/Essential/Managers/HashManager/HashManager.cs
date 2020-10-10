@@ -6,10 +6,7 @@ namespace Roundbeargames
 {
     public class HashManager : Singleton<HashManager>
     {
-        public Dictionary<HashClassKey, int> DicHashes = new Dictionary<HashClassKey, int>();
-
         HashInitializer hashInitializer = null;
-        HashKeyGetter hashKeyGetter = null;
 
         public void SetupHashInitializer()
         {
@@ -25,22 +22,6 @@ namespace Roundbeargames
                 hashInitializer.transform.rotation = Quaternion.identity;
 
                 hashInitializer.InitAllHashKeys();
-            }
-        }
-
-        public HashKeyGetter HASH_KEY_GETTER
-        {
-            get
-            {
-                if (hashKeyGetter == null)
-                {
-                    hashKeyGetter = Instantiate(
-                        Resources.Load("HashKeyGetter",
-                        typeof(HashKeyGetter)))
-                        as HashKeyGetter;
-                }
-
-                return hashKeyGetter;
             }
         }
 
