@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/2.5D Platformer/HDRP Scenes/RB - old controller.unity
+    path: Assets/2.5D Platformer/HDRP Scenes/RB - old controller scene.unity
     guid: 9f45f5962d3ee1f4bad1af3f3860ba56
   m_configObjects: {}
