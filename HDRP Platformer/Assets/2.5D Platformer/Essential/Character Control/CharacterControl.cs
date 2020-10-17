@@ -5,13 +5,6 @@ using UnityEngine.AI;
 
 namespace Roundbeargames
 {
-    public enum RBScenes
-    {
-        TutorialScene_CharacterSelect,
-        TutorialScene_Sample,
-        TutorialScene_Sample_Night,
-    }
-
     public class CharacterControl : MonoBehaviour
     {
         [Header("Input")]
@@ -27,14 +20,15 @@ namespace Roundbeargames
         [Header("Disable Turning")]
         public bool DisableTurning;
 
-        // temp
+        [Header("temp")]
         public AIProgress aiProgress;
         public AIController aiController;
         public BoxCollider boxCollider;
         public NavMeshObstacle navMeshObstacle;
 
+        [Header("SubComponents")]
         public CharacterSetup characterSetup;
-        public CharacterData characterData;
+        public CharacterData characterData; //temp
         public CharacterFunctionProcessor characterFunctionProcessor;
         public CharacterUpdateProcessor characterUpdateProcessor;
         public CharacterQueryProcessor characterQueryProcessor;
@@ -44,7 +38,8 @@ namespace Roundbeargames
         public GameObject RIGHT_FOOT_ATTACK => characterSetup.attackPartSetup.RightFoot_Attack;
         public GameObject LEFT_FOOT_ATTACK => characterSetup.attackPartSetup.LeftFoot_Attack;
 
-        public BlockingObjData BLOCKING_DATA => characterData.blockingData;
+        [Header("Character Data")]
+        public BlockingObjData BLOCKING_DATA;
         public LedgeGrabData LEDGE_GRAB_DATA => characterData.ledgeGrabData;
         public RagdollData RAGDOLL_DATA => characterData.ragdollData;
         public ManualInputData MANUAL_INPUT_DATA => characterData.manualInputData;

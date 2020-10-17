@@ -17,11 +17,11 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.characterControl.RIGID_BODY.useGravity)
+            if (!characterState.control.RIGID_BODY.useGravity)
             {
-                if (characterState.BLOCKING_DATA.UpBlockingDicCount == 0)
+                if (characterState.control.BLOCKING_DATA.UpBlockingDicCount == 0)
                 {
-                    characterState.characterControl.transform.
+                    characterState.control.transform.
                         Translate(Vector3.up * Speed *
                         SpeedGraph.Evaluate(stateInfo.normalizedTime) *
                         Time.deltaTime);

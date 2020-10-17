@@ -32,12 +32,12 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!PreConditionsNotMet(characterState.characterControl) &&
-                !NextAnimatorStateIsDecided(characterState.characterControl) &&
+            if (!PreConditionsNotMet(characterState.control) &&
+                !NextAnimatorStateIsDecided(characterState.control) &&
                 !BelowExitTimeRequirement(stateInfo) &&
-                !ConditionsNotMet(characterState.characterControl))
+                !ConditionsNotMet(characterState.control))
             {
-                MakeInstantTransition(characterState.characterControl);
+                MakeInstantTransition(characterState.control);
             }
         }
 

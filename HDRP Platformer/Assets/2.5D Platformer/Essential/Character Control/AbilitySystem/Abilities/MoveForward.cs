@@ -47,13 +47,13 @@ namespace Roundbeargames
 
             if (AllowEarlyTurn)
             {
-                if (characterState.characterControl.MoveLeft)
+                if (characterState.control.MoveLeft)
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), false);
+                    characterState.control.RunFunction(typeof(FaceForward), false);
                 }
-                if (characterState.characterControl.MoveRight)
+                if (characterState.control.MoveRight)
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), true);
+                    characterState.control.RunFunction(typeof(FaceForward), true);
                 }
             }
 
@@ -61,7 +61,7 @@ namespace Roundbeargames
             {
                 if (StartingMomentum > 0.001f)
                 {
-                    if (characterState.characterControl.GetBool(typeof(FacingForward)))
+                    if (characterState.control.GetBool(typeof(FacingForward)))
                     {
                         characterState.MOMENTUM_DATA.Momentum = StartingMomentum;
                     }
@@ -90,9 +90,9 @@ namespace Roundbeargames
                 return;
             }
 
-            UpdateCharacterIgnoreTime(characterState.characterControl, stateInfo);
+            UpdateCharacterIgnoreTime(characterState.control, stateInfo);
 
-            if (characterState.characterControl.Turbo)
+            if (characterState.control.Turbo)
             {
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Turbo], true);
             }
@@ -103,17 +103,17 @@ namespace Roundbeargames
 
             if (UseMomentum)
             {
-                MoveOnMomentum(characterState.characterControl, stateInfo);
+                MoveOnMomentum(characterState.control, stateInfo);
             }
             else
             {
                 if (Constant)
                 {
-                    ConstantMove(characterState.characterControl, stateInfo);
+                    ConstantMove(characterState.control, stateInfo);
                 }
                 else
                 {
-                    ControlledMove(characterState.characterControl, stateInfo);
+                    ControlledMove(characterState.control, stateInfo);
                 }
             }
         }

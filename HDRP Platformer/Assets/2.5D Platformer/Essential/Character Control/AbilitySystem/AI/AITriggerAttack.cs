@@ -15,19 +15,19 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.characterControl.aiProgress.TargetIsDead())
+            if (characterState.control.aiProgress.TargetIsDead())
             {
-                characterState.characterControl.Attack = false;
+                characterState.control.Attack = false;
             }
             else
             {
-                if (characterState.characterControl.aiProgress.AIDistanceToTarget() < 8f)
+                if (characterState.control.aiProgress.AIDistanceToTarget() < 8f)
                 {
-                    if (!FlyingKick(characterState.characterControl))
+                    if (!FlyingKick(characterState.control))
                     {
-                        if (characterState.characterControl.aiProgress.AIDistanceToTarget() < 2f)
+                        if (characterState.control.aiProgress.AIDistanceToTarget() < 2f)
                         {
-                            TriggerAttack(characterState.characterControl);
+                            TriggerAttack(characterState.control);
                         }
                     }
                 }

@@ -15,33 +15,33 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.characterControl.characterSetup.SkinnedMeshAnimator.GetBool(
+            if (!characterState.control.characterSetup.SkinnedMeshAnimator.GetBool(
                 HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
                 return;
             }
 
-            if (characterState.characterControl.Attack)
+            if (characterState.control.Attack)
             {
                 return;
             }
 
-            if (characterState.characterControl.transform.position.z <
-                characterState.characterControl.aiProgress.pathfindingAgent.EndSphere.transform.position.z)
+            if (characterState.control.transform.position.z <
+                characterState.control.aiProgress.pathfindingAgent.EndSphere.transform.position.z)
             {
-                characterState.characterControl.MoveRight = true;
-                characterState.characterControl.MoveLeft = false;
+                characterState.control.MoveRight = true;
+                characterState.control.MoveLeft = false;
             }
-            else if (characterState.characterControl.transform.position.z >
-                characterState.characterControl.aiProgress.pathfindingAgent.EndSphere.transform.position.z)
+            else if (characterState.control.transform.position.z >
+                characterState.control.aiProgress.pathfindingAgent.EndSphere.transform.position.z)
             {
-                characterState.characterControl.MoveRight = false;
-                characterState.characterControl.MoveLeft = true;
+                characterState.control.MoveRight = false;
+                characterState.control.MoveLeft = true;
             }
 
-            if (characterState.characterControl.aiProgress.AIDistanceToStartSphere() > 3f)
+            if (characterState.control.aiProgress.AIDistanceToStartSphere() > 3f)
             {
-                characterState.characterControl.Turbo = true;
+                characterState.control.Turbo = true;
             }
         }
 

@@ -11,8 +11,8 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.MoveLeft = false;
-            characterState.characterControl.MoveRight = false;
+            characterState.control.MoveLeft = false;
+            characterState.control.MoveRight = false;
 
             characterState.MOMENTUM_DATA.Momentum = 0f;
             characterState.JUMP_DATA.CanWallJump = false;
@@ -21,7 +21,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.characterControl.Jump)
+            if (!characterState.control.Jump)
             {
                 characterState.JUMP_DATA.CanWallJump = true;
             }

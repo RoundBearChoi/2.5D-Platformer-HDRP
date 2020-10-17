@@ -39,7 +39,7 @@ namespace Roundbeargames
                 }
             }
 
-            ConstantMove(characterState.characterControl, stateInfo);
+            ConstantMove(characterState.control, stateInfo);
         }
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -76,7 +76,7 @@ namespace Roundbeargames
                 {
                     if (momentumOptions.StartingMomentum > 0.001f)
                     {
-                        if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+                        if (characterState.control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
                         {
                             characterState.MOMENTUM_DATA.Momentum = momentumOptions.StartingMomentum;
                         }

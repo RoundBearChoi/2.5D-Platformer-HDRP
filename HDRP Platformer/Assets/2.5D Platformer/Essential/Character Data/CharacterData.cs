@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public BlockingObjData blockingData;
         [Space(15)] public LedgeGrabData ledgeGrabData;
         [Space(15)] public RagdollData ragdollData;
         [Space(15)] public ManualInputData manualInputData;
@@ -29,18 +28,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            blockingData = new BlockingObjData
-            {
-                FrontBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
-                DownBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
-                UpBlockingObjs = new Dictionary<GameObject, List<GameObject>>(),
-
-                MarioStompTargets = new List<CharacterControl>(),
-
-                FrontBlockingDicCount = 0,
-                UpBlockingDicCount = 0,
-            };
 
             LedgeCollider[] col_arr = this.transform.root.gameObject.GetComponentsInChildren<LedgeCollider>();
             LedgeCollider c1 = null;

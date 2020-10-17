@@ -10,19 +10,19 @@ namespace Roundbeargames
     {
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.MoveLeft = false;
-            characterState.characterControl.MoveRight = false;
+            characterState.control.MoveLeft = false;
+            characterState.control.MoveRight = false;
             characterState.MOMENTUM_DATA.Momentum = 0f;
 
-            characterState.characterControl.RIGID_BODY.velocity = Vector3.zero;
+            characterState.control.RIGID_BODY.velocity = Vector3.zero;
 
-            if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (characterState.control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
-                characterState.characterControl.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
+                characterState.control.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
             }
             else
             {
-                characterState.characterControl.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
+                characterState.control.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
             }
         }
 

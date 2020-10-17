@@ -14,9 +14,9 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            CheckLeftRightUpDown(characterState.characterControl);
+            CheckLeftRightUpDown(characterState.control);
 
-            if (characterState.characterControl.MoveLeft || characterState.characterControl.MoveRight)
+            if (characterState.control.MoveLeft || characterState.control.MoveRight)
             {
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Move], true);
             }
@@ -25,7 +25,7 @@ namespace Roundbeargames
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Move], false);
             }
 
-            if (characterState.characterControl.Turbo)
+            if (characterState.control.Turbo)
             {
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Turbo], true);
             }

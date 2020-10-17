@@ -20,17 +20,17 @@ namespace Roundbeargames
                 return;
             }
 
-            if (characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (characterState.control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
-                if (characterState.characterControl.MoveLeft)
+                if (characterState.control.MoveLeft)
                 {
                     animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Turn], true);
                 }
             }
 
-            if (!characterState.characterControl.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (!characterState.control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
             {
-                if (characterState.characterControl.MoveRight)
+                if (characterState.control.MoveRight)
                 {
                     animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Turn], true);
                 }

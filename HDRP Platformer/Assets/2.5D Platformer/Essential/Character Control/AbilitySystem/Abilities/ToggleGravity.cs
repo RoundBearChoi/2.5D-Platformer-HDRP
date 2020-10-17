@@ -16,7 +16,7 @@ namespace Roundbeargames
         {
             if (OnStart)
             {
-                ToggleGrav(characterState.characterControl);
+                ToggleGrav(characterState.control);
             }
         }
 
@@ -26,7 +26,7 @@ namespace Roundbeargames
             {
                 if (CustomTiming <= stateInfo.normalizedTime)
                 {
-                    ToggleGrav(characterState.characterControl);
+                    ToggleGrav(characterState.control);
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace Roundbeargames
         {
             if (OnEnd)
             {
-                ToggleGrav(characterState.characterControl);
+                ToggleGrav(characterState.control);
             }
         }
 

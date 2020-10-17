@@ -14,8 +14,8 @@ namespace Roundbeargames
         {
             if (OnStart)
             {
-                characterState.characterControl.characterSetup.SkinnedMeshAnimator.transform.localPosition = Vector3.zero;
-                characterState.characterControl.characterSetup.SkinnedMeshAnimator.transform.localRotation = Quaternion.identity;
+                characterState.control.characterSetup.SkinnedMeshAnimator.transform.localPosition = Vector3.zero;
+                characterState.control.characterSetup.SkinnedMeshAnimator.transform.localRotation = Quaternion.identity;
             }
         }
 
@@ -28,10 +28,10 @@ namespace Roundbeargames
         {
             if (OnEnd)
             {
-                characterState.characterControl.characterSetup.
+                characterState.control.characterSetup.
                     SkinnedMeshAnimator.transform.localPosition = Vector3.zero;
 
-                characterState.characterControl.characterSetup.
+                characterState.control.characterSetup.
                     SkinnedMeshAnimator.transform.localRotation = Quaternion.identity;
             }
         }

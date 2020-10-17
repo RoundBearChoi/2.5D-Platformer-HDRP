@@ -11,12 +11,12 @@ namespace Roundbeargames
         {
             animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Move], false);
 
-            characterState.BLOCKING_DATA.FrontBlockingObjs.Clear();
+            characterState.control.BLOCKING_DATA.FrontBlockingObjs.Clear();
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.characterControl.Jump)
+            if (characterState.control.Jump)
             {
                 // do nothing
             }

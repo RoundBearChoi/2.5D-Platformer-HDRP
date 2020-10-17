@@ -10,25 +10,25 @@ namespace Roundbeargames
     {
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.characterControl.aiProgress.pathfindingAgent == null)
+            if (characterState.control.aiProgress.pathfindingAgent == null)
             {
                 GameObject p = Instantiate(Resources.Load("PathfindingAgent", typeof(GameObject)) as GameObject);
-                characterState.characterControl.aiProgress.pathfindingAgent = p.GetComponent<PathFindingAgent>();
+                characterState.control.aiProgress.pathfindingAgent = p.GetComponent<PathFindingAgent>();
             }
 
-            characterState.characterControl.aiProgress.pathfindingAgent.owner = characterState.characterControl;
-            characterState.characterControl.aiProgress.pathfindingAgent.GetComponent<NavMeshAgent>().enabled = false;
+            characterState.control.aiProgress.pathfindingAgent.owner = characterState.control;
+            characterState.control.aiProgress.pathfindingAgent.GetComponent<NavMeshAgent>().enabled = false;
 
-            characterState.characterControl.aiProgress.pathfindingAgent.transform.position =
-                characterState.characterControl.transform.position + (Vector3.up * 0.5f);
+            characterState.control.aiProgress.pathfindingAgent.transform.position =
+                characterState.control.transform.position + (Vector3.up * 0.5f);
 
-            characterState.characterControl.navMeshObstacle.carving = false;
-            characterState.characterControl.aiProgress.pathfindingAgent.GoToTarget();
+            characterState.control.navMeshObstacle.carving = false;
+            characterState.control.aiProgress.pathfindingAgent.GoToTarget();
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.characterControl.aiProgress.pathfindingAgent.StartWalk)
+            if (characterState.control.aiProgress.pathfindingAgent.StartWalk)
             {
                 animator.SetBool(HashManager.Instance.ArrAITransitionParams[(int)AI_Transition.start_walking], true);
             }

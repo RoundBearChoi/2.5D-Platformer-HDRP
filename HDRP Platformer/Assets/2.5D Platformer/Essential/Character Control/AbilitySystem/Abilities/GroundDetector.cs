@@ -16,7 +16,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (IsGrounded(characterState.characterControl))
+            if (IsGrounded(characterState.control))
             {
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded], true);
             }

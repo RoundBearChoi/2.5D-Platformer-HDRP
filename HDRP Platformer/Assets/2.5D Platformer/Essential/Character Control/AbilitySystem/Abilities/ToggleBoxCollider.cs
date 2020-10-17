@@ -17,7 +17,7 @@ namespace Roundbeargames
         {
             if (OnStart)
             {
-                ToggleBoxCol(characterState.characterControl);
+                ToggleBoxCol(characterState.control);
             }
         }
 
@@ -30,7 +30,7 @@ namespace Roundbeargames
         {
             if (OnEnd)
             {
-                ToggleBoxCol(characterState.characterControl);
+                ToggleBoxCol(characterState.control);
             }
         }
 

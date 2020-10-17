@@ -46,7 +46,7 @@ namespace Roundbeargames
 
             foreach (CharacterState c in arr)
             {
-                c.characterControl = control;
+                c.control = control;
             }
         }
     }

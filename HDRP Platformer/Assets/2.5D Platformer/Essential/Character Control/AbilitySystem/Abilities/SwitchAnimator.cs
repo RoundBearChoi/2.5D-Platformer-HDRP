@@ -12,14 +12,14 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.RIGID_BODY.useGravity = true;
+            characterState.control.RIGID_BODY.useGravity = true;
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             if (stateInfo.normalizedTime >= SwitchTiming)
             {
-                characterState.characterControl.characterSetup.SkinnedMeshAnimator.runtimeAnimatorController = TargetAnimator;
+                characterState.control.characterSetup.SkinnedMeshAnimator.runtimeAnimatorController = TargetAnimator;
             }
         }
 

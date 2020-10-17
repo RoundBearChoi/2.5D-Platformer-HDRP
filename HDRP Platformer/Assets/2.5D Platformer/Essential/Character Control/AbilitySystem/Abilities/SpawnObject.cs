@@ -17,7 +17,7 @@ namespace Roundbeargames
         {
             if (SpawnTiming == 0f)
             {
-                SpawnObj(characterState.characterControl);
+                SpawnObj(characterState.control);
             }
         }
 
@@ -27,7 +27,7 @@ namespace Roundbeargames
             {
                 if (stateInfo.normalizedTime >= SpawnTiming)
                 {
-                    SpawnObj(characterState.characterControl);
+                    SpawnObj(characterState.control);
                 }
             }
         }

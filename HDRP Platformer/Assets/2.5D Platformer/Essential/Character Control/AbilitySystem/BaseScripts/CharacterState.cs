@@ -6,7 +6,7 @@ namespace Roundbeargames
 {
     public class CharacterState : StateMachineBehaviour
     {
-        public CharacterControl characterControl;
+        public CharacterControl control;
 
         [Space(10)]
         public List<CharacterAbility> ListAbilityData = new List<CharacterAbility>();
@@ -22,23 +22,22 @@ namespace Roundbeargames
         [Space(10)]
         public CharacterAbility[] ArrOther;
 
-        public GameObject RIGHT_HAND_ATTACK => characterControl.characterSetup.attackPartSetup.RightHand_Attack;
+        public GameObject RIGHT_HAND_ATTACK => control.characterSetup.attackPartSetup.RightHand_Attack;
 
-        public BlockingObjData BLOCKING_DATA => characterControl.characterData.blockingData;
-        public RagdollData RAGDOLL_DATA => characterControl.characterData.ragdollData;
-        public BoxColliderData BOX_COLLIDER_DATA => characterControl.characterData.boxColliderData;
-        public VerticalVelocityData VERTICAL_VELOCITY_DATA => characterControl.characterData.verticalVelocityData;
-        public MomentumData MOMENTUM_DATA => characterControl.characterData.momentumData;
-        public RotationData ROTATION_DATA => characterControl.characterData.rotationData;
-        public JumpData JUMP_DATA => characterControl.characterData.jumpData;
-        public CollisionSphereData COLLISION_SPHERE_DATA => characterControl.characterData.collisionSphereData;
-        public GroundData GROUND_DATA => characterControl.characterData.groundData;
-        public AttackData ATTACK_DATA => characterControl.characterData.attackData;
-        public AnimationData ANIMATION_DATA => characterControl.characterData.animationData;
-        public AIController AI_CONTROLLER => characterControl.aiController;
-        public WeaponData WEAPON_DATA => characterControl.characterData.weaponData;
-        public CameraData CAMERA_DATA => characterControl.characterData.cameraData;
-        public TurnData TURN_DATA => characterControl.characterData.turnData;
+        public RagdollData RAGDOLL_DATA => control.characterData.ragdollData;
+        public BoxColliderData BOX_COLLIDER_DATA => control.characterData.boxColliderData;
+        public VerticalVelocityData VERTICAL_VELOCITY_DATA => control.characterData.verticalVelocityData;
+        public MomentumData MOMENTUM_DATA => control.characterData.momentumData;
+        public RotationData ROTATION_DATA => control.characterData.rotationData;
+        public JumpData JUMP_DATA => control.characterData.jumpData;
+        public CollisionSphereData COLLISION_SPHERE_DATA => control.characterData.collisionSphereData;
+        public GroundData GROUND_DATA => control.characterData.groundData;
+        public AttackData ATTACK_DATA => control.characterData.attackData;
+        public AnimationData ANIMATION_DATA => control.characterData.animationData;
+        public AIController AI_CONTROLLER => control.aiController;
+        public WeaponData WEAPON_DATA => control.characterData.weaponData;
+        public CameraData CAMERA_DATA => control.characterData.cameraData;
+        public TurnData TURN_DATA => control.characterData.turnData;
 
         public void PutStatesInArray()
         {
@@ -86,13 +85,13 @@ namespace Roundbeargames
             {
                 AbilityList[i].OnEnter(characterState, animator, stateInfo);
 
-                if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
+                if (control.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
                 {
-                    characterControl.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] += 1;
+                    control.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] += 1;
                 }
                 else
                 {
-                    characterControl.ANIMATION_DATA.CurrentRunningAbilities.Add(AbilityList[i], 1);
+                    control.ANIMATION_DATA.CurrentRunningAbilities.Add(AbilityList[i], 1);
                 }
             }
         }
@@ -111,13 +110,13 @@ namespace Roundbeargames
             {
                 AbilityList[i].OnExit(characterState, animator, stateInfo);
 
-                if (characterControl.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
+                if (control.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
                 {
-                    characterControl.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] -= 1;
+                    control.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] -= 1;
 
-                    if (characterControl.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] <= 0)
+                    if (control.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] <= 0)
                     {
-                        characterControl.ANIMATION_DATA.CurrentRunningAbilities.Remove(AbilityList[i]);
+                        control.ANIMATION_DATA.CurrentRunningAbilities.Remove(AbilityList[i]);
                     }
                 }
             }
@@ -125,7 +124,7 @@ namespace Roundbeargames
 
         public bool UpdatingAbility(System.Type characterAbilityType)
         {
-            return characterControl.GetBool(typeof(CurrentAbility), characterAbilityType);
+            return control.GetBool(typeof(CurrentAbility), characterAbilityType);
         }
     }
 }

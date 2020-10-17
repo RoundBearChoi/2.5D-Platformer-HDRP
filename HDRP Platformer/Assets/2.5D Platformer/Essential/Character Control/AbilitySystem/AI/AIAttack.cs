@@ -9,21 +9,21 @@ namespace Roundbeargames
     {
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.Turbo = false;
-            characterState.characterControl.Attack = false;
+            characterState.control.Turbo = false;
+            characterState.control.Attack = false;
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.characterControl.aiProgress.TargetIsDead())
+            if (!characterState.control.aiProgress.TargetIsDead())
             {
-                characterState.characterControl.aiProgress.DoAttack();
+                characterState.control.aiProgress.DoAttack();
             }
             else
             {
-                characterState.characterControl.MoveRight = false;
-                characterState.characterControl.MoveLeft = false;
-                characterState.characterControl.Attack = false;
+                characterState.control.MoveRight = false;
+                characterState.control.MoveLeft = false;
+                characterState.control.Attack = false;
             }
         }
 

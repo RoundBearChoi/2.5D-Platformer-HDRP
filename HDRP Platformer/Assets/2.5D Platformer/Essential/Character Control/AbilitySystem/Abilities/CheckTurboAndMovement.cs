@@ -14,8 +14,8 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if ((characterState.characterControl.MoveLeft || characterState.characterControl.MoveRight) &&
-                characterState.characterControl.Turbo)
+            if ((characterState.control.MoveLeft || characterState.control.MoveRight) &&
+                characterState.control.Turbo)
             {
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Move], true);
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Turbo], true);

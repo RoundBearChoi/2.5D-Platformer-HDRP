@@ -14,13 +14,13 @@ namespace Roundbeargames
         {
             if (TurnOnEnter)
             {
-                if (characterState.characterControl.GetBool(typeof(FacingForward)))
+                if (characterState.control.GetBool(typeof(FacingForward)))
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), false);
+                    characterState.control.RunFunction(typeof(FaceForward), false);
                 }
                 else
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), true);
+                    characterState.control.RunFunction(typeof(FaceForward), true);
                 }
             }
         }
@@ -34,13 +34,13 @@ namespace Roundbeargames
         {
             if (TurnOnExit)
             {
-                if (characterState.characterControl.GetBool(typeof(FacingForward)))
+                if (characterState.control.GetBool(typeof(FacingForward)))
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), false);
+                    characterState.control.RunFunction(typeof(FaceForward), false);
                 }
                 else
                 {
-                    characterState.characterControl.RunFunction(typeof(FaceForward), true);
+                    characterState.control.RunFunction(typeof(FaceForward), true);
                 }
             }
         }

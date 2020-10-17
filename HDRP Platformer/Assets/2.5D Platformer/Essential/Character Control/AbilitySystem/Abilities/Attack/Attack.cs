@@ -50,7 +50,7 @@ namespace Roundbeargames
             }
 
             obj.SetActive(true);
-            info.ResetInfo(this, characterState.characterControl);
+            info.ResetInfo(this, characterState.control);
 
             if (!AttackManager.Instance.CurrentAttacks.Contains(info))
             {

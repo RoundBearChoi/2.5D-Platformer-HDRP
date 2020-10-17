@@ -15,7 +15,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!AIIsOnGround(characterState.characterControl))
+            if (!AIIsOnGround(characterState.control))
             {
                 return;
             }
@@ -27,38 +27,38 @@ namespace Roundbeargames
 
             if (characterState.UpdatingAbility(typeof(Landing)))
             {
-                characterState.characterControl.Turbo = false;
-                characterState.characterControl.Jump = false;
-                characterState.characterControl.MoveUp = false;
-                characterState.characterControl.MoveLeft = false;
-                characterState.characterControl.MoveRight = false;
-                characterState.characterControl.MoveDown = false;
-                characterState.characterControl.aiController.InitializeAI();
+                characterState.control.Turbo = false;
+                characterState.control.Jump = false;
+                characterState.control.MoveUp = false;
+                characterState.control.MoveLeft = false;
+                characterState.control.MoveRight = false;
+                characterState.control.MoveDown = false;
+                characterState.control.aiController.InitializeAI();
             }
 
             if (characterState.AI_CONTROLLER.IsAttacking())
             {
-                if (characterState.characterControl.aiProgress.AIDistanceToTarget() > 3f ||
-                    !characterState.characterControl.aiProgress.TargetIsOnSamePlatform())
+                if (characterState.control.aiProgress.AIDistanceToTarget() > 3f ||
+                    !characterState.control.aiProgress.TargetIsOnSamePlatform())
                 {
-                    characterState.characterControl.Turbo = false;
-                    characterState.characterControl.Jump = false;
-                    characterState.characterControl.MoveUp = false;
-                    characterState.characterControl.MoveLeft = false;
-                    characterState.characterControl.MoveRight = false;
-                    characterState.characterControl.MoveDown = false;
-                    characterState.characterControl.aiController.InitializeAI();
+                    characterState.control.Turbo = false;
+                    characterState.control.Jump = false;
+                    characterState.control.MoveUp = false;
+                    characterState.control.MoveLeft = false;
+                    characterState.control.MoveRight = false;
+                    characterState.control.MoveDown = false;
+                    characterState.control.aiController.InitializeAI();
                 }
             }
 
             // path is blocked
-            if (characterState.BLOCKING_DATA.FrontBlockingDicCount == 0)
+            if (characterState.control.BLOCKING_DATA.FrontBlockingDicCount == 0)
             {
-                characterState.characterControl.aiProgress.BlockingCharacter = null;
+                characterState.control.aiProgress.BlockingCharacter = null;
             }
             else
             {
-                List<GameObject> objs = characterState.characterControl.GetGameObjList(typeof(FrontBlockingCharacterList));
+                List<GameObject> objs = characterState.control.GetGameObjList(typeof(FrontBlockingCharacterList));
 
                 foreach(GameObject o in objs)
                 {
@@ -66,30 +66,30 @@ namespace Roundbeargames
 
                     if (blockingChar != null)
                     {
-                        characterState.characterControl.aiProgress.BlockingCharacter = blockingChar;
+                        characterState.control.aiProgress.BlockingCharacter = blockingChar;
                         break;
                     }
                     else
                     {
-                        characterState.characterControl.aiProgress.BlockingCharacter = null;
+                        characterState.control.aiProgress.BlockingCharacter = null;
                     }
                 }
             }
 
-            if (characterState.characterControl.aiProgress.BlockingCharacter != null)
+            if (characterState.control.aiProgress.BlockingCharacter != null)
             {
                 if (characterState.GROUND_DATA.Ground != null)
                 {
                     if (!characterState.UpdatingAbility(typeof(Jump)) &&
                         !characterState.UpdatingAbility(typeof(JumpPrep)))
                     {
-                        characterState.characterControl.Turbo = false;
-                        characterState.characterControl.Jump = false;
-                        characterState.characterControl.MoveUp = false;
-                        characterState.characterControl.MoveLeft = false;
-                        characterState.characterControl.MoveRight = false;
-                        characterState.characterControl.MoveDown = false;
-                        characterState.characterControl.aiController.InitializeAI();
+                        characterState.control.Turbo = false;
+                        characterState.control.Jump = false;
+                        characterState.control.MoveUp = false;
+                        characterState.control.MoveLeft = false;
+                        characterState.control.MoveRight = false;
+                        characterState.control.MoveDown = false;
+                        characterState.control.aiController.InitializeAI();
                     }
                 }
             }
@@ -99,15 +99,15 @@ namespace Roundbeargames
                 !characterState.UpdatingAbility(typeof(Jump)) &&
                 !characterState.UpdatingAbility(typeof(WallJumpPrep)))
             {
-                if (characterState.characterControl.aiProgress.GetStartSphereHeight() > 0.1f)
+                if (characterState.control.aiProgress.GetStartSphereHeight() > 0.1f)
                 {
-                    characterState.characterControl.Turbo = false;
-                    characterState.characterControl.Jump = false;
-                    characterState.characterControl.MoveUp = false;
-                    characterState.characterControl.MoveLeft = false;
-                    characterState.characterControl.MoveRight = false;
-                    characterState.characterControl.MoveDown = false;
-                    characterState.characterControl.aiController.InitializeAI();
+                    characterState.control.Turbo = false;
+                    characterState.control.Jump = false;
+                    characterState.control.MoveUp = false;
+                    characterState.control.MoveLeft = false;
+                    characterState.control.MoveRight = false;
+                    characterState.control.MoveDown = false;
+                    characterState.control.aiController.InitializeAI();
                 }
             }
         }

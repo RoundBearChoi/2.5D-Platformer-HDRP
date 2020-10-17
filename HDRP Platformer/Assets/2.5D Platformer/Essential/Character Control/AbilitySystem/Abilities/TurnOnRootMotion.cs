@@ -9,7 +9,7 @@ namespace Roundbeargames
     {
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.characterSetup.
+            characterState.control.characterSetup.
                 SkinnedMeshAnimator.applyRootMotion = true;
         }
 
@@ -20,7 +20,7 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.characterSetup.
+            characterState.control.characterSetup.
                 SkinnedMeshAnimator.applyRootMotion = false;
         }
     }

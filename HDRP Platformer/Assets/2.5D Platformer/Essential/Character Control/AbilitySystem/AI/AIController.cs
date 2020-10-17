@@ -32,7 +32,7 @@ namespace Roundbeargames
 
             foreach(CharacterState aiState in arr)
             {
-                aiState.characterControl = control;
+                aiState.control = control;
             }
         }
 

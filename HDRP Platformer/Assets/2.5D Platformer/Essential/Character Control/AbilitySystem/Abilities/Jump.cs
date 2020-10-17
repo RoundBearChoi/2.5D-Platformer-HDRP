@@ -28,7 +28,7 @@ namespace Roundbeargames
 
             if (JumpTiming == 0f)
             {
-                MakeJump(characterState.characterControl);
+                MakeJump(characterState.control);
             }
         }
 
@@ -36,13 +36,13 @@ namespace Roundbeargames
         {
             if (!characterState.JUMP_DATA.DicJumped[JumpIndex] && stateInfo.normalizedTime >= JumpTiming)
             {
-                MakeJump(characterState.characterControl);
+                MakeJump(characterState.control);
             }
         }
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.characterControl.JUMP_DATA.DicJumped[JumpIndex] = false;
+            characterState.control.JUMP_DATA.DicJumped[JumpIndex] = false;
         }
 
         void MakeJump(CharacterControl control)

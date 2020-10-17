@@ -12,7 +12,7 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             characterState.WEAPON_DATA.HoldingWeapon =
-                characterState.characterControl.GetMeleeWeapon(typeof(GetTouchingMeleeWeapon));
+                characterState.control.GetMeleeWeapon(typeof(GetTouchingMeleeWeapon));
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -29,10 +29,10 @@ namespace Roundbeargames
                         w.transform.localPosition = w.CustomPosition;
                         w.transform.localRotation = Quaternion.Euler(w.CustomRotation);
 
-                        w.control = characterState.characterControl;
-                        w.triggerDetector.control = characterState.characterControl;
+                        w.control = characterState.control;
+                        w.triggerDetector.control = characterState.control;
 
-                        w.RemoveWeaponFromDictionary(characterState.characterControl);
+                        w.RemoveWeaponFromDictionary(characterState.control);
                     }
                 }
                 catch(System.Exception e)
