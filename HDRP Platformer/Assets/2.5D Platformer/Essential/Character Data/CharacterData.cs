@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public RagdollData ragdollData;
         [Space(15)] public ManualInputData manualInputData;
         [Space(15)] public BoxColliderData boxColliderData;
         [Space(15)] public VerticalVelocityData verticalVelocityData;
@@ -26,12 +25,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            ragdollData = new RagdollData
-            {
-                RagdollTriggered = false,
-                flyingRagdollData = new FlyingRagdollData(),
-            };
 
             manualInputData = new ManualInputData
             {

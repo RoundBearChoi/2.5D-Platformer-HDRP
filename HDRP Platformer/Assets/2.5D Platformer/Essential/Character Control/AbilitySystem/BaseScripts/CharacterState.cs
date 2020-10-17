@@ -24,7 +24,7 @@ namespace Roundbeargames
 
         public GameObject RIGHT_HAND_ATTACK => control.characterSetup.attackPartSetup.RightHand_Attack;
 
-        public RagdollData RAGDOLL_DATA => control.characterData.ragdollData;
+        //temp
         public BoxColliderData BOX_COLLIDER_DATA => control.characterData.boxColliderData;
         public VerticalVelocityData VERTICAL_VELOCITY_DATA => control.characterData.verticalVelocityData;
         public MomentumData MOMENTUM_DATA => control.characterData.momentumData;
