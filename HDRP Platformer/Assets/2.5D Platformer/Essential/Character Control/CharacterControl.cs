@@ -55,7 +55,6 @@ namespace Roundbeargames
         public RotationData ROTATION_DATA => characterData.rotationData;
         public JumpData JUMP_DATA => characterData.jumpData;
         public CollisionSphereData COLLISION_SPHERE_DATA => characterData.collisionSphereData;
-        public InstaKillData INSTA_KILL_DATA => characterData.instaKillData;
         public GroundData GROUND_DATA => characterData.groundData;
         public AttackData ATTACK_DATA => characterData.attackData;
         public AnimationData ANIMATION_DATA => characterData.animationData;

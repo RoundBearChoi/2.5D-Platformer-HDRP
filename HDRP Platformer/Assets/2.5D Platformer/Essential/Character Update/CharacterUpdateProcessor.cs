@@ -28,7 +28,6 @@ namespace Roundbeargames
             AddUpdater(typeof(PlayerAttack));
             AddUpdater(typeof(PlayerAnimation));
             AddUpdater(typeof(CollisionSpheres));
-            AddUpdater(typeof(InstaKill));
 
             if (control.characterSetup.playableCharacterType != PlayableCharacterType.NONE)
             {
@@ -65,10 +64,8 @@ namespace Roundbeargames
             CharacterFixedUpdate(typeof(BlockingObj));
             CharacterFixedUpdate(typeof(BoxColliderUpdater));
             CharacterFixedUpdate(typeof(VerticalVelocity));
-            CharacterFixedUpdate(typeof(InstaKill));
             CharacterFixedUpdate(typeof(DamageDetector));
             CharacterFixedUpdate(typeof(PlayerRotation));
-            //CharacterFixedUpdate(typeof(CollisionSpheres));
         }
 
         public void RunCharacterUpdate()

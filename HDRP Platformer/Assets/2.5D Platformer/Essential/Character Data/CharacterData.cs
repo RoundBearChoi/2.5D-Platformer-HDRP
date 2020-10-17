@@ -17,7 +17,6 @@ namespace Roundbeargames
         [Space(15)] public RotationData rotationData;
         [Space(15)] public JumpData jumpData;
         [Space(15)] public CollisionSphereData collisionSphereData;
-        [Space(15)] public InstaKillData instaKillData;
         [Space(15)] public GroundData groundData;
         [Space(15)] public AttackData attackData;
         [Space(15)] public AnimationData animationData;
@@ -131,11 +130,6 @@ namespace Roundbeargames
                 FrontSpheres = new GameObject[10],
                 BackSpheres = new GameObject[10],
                 UpSpheres = new GameObject[5],
-            };
-
-            instaKillData = new InstaKillData
-            {
-
             };
 
             groundData = new GroundData
