@@ -12,5 +12,30 @@ namespace Roundbeargames
         [Space(15)] public AttackPartSetup attackPartSetup;
         [Space(15)] public Animator SkinnedMeshAnimator;
         [Space(15)] public PlayableCharacterType playableCharacterType;
+
+        private void Awake()
+        {
+            SetLedgeColliders();   
+        }
+
+        void SetLedgeColliders()
+        {
+            CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
+
+            LedgeCollider[] col_arr = this.transform.root.gameObject.GetComponentsInChildren<LedgeCollider>();
+
+            foreach (LedgeCollider c in col_arr)
+            {
+                if (c.gameObject.name.Contains("1"))
+                {
+                    control.LEDGE_GRAB_DATA.collider1 = c;
+                }
+
+                if (c.gameObject.name.Contains("2"))
+                {
+                    control.LEDGE_GRAB_DATA.collider2 = c;
+                }
+            }
+        }
     }
 }

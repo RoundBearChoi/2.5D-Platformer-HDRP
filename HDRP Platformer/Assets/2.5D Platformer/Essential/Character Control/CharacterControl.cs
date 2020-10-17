@@ -40,7 +40,10 @@ namespace Roundbeargames
 
         [Header("Character Data")]
         public BlockingObjData BLOCKING_DATA;
-        public LedgeGrabData LEDGE_GRAB_DATA => characterData.ledgeGrabData;
+        [Space(3)]
+        public LedgeGrabData LEDGE_GRAB_DATA;
+
+        //temp
         public RagdollData RAGDOLL_DATA => characterData.ragdollData;
         public ManualInputData MANUAL_INPUT_DATA => characterData.manualInputData;
         public BoxColliderData BOX_COLLIDER_DATA => characterData.boxColliderData;
