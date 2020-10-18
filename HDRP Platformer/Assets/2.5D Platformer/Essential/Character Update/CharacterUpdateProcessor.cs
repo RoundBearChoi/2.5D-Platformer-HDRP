@@ -7,7 +7,8 @@ namespace Roundbeargames
     public class CharacterUpdateProcessor : MonoBehaviour
     {
         public Dictionary<System.Type, CharacterUpdate> DicUpdaters = new Dictionary<System.Type, CharacterUpdate>();
-        
+        public CharacterUpdateList UpdateListType;
+
         public CharacterControl control
         {
             get
@@ -25,6 +26,27 @@ namespace Roundbeargames
 
         public void InitUpdaters()
         {
+            if (UpdateListType != null)
+            {
+                foreach (System.Type t in UpdateListType.GetList())
+                {
+                    AddUpdater(t);
+                }
+            }
+            else
+            {
+                Debug.Log("Loading Default Character Updates: " + this.transform.root.gameObject.name);
+                SetDefaultUpdates();
+            }
+
+            if (control.characterSetup.playableCharacterType != PlayableCharacterType.NONE)
+            {
+                AddUpdater(typeof(ManualInput));
+            }
+        }
+
+        void SetDefaultUpdates()
+        {
             AddUpdater(typeof(LedgeChecker));
             AddUpdater(typeof(DamageDetector));
             AddUpdater(typeof(Ragdoll));
@@ -37,11 +59,6 @@ namespace Roundbeargames
             AddUpdater(typeof(PlayerAttack));
             AddUpdater(typeof(PlayerAnimation));
             AddUpdater(typeof(CollisionSpheres));
-
-            if (control.characterSetup.playableCharacterType != PlayableCharacterType.NONE)
-            {
-                AddUpdater(typeof(ManualInput));
-            }
         }
 
         void AddUpdater(System.Type UpdaterType)

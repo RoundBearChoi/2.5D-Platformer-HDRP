@@ -12,9 +12,6 @@ namespace Roundbeargames
         {
             if (FunctionListType != null)
             {
-                Debug.Log("Loading Character Functions: " +
-                    this.name +" - " + this.transform.root.gameObject.name);
-
                 List<System.Type> functions = FunctionListType.GetList();
 
                 foreach(System.Type t in functions)

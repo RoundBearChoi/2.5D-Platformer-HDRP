@@ -13,9 +13,6 @@ namespace Roundbeargames
         {
             if (QueryListType != null)
             {
-                Debug.Log("Loading Character Queries: " +
-                    this.name + " - " + this.transform.root.gameObject.name);
-
                 List<System.Type> functions = QueryListType.GetList();
 
                 foreach (System.Type t in functions)
