@@ -16,7 +16,7 @@ namespace Roundbeargames
 
             characterState.MOMENTUM_DATA.Momentum = 0f;
             characterState.JUMP_DATA.CanWallJump = false;
-            characterState.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = MaxFallVelocity;
+            characterState.control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = MaxFallVelocity;
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -29,7 +29,7 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = Vector3.zero;
+            characterState.control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = Vector3.zero;
         }
     }
 }

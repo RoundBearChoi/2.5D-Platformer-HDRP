@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public VerticalVelocityData verticalVelocityData;
         [Space(15)] public DamageData damageData;
         [Space(15)] public MomentumData momentumData;
         [Space(15)] public RotationData rotationData;
@@ -23,12 +22,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            verticalVelocityData = new VerticalVelocityData
-            {
-                NoJumpCancel = false,
-                MaxWallSlideVelocity = Vector3.zero,
-            };
 
             damageData = new DamageData
             {

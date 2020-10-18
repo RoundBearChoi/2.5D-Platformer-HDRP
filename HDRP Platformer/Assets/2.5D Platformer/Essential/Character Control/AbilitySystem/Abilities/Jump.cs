@@ -24,7 +24,7 @@ namespace Roundbeargames
                 characterState.JUMP_DATA.DicJumped.Add(JumpIndex, false);
             }
 
-            characterState.VERTICAL_VELOCITY_DATA.NoJumpCancel = CancelPull;
+            characterState.control.VERTICAL_VELOCITY_DATA.NoJumpCancel = CancelPull;
 
             if (JumpTiming == 0f)
             {

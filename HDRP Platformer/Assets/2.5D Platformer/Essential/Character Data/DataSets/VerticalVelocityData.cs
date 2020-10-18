@@ -7,7 +7,7 @@ namespace Roundbeargames
     [System.Serializable]
     public class VerticalVelocityData
     {
-        public bool NoJumpCancel;
-        public Vector3 MaxWallSlideVelocity;
+        public bool NoJumpCancel = false;
+        public Vector3 MaxWallSlideVelocity = new Vector3();
     }
 }
