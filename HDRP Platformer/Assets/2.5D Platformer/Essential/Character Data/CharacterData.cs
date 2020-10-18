@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public DamageData damageData;
         [Space(15)] public MomentumData momentumData;
         [Space(15)] public RotationData rotationData;
         [Space(15)] public JumpData jumpData;
@@ -22,16 +21,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            damageData = new DamageData
-            {
-                BlockedAttack = null,
-                hp = 1f,
-                damageTaken = new DamageTaken(null, null, null, null, Vector3.zero),
-
-                MarioStompAttack = control.characterSetup.MarioStompAttack,
-                AxeThrow = control.characterSetup.AxeThrow,
-            };
 
             momentumData = new MomentumData
             {

@@ -12,8 +12,9 @@ namespace Roundbeargames
         public List<CharacterAbility> ListAbilityData = new List<CharacterAbility>();
         [Space(10)]
         public CharacterAbility[] ArrAbilities;
+
         [Space(20)]
-        [Header("Separated Arrays")]
+        [Header("Character Ability Types")]
         public CharacterAbility[] ArrMove;
         [Space(10)]
         public CharacterAbility[] ArrTransition;

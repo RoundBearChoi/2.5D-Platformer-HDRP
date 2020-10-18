@@ -7,12 +7,16 @@ namespace Roundbeargames
     [System.Serializable]
     public class DamageData
     {
-        public AttackCondition BlockedAttack;
-        public float hp;
+        [Header("Damage Dataset")]
+        public DamageTaken damageTaken = new DamageTaken(null, null, null, null, Vector3.zero);
+
+        [Header("Defense")]
+        public AttackCondition BlockedAttack = null;
+        public float hp = 1f;
+
+        [Header("Offense")]
         public Attack MarioStompAttack;
         public Attack AxeThrow;
-
-        public DamageTaken damageTaken;
     }
 
     [System.Serializable]

@@ -15,13 +15,14 @@ namespace Roundbeargames
 
         private void Awake()
         {
-            SetLedgeColliders();   
-        }
-
-        void SetLedgeColliders()
-        {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
 
+            SetLedgeColliders(control);
+            SetDamageData(control);
+        }
+
+        void SetLedgeColliders(CharacterControl control)
+        {
             LedgeCollider[] col_arr = this.transform.root.gameObject.GetComponentsInChildren<LedgeCollider>();
 
             foreach (LedgeCollider c in col_arr)
@@ -36,6 +37,12 @@ namespace Roundbeargames
                     control.LEDGE_GRAB_DATA.collider2 = c;
                 }
             }
+        }
+
+        void SetDamageData(CharacterControl control)
+        {
+            control.DAMAGE_DATA.MarioStompAttack = MarioStompAttack;
+            control.DAMAGE_DATA.AxeThrow = AxeThrow;
         }
     }
 }
