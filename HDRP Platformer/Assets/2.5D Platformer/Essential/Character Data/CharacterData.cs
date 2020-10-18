@@ -55,8 +55,6 @@ namespace Roundbeargames
 
             animationData = new AnimationData
             {
-                InstantTransitionMade = false,
-                LockTransition = false,
                 CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
             };
 

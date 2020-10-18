@@ -25,7 +25,7 @@ namespace Roundbeargames
 
             if (animator.GetInteger(HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex]) == 0)
             {
-                if (!characterState.ANIMATION_DATA.LockTransition)
+                if (!characterState.control.TRANSITION_DATA.LockTransition)
                 {
                     if (IndexChecker.MakeTransition(characterState.control, transitionConditions))
                     {

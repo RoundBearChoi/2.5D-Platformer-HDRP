@@ -39,14 +39,15 @@ namespace Roundbeargames
         public GameObject LEFT_FOOT_ATTACK => characterSetup.attackPartSetup.LeftFoot_Attack;
 
         [Header("Character Data")]
-        public BlockingObjData BLOCKING_DATA;
+        public MoveData MOVE_DATA;
+        [Space(3)] public DamageData DAMAGE_DATA;
+        [Space(3)] public BlockingObjData BLOCKING_DATA;
         [Space(3)] public LedgeGrabData LEDGE_GRAB_DATA;
         [Space(3)] public RagdollData RAGDOLL_DATA;
         [Space(3)] public ManualInputData MANUAL_INPUT_DATA;
         [Space(3)] public BoxColliderData BOX_COLLIDER_DATA;
         [Space(3)] public VerticalVelocityData VERTICAL_VELOCITY_DATA;
-        [Space(3)] public DamageData DAMAGE_DATA;
-        [Space(3)] public MoveData MOVE_DATA;
+        [Space(3)] public TransitionData TRANSITION_DATA;
 
         //temp
         public RotationData ROTATION_DATA => characterData.rotationData;
