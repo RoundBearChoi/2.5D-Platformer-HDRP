@@ -17,7 +17,7 @@ namespace Roundbeargames
             control.DAMAGE_DATA.hp -= info.AttackAbility.Damage;
 
             AttackManager.Instance.ForceDeregister(control);
-            control.ANIMATION_DATA.CurrentRunningAbilities.Clear();
+            control.ABILITY_DATA.CurrentAbilities.Clear();
 
             if (control.GetBool(typeof(CharacterDead)))
             {

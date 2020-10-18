@@ -48,6 +48,7 @@ namespace Roundbeargames
         [Space(3)] public BoxColliderData BOX_COLLIDER_DATA;
         [Space(3)] public VerticalVelocityData VERTICAL_VELOCITY_DATA;
         [Space(3)] public TransitionData TRANSITION_DATA;
+        [Space(3)] public AbilityData ABILITY_DATA;
 
         //temp
         public RotationData ROTATION_DATA => characterData.rotationData;

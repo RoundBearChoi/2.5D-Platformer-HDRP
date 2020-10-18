@@ -87,13 +87,13 @@ namespace Roundbeargames
             {
                 AbilityList[i].OnEnter(characterState, animator, stateInfo);
 
-                if (control.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
+                if (control.ABILITY_DATA.CurrentAbilities.ContainsKey(AbilityList[i]))
                 {
-                    control.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] += 1;
+                    control.ABILITY_DATA.CurrentAbilities[AbilityList[i]] += 1;
                 }
                 else
                 {
-                    control.ANIMATION_DATA.CurrentRunningAbilities.Add(AbilityList[i], 1);
+                    control.ABILITY_DATA.CurrentAbilities.Add(AbilityList[i], 1);
                 }
             }
         }
@@ -112,13 +112,13 @@ namespace Roundbeargames
             {
                 AbilityList[i].OnExit(characterState, animator, stateInfo);
 
-                if (control.ANIMATION_DATA.CurrentRunningAbilities.ContainsKey(AbilityList[i]))
+                if (control.ABILITY_DATA.CurrentAbilities.ContainsKey(AbilityList[i]))
                 {
-                    control.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] -= 1;
+                    control.ABILITY_DATA.CurrentAbilities[AbilityList[i]] -= 1;
 
-                    if (control.ANIMATION_DATA.CurrentRunningAbilities[AbilityList[i]] <= 0)
+                    if (control.ABILITY_DATA.CurrentAbilities[AbilityList[i]] <= 0)
                     {
-                        control.ANIMATION_DATA.CurrentRunningAbilities.Remove(AbilityList[i]);
+                        control.ABILITY_DATA.CurrentAbilities.Remove(AbilityList[i]);
                     }
                 }
             }

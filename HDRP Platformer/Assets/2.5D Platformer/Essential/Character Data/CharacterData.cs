@@ -55,7 +55,7 @@ namespace Roundbeargames
 
             animationData = new AnimationData
             {
-                CurrentRunningAbilities = new Dictionary<CharacterAbility, int>(),
+
             };
 
             collidingObjData = new CollidingObjData
