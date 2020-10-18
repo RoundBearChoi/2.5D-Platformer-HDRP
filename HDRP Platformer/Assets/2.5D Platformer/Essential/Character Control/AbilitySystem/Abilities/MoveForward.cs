@@ -7,7 +7,7 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/MoveForward")]
     public class MoveForward : CharacterAbility
     {
-        public CommonMoveForwardData moveForwardComponent;
+        public CommonMoveForwardData commonForwardData = null;
 
         public bool debug;
 
@@ -35,15 +35,16 @@ namespace Roundbeargames
         
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (moveForwardComponent == null)
+            if (commonForwardData == null)
             {
-                moveForwardComponent = new CommonMoveForwardData();
-                moveForwardComponent.GetBlockDistance = ReturnBlockDistance;
-                moveForwardComponent.GetMoveSpeed = ReturnMoveSpeed;
-                moveForwardComponent.IsMoveOnHit = ReturnMoveOnHit;
+                commonForwardData = new CommonMoveForwardData();
+
+                commonForwardData.GetBlockDistance = ReturnBlockDistance;
+                commonForwardData.GetMoveSpeed = ReturnMoveSpeed;
+                commonForwardData.IsMoveOnHit = ReturnMoveOnHit;
             }
 
-            characterState.ANIMATION_DATA.LatestMoveForward = moveForwardComponent;
+            characterState.control.MOVE_DATA.LatestMoveForward = commonForwardData;
 
             if (AllowEarlyTurn)
             {
@@ -80,7 +81,7 @@ namespace Roundbeargames
                 Debug.Log(stateInfo.normalizedTime);
             }
 
-            if (characterState.ANIMATION_DATA.LatestMoveForward != moveForwardComponent)
+            if (characterState.control.MOVE_DATA.LatestMoveForward != commonForwardData)
             {
                 return;
             }
@@ -228,12 +229,12 @@ namespace Roundbeargames
             {
                 if (control.MoveRight)
                 {
-                    control.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
+                    control.RunFunction(typeof(FaceForward), true);
                 }
 
                 if (control.MoveLeft)
                 {
-                    control.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
+                    control.RunFunction(typeof(FaceForward), false);
                 }
             }
         }
@@ -242,17 +243,17 @@ namespace Roundbeargames
         {
             if (!IgnoreCharacterBox)
             {
-                control.ANIMATION_DATA.IsIgnoreCharacterTime = false;
+                control.MOVE_DATA.IsIgnoreCharacterTime = false;
             }
 
             if (stateInfo.normalizedTime > IgnoreStartTime &&
                 stateInfo.normalizedTime < IgnoreEndTime)
             {
-                control.ANIMATION_DATA.IsIgnoreCharacterTime = true;
+                control.MOVE_DATA.IsIgnoreCharacterTime = true;
             }
             else
             {
-                control.ANIMATION_DATA.IsIgnoreCharacterTime = false;
+                control.MOVE_DATA.IsIgnoreCharacterTime = false;
             }
         }
 

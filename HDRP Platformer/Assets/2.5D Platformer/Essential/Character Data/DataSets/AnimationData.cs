@@ -7,10 +7,7 @@ namespace Roundbeargames
     public class AnimationData
     {
         public bool InstantTransitionMade;
-        public CommonMoveForwardData LatestMoveForward;
-        public MoveUp LatestMoveUp;
         public bool LockTransition;
-        public bool IsIgnoreCharacterTime;
         public Dictionary<CharacterAbility, int> CurrentRunningAbilities = new Dictionary<CharacterAbility, int>();
         public List<PoolObjectType> SpawnedObjList = new List<PoolObjectType>();
     }

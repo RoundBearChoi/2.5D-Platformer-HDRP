@@ -28,7 +28,7 @@ namespace Roundbeargames
             // checking while ledge grabbing
             if (control.UpdatingAbility(typeof(MoveUp)))
             {
-                if (control.ANIMATION_DATA.LatestMoveUp.Speed > 0f)
+                if (control.MOVE_DATA.LatestMoveUp.Speed > 0f)
                 {
                     control.RunFunction(typeof(CheckUpBlocking), 0.3f);
                 }
@@ -107,7 +107,7 @@ namespace Roundbeargames
             }
 
             FrontRayDirection = this.transform.forward * FrontDirectionMultiplier;
-            FrontRayLength = control.ANIMATION_DATA.LatestMoveForward.GetBlockDistance();
+            FrontRayLength = control.MOVE_DATA.LatestMoveForward.GetBlockDistance();
 
             for (int i = 0; i < FrontSpheresArray.Length; i++)
             {

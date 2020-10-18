@@ -7,7 +7,8 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/MoveForward_v2")]
     public class MoveForward_v2 : CharacterAbility
     {
-        CommonMoveForwardData moveForwardComponent;
+        CommonMoveForwardData commonForwardData = null;
+
         [Space(10)]
         [SerializeField] BasicMovementOptions basicMovementOptions;
         [Space(10)]
@@ -18,13 +19,13 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             SetCommonMoveComponent();
-            characterState.ANIMATION_DATA.LatestMoveForward = moveForwardComponent;
+            characterState.control.MOVE_DATA.LatestMoveForward = commonForwardData;
             SetStartingMomentum(characterState);
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.ANIMATION_DATA.LatestMoveForward != moveForwardComponent)
+            if (characterState.control.MOVE_DATA.LatestMoveForward != commonForwardData)
             {
                 return;
             }
@@ -50,6 +51,18 @@ namespace Roundbeargames
                 {
                     characterState.control.MOVE_DATA.Momentum = 0f;
                 }
+            }
+        }
+
+        void SetCommonMoveComponent()
+        {
+            if (commonForwardData == null)
+            {
+                commonForwardData = new CommonMoveForwardData();
+
+                commonForwardData.GetBlockDistance = ReturnBlockDistance;
+                commonForwardData.GetMoveSpeed = ReturnMoveSpeed;
+                commonForwardData.IsMoveOnHit = ReturnMoveOnHit;
             }
         }
 
@@ -98,17 +111,6 @@ namespace Roundbeargames
                 control.RunFunction(typeof(MoveTransformForward),
                     basicMovementOptions.Speed,
                     basicMovementOptions.SpeedGraph.Evaluate(stateInfo.normalizedTime));
-            }
-        }
-
-        void SetCommonMoveComponent()
-        {
-            if (moveForwardComponent == null)
-            {
-                moveForwardComponent = new CommonMoveForwardData();
-                moveForwardComponent.GetBlockDistance = ReturnBlockDistance;
-                moveForwardComponent.GetMoveSpeed = ReturnMoveSpeed;
-                moveForwardComponent.IsMoveOnHit = ReturnMoveOnHit;
             }
         }
     }

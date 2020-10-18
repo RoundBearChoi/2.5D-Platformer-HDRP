@@ -12,7 +12,7 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.ANIMATION_DATA.LatestMoveUp = this;
+            characterState.control.MOVE_DATA.LatestMoveUp = this;
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
