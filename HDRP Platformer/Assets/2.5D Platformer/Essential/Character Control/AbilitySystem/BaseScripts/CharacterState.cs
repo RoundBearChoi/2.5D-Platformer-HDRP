@@ -26,9 +26,6 @@ namespace Roundbeargames
 
         public GameObject RIGHT_HAND_ATTACK => control.characterSetup.attackPartSetup.RightHand_Attack;
 
-        //temp
-        public AIController AI_CONTROLLER => control.aiController;
-
         public void PutStatesInArray()
         {
             ArrAbilities = new CharacterAbility[ListAbilityData.Count];

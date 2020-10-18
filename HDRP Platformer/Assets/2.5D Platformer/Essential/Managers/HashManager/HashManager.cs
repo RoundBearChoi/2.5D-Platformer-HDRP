@@ -27,8 +27,6 @@ namespace Roundbeargames
 
         public int[] ArrMainParams = new int[HashTool.GetLength(typeof(MainParameterType))];
         public int[] ArrCameraParams = new int[HashTool.GetLength(typeof(CameraTrigger))];
-        public int[] ArrAITransitionParams = new int[HashTool.GetLength(typeof(AI_Transition))];
-        public int[] ArrAIStateNames = new int[HashTool.GetLength(typeof(AI_State_Name))];
         public int[] ArrInstantTransitionStates = new int[HashTool.GetLength(typeof(Instant_Transition_States))];
         public int[] ArrLedgeTriggerStates = new int[HashTool.GetLength(typeof(Ledge_Trigger_States))];
         public int[] ArrMirrorParameters = new int[HashTool.GetLength(typeof(MirrorParameterType))];
@@ -52,8 +50,6 @@ namespace Roundbeargames
         {
             HashTool.AddNameHashToArray(typeof(MainParameterType), ArrMainParams);
             HashTool.AddNameHashToArray(typeof(CameraTrigger), ArrCameraParams);
-            HashTool.AddNameHashToArray(typeof(AI_Transition), ArrAITransitionParams);
-            HashTool.AddNameHashToArray(typeof(AI_State_Name), ArrAIStateNames);
             HashTool.AddNameHashToArray(typeof(Instant_Transition_States), ArrInstantTransitionStates);
             HashTool.AddNameHashToArray(typeof(Ledge_Trigger_States), ArrLedgeTriggerStates);
             HashTool.AddNameHashToArray(typeof(MirrorParameterType), ArrMirrorParameters);

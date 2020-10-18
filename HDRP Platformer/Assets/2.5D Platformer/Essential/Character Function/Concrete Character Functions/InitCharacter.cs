@@ -11,18 +11,7 @@ namespace Roundbeargames
             control.characterUpdateProcessor = control.GetComponentInChildren<CharacterUpdateProcessor>();
 
             // temp
-            control.aiProgress = control.GetComponentInChildren<AIProgress>();
             control.boxCollider = control.GetComponent<BoxCollider>();
-            control.navMeshObstacle = control.GetComponent<UnityEngine.AI.NavMeshObstacle>();
-
-            control.aiController = control.GetComponentInChildren<AIController>();
-            if (control.aiController == null)
-            {
-                if (control.navMeshObstacle != null)
-                {
-                    control.navMeshObstacle.carving = true;
-                }
-            }
 
             control.characterSetup = control.GetComponentInChildren<CharacterSetup>();
             control.characterQueryProcessor = control.GetComponentInChildren<CharacterQueryProcessor>();

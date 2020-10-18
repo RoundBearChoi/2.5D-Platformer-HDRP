@@ -102,13 +102,6 @@ namespace Roundbeargames
             //turn off ledge colliders
             control.RunFunction(typeof(LedgeCollidersOff));
 
-            //turn off ai
-            if (control.aiController != null)
-            {
-                control.aiController.gameObject.SetActive(false);
-                control.navMeshObstacle.enabled = false;
-            }
-
             //turn on ragdoll
             for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {

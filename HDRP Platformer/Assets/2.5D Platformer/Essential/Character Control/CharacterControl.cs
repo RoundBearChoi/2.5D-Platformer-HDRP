@@ -21,10 +21,7 @@ namespace Roundbeargames
         public bool DisableTurning;
 
         [Header("temp")]
-        public AIProgress aiProgress;
-        public AIController aiController;
         public BoxCollider boxCollider;
-        public NavMeshObstacle navMeshObstacle;
 
         [Header("SubComponents")]
         public CharacterSetup characterSetup;
