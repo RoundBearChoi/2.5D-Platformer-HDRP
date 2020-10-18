@@ -9,7 +9,6 @@ namespace Roundbeargames
         public CharacterControl Attacker = null;
         public Attack AttackAbility;
         public List<AttackPartType> AttackParts = new List<AttackPartType>();
-        public DeathType deathType;
         public bool MustCollide;
         public bool MustFaceAttacker;
         public float LethalRange;
