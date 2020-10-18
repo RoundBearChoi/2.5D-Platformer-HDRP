@@ -19,9 +19,9 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.JUMP_DATA.DicJumped.ContainsKey(JumpIndex))
+            if (!characterState.control.JUMP_DATA.DicJumped.ContainsKey(JumpIndex))
             {
-                characterState.JUMP_DATA.DicJumped.Add(JumpIndex, false);
+                characterState.control.JUMP_DATA.DicJumped.Add(JumpIndex, false);
             }
 
             characterState.control.VERTICAL_VELOCITY_DATA.NoJumpCancel = CancelPull;
@@ -34,7 +34,8 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.JUMP_DATA.DicJumped[JumpIndex] && stateInfo.normalizedTime >= JumpTiming)
+            if (!characterState.control.JUMP_DATA.DicJumped[JumpIndex] &&
+                stateInfo.normalizedTime >= JumpTiming)
             {
                 MakeJump(characterState.control);
             }

@@ -24,7 +24,7 @@ namespace Roundbeargames
             {
                 if (!characterState.UpdatingAbility(typeof(Jump)))
                 {
-                    characterState.JUMP_DATA.DicJumped.Clear();
+                    characterState.control.JUMP_DATA.DicJumped.Clear();
                 }
             }
         }

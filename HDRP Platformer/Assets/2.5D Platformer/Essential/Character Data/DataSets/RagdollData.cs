@@ -7,7 +7,7 @@ namespace Roundbeargames
     {
         public bool RagdollTriggered = false;
         public Collider[] ArrBodyParts;
-        public FlyingRagdollData flyingRagdollData = new FlyingRagdollData();
+        public FlyingRagdollData flyingRagdollData;
     }
 
     [System.Serializable]

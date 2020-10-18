@@ -5,8 +5,8 @@ namespace Roundbeargames
     [System.Serializable]
     public class JumpData
     {
-        public Dictionary<int, bool> DicJumped;
-        public bool CanWallJump;
-        public bool CheckWallBlock;
+        public Dictionary<int, bool> DicJumped = new Dictionary<int, bool>();
+        public bool CanWallJump = false;
+        public bool CheckWallBlock = false;
     }
 }

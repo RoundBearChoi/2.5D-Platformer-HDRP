@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public RotationData rotationData;
-        [Space(15)] public JumpData jumpData;
         [Space(15)] public CollisionSphereData collisionSphereData;
         [Space(15)] public GroundData groundData;
         [Space(15)] public AttackData attackData;
@@ -19,19 +17,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            rotationData = new RotationData
-            {
-                LockTurn = false,
-                UnlockTiming = 0f,
-            };
-
-            jumpData = new JumpData
-            {
-                DicJumped = new Dictionary<int, bool>(),
-                CanWallJump = false,
-                CheckWallBlock = false,
-            };
 
             collisionSphereData = new CollisionSphereData
             {
