@@ -38,8 +38,11 @@ namespace Roundbeargames
             {
                 foreach (ContactPoint c in control.GROUND_DATA.BoxColliderContacts)
                 {
-                    float colliderBottom = (control.transform.position.y + control.boxCollider.center.y) -
-                        (control.boxCollider.size.y / 2f);
+                    float colliderBottom = (
+                        control.transform.position.y +
+                        control.BOX_COLLIDER.center.y) -
+                        (control.BOX_COLLIDER.size.y / 2f);
+
                     float yDifference = Mathf.Abs(c.point.y - colliderBottom);
 
                     if (yDifference < 0.01f)

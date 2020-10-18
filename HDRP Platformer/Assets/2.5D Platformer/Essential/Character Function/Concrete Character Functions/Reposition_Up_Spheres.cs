@@ -6,9 +6,9 @@ namespace Roundbeargames
     {
         public override void RunFunction()
         {
-            float top = control.boxCollider.bounds.center.y + (control.boxCollider.bounds.size.y / 2f);
-            float front = control.boxCollider.bounds.center.z + (control.boxCollider.bounds.size.z / 2f);
-            float back = control.boxCollider.bounds.center.z - (control.boxCollider.bounds.size.z / 2f);
+            float top = control.BOX_COLLIDER.bounds.center.y + (control.BOX_COLLIDER.bounds.size.y / 2f);
+            float front = control.BOX_COLLIDER.bounds.center.z + (control.BOX_COLLIDER.bounds.size.z / 2f);
+            float back = control.BOX_COLLIDER.bounds.center.z - (control.BOX_COLLIDER.bounds.size.z / 2f);
 
             control.COLLISION_SPHERE_DATA.UpSpheres[0].transform.localPosition =
                 new Vector3(0f, top, back) - control.transform.position;

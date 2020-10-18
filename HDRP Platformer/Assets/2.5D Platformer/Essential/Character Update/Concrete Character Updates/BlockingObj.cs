@@ -54,8 +54,8 @@ namespace Roundbeargames
                             }
                             else
                             {
-                                if (control.transform.position.y + control.boxCollider.center.y <
-                                    c.transform.position.y)
+                                if (c.transform.position.y >
+                                    control.transform.position.y + control.BOX_COLLIDER.center.y)
                                 {
                                     control.RunFunction(typeof(ClearUpVelocity));
                                     break;

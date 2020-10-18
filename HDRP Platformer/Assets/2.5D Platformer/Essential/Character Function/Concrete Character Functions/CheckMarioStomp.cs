@@ -68,7 +68,8 @@ namespace Roundbeargames
 
             if (c != null)
             {
-                if (c.boxCollider.center.y + c.transform.position.y < control.transform.position.y)
+                if (c.BOX_COLLIDER.center.y + c.transform.position.y <
+                    control.transform.position.y)
                 {
                     if (c != control)
                     {

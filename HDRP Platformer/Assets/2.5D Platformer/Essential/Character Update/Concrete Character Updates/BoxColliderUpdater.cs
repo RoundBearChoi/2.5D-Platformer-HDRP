@@ -56,9 +56,11 @@ namespace Roundbeargames
                 return;
             }
 
-            if (Vector3.SqrMagnitude(control.boxCollider.size - control.BOX_COLLIDER_DATA.TargetSize) > 0.00001f)
+            if (Vector3.SqrMagnitude(
+                control.BOX_COLLIDER.size - control.BOX_COLLIDER_DATA.TargetSize) >
+                0.00001f)
             {
-                control.boxCollider.size = Vector3.Lerp(control.boxCollider.size,
+                control.BOX_COLLIDER.size = Vector3.Lerp(control.BOX_COLLIDER.size,
                     control.BOX_COLLIDER_DATA.TargetSize,
                     Time.deltaTime * control.BOX_COLLIDER_DATA.Size_Update_Speed);
 
@@ -73,9 +75,12 @@ namespace Roundbeargames
                 return;
             }
 
-            if (Vector3.SqrMagnitude(control.boxCollider.center - control.BOX_COLLIDER_DATA.TargetCenter) > 0.00001f)
+            if (Vector3.SqrMagnitude(
+                control.BOX_COLLIDER.center -
+                control.BOX_COLLIDER_DATA.TargetCenter) > 0.00001f)
             {
-                control.boxCollider.center = Vector3.Lerp(control.boxCollider.center,
+                control.BOX_COLLIDER.center = Vector3.Lerp(
+                    control.BOX_COLLIDER.center,
                     control.BOX_COLLIDER_DATA.TargetCenter,
                     Time.deltaTime * control.BOX_COLLIDER_DATA.Center_Update_Speed);
 

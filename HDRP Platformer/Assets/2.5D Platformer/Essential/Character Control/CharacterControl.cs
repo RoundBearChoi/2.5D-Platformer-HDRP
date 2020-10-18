@@ -20,9 +20,6 @@ namespace Roundbeargames
         [Header("Disable Turning")]
         public bool DisableTurning;
 
-        [Header("temp")]
-        public BoxCollider boxCollider;
-
         [Header("SubComponents")]
         public CharacterSetup characterSetup;
         public CharacterFunctionProcessor characterFunctionProcessor;
@@ -84,6 +81,21 @@ namespace Roundbeargames
         }
 
         private Animator SkinnedMeshAnimator = null;
+
+        public BoxCollider BOX_COLLIDER
+        {
+            get
+            {
+                if (rootBoxCollider == null)
+                {
+                    rootBoxCollider = this.gameObject.GetComponent<BoxCollider>();
+                }
+
+                return rootBoxCollider;
+            }
+        }
+
+        private BoxCollider rootBoxCollider;
 
         public CharacterUpdate GetUpdater(System.Type UpdaterType)
         {

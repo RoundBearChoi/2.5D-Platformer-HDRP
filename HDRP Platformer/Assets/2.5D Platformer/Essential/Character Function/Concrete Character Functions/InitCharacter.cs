@@ -9,10 +9,6 @@ namespace Roundbeargames
         public override void RunFunction(CharacterControl control)
         {
             control.characterUpdateProcessor = control.GetComponentInChildren<CharacterUpdateProcessor>();
-
-            // temp
-            control.boxCollider = control.GetComponent<BoxCollider>();
-
             control.characterSetup = control.GetComponentInChildren<CharacterSetup>();
             control.characterQueryProcessor = control.GetComponentInChildren<CharacterQueryProcessor>();
 
