@@ -26,11 +26,6 @@ namespace Roundbeargames
         public CharacterUpdateProcessor characterUpdateProcessor;
         public CharacterQueryProcessor characterQueryProcessor;
 
-        public GameObject RIGHT_HAND_ATTACK => characterSetup.attackPartSetup.RightHand_Attack;
-        public GameObject LEFT_HAND_ATTACK => characterSetup.attackPartSetup.LeftHand_Attack;
-        public GameObject RIGHT_FOOT_ATTACK => characterSetup.attackPartSetup.RightFoot_Attack;
-        public GameObject LEFT_FOOT_ATTACK => characterSetup.attackPartSetup.LeftFoot_Attack;
-
         [Header("Character Data")]
         public MoveData MOVE_DATA;
         [Space(3)] public DamageData DAMAGE_DATA;
@@ -52,6 +47,11 @@ namespace Roundbeargames
         [Space(3)] public WeaponData WEAPON_DATA;
         [Space(3)] public TurnData TURN_DATA;
         [Space(3)] public CameraData CAMERA_DATA;
+
+        public GameObject RIGHT_HAND_ATTACK => characterSetup.attackPartSetup.RightHand_Attack;
+        public GameObject LEFT_HAND_ATTACK => characterSetup.attackPartSetup.LeftHand_Attack;
+        public GameObject RIGHT_FOOT_ATTACK => characterSetup.attackPartSetup.RightFoot_Attack;
+        public GameObject LEFT_FOOT_ATTACK => characterSetup.attackPartSetup.LeftFoot_Attack;
 
         private Rigidbody rigid;
 
