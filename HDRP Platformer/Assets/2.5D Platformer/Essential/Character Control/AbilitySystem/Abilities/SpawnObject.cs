@@ -23,7 +23,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.ANIMATION_DATA.SpawnedObjList.Contains(ObjectType))
+            if (!characterState.control.SPAWNED_OBJ_DATA.ObjList.Contains(ObjectType))
             {
                 if (stateInfo.normalizedTime >= SpawnTiming)
                 {
@@ -34,15 +34,15 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.ANIMATION_DATA.SpawnedObjList.Contains(ObjectType))
+            if (characterState.control.SPAWNED_OBJ_DATA.ObjList.Contains(ObjectType))
             {
-                characterState.ANIMATION_DATA.SpawnedObjList.Remove(ObjectType);
+                characterState.control.SPAWNED_OBJ_DATA.ObjList.Remove(ObjectType);
             }
         }
 
         private void SpawnObj(CharacterControl control)
         {
-            if (control.ANIMATION_DATA.SpawnedObjList.Contains(ObjectType))
+            if (control.SPAWNED_OBJ_DATA.ObjList.Contains(ObjectType))
             {
                 return;
             }
@@ -66,7 +66,7 @@ namespace Roundbeargames
 
             obj.SetActive(true);
 
-            control.ANIMATION_DATA.SpawnedObjList.Add(ObjectType);
+            control.SPAWNED_OBJ_DATA.ObjList.Add(ObjectType);
         }
     }
 }

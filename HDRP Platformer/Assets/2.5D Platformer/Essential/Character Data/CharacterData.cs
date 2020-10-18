@@ -11,7 +11,6 @@ namespace Roundbeargames
         [Space(15)] public CollisionSphereData collisionSphereData;
         [Space(15)] public GroundData groundData;
         [Space(15)] public AttackData attackData;
-        [Space(15)] public AnimationData animationData;
         [Space(15)] public CollidingObjData collidingObjData;
         [Space(15)] public WeaponData weaponData;
         [Space(15)] public CameraData cameraData;
@@ -51,11 +50,6 @@ namespace Roundbeargames
             {
                 AttackButtonIsReset = false,
                 AttackTriggered = false,
-            };
-
-            animationData = new AnimationData
-            {
-
             };
 
             collidingObjData = new CollidingObjData

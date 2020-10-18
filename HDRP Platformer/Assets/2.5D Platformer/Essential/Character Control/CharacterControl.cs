@@ -49,6 +49,7 @@ namespace Roundbeargames
         [Space(3)] public VerticalVelocityData VERTICAL_VELOCITY_DATA;
         [Space(3)] public TransitionData TRANSITION_DATA;
         [Space(3)] public AbilityData ABILITY_DATA;
+        [Space(3)] public SpawnedObjData SPAWNED_OBJ_DATA;
 
         //temp
         public RotationData ROTATION_DATA => characterData.rotationData;
@@ -56,7 +57,6 @@ namespace Roundbeargames
         public CollisionSphereData COLLISION_SPHERE_DATA => characterData.collisionSphereData;
         public GroundData GROUND_DATA => characterData.groundData;
         public AttackData ATTACK_DATA => characterData.attackData;
-        public AnimationData ANIMATION_DATA => characterData.animationData;
         public CollidingObjData COLLIDING_OBJ_DATA => characterData.collidingObjData;
         public WeaponData WEAPON_DATA => characterData.weaponData;
         public TurnData TURN_DATA => characterData.turnData;
@@ -106,7 +106,6 @@ namespace Roundbeargames
         {
             RunFunction(typeof(InitCharacter), this);
         }
-
 
         public void CharacterUpdate()
         {

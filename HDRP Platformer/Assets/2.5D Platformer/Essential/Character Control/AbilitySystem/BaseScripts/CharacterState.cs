@@ -32,7 +32,6 @@ namespace Roundbeargames
         public CollisionSphereData COLLISION_SPHERE_DATA => control.characterData.collisionSphereData;
         public GroundData GROUND_DATA => control.characterData.groundData;
         public AttackData ATTACK_DATA => control.characterData.attackData;
-        public AnimationData ANIMATION_DATA => control.characterData.animationData;
         public AIController AI_CONTROLLER => control.aiController;
         public WeaponData WEAPON_DATA => control.characterData.weaponData;
         public CameraData CAMERA_DATA => control.characterData.cameraData;
