@@ -8,6 +8,7 @@ namespace Roundbeargames
     {
         public CharacterControl control;
 
+        //temp
         [Space(10)]
         public List<CharacterAbility> ListAbilityData = new List<CharacterAbility>();
         [Space(10)]
@@ -50,6 +51,7 @@ namespace Roundbeargames
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            //temp
             EnterAll(this, animator, stateInfo, ArrAbilities);
 
             EnterAll(this, animator, stateInfo, ArrMove);
@@ -60,6 +62,7 @@ namespace Roundbeargames
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            //temp
             UpdateAll(this, animator, stateInfo, ArrAbilities);
 
             UpdateAll(this, animator, stateInfo, ArrMove);
@@ -70,6 +73,7 @@ namespace Roundbeargames
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            //temp
             ExitAll(this, animator, stateInfo, ArrAbilities);
 
             ExitAll(this, animator, stateInfo, ArrMove);
