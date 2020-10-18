@@ -8,13 +8,7 @@ namespace Roundbeargames
     {
         protected CharacterUpdateProcessor characterUpdateProcessor;
 
-        public CharacterControl control
-        {
-            get
-            {
-                return characterUpdateProcessor.control;
-            }
-        }
+        public CharacterControl control => characterUpdateProcessor.control;
 
         private void Awake()
         {

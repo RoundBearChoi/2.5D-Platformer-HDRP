@@ -7,12 +7,21 @@ namespace Roundbeargames
     public class CharacterUpdateProcessor : MonoBehaviour
     {
         public Dictionary<System.Type, CharacterUpdate> DicUpdaters = new Dictionary<System.Type, CharacterUpdate>();
-        public CharacterControl control;
-
-        private void Awake()
+        
+        public CharacterControl control
         {
-            control = GetComponentInParent<CharacterControl>();
+            get
+            {
+                if (characterControl == null)
+                {
+                    characterControl = this.gameObject.GetComponentInParent<CharacterControl>();
+                }
+
+                return characterControl;
+            }
         }
+
+        private CharacterControl characterControl;
 
         public void InitUpdaters()
         {

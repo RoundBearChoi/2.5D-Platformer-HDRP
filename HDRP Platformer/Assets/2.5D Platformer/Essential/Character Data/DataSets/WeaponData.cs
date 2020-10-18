@@ -2,9 +2,9 @@
 
 namespace Roundbeargames
 {
-    [SerializeField]
+    [System.Serializable]
     public class WeaponData
     {
-        public MeleeWeapon HoldingWeapon;
+        public MeleeWeapon HoldingWeapon = null;
     }
 }

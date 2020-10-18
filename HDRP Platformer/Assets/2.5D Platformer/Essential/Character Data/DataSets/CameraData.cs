@@ -3,6 +3,6 @@
     [System.Serializable]
     public class CameraData
     {
-        public bool CameraShaken;
+        public bool CameraShaken = false;
     }
 }

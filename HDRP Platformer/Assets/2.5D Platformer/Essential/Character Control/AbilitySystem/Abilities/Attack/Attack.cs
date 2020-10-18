@@ -31,7 +31,7 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.ATTACK_DATA.AttackTriggered = false;
+            characterState.control.ATTACK_DATA.AttackTriggered = false;
                         
             GameObject obj = PoolManager.Instance.GetObject(PoolObjectType.ATTACK_CONDITION); 
             AttackCondition info = obj.GetComponent<AttackCondition>();

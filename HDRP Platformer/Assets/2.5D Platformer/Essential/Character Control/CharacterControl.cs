@@ -28,7 +28,6 @@ namespace Roundbeargames
 
         [Header("SubComponents")]
         public CharacterSetup characterSetup;
-        public CharacterData characterData; //temp
         public CharacterFunctionProcessor characterFunctionProcessor;
         public CharacterUpdateProcessor characterUpdateProcessor;
         public CharacterQueryProcessor characterQueryProcessor;
@@ -52,14 +51,13 @@ namespace Roundbeargames
         [Space(3)] public SpawnedObjData SPAWNED_OBJ_DATA;
         [Space(3)] public RotationData ROTATION_DATA;
         [Space(3)] public JumpData JUMP_DATA;
-        [Space(3)]  public CollisionSphereData COLLISION_SPHERE_DATA;
-
-        //temp
-        public GroundData GROUND_DATA => characterData.groundData;
-        public AttackData ATTACK_DATA => characterData.attackData;
-        public CollidingObjData COLLIDING_OBJ_DATA => characterData.collidingObjData;
-        public WeaponData WEAPON_DATA => characterData.weaponData;
-        public TurnData TURN_DATA => characterData.turnData;
+        [Space(3)] public CollisionSphereData COLLISION_SPHERE_DATA;
+        [Space(3)] public GroundData GROUND_DATA;
+        [Space(3)] public AttackData ATTACK_DATA;
+        [Space(3)] public CollidingObjData COLLIDING_OBJ_DATA;
+        [Space(3)] public WeaponData WEAPON_DATA;
+        [Space(3)] public TurnData TURN_DATA;
+        [Space(3)] public CameraData CAMERA_DATA;
 
         private Rigidbody rigid;
 
@@ -105,6 +103,8 @@ namespace Roundbeargames
         public void InitalizeCharacter()
         {
             RunFunction(typeof(InitCharacter), this);
+
+            characterUpdateProcessor.InitUpdaters();
         }
 
         public void CharacterUpdate()

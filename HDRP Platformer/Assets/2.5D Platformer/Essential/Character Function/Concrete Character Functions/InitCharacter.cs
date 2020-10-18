@@ -25,7 +25,6 @@ namespace Roundbeargames
             }
 
             control.characterSetup = control.GetComponentInChildren<CharacterSetup>();
-            control.characterData = control.GetComponentInChildren<CharacterData>();
             control.characterQueryProcessor = control.GetComponentInChildren<CharacterQueryProcessor>();
 
             RegisterCharacter();

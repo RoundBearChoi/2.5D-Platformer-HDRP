@@ -1,90 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2071912936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2071912937}
-  - component: {fileID: 4792439104514448865}
-  m_Layer: 9
-  m_Name: CharacterData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2071912937
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071912936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7198515055300973108}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4792439104514448865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071912936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f5ff051f23a7c46be58c95701d8d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boxColliderData:
-    IsUpdatingSpheres: 0
-    IsLanding: 0
-    Size_Update_Speed: 0
-    Center_Update_Speed: 0
-    TargetSize: {x: 0, y: 0, z: 0}
-    TargetCenter: {x: 0, y: 0, z: 0}
-    LandingPosition: {x: 0, y: 0, z: 0}
-  verticalVelocityData:
-    NoJumpCancel: 0
-    MaxWallSlideVelocity: {x: 0, y: 0, z: 0}
-  damageData:
-    BlockedAttack: {fileID: 0}
-    hp: 0
-    MarioStompAttack: {fileID: 0}
-    AxeThrow: {fileID: 0}
-    damageTaken:
-      mAttacker: {fileID: 0}
-      mAttack: {fileID: 0}
-      mDamager: {fileID: 0}
-      mDamagee: {fileID: 0}
-      mIncomingVelocity: {x: 0, y: 0, z: 0}
-  momentumData:
-    Momentum: 0
-  rotationData:
-    LockTurn: 0
-    UnlockTiming: 0
-  jumpData:
-    CanWallJump: 0
-    CheckWallBlock: 0
-  collisionSphereData:
-    BottomSpheres: []
-    FrontSpheres: []
-    BackSpheres: []
-    UpSpheres: []
-  groundData:
-    Ground: {fileID: 0}
-  attackData:
-    AttackTriggered: 0
-    AttackButtonIsReset: 0
-  cameraData:
-    CameraShaken: 0
 --- !u!1 &108123440768055017
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +188,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27614462, y: 0.0000001452387, z: 0.000000109499275}
+  m_ConnectedAnchor: {x: -0.27614462, y: 0.00000026444798, z: 0.00000019890625}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -416,7 +331,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27614456, y: 0.00000024083178, z: 0.00000021203098}
+  m_ConnectedAnchor: {x: 0.27614456, y: 0.00000024083178, z: 0.00000018222867}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -998,7 +913,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18760951, y: 0.222047, z: -0.035218373}
+  m_ConnectedAnchor: {x: -0.18760951, y: 0.222047, z: -0.035218306}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1107,7 +1022,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27404684, y: 0.00000029807774, z: 0.00000017322597}
+  m_ConnectedAnchor: {x: -0.27404684, y: 0.000000417287, z: 0.000000065192545}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1370,7 +1285,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.09124453, y: -0.066564, z: -0.0005538515}
+  m_ConnectedAnchor: {x: 0.09124453, y: -0.066564, z: -0.00055377925}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1738,7 +1653,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18760645, y: 0.22204676, z: -0.035217896}
+  m_ConnectedAnchor: {x: 0.18760645, y: 0.22204688, z: -0.03521792}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1847,7 +1762,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000001280502, y: 0.21568888, z: -0.026496656}
+  m_ConnectedAnchor: {x: 0.0000012805019, y: 0.215689, z: -0.02649676}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2077,7 +1992,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000011901354, y: 0.3871452, z: 0.023088798}
+  m_ConnectedAnchor: {x: -0.0000011901354, y: 0.3871452, z: 0.023088736}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2308,7 +2223,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0024467986, y: -0.40595412, z: -0.0051703397}
+  m_ConnectedAnchor: {x: -0.0024467986, y: -0.40595406, z: -0.005170411}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2757,7 +2672,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.091244526, y: -0.06656393, z: -0.0005538565}
+  m_ConnectedAnchor: {x: -0.091244526, y: -0.066563986, z: -0.00055377925}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3115,7 +3030,6 @@ Transform:
   - {fileID: 8457966283628990782}
   - {fileID: 5216611642064733004}
   - {fileID: 4610016632639464394}
-  - {fileID: 2071912937}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3166,10 +3080,24 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   navMeshObstacle: {fileID: 0}
   characterSetup: {fileID: 0}
-  characterData: {fileID: 0}
   characterFunctionProcessor: {fileID: 0}
   characterUpdateProcessor: {fileID: 0}
   characterQueryProcessor: {fileID: 0}
+  MOVE_DATA:
+    LatestMoveUp: {fileID: 0}
+    IsIgnoreCharacterTime: 0
+    Momentum: 0
+  DAMAGE_DATA:
+    damageTaken:
+      mAttacker: {fileID: 0}
+      mAttack: {fileID: 0}
+      mDamager: {fileID: 0}
+      mDamagee: {fileID: 0}
+      mIncomingVelocity: {x: 0, y: 0, z: 0}
+    BlockedAttack: {fileID: 0}
+    hp: 1
+    MarioStompAttack: {fileID: 0}
+    AxeThrow: {fileID: 0}
   BLOCKING_DATA:
     RaycastContact: {x: 0, y: 0, z: 0}
     MarioStompTargets: []
@@ -3186,6 +3114,76 @@ MonoBehaviour:
     flyingRagdollData:
       IsTriggered: 0
       Attacker: {fileID: 0}
+  MANUAL_INPUT_DATA:
+    DoubleTaps: 
+  BOX_COLLIDER_DATA:
+    IsUpdatingSpheres: 0
+    IsLanding: 0
+    Size_Update_Speed: 0
+    Center_Update_Speed: 0
+    TargetSize: {x: 0, y: 0, z: 0}
+    TargetCenter: {x: 0, y: 0, z: 0}
+    LandingPosition: {x: 0, y: 0, z: 0}
+  VERTICAL_VELOCITY_DATA:
+    NoJumpCancel: 0
+    MaxWallSlideVelocity: {x: 0, y: 0, z: 0}
+  TRANSITION_DATA:
+    InstantTransitionMade: 0
+    LockTransition: 0
+  SPAWNED_OBJ_DATA:
+    ObjList: 
+  ROTATION_DATA:
+    LockTurn: 0
+    UnlockTiming: 0
+  JUMP_DATA:
+    CanWallJump: 0
+    CheckWallBlock: 0
+  COLLISION_SPHERE_DATA:
+    BottomSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    FrontSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    BackSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    UpSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  GROUND_DATA:
+    Ground: {fileID: 0}
+  ATTACK_DATA:
+    AttackTriggered: 0
+    AttackButtonIsReset: 0
+  WEAPON_DATA:
+    HoldingWeapon: {fileID: 0}
+  TURN_DATA:
+    StartedForward: 0
+  CAMERA_DATA:
+    CameraShaken: 0
 --- !u!114 &7199473640970729132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3307,7 +3305,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0024466957, y: -0.42048007, z: -0.020576518}
+  m_ConnectedAnchor: {x: 0.0024466957, y: -0.42048007, z: -0.020576412}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3657,7 +3655,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27404684, y: 0.00000033126352, z: 0.000000024214376}
+  m_ConnectedAnchor: {x: 0.27404684, y: 0.00000033126352, z: 0.0000000540167}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3895,7 +3893,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0024466957, y: -0.42047873, z: -0.02060238}
+  m_ConnectedAnchor: {x: -0.0024466957, y: -0.42047873, z: -0.02060231}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3990,7 +3988,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0024468026, y: -0.40595433, z: -0.005145379}
+  m_ConnectedAnchor: {x: 0.0024468026, y: -0.4059544, z: -0.0051452797}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4121,5 +4119,4 @@ MonoBehaviour:
     RightHand_Attack: {fileID: 877859058002271199}
     LeftFoot_Attack: {fileID: 7213782182656917228}
     RightFoot_Attack: {fileID: 8596709973711031587}
-  SkinnedMeshAnimator: {fileID: 3363093133717548819}
   playableCharacterType: 1

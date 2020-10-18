@@ -3,7 +3,7 @@
     [System.Serializable]
     public class AttackData
     {
-        public bool AttackTriggered;
-        public bool AttackButtonIsReset;
+        public bool AttackTriggered = false;
+        public bool AttackButtonIsReset = false;
     }
 }

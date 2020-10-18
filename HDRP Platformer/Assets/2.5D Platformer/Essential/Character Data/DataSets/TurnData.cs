@@ -1,7 +1,8 @@
 ﻿namespace Roundbeargames
 {
+    [System.Serializable]
     public class TurnData
     {
-        public bool StartedForward;
+        public bool StartedForward = false;
     }
 }
