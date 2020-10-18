@@ -7,8 +7,30 @@ namespace Roundbeargames
     public class CharacterQueryProcessor : MonoBehaviour
     {
         public Dictionary<System.Type, CharacterQuery> DicQueries = new Dictionary<System.Type, CharacterQuery>();
+        public CharacterQueryList QueryListType;
 
         private void Start()
+        {
+            if (QueryListType != null)
+            {
+                Debug.Log("Loading Character Queries: " +
+                    this.name + " - " + this.transform.root.gameObject.name);
+
+                List<System.Type> functions = QueryListType.GetList();
+
+                foreach (System.Type t in functions)
+                {
+                    AddQuery(t);
+                }
+            }
+            else
+            {
+                Debug.Log("Loading Default Character Queries: " + this.transform.root.gameObject.name);
+                SetDefaultQueries();
+            }
+        }
+
+        void SetDefaultQueries()
         {
             AddQuery(typeof(LeftSideIsBlocked));
             AddQuery(typeof(RightSideIsBlocked));
@@ -25,7 +47,6 @@ namespace Roundbeargames
             AddQuery(typeof(FrontIsBlocked));
             AddQuery(typeof(GetAttackingPart));
             AddQuery(typeof(GetChildObj));
-            //AddQuery(typeof(StateNameContains));
             AddQuery(typeof(GetTouchingMeleeWeapon));
             AddQuery(typeof(CurrentAbility));
             AddQuery(typeof(ShouldShowHitParticles));
