@@ -14,7 +14,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.ROTATION_DATA.LockTurn)
+            if (characterState.control.ROTATION_DATA.LockTurn)
             {
                 animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Turn], false);
                 return;

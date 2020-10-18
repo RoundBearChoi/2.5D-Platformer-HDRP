@@ -20,10 +20,11 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (stateInfo.normalizedTime >= LockTiming && !characterState.ROTATION_DATA.LockTurn)
+            if (stateInfo.normalizedTime >= LockTiming &&
+                !characterState.control.ROTATION_DATA.LockTurn)
             {
-                characterState.ROTATION_DATA.LockTurn = true;
-                characterState.ROTATION_DATA.UnlockTiming = UnlockTiming;
+                characterState.control.ROTATION_DATA.LockTurn = true;
+                characterState.control.ROTATION_DATA.UnlockTiming = UnlockTiming;
             }
         }
 

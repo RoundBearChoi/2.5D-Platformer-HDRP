@@ -50,9 +50,9 @@ namespace Roundbeargames
         [Space(3)] public TransitionData TRANSITION_DATA;
         [Space(3)] public AbilityData ABILITY_DATA;
         [Space(3)] public SpawnedObjData SPAWNED_OBJ_DATA;
+        [Space(3)] public RotationData ROTATION_DATA;
 
         //temp
-        public RotationData ROTATION_DATA => characterData.rotationData;
         public JumpData JUMP_DATA => characterData.jumpData;
         public CollisionSphereData COLLISION_SPHERE_DATA => characterData.collisionSphereData;
         public GroundData GROUND_DATA => characterData.groundData;

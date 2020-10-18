@@ -3,7 +3,7 @@
     [System.Serializable]
     public class RotationData
     {
-        public bool LockTurn;
-        public float UnlockTiming;
+        public bool LockTurn = false;
+        public float UnlockTiming = 0f;
     }
 }
