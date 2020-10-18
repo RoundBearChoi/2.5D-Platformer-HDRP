@@ -12,7 +12,7 @@ namespace Roundbeargames
             {
                 if (control.MoveRight)
                 {
-                    control.MOMENTUM_DATA.Momentum += speed;
+                    control.MOVE_DATA.Momentum += speed;
                 }
             }
 
@@ -20,26 +20,26 @@ namespace Roundbeargames
             {
                 if (control.MoveLeft)
                 {
-                    control.MOMENTUM_DATA.Momentum -= speed;
+                    control.MOVE_DATA.Momentum -= speed;
                 }
             }
 
             if (control.GetBool(typeof(RightSideIsBlocked)) || control.GetBool(typeof(LeftSideIsBlocked)))
             {
-                float lerped = Mathf.Lerp(control.MOMENTUM_DATA.Momentum, 0f, Time.deltaTime * 1.5f);
-                control.MOMENTUM_DATA.Momentum = lerped;
+                float lerped = Mathf.Lerp(control.MOVE_DATA.Momentum, 0f, Time.deltaTime * 1.5f);
+                control.MOVE_DATA.Momentum = lerped;
             }
 
 
-            if (Mathf.Abs(control.MOMENTUM_DATA.Momentum) >= maxMomentum)
+            if (Mathf.Abs(control.MOVE_DATA.Momentum) >= maxMomentum)
             {
-                if (control.MOMENTUM_DATA.Momentum > 0f)
+                if (control.MOVE_DATA.Momentum > 0f)
                 {
-                    control.MOMENTUM_DATA.Momentum = maxMomentum;
+                    control.MOVE_DATA.Momentum = maxMomentum;
                 }
-                else if (control.MOMENTUM_DATA.Momentum < 0f)
+                else if (control.MOVE_DATA.Momentum < 0f)
                 {
-                    control.MOMENTUM_DATA.Momentum = -maxMomentum;
+                    control.MOVE_DATA.Momentum = -maxMomentum;
                 }
             }
         }

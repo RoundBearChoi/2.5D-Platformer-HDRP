@@ -7,7 +7,7 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/MoveForward_v2")]
     public class MoveForward_v2 : CharacterAbility
     {
-        MoveForwardComponent moveForwardComponent;
+        CommonMoveForwardData moveForwardComponent;
         [Space(10)]
         [SerializeField] BasicMovementOptions basicMovementOptions;
         [Space(10)]
@@ -48,7 +48,7 @@ namespace Roundbeargames
             {
                 if (momentumOptions.ClearMomentumOnExit)
                 {
-                    characterState.control.MOMENTUM_DATA.Momentum = 0f;
+                    characterState.control.MOVE_DATA.Momentum = 0f;
                 }
             }
         }
@@ -78,12 +78,12 @@ namespace Roundbeargames
                     {
                         if (characterState.control.GetBool(typeof(FacingForward)))
                         {
-                            characterState.control.MOMENTUM_DATA.Momentum =
+                            characterState.control.MOVE_DATA.Momentum =
                                 momentumOptions.StartingMomentum;
                         }
                         else
                         {
-                            characterState.control.MOMENTUM_DATA.Momentum =
+                            characterState.control.MOVE_DATA.Momentum =
                                 -momentumOptions.StartingMomentum;
                         }
                     }
@@ -105,7 +105,7 @@ namespace Roundbeargames
         {
             if (moveForwardComponent == null)
             {
-                moveForwardComponent = new MoveForwardComponent();
+                moveForwardComponent = new CommonMoveForwardData();
                 moveForwardComponent.GetBlockDistance = ReturnBlockDistance;
                 moveForwardComponent.GetMoveSpeed = ReturnMoveSpeed;
                 moveForwardComponent.IsMoveOnHit = ReturnMoveOnHit;

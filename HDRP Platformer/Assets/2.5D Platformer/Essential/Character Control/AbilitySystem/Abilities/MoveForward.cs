@@ -7,7 +7,7 @@ namespace Roundbeargames
     [CreateAssetMenu(fileName = "New State", menuName = "Roundbeargames/CharacterAbilities/MoveForward")]
     public class MoveForward : CharacterAbility
     {
-        public MoveForwardComponent moveForwardComponent;
+        public CommonMoveForwardData moveForwardComponent;
 
         public bool debug;
 
@@ -37,7 +37,7 @@ namespace Roundbeargames
         {
             if (moveForwardComponent == null)
             {
-                moveForwardComponent = new MoveForwardComponent();
+                moveForwardComponent = new CommonMoveForwardData();
                 moveForwardComponent.GetBlockDistance = ReturnBlockDistance;
                 moveForwardComponent.GetMoveSpeed = ReturnMoveSpeed;
                 moveForwardComponent.IsMoveOnHit = ReturnMoveOnHit;
@@ -63,11 +63,11 @@ namespace Roundbeargames
                 {
                     if (characterState.control.GetBool(typeof(FacingForward)))
                     {
-                        characterState.control.MOMENTUM_DATA.Momentum = StartingMomentum;
+                        characterState.control.MOVE_DATA.Momentum = StartingMomentum;
                     }
                     else
                     {
-                        characterState.control.MOMENTUM_DATA.Momentum = -StartingMomentum;
+                        characterState.control.MOVE_DATA.Momentum = -StartingMomentum;
                     }
                 }
             }
@@ -122,7 +122,7 @@ namespace Roundbeargames
         {
             if (ClearMomentumOnExit)
             {
-                characterState.control.MOMENTUM_DATA.Momentum = 0f;
+                characterState.control.MOVE_DATA.Momentum = 0f;
             }
         }
 
@@ -142,20 +142,20 @@ namespace Roundbeargames
 
             control.RunFunction(typeof(CalculateMomentum), speed, MaxMomentum);
 
-            if (control.MOMENTUM_DATA.Momentum > 0f)
+            if (control.MOVE_DATA.Momentum > 0f)
             {
-                control.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
+                control.RunFunction(typeof(FaceForward), true);
             }
-            else if (control.MOMENTUM_DATA.Momentum < 0f)
+            else if (control.MOVE_DATA.Momentum < 0f)
             {
-                control.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
+                control.RunFunction(typeof(FaceForward), false);
             }
 
             if (!control.GetBool(typeof(FrontIsBlocked)))
             {
                 control.RunFunction(typeof(MoveTransformForward),
                     Speed,
-                    Mathf.Abs(control.MOMENTUM_DATA.Momentum));
+                    Mathf.Abs(control.MOVE_DATA.Momentum));
             }
         }
 

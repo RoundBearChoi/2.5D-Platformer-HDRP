@@ -12,7 +12,7 @@ namespace Roundbeargames
         {
             characterState.control.MoveLeft = false;
             characterState.control.MoveRight = false;
-            characterState.control.MOMENTUM_DATA.Momentum = 0f;
+            characterState.control.MOVE_DATA.Momentum = 0f;
 
             characterState.control.RIGID_BODY.velocity = Vector3.zero;
 

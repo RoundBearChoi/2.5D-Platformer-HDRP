@@ -7,7 +7,7 @@ namespace Roundbeargames
     public class AnimationData
     {
         public bool InstantTransitionMade;
-        public MoveForwardComponent LatestMoveForward;
+        public CommonMoveForwardData LatestMoveForward;
         public MoveUp LatestMoveUp;
         public bool LockTransition;
         public bool IsIgnoreCharacterTime;

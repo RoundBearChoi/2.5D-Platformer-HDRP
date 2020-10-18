@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    public class MoveForwardComponent
+    public class CommonMoveForwardData
     {
         public delegate float GetFloat();
         public delegate bool GetBool();
