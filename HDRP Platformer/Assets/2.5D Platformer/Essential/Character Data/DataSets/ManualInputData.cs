@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Roundbeargames
 {
-    //[System.Serializable]
+    [System.Serializable]
     public class ManualInputData
     {
         public List<InputKeyType> DoubleTaps = new List<InputKeyType>();
