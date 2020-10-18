@@ -21,8 +21,9 @@ namespace Roundbeargames
                 return;
             }
 
-            float platformDist = characterState.control.aiProgress.pathfindingAgent.EndSphere.transform.position.y -
-                characterState.COLLISION_SPHERE_DATA.FrontSpheres[0].transform.position.y;
+            float platformDist =
+                characterState.control.aiProgress.pathfindingAgent.EndSphere.transform.position.y -
+                characterState.control.COLLISION_SPHERE_DATA.FrontSpheres[0].transform.position.y;
 
             if (platformDist > 0.5f)
             {

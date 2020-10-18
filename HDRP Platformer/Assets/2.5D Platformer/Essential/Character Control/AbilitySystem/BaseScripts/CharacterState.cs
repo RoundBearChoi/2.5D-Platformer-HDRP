@@ -27,7 +27,6 @@ namespace Roundbeargames
         public GameObject RIGHT_HAND_ATTACK => control.characterSetup.attackPartSetup.RightHand_Attack;
 
         //temp
-        public CollisionSphereData COLLISION_SPHERE_DATA => control.characterData.collisionSphereData;
         public GroundData GROUND_DATA => control.characterData.groundData;
         public AttackData ATTACK_DATA => control.characterData.attackData;
         public AIController AI_CONTROLLER => control.aiController;

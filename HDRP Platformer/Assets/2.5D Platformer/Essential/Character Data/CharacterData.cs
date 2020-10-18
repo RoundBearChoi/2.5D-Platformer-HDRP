@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public CollisionSphereData collisionSphereData;
         [Space(15)] public GroundData groundData;
         [Space(15)] public AttackData attackData;
         [Space(15)] public CollidingObjData collidingObjData;
@@ -17,14 +16,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            collisionSphereData = new CollisionSphereData
-            {
-                BottomSpheres = new GameObject[5],
-                FrontSpheres = new GameObject[10],
-                BackSpheres = new GameObject[10],
-                UpSpheres = new GameObject[5],
-            };
 
             groundData = new GroundData
             {
