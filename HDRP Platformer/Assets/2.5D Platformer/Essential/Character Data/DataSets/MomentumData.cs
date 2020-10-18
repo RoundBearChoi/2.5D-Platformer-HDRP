@@ -7,6 +7,6 @@ namespace Roundbeargames
     [System.Serializable]
     public class MomentumData
     {
-        public float Momentum;
+        public float Momentum = 0f;
     }
 }

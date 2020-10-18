@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public MomentumData momentumData;
         [Space(15)] public RotationData rotationData;
         [Space(15)] public JumpData jumpData;
         [Space(15)] public CollisionSphereData collisionSphereData;
@@ -21,11 +20,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            momentumData = new MomentumData
-            {
-                Momentum = 0f,
-            };
 
             rotationData = new RotationData
             {

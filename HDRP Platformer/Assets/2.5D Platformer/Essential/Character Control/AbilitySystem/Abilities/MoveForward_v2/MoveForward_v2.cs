@@ -48,7 +48,7 @@ namespace Roundbeargames
             {
                 if (momentumOptions.ClearMomentumOnExit)
                 {
-                    characterState.MOMENTUM_DATA.Momentum = 0f;
+                    characterState.control.MOMENTUM_DATA.Momentum = 0f;
                 }
             }
         }
@@ -76,13 +76,15 @@ namespace Roundbeargames
                 {
                     if (momentumOptions.StartingMomentum > 0.001f)
                     {
-                        if (characterState.control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+                        if (characterState.control.GetBool(typeof(FacingForward)))
                         {
-                            characterState.MOMENTUM_DATA.Momentum = momentumOptions.StartingMomentum;
+                            characterState.control.MOMENTUM_DATA.Momentum =
+                                momentumOptions.StartingMomentum;
                         }
                         else
                         {
-                            characterState.MOMENTUM_DATA.Momentum = -momentumOptions.StartingMomentum;
+                            characterState.control.MOMENTUM_DATA.Momentum =
+                                -momentumOptions.StartingMomentum;
                         }
                     }
                 }

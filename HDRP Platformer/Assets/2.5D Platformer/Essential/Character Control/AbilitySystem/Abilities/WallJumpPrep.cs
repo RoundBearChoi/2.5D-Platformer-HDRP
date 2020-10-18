@@ -12,17 +12,17 @@ namespace Roundbeargames
         {
             characterState.control.MoveLeft = false;
             characterState.control.MoveRight = false;
-            characterState.MOMENTUM_DATA.Momentum = 0f;
+            characterState.control.MOMENTUM_DATA.Momentum = 0f;
 
             characterState.control.RIGID_BODY.velocity = Vector3.zero;
 
-            if (characterState.control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (characterState.control.GetBool(typeof(FacingForward)))
             {
-                characterState.control.RunFunction(typeof(FaceForward), false);// ROTATION_DATA.FaceForward(false);
+                characterState.control.RunFunction(typeof(FaceForward), false);
             }
             else
             {
-                characterState.control.RunFunction(typeof(FaceForward), true);// ROTATION_DATA.FaceForward(true);
+                characterState.control.RunFunction(typeof(FaceForward), true);
             }
         }
 

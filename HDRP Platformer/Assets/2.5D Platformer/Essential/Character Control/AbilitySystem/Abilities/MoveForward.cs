@@ -63,11 +63,11 @@ namespace Roundbeargames
                 {
                     if (characterState.control.GetBool(typeof(FacingForward)))
                     {
-                        characterState.MOMENTUM_DATA.Momentum = StartingMomentum;
+                        characterState.control.MOMENTUM_DATA.Momentum = StartingMomentum;
                     }
                     else
                     {
-                        characterState.MOMENTUM_DATA.Momentum = -StartingMomentum;
+                        characterState.control.MOMENTUM_DATA.Momentum = -StartingMomentum;
                     }
                 }
             }
@@ -122,7 +122,7 @@ namespace Roundbeargames
         {
             if (ClearMomentumOnExit)
             {
-                characterState.MOMENTUM_DATA.Momentum = 0f;
+                characterState.control.MOMENTUM_DATA.Momentum = 0f;
             }
         }
 

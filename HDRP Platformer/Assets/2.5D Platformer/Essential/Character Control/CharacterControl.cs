@@ -40,21 +40,15 @@ namespace Roundbeargames
 
         [Header("Character Data")]
         public BlockingObjData BLOCKING_DATA;
-        [Space(3)]
-        public LedgeGrabData LEDGE_GRAB_DATA;
-        [Space(3)]
-        public RagdollData RAGDOLL_DATA;
-        [Space(3)]
-        public ManualInputData MANUAL_INPUT_DATA;
-        [Space(3)]
-        public BoxColliderData BOX_COLLIDER_DATA;
-        [Space(3)]
-        public VerticalVelocityData VERTICAL_VELOCITY_DATA;
-        [Space(3)]
-        public DamageData DAMAGE_DATA;
+        [Space(3)] public LedgeGrabData LEDGE_GRAB_DATA;
+        [Space(3)] public RagdollData RAGDOLL_DATA;
+        [Space(3)] public ManualInputData MANUAL_INPUT_DATA;
+        [Space(3)] public BoxColliderData BOX_COLLIDER_DATA;
+        [Space(3)] public VerticalVelocityData VERTICAL_VELOCITY_DATA;
+        [Space(3)] public DamageData DAMAGE_DATA;
+        [Space(3)] public MomentumData MOMENTUM_DATA;
 
         //temp
-        public MomentumData MOMENTUM_DATA => characterData.momentumData;
         public RotationData ROTATION_DATA => characterData.rotationData;
         public JumpData JUMP_DATA => characterData.jumpData;
         public CollisionSphereData COLLISION_SPHERE_DATA => characterData.collisionSphereData;

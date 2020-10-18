@@ -14,7 +14,7 @@ namespace Roundbeargames
             characterState.control.MoveLeft = false;
             characterState.control.MoveRight = false;
 
-            characterState.MOMENTUM_DATA.Momentum = 0f;
+            characterState.control.MOMENTUM_DATA.Momentum = 0f;
             characterState.JUMP_DATA.CanWallJump = false;
             characterState.control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = MaxFallVelocity;
         }
