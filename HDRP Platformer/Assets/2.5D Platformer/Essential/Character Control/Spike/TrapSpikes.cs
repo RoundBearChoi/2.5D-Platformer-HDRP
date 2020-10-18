@@ -52,7 +52,7 @@ namespace Roundbeargames
 
             foreach(CharacterControl control in ListSpikeVictims)
             {
-                if (control.characterSetup.SkinnedMeshAnimator.avatar != null)
+                if (control.ANIMATOR.avatar != null)
                 {
                     if (SpikeTriggerRoutine == null && SpikesReloaded)
                     {
@@ -75,7 +75,7 @@ namespace Roundbeargames
 
             foreach(CharacterControl control in ListSpikeVictims)
             {
-                control.characterSetup.SkinnedMeshAnimator.runtimeAnimatorController = SpikeDeathAnimator;
+                control.ANIMATOR.runtimeAnimatorController = SpikeDeathAnimator;
             }
 
             yield return new WaitForSeconds(1.5f);

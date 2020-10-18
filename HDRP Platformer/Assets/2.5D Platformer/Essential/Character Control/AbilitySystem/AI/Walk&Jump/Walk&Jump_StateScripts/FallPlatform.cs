@@ -15,7 +15,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.control.characterSetup.SkinnedMeshAnimator.GetBool(
+            if (!characterState.control.ANIMATOR.GetBool(
                 HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
                 return;

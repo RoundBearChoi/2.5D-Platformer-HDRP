@@ -84,8 +84,8 @@ namespace Roundbeargames
 
         void SetLandingPosition(CharacterControl control, Vector3 pos)
         {
-            if (control.characterSetup.SkinnedMeshAnimator.
-                GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]) == false)
+            if (control.ANIMATOR.GetBool(
+                HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]) == false)
             {
                 _setlandingposition(control, pos);
             }

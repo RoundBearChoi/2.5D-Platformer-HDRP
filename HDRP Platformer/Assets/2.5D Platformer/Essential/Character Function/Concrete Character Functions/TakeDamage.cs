@@ -27,10 +27,10 @@ namespace Roundbeargames
             {
                 int randomIndex = Random.Range(0, HashTool.GetLength(typeof(Hit_Reaction_States)));
 
-                control.characterSetup.
-                    SkinnedMeshAnimator.Play(
-                    HashManager.Instance.DicHitReactionStates[
-                        (Hit_Reaction_States)randomIndex], 0, 0f);
+                control.ANIMATOR.Play(
+                    HashManager.Instance.DicHitReactionStates[(Hit_Reaction_States)randomIndex],
+                    0,
+                    0f);
             }
 
             control.RunFunction(typeof(TurnIntoFlyingRagdoll), info);

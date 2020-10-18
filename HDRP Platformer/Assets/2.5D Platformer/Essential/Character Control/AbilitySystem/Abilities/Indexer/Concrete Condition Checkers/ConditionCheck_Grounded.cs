@@ -8,9 +8,8 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (control.characterSetup.SkinnedMeshAnimator.
-                                GetBool(HashManager.Instance.ArrMainParams[
-                                    (int)MainParameterType.Grounded]) == false)
+            if (control.ANIMATOR.GetBool(
+                HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]) == false)
             {
                 return false;
             }

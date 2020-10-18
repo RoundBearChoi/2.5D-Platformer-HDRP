@@ -71,7 +71,7 @@ namespace Roundbeargames
         {
             for (int i = 0; i < ArrCharacters.Length; i++)
             {
-                if (ArrCharacters[i].characterSetup.SkinnedMeshAnimator == animator)
+                if (ArrCharacters[i].ANIMATOR == animator)
                 {
                     return ArrCharacters[i];
                 }

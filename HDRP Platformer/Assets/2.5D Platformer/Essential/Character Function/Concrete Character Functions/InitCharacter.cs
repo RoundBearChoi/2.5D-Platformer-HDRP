@@ -29,7 +29,7 @@ namespace Roundbeargames
             control.characterQueryProcessor = control.GetComponentInChildren<CharacterQueryProcessor>();
 
             RegisterCharacter();
-            InitCharacterStates(control.characterSetup.SkinnedMeshAnimator);
+            InitCharacterStates(control.ANIMATOR);
         }
 
         void RegisterCharacter()

@@ -64,20 +64,17 @@ namespace Roundbeargames
 
             if (CrossFade <= 0f)
             {
-                control.characterSetup.SkinnedMeshAnimator.
-                    Play(transitionKey.ShortNameHash, 0);
+                control.ANIMATOR.Play(transitionKey.ShortNameHash, 0);
             }
             else
             {
                 if (Offset <= 0f)
                 {
-                    control.characterSetup.SkinnedMeshAnimator.
-                        CrossFade(transitionKey.ShortNameHash, CrossFade, 0);
+                    control.ANIMATOR.CrossFade(transitionKey.ShortNameHash, CrossFade, 0);
                 }
                 else
                 {
-                    control.characterSetup.SkinnedMeshAnimator.
-                        CrossFade(transitionKey.ShortNameHash, CrossFade, 0, Offset);
+                    control.ANIMATOR.CrossFade(transitionKey.ShortNameHash, CrossFade, 0, Offset);
                 }
             }
         }
@@ -94,7 +91,7 @@ namespace Roundbeargames
 
         bool NextAnimatorStateIsDecided(CharacterControl control)
         {
-            AnimatorStateInfo nextInfo = control.characterSetup.SkinnedMeshAnimator.GetNextAnimatorStateInfo(0);
+            AnimatorStateInfo nextInfo = control.ANIMATOR.GetNextAnimatorStateInfo(0);
 
             if (nextInfo.shortNameHash != 0)
             {

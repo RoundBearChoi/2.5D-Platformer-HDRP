@@ -72,7 +72,7 @@ namespace Roundbeargames
         {
             control.RAGDOLL_DATA.RagdollTriggered = false;
 
-            if (control.characterSetup.SkinnedMeshAnimator.avatar == null)
+            if (control.ANIMATOR.avatar == null)
             {
                 return;
             }
@@ -96,8 +96,8 @@ namespace Roundbeargames
             control.RIGID_BODY.useGravity = false;
             control.RIGID_BODY.velocity = Vector3.zero;
             control.gameObject.GetComponent<BoxCollider>().enabled = false;
-            control.characterSetup.SkinnedMeshAnimator.enabled = false;
-            control.characterSetup.SkinnedMeshAnimator.avatar = null;
+            control.ANIMATOR.enabled = false;
+            control.ANIMATOR.avatar = null;
 
             //turn off ledge colliders
             control.RunFunction(typeof(LedgeCollidersOff));

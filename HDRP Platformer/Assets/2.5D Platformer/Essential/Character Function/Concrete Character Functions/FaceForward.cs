@@ -6,8 +6,6 @@ namespace Roundbeargames
 {
     public class FaceForward : CharacterFunction
     {
-        //static string TutorialScene_CharacterSelect = "TutorialScene_CharacterSelect";
-
         public override void RunFunction(bool forward)
         {
             if (control.DisableTurning)
@@ -15,12 +13,7 @@ namespace Roundbeargames
                 return;
             }
 
-            //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals(TutorialScene_CharacterSelect))
-            //{
-            //    return;
-            //}
-
-            if (!control.characterSetup.SkinnedMeshAnimator.enabled)
+            if (!control.ANIMATOR.enabled)
             {
                 return;
             }

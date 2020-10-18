@@ -73,7 +73,7 @@ namespace Roundbeargames
 
         static void ToggleMirror(CharacterControl control, MirrorParameterType mirrorParamType, bool toogle)
         {
-            control.characterSetup.SkinnedMeshAnimator.SetBool(
+            control.ANIMATOR.SetBool(
                 HashManager.Instance.ArrMirrorParameters[(int)mirrorParamType], toogle);
         }
     }

@@ -20,17 +20,17 @@ namespace Roundbeargames
             if (stateInfo.normalizedTime >= from &&
                 stateInfo.normalizedTime <= to)
             {
-                characterState.control.characterSetup.SkinnedMeshAnimator.applyRootMotion = true;
+                characterState.control.ANIMATOR.applyRootMotion = true;
             }
             else
             {
-                characterState.control.characterSetup.SkinnedMeshAnimator.applyRootMotion = false;
+                characterState.control.ANIMATOR.applyRootMotion = false;
             }
         }
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.characterSetup.SkinnedMeshAnimator.applyRootMotion = false;
+            characterState.control.ANIMATOR.applyRootMotion = false;
         }
     }
 }

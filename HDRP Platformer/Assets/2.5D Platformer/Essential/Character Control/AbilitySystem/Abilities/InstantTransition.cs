@@ -45,8 +45,9 @@ namespace Roundbeargames
         {
             if (CrossFade <= 0f)
             {
-                control.characterSetup.SkinnedMeshAnimator.Play(
-                    HashManager.Instance.ArrInstantTransitionStates[(int)TransitionTo], 0);
+                control.ANIMATOR.Play(
+                    HashManager.Instance.ArrInstantTransitionStates[(int)TransitionTo],
+                    0);
             }
             else
             {
@@ -57,15 +58,18 @@ namespace Roundbeargames
                 
                 if (Offset <= 0f)
                 {
-                    control.characterSetup.SkinnedMeshAnimator.CrossFade(
+                    control.ANIMATOR.CrossFade(
                         HashManager.Instance.ArrInstantTransitionStates[(int)TransitionTo],
-                        CrossFade, 0);
+                        CrossFade,
+                        0);
                 }
                 else
                 {
-                    control.characterSetup.SkinnedMeshAnimator.CrossFade(
+                    control.ANIMATOR.CrossFade(
                         HashManager.Instance.ArrInstantTransitionStates[(int)TransitionTo],
-                        CrossFade, 0, Offset);
+                        CrossFade,
+                        0,
+                        Offset);
                 }
             }
         }
@@ -82,7 +86,7 @@ namespace Roundbeargames
                 return true;
             }
 
-            if (control.characterSetup.SkinnedMeshAnimator.GetInteger(
+            if (control.ANIMATOR.GetInteger(
                 HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex]) != 0)
             {
                 return true;
@@ -96,7 +100,7 @@ namespace Roundbeargames
                 }
             }
 
-            AnimatorStateInfo nextInfo = control.characterSetup.SkinnedMeshAnimator.GetNextAnimatorStateInfo(0);
+            AnimatorStateInfo nextInfo = control.ANIMATOR.GetNextAnimatorStateInfo(0);
 
             if (nextInfo.shortNameHash == HashManager.Instance.ArrInstantTransitionStates[(int)TransitionTo])
             {

@@ -73,6 +73,21 @@ namespace Roundbeargames
             }
         }
 
+        public Animator ANIMATOR
+        {
+            get
+            {
+                if (SkinnedMeshAnimator == null)
+                {
+                    SkinnedMeshAnimator = this.gameObject.GetComponentInChildren<Animator>();
+                }
+
+                return SkinnedMeshAnimator;
+            }
+        }
+
+        private Animator SkinnedMeshAnimator = null;
+
         public CharacterUpdate GetUpdater(System.Type UpdaterType)
         {
             if (characterUpdateProcessor.DicUpdaters.ContainsKey(UpdaterType))

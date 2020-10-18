@@ -34,8 +34,7 @@ namespace Roundbeargames
             {
                 if (control.ROTATION_DATA.LockTurn)
                 {
-                    AnimatorStateInfo info = control.characterSetup.
-                        SkinnedMeshAnimator.GetCurrentAnimatorStateInfo(0);
+                    AnimatorStateInfo info = control.ANIMATOR.GetCurrentAnimatorStateInfo(0);
 
                     if (info.normalizedTime >= control.ROTATION_DATA.UnlockTiming)
                     {

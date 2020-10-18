@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool ReturnBool(string str)
         {
-            AnimatorClipInfo[] arr = control.characterSetup.SkinnedMeshAnimator.GetCurrentAnimatorClipInfo(0);
+            AnimatorClipInfo[] arr = control.ANIMATOR.GetCurrentAnimatorClipInfo(0);
 
             foreach (AnimatorClipInfo clipInfo in arr)
             {

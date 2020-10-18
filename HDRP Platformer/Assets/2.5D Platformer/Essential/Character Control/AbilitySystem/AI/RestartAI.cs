@@ -126,7 +126,7 @@ namespace Roundbeargames
 
             if (control.RIGID_BODY.useGravity)
             {
-                if (control.characterSetup.SkinnedMeshAnimator.GetBool(
+                if (control.ANIMATOR.GetBool(
                     HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
                 {
                     return true;

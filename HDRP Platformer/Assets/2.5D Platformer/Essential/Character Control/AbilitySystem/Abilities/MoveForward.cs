@@ -129,8 +129,8 @@ namespace Roundbeargames
         private void MoveOnMomentum(CharacterControl control, AnimatorStateInfo stateInfo)
         {
             // move only in air
-            if (!control.characterSetup.SkinnedMeshAnimator.
-                GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
+            if (!control.ANIMATOR.GetBool(
+                HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]))
             {
                 Momentum_Move(control, stateInfo);
             }

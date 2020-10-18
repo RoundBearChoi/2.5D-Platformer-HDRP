@@ -10,7 +10,6 @@ namespace Roundbeargames
         [Space(15)] public Attack MarioStompAttack;
         [Space(15)] public Attack AxeThrow;
         [Space(15)] public AttackPartSetup attackPartSetup;
-        [Space(15)] public Animator SkinnedMeshAnimator;
         [Space(15)] public PlayableCharacterType playableCharacterType;
 
         private void Awake()
