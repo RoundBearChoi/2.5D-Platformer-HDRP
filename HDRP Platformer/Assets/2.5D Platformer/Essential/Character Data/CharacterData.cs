@@ -6,7 +6,6 @@ namespace Roundbeargames
 {
     public class CharacterData : MonoBehaviour
     {
-        [Space(15)] public BoxColliderData boxColliderData;
         [Space(15)] public VerticalVelocityData verticalVelocityData;
         [Space(15)] public DamageData damageData;
         [Space(15)] public MomentumData momentumData;
@@ -24,19 +23,6 @@ namespace Roundbeargames
         private void Start()
         {
             CharacterControl control = this.transform.root.gameObject.GetComponent<CharacterControl>();
-
-            boxColliderData = new BoxColliderData
-            {
-                IsUpdatingSpheres = false,
-                IsLanding = false,
-
-                Size_Update_Speed = 0f,
-                Center_Update_Speed = 0f,
-
-                TargetSize = Vector3.zero,
-                TargetCenter = Vector3.zero,
-                LandingPosition = Vector3.zero,
-            };
 
             verticalVelocityData = new VerticalVelocityData
             {

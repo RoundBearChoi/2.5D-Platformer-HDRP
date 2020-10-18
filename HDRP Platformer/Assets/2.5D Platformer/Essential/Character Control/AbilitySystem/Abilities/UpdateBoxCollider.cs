@@ -18,15 +18,15 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.BOX_COLLIDER_DATA.TargetSize = TargetSize;
-            characterState.BOX_COLLIDER_DATA.Size_Update_Speed = SizeUpdateSpeed;
+            characterState.control.BOX_COLLIDER_DATA.TargetSize = TargetSize;
+            characterState.control.BOX_COLLIDER_DATA.Size_Update_Speed = SizeUpdateSpeed;
 
-            characterState.BOX_COLLIDER_DATA.TargetCenter = TargetCenter;
-            characterState.BOX_COLLIDER_DATA.Center_Update_Speed = CenterUpdateSpeed;
+            characterState.control.BOX_COLLIDER_DATA.TargetCenter = TargetCenter;
+            characterState.control.BOX_COLLIDER_DATA.Center_Update_Speed = CenterUpdateSpeed;
 
             if (stateInfo.IsName(LandingState))
             {
-                characterState.BOX_COLLIDER_DATA.IsLanding = true;
+                characterState.control.BOX_COLLIDER_DATA.IsLanding = true;
             }
         }
 
@@ -38,16 +38,16 @@ namespace Roundbeargames
                 {
                     if (animator.GetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Grounded]) == true)
                     {
-                        characterState.BOX_COLLIDER_DATA.IsLanding = true;
+                        characterState.control.BOX_COLLIDER_DATA.IsLanding = true;
                     }
                     else
                     {
-                        characterState.BOX_COLLIDER_DATA.IsLanding = false;
+                        characterState.control.BOX_COLLIDER_DATA.IsLanding = false;
                     }
                 }
                 else
                 {
-                    characterState.BOX_COLLIDER_DATA.IsLanding = false;
+                    characterState.control.BOX_COLLIDER_DATA.IsLanding = false;
                 }
             }
         }
@@ -57,7 +57,7 @@ namespace Roundbeargames
             if (stateInfo.IsName(LandingState) ||
                 stateInfo.IsName(ClimbingState))
             {
-                characterState.BOX_COLLIDER_DATA.IsLanding = false;
+                characterState.control.BOX_COLLIDER_DATA.IsLanding = false;
             }
         }
     }
