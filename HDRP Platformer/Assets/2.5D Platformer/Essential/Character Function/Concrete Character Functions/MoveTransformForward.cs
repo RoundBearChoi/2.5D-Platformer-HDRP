@@ -14,7 +14,7 @@ namespace Roundbeargames
             }
             else
             {
-                if (control.TURN_DATA.StartedForward)
+                if (control.DATASET.TURN_DATA.StartedForward)
                 {
                     if (control.GetBool(typeof(FacingForward)))
                     {

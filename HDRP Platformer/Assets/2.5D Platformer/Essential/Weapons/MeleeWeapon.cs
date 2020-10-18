@@ -72,7 +72,7 @@ namespace Roundbeargames
 
         public void DropWeapon()
         {
-            MeleeWeapon w = control.WEAPON_DATA.HoldingWeapon;
+            MeleeWeapon w = control.DATASET.WEAPON_DATA.HoldingWeapon;
 
             if (w != null)
             {
@@ -91,7 +91,7 @@ namespace Roundbeargames
 
                 w.transform.position = control.transform.position + (Vector3.up * 0.0225f);
 
-                control.WEAPON_DATA.HoldingWeapon = null;
+                control.DATASET.WEAPON_DATA.HoldingWeapon = null;
                 control = null;
                 w.triggerDetector.control = null;
             }
@@ -99,13 +99,13 @@ namespace Roundbeargames
 
         public void ThrowWeapon()
         {
-            MeleeWeapon w = control.WEAPON_DATA.HoldingWeapon;
+            MeleeWeapon w = control.DATASET.WEAPON_DATA.HoldingWeapon;
 
             if (w != null)
             {
                 w.transform.parent = null;
 
-                if (control.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+                if (control.GetBool(typeof(FacingForward)))
                 {
                     w.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
                 }
@@ -114,13 +114,13 @@ namespace Roundbeargames
                     w.transform.rotation = Quaternion.Euler(0f, -90f, 0f);
                 }
 
-                FlyForward = control.GetBool(typeof(FacingForward));// ROTATION_DATA.IsFacingForward();
+                FlyForward = control.GetBool(typeof(FacingForward));
 
                 w.transform.position = control.transform.position + (Vector3.up * ThrowOffset.y);
                 w.transform.position += (control.transform.forward * ThrowOffset.z);
 
                 Thrower = control;
-                control.WEAPON_DATA.HoldingWeapon = null;
+                control.DATASET.WEAPON_DATA.HoldingWeapon = null;
                 control = null;
                 w.triggerDetector.control = null;
 
@@ -132,14 +132,14 @@ namespace Roundbeargames
 
         public void RemoveWeaponFromDictionary(CharacterControl c)
         {
-            for (int i = 0; i < c.RAGDOLL_DATA.ArrBodyParts.Length; i++)
+            for (int i = 0; i < c.DATASET.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                TriggerDetector t = c.RAGDOLL_DATA.ArrBodyParts[i].GetComponent<TriggerDetector>();
+                TriggerDetector t = c.DATASET.RAGDOLL_DATA.ArrBodyParts[i].GetComponent<TriggerDetector>();
 
                 if (t != null)
                 {
-                    ProcRemove(c.COLLIDING_OBJ_DATA.CollidingWeapons, t);
-                    ProcRemove(c.COLLIDING_OBJ_DATA.CollidingBodyParts, t);
+                    ProcRemove(c.DATASET.COLLIDING_OBJ_DATA.CollidingWeapons, t);
+                    ProcRemove(c.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts, t);
                 }
             }
         }

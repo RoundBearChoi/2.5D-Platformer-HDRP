@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool ReturnBool()
         {
-            if (control.DAMAGE_DATA.hp <= 0f)
+            if (control.DATASET.DAMAGE_DATA.hp <= 0f)
             {
                 return true;
             }

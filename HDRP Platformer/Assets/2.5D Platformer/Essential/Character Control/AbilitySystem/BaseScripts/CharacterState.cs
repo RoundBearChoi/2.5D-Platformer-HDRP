@@ -24,6 +24,8 @@ namespace Roundbeargames
         [Space(10)]
         public CharacterAbility[] ArrOther;
 
+        public Datasets DATASET => control.DATASET;
+
         public GameObject RIGHT_HAND_ATTACK => control.characterSetup.attackPartSetup.RightHand_Attack;
 
         public void PutStatesInArray()
@@ -75,13 +77,13 @@ namespace Roundbeargames
             {
                 AbilityList[i].OnEnter(characterState, animator, stateInfo);
 
-                if (control.ABILITY_DATA.CurrentAbilities.ContainsKey(AbilityList[i]))
+                if (control.DATASET.ABILITY_DATA.CurrentAbilities.ContainsKey(AbilityList[i]))
                 {
-                    control.ABILITY_DATA.CurrentAbilities[AbilityList[i]] += 1;
+                    control.DATASET.ABILITY_DATA.CurrentAbilities[AbilityList[i]] += 1;
                 }
                 else
                 {
-                    control.ABILITY_DATA.CurrentAbilities.Add(AbilityList[i], 1);
+                    control.DATASET.ABILITY_DATA.CurrentAbilities.Add(AbilityList[i], 1);
                 }
             }
         }
@@ -100,13 +102,13 @@ namespace Roundbeargames
             {
                 AbilityList[i].OnExit(characterState, animator, stateInfo);
 
-                if (control.ABILITY_DATA.CurrentAbilities.ContainsKey(AbilityList[i]))
+                if (control.DATASET.ABILITY_DATA.CurrentAbilities.ContainsKey(AbilityList[i]))
                 {
-                    control.ABILITY_DATA.CurrentAbilities[AbilityList[i]] -= 1;
+                    control.DATASET.ABILITY_DATA.CurrentAbilities[AbilityList[i]] -= 1;
 
-                    if (control.ABILITY_DATA.CurrentAbilities[AbilityList[i]] <= 0)
+                    if (control.DATASET.ABILITY_DATA.CurrentAbilities[AbilityList[i]] <= 0)
                     {
-                        control.ABILITY_DATA.CurrentAbilities.Remove(AbilityList[i]);
+                        control.DATASET.ABILITY_DATA.CurrentAbilities.Remove(AbilityList[i]);
                     }
                 }
             }

@@ -10,9 +10,9 @@ namespace Roundbeargames
 
         public override void RunFunction()
         {
-            targets = control.BLOCKING_DATA.MarioStompTargets;
+            targets = control.DATASET.BLOCKING_DATA.MarioStompTargets;
 
-            if (control.BLOCKING_DATA.MarioStompTargets.Count > 0)
+            if (control.DATASET.BLOCKING_DATA.MarioStompTargets.Count > 0)
             {
                 DealDamageToTarget();
             }
@@ -30,14 +30,16 @@ namespace Roundbeargames
             foreach (CharacterControl c in targets)
             {
                 AttackCondition info = new AttackCondition();
-                info.CopyInfo(c.DAMAGE_DATA.MarioStompAttack, control);
+                info.CopyInfo(c.DATASET.DAMAGE_DATA.MarioStompAttack, control);
 
-                int index = Random.Range(0, c.RAGDOLL_DATA.ArrBodyParts.Length);
-                TriggerDetector randomPart = c.RAGDOLL_DATA.ArrBodyParts[index].GetComponent<TriggerDetector>();
+                int index = Random.Range(0, c.DATASET.RAGDOLL_DATA.ArrBodyParts.Length);
 
-                c.DAMAGE_DATA.damageTaken = new DamageTaken(
+                TriggerDetector randomPart =
+                    c.DATASET.RAGDOLL_DATA.ArrBodyParts[index].GetComponent<TriggerDetector>();
+
+                c.DATASET.DAMAGE_DATA.damageTaken = new DamageTaken(
                     control,
-                    c.DAMAGE_DATA.MarioStompAttack,
+                    c.DATASET.DAMAGE_DATA.MarioStompAttack,
                     randomPart,
                     control.RIGHT_FOOT_ATTACK,
                     Vector3.zero);
@@ -50,9 +52,10 @@ namespace Roundbeargames
 
         void AddsTargetToList()
         {
-            if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0)
+            if (control.DATASET.BLOCKING_DATA.DownBlockingObjs.Count > 0)
             {
-                foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
+                foreach (KeyValuePair<GameObject, List<GameObject>> data in
+                    control.DATASET.BLOCKING_DATA.DownBlockingObjs)
                 {
                     foreach (GameObject obj in data.Value)
                     {

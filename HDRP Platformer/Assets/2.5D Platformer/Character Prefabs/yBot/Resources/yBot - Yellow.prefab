@@ -1500,7 +1500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ffcb032295b9b4aa90515c8951dcf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  control: {fileID: 0}
 --- !u!1 &3299876615741576762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +3002,7 @@ GameObject:
   - component: {fileID: 7178425326382510822}
   - component: {fileID: 7134026025264460630}
   - component: {fileID: 7097633973097604586}
+  - component: {fileID: 4344561324718807891}
   - component: {fileID: 7199473640970729132}
   - component: {fileID: 2217124918068040343}
   - component: {fileID: 3396805944348958970}
@@ -3075,14 +3075,123 @@ MonoBehaviour:
   Attack: 0
   Block: 0
   DisableTurning: 0
-  aiProgress: {fileID: 0}
-  aiController: {fileID: 0}
-  boxCollider: {fileID: 0}
-  navMeshObstacle: {fileID: 0}
   characterSetup: {fileID: 0}
   characterFunctionProcessor: {fileID: 0}
   characterUpdateProcessor: {fileID: 0}
   characterQueryProcessor: {fileID: 0}
+  MOVE_DATA:
+    LatestMoveUp: {fileID: 0}
+    IsIgnoreCharacterTime: 0
+    Momentum: 0
+  DAMAGE_DATA:
+    damageTaken:
+      mAttacker: {fileID: 0}
+      mAttack: {fileID: 0}
+      mDamager: {fileID: 0}
+      mDamagee: {fileID: 0}
+      mIncomingVelocity: {x: 0, y: 0, z: 0}
+    BlockedAttack: {fileID: 0}
+    hp: 1
+    MarioStompAttack: {fileID: 0}
+    AxeThrow: {fileID: 0}
+  BLOCKING_DATA:
+    RaycastContact: {x: 0, y: 0, z: 0}
+    MarioStompTargets: []
+    FrontBlockingDicCount: 0
+    UpBlockingDicCount: 0
+  LEDGE_GRAB_DATA:
+    isGrabbingLedge: 0
+    TargetLedge: {fileID: 0}
+    collider1: {fileID: 0}
+    collider2: {fileID: 0}
+  RAGDOLL_DATA:
+    RagdollTriggered: 0
+    ArrBodyParts: []
+    flyingRagdollData:
+      IsTriggered: 0
+      Attacker: {fileID: 0}
+  MANUAL_INPUT_DATA:
+    DoubleTaps: 
+  BOX_COLLIDER_DATA:
+    IsUpdatingSpheres: 0
+    IsLanding: 0
+    Size_Update_Speed: 0
+    Center_Update_Speed: 0
+    TargetSize: {x: 0, y: 0, z: 0}
+    TargetCenter: {x: 0, y: 0, z: 0}
+    LandingPosition: {x: 0, y: 0, z: 0}
+  VERTICAL_VELOCITY_DATA:
+    NoJumpCancel: 0
+    MaxWallSlideVelocity: {x: 0, y: 0, z: 0}
+  TRANSITION_DATA:
+    InstantTransitionMade: 0
+    LockTransition: 0
+  SPAWNED_OBJ_DATA:
+    ObjList: 
+  ROTATION_DATA:
+    LockTurn: 0
+    UnlockTiming: 0
+  JUMP_DATA:
+    CanWallJump: 0
+    CheckWallBlock: 0
+  COLLISION_SPHERE_DATA:
+    BottomSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    FrontSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    BackSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    UpSpheres:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  GROUND_DATA:
+    Ground: {fileID: 0}
+  ATTACK_DATA:
+    AttackTriggered: 0
+    AttackButtonIsReset: 0
+  WEAPON_DATA:
+    HoldingWeapon: {fileID: 0}
+  TURN_DATA:
+    StartedForward: 0
+  CAMERA_DATA:
+    CameraShaken: 0
+--- !u!114 &4344561324718807891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200667830176523006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db97209f2927ed43be6b77e81c9f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   MOVE_DATA:
     LatestMoveUp: {fileID: 0}
     IsIgnoreCharacterTime: 0

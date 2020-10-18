@@ -34,9 +34,9 @@ namespace Roundbeargames
         bool IsGrounded(CharacterControl control)
         {
             // physics check
-            if (control.GROUND_DATA.BoxColliderContacts != null)
+            if (control.DATASET.GROUND_DATA.BoxColliderContacts != null)
             {
-                foreach (ContactPoint c in control.GROUND_DATA.BoxColliderContacts)
+                foreach (ContactPoint c in control.DATASET.GROUND_DATA.BoxColliderContacts)
                 {
                     float colliderBottom = (
                         control.transform.position.y +
@@ -49,7 +49,7 @@ namespace Roundbeargames
                     {
                         if (Mathf.Abs(control.RIGID_BODY.velocity.y) < 0.001f)
                         {
-                            control.GROUND_DATA.Ground = c.otherCollider.gameObject;
+                            control.DATASET.GROUND_DATA.Ground = c.otherCollider.gameObject;
                             SetLandingPosition(control, c.point);
                             return true;
                         }
@@ -60,7 +60,8 @@ namespace Roundbeargames
             // raycast check
             if (control.RIGID_BODY.velocity.y < 0f)
             {
-                foreach (GameObject o in control.COLLISION_SPHERE_DATA.BottomSpheres)
+                foreach (GameObject o in
+                    control.DATASET.COLLISION_SPHERE_DATA.BottomSpheres)
                 {
                     RaycastHit[] hits = Physics.RaycastAll(o.transform.position, Vector3.down, Distance);
 
@@ -72,7 +73,7 @@ namespace Roundbeargames
 
                             if (c == null)
                             {
-                                control.GROUND_DATA.Ground = h.transform.gameObject;
+                                control.DATASET.GROUND_DATA.Ground = h.transform.gameObject;
                                 SetLandingPosition(control, h.point);
                                 return true;
                             }
@@ -81,7 +82,7 @@ namespace Roundbeargames
                 }
             }
 
-            control.GROUND_DATA.Ground = null;
+            control.DATASET.GROUND_DATA.Ground = null;
             return false;
         }
 
@@ -96,15 +97,16 @@ namespace Roundbeargames
 
         void _setlandingposition(CharacterControl control, Vector3 pos)
         {
-            control.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
+            control.DATASET.BOX_COLLIDER_DATA.LandingPosition = new Vector3(
                 0f,
                 pos.y,
                 pos.z);
 
-            if (control.BLOCKING_DATA.DownBlockingObjs.Count > 0 &&
-                control.BLOCKING_DATA.DownBlockingObjs.Count < 5)
+            if (control.DATASET.BLOCKING_DATA.DownBlockingObjs.Count > 0 &&
+                control.DATASET.BLOCKING_DATA.DownBlockingObjs.Count < 5)
             {
-                foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.DownBlockingObjs)
+                foreach (KeyValuePair<GameObject, List<GameObject>> data in
+                    control.DATASET.BLOCKING_DATA.DownBlockingObjs)
                 {
                     if (data.Key.transform.position.z < control.transform.position.z)
                     {

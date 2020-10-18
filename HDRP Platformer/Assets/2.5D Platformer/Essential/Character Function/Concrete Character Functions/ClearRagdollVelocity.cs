@@ -8,9 +8,9 @@ namespace Roundbeargames
     {
         public override void RunFunction()
         {
-            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.DATASET.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                control.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
+                control.DATASET.RAGDOLL_DATA.ArrBodyParts[i].attachedRigidbody.velocity = Vector3.zero;
             }
         }
     }

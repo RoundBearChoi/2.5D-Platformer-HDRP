@@ -21,16 +21,16 @@ namespace Roundbeargames
 
             if (control.Attack)
             {
-                if (control.ATTACK_DATA.AttackButtonIsReset)
+                if (control.DATASET.ATTACK_DATA.AttackButtonIsReset)
                 {
-                    control.ATTACK_DATA.AttackTriggered = true;
-                    control.ATTACK_DATA.AttackButtonIsReset = false;
+                    control.DATASET.ATTACK_DATA.AttackTriggered = true;
+                    control.DATASET.ATTACK_DATA.AttackButtonIsReset = false;
                 }
             }
             else
             {
-                control.ATTACK_DATA.AttackButtonIsReset = true;
-                control.ATTACK_DATA.AttackTriggered = false;
+                control.DATASET.ATTACK_DATA.AttackButtonIsReset = true;
+                control.DATASET.ATTACK_DATA.AttackTriggered = false;
             }
         }
 

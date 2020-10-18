@@ -11,7 +11,7 @@ namespace Roundbeargames
         {
             animator.SetBool(HashManager.Instance.ArrMainParams[(int)MainParameterType.Move], false);
 
-            characterState.control.BLOCKING_DATA.FrontBlockingObjs.Clear();
+            characterState.DATASET.BLOCKING_DATA.FrontBlockingObjs.Clear();
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -24,7 +24,7 @@ namespace Roundbeargames
             {
                 if (!characterState.UpdatingAbility(typeof(Jump)))
                 {
-                    characterState.control.JUMP_DATA.DicJumped.Clear();
+                    characterState.DATASET.JUMP_DATA.DicJumped.Clear();
                 }
             }
         }

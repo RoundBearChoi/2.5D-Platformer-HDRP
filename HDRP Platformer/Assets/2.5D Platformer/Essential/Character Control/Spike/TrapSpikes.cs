@@ -42,8 +42,8 @@ namespace Roundbeargames
                             if (!ListSpikeVictims.Contains(control))
                             {
                                 ListSpikeVictims.Add(control);
-                                control.DAMAGE_DATA.hp = 0f;
-                                control.DAMAGE_DATA.damageTaken = null;
+                                control.DATASET.DAMAGE_DATA.hp = 0f;
+                                control.DATASET.DAMAGE_DATA.damageTaken = null;
                             }
                         }
                     }
@@ -87,7 +87,7 @@ namespace Roundbeargames
 
             foreach (CharacterControl control in ListSpikeVictims)
             {
-                control.RAGDOLL_DATA.RagdollTriggered = true;
+                control.DATASET.RAGDOLL_DATA.RagdollTriggered = true;
             }
 
             yield return new WaitForSeconds(1f);

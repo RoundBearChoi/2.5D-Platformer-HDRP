@@ -21,11 +21,11 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.JUMP_DATA.CheckWallBlock = StartCheckingWallBlock();
+            characterState.DATASET.JUMP_DATA.CheckWallBlock = StartCheckingWallBlock();
 
             if (animator.GetInteger(HashManager.Instance.ArrMainParams[(int)MainParameterType.TransitionIndex]) == 0)
             {
-                if (!characterState.control.TRANSITION_DATA.LockTransition)
+                if (!characterState.DATASET.TRANSITION_DATA.LockTransition)
                 {
                     if (IndexChecker.MakeTransition(characterState.control, transitionConditions))
                     {

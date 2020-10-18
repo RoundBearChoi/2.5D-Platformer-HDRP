@@ -11,11 +11,11 @@ namespace Roundbeargames
             GameObject vfx = PoolManager.Instance.GetObject(EffectsType);
 
             vfx.transform.position =
-                control.DAMAGE_DATA.damageTaken.DAMAGEE.triggerCollider.bounds.center;
+                control.DATASET.DAMAGE_DATA.damageTaken.DAMAGEE.triggerCollider.bounds.center;
 
             vfx.SetActive(true);
 
-            if (attacker.GetBool(typeof(FacingForward)))// ROTATION_DATA.IsFacingForward())
+            if (attacker.GetBool(typeof(FacingForward)))
             {
                 vfx.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }

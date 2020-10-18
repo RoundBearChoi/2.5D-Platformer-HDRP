@@ -81,7 +81,7 @@ namespace Roundbeargames
 
         bool PreConditionsNotMet(CharacterControl control)
         {
-            if (control.TRANSITION_DATA.LockTransition)
+            if (control.DATASET.TRANSITION_DATA.LockTransition)
             {
                 return true;
             }

@@ -14,14 +14,14 @@ namespace Roundbeargames
             }
 
             info.CurrentHits++;
-            control.DAMAGE_DATA.hp -= info.AttackAbility.Damage;
+            control.DATASET.DAMAGE_DATA.hp -= info.AttackAbility.Damage;
 
             AttackManager.Instance.ForceDeregister(control);
-            control.ABILITY_DATA.CurrentAbilities.Clear();
+            control.DATASET.ABILITY_DATA.CurrentAbilities.Clear();
 
             if (control.GetBool(typeof(CharacterDead)))
             {
-                control.RAGDOLL_DATA.RagdollTriggered = true;
+                control.DATASET.RAGDOLL_DATA.RagdollTriggered = true;
             }
             else
             {

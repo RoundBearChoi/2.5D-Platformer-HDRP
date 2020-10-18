@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (!control.JUMP_DATA.CanWallJump)
+            if (!control.DATASET.JUMP_DATA.CanWallJump)
             {
                 return false;
             }

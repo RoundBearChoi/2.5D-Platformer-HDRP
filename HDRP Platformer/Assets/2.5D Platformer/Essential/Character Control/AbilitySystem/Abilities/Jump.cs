@@ -19,12 +19,12 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.control.JUMP_DATA.DicJumped.ContainsKey(JumpIndex))
+            if (!characterState.DATASET.JUMP_DATA.DicJumped.ContainsKey(JumpIndex))
             {
-                characterState.control.JUMP_DATA.DicJumped.Add(JumpIndex, false);
+                characterState.DATASET.JUMP_DATA.DicJumped.Add(JumpIndex, false);
             }
 
-            characterState.control.VERTICAL_VELOCITY_DATA.NoJumpCancel = CancelPull;
+            characterState.DATASET.VERTICAL_VELOCITY_DATA.NoJumpCancel = CancelPull;
 
             if (JumpTiming == 0f)
             {
@@ -34,7 +34,7 @@ namespace Roundbeargames
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.control.JUMP_DATA.DicJumped[JumpIndex] &&
+            if (!characterState.DATASET.JUMP_DATA.DicJumped[JumpIndex] &&
                 stateInfo.normalizedTime >= JumpTiming)
             {
                 MakeJump(characterState.control);
@@ -43,7 +43,7 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.JUMP_DATA.DicJumped[JumpIndex] = false;
+            characterState.DATASET.JUMP_DATA.DicJumped[JumpIndex] = false;
         }
 
         void MakeJump(CharacterControl control)
@@ -53,7 +53,7 @@ namespace Roundbeargames
                 Debug.Log("Making jump: " + this.name);
             }
 
-            if (control.JUMP_DATA.DicJumped[JumpIndex])
+            if (control.DATASET.JUMP_DATA.DicJumped[JumpIndex])
             {
                 Debug.Log("Preventing double jump");
                 return;
@@ -71,7 +71,7 @@ namespace Roundbeargames
             }
 
             control.RIGID_BODY.AddForce(Vector3.up * JumpForce);
-            control.JUMP_DATA.DicJumped[JumpIndex] = true;
+            control.DATASET.JUMP_DATA.DicJumped[JumpIndex] = true;
         }
     }
 }

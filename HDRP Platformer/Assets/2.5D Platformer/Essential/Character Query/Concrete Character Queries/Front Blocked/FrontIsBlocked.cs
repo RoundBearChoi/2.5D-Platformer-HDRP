@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool ReturnBool()
         {
-            if (control.BLOCKING_DATA.FrontBlockingDicCount != 0)
+            if (control.DATASET.BLOCKING_DATA.FrontBlockingDicCount != 0)
             {
                 return true;
             }

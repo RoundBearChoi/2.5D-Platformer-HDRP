@@ -50,9 +50,9 @@ namespace Roundbeargames
                 return null;
             }
 
-            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.DATASET.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
-                if (control.RAGDOLL_DATA.ArrBodyParts[i].Equals(col))
+                if (control.DATASET.RAGDOLL_DATA.ArrBodyParts[i].Equals(col))
                 {
                     return null;
                 }
@@ -72,14 +72,14 @@ namespace Roundbeargames
 
             // add collider to dictionary
 
-            if (!control.COLLIDING_OBJ_DATA.CollidingBodyParts.ContainsKey(this))
+            if (!control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts.ContainsKey(this))
             {
-                control.COLLIDING_OBJ_DATA.CollidingBodyParts.Add(this, new List<Collider>());
+                control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts.Add(this, new List<Collider>());
             }
 
-            if (!control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Contains(col))
+            if (!control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Contains(col))
             {
-                control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Add(col);
+                control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Add(col);
             }
 
             return attacker;
@@ -92,40 +92,40 @@ namespace Roundbeargames
                 return;
             }
 
-            if (control.COLLIDING_OBJ_DATA.CollidingBodyParts.ContainsKey(this))
+            if (control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts.ContainsKey(this))
             {
-                if (control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Contains(col))
+                if (control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Contains(col))
                 {
-                    control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Remove(col);
+                    control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Remove(col);
                 }
 
-                if (control.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Count == 0)
+                if (control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts[this].Count == 0)
                 {
-                    control.COLLIDING_OBJ_DATA.CollidingBodyParts.Remove(this);
+                    control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts.Remove(this);
                 }
             }
         }
 
         void TakeCollateralDamage(CharacterControl attacker, Collider col)
         {
-            if (attacker.RAGDOLL_DATA.flyingRagdollData.IsTriggered)
+            if (attacker.DATASET.RAGDOLL_DATA.flyingRagdollData.IsTriggered)
             {
-                if (attacker.RAGDOLL_DATA.flyingRagdollData.Attacker != control)
+                if (attacker.DATASET.RAGDOLL_DATA.flyingRagdollData.Attacker != control)
                 {
                     float mag = Vector3.SqrMagnitude(col.attachedRigidbody.velocity);
                     Debug.Log("incoming ragdoll: " + attacker.gameObject.name + "\n" + "Velocity: " + mag);
 
                     if (mag >= 10f)
                     {
-                        control.DAMAGE_DATA.damageTaken = new DamageTaken(
+                        control.DATASET.DAMAGE_DATA.damageTaken = new DamageTaken(
                             null,
                             null,
                             this,
                             null,
                             col.attachedRigidbody.velocity);
 
-                        control.DAMAGE_DATA.hp = 0;
-                        control.RAGDOLL_DATA.RagdollTriggered = true;
+                        control.DATASET.DAMAGE_DATA.hp = 0;
+                        control.DATASET.RAGDOLL_DATA.RagdollTriggered = true;
                     }
                 }
             }

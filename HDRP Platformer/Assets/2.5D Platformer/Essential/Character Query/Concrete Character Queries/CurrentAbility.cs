@@ -13,7 +13,8 @@ namespace Roundbeargames
                 Debug.LogError(abilityType.ToString() + " is not a character ability");
             }
 
-            foreach (KeyValuePair<CharacterAbility, int> data in control.ABILITY_DATA.CurrentAbilities)
+            foreach (KeyValuePair<CharacterAbility, int> data in
+                control.DATASET.ABILITY_DATA.CurrentAbilities)
             {
                 if (data.Key.GetType() == abilityType)
                 {

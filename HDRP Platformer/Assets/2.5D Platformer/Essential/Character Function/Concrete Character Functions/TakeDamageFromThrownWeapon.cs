@@ -9,11 +9,11 @@ namespace Roundbeargames
         public override void RunFunction(MeleeWeapon weapon, TriggerDetector triggerDetector)
         {
             AttackCondition info = new AttackCondition();
-            info.CopyInfo(control.DAMAGE_DATA.AxeThrow, control);
+            info.CopyInfo(control.DATASET.DAMAGE_DATA.AxeThrow, control);
 
-            control.DAMAGE_DATA.damageTaken = new DamageTaken(
+            control.DATASET.DAMAGE_DATA.damageTaken = new DamageTaken(
                 weapon.Thrower,
-                control.DAMAGE_DATA.AxeThrow,
+                control.DATASET.DAMAGE_DATA.AxeThrow,
                 triggerDetector,
                 null,
                 Vector3.zero);

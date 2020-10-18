@@ -19,13 +19,13 @@ namespace Roundbeargames
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             SetCommonMoveComponent();
-            characterState.control.MOVE_DATA.LatestMoveForward = commonForwardData;
+            characterState.DATASET.MOVE_DATA.LatestMoveForward = commonForwardData;
             SetStartingMomentum(characterState);
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.control.MOVE_DATA.LatestMoveForward != commonForwardData)
+            if (characterState.DATASET.MOVE_DATA.LatestMoveForward != commonForwardData)
             {
                 return;
             }
@@ -49,7 +49,7 @@ namespace Roundbeargames
             {
                 if (momentumOptions.ClearMomentumOnExit)
                 {
-                    characterState.control.MOVE_DATA.Momentum = 0f;
+                    characterState.DATASET.MOVE_DATA.Momentum = 0f;
                 }
             }
         }
@@ -91,12 +91,12 @@ namespace Roundbeargames
                     {
                         if (characterState.control.GetBool(typeof(FacingForward)))
                         {
-                            characterState.control.MOVE_DATA.Momentum =
+                            characterState.DATASET.MOVE_DATA.Momentum =
                                 momentumOptions.StartingMomentum;
                         }
                         else
                         {
-                            characterState.control.MOVE_DATA.Momentum =
+                            characterState.DATASET.MOVE_DATA.Momentum =
                                 -momentumOptions.StartingMomentum;
                         }
                     }

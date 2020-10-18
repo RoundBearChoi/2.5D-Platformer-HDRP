@@ -18,7 +18,7 @@ namespace Roundbeargames
                 return;
             }
 
-            if (control.ROTATION_DATA.LockTurn)
+            if (control.DATASET.ROTATION_DATA.LockTurn)
             {
                 return;
             }

@@ -67,7 +67,7 @@ namespace Roundbeargames
             {
                 GameObject obj = LoadCollisionSphere();
 
-                control.COLLISION_SPHERE_DATA.BottomSpheres[i] = obj;
+                control.DATASET.COLLISION_SPHERE_DATA.BottomSpheres[i] = obj;
                 obj.transform.parent = Bottom.transform;
             }
 
@@ -79,7 +79,7 @@ namespace Roundbeargames
             {
                 GameObject obj = LoadCollisionSphere();
 
-                control.COLLISION_SPHERE_DATA.UpSpheres[i] = obj;
+                control.DATASET.COLLISION_SPHERE_DATA.UpSpheres[i] = obj;
                 obj.transform.parent = Up.transform;
             }
 
@@ -91,7 +91,7 @@ namespace Roundbeargames
             {
                 GameObject obj = LoadCollisionSphere();
 
-                control.COLLISION_SPHERE_DATA.FrontSpheres[i] = obj;
+                control.DATASET.COLLISION_SPHERE_DATA.FrontSpheres[i] = obj;
                 obj.transform.parent = Front.transform;
             }
 
@@ -103,7 +103,7 @@ namespace Roundbeargames
             {
                 GameObject obj = LoadCollisionSphere();
 
-                control.COLLISION_SPHERE_DATA.BackSpheres[i] = obj;
+                control.DATASET.COLLISION_SPHERE_DATA.BackSpheres[i] = obj;
                 obj.transform.parent = Back.transform;
             }
 

@@ -6,9 +6,11 @@ namespace Roundbeargames
 {
     public class ForwardReversed : CharacterQuery
     {
+        MoveData MOVE => control.DATASET.MOVE_DATA;
+
         public override bool ReturnBool()
         {
-            if (control.MOVE_DATA.LatestMoveForward.IsMoveOnHit())
+            if (MOVE.LatestMoveForward.IsMoveOnHit())
             {
                 if (control.GetBool(typeof(FacingAttacker)))
                 {
@@ -20,11 +22,11 @@ namespace Roundbeargames
                 }
             }
 
-            if (control.MOVE_DATA.LatestMoveForward.GetMoveSpeed() > 0f)
+            if (MOVE.LatestMoveForward.GetMoveSpeed() > 0f)
             {
                 return false;
             }
-            else if (control.MOVE_DATA.LatestMoveForward.GetMoveSpeed() < 0f)
+            else if (MOVE.LatestMoveForward.GetMoveSpeed() < 0f)
             {
                 return true;
             }

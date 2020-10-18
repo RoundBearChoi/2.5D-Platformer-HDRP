@@ -28,20 +28,20 @@ namespace Roundbeargames
             {
                 if (c.gameObject.name.Contains("1"))
                 {
-                    control.LEDGE_GRAB_DATA.collider1 = c;
+                    control.DATASET.LEDGE_GRAB_DATA.collider1 = c;
                 }
 
                 if (c.gameObject.name.Contains("2"))
                 {
-                    control.LEDGE_GRAB_DATA.collider2 = c;
+                    control.DATASET.LEDGE_GRAB_DATA.collider2 = c;
                 }
             }
         }
 
         void SetDamageData(CharacterControl control)
         {
-            control.DAMAGE_DATA.MarioStompAttack = MarioStompAttack;
-            control.DAMAGE_DATA.AxeThrow = AxeThrow;
+            control.DATASET.DAMAGE_DATA.MarioStompAttack = MarioStompAttack;
+            control.DATASET.DAMAGE_DATA.AxeThrow = AxeThrow;
         }
     }
 }

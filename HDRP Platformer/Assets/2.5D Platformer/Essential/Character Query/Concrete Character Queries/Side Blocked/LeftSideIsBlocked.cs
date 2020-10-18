@@ -8,7 +8,8 @@ namespace Roundbeargames
     {
         public override bool ReturnBool()
         {
-            foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, List<GameObject>> data in
+                control.DATASET.BLOCKING_DATA.FrontBlockingObjs)
             {
                 foreach(GameObject obj in data.Value)
                 {

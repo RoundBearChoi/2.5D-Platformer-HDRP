@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override void RunFunction(float RayDistance)
         {
-            foreach (GameObject obj in control.COLLISION_SPHERE_DATA.BottomSpheres)
+            foreach (GameObject obj in control.DATASET.COLLISION_SPHERE_DATA.BottomSpheres)
             {
                 RaycastHit[] hits;
                 hits = Physics.RaycastAll(obj.transform.position, Vector3.down, RayDistance);
@@ -17,7 +17,8 @@ namespace Roundbeargames
                 {
                     if (!CollisionDetection.IgnoreCollision(control, h))
                     {
-                        AddObjToDictionary.Add(control.BLOCKING_DATA.DownBlockingObjs,
+                        AddObjToDictionary.Add(
+                            control.DATASET.BLOCKING_DATA.DownBlockingObjs,
                             obj,
                             h.collider.transform.root.gameObject);
                     }

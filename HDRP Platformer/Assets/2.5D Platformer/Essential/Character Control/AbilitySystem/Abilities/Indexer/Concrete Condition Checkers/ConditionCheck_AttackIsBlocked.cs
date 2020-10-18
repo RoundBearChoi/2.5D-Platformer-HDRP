@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (control.DAMAGE_DATA.BlockedAttack == null)
+            if (control.DATASET.DAMAGE_DATA.BlockedAttack == null)
             {
                 return false;
             }

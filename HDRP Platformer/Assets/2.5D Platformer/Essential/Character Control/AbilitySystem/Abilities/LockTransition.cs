@@ -11,18 +11,18 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.TRANSITION_DATA.LockTransition = true;
+            characterState.DATASET.TRANSITION_DATA.LockTransition = true;
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             if (stateInfo.normalizedTime > UnlockTime)
             {
-                characterState.control.TRANSITION_DATA.LockTransition = false;
+                characterState.DATASET.TRANSITION_DATA.LockTransition = false;
             }
             else
             {
-                characterState.control.TRANSITION_DATA.LockTransition = true;
+                characterState.DATASET.TRANSITION_DATA.LockTransition = true;
             }
         }
 

@@ -22,7 +22,7 @@ namespace Roundbeargames
 
         static bool IsIgnoringCharacter(CharacterControl control, Collider col)
         {
-            if (!control.MOVE_DATA.IsIgnoreCharacterTime)
+            if (!control.DATASET.MOVE_DATA.IsIgnoreCharacterTime)
             {
                 return false;
             }

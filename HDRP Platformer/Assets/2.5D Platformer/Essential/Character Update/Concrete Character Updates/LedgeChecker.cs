@@ -6,6 +6,8 @@ namespace Roundbeargames
 {
     public class LedgeChecker : CharacterUpdate
     {
+        LedgeGrabData LGDATA => control.DATASET.LEDGE_GRAB_DATA;
+
         public override void InitComponent()
         {
 
@@ -23,7 +25,7 @@ namespace Roundbeargames
             {
                 if (control.RIGID_BODY.useGravity)
                 {
-                    control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
+                    LGDATA.isGrabbingLedge = false;
                 }
             }
 
@@ -32,15 +34,15 @@ namespace Roundbeargames
                 if (LedgeCollidersInPosition() &&
                     control.Jump)
                 {
-                    if (!control.LEDGE_GRAB_DATA.isGrabbingLedge)
+                    if (!LGDATA.isGrabbingLedge)
                     {
                         control.RunFunction(typeof(DoLedgeGrab));
-                        control.LEDGE_GRAB_DATA.isGrabbingLedge = true;
+                        LGDATA.isGrabbingLedge = true;
                     }
                 }
                 else
                 {
-                    control.LEDGE_GRAB_DATA.isGrabbingLedge = false;
+                    LGDATA.isGrabbingLedge = false;
                 }
             }
         }
@@ -71,21 +73,21 @@ namespace Roundbeargames
 
         bool LedgeCollidersInPosition()
         {
-            foreach (GameObject obj in control.LEDGE_GRAB_DATA.collider1.CollidedObjects)
+            foreach (GameObject obj in LGDATA.collider1.CollidedObjects)
             {
-                if (!control.LEDGE_GRAB_DATA.collider2.CollidedObjects.Contains(obj))
+                if (!LGDATA.collider2.CollidedObjects.Contains(obj))
                 {
-                    control.LEDGE_GRAB_DATA.TargetLedge = obj;
+                    LGDATA.TargetLedge = obj;
                     return true;
                 }
                 else
                 {
-                    control.LEDGE_GRAB_DATA.TargetLedge = null;
+                    LGDATA.TargetLedge = null;
                     return false;
                 }
             }
 
-            control.LEDGE_GRAB_DATA.TargetLedge = null;
+            LGDATA.TargetLedge = null;
             return false;
         }
     }

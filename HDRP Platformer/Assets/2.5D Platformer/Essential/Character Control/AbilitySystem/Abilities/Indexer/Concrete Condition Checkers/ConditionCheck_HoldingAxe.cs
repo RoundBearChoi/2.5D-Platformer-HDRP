@@ -8,12 +8,12 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (control.WEAPON_DATA.HoldingWeapon == null)
+            if (control.DATASET.WEAPON_DATA.HoldingWeapon == null)
             {
                 return false;
             }
 
-            if (!control.WEAPON_DATA.HoldingWeapon.name.Contains("Axe"))
+            if (!control.DATASET.WEAPON_DATA.HoldingWeapon.name.Contains("Axe"))
             {
                 return false;
             }

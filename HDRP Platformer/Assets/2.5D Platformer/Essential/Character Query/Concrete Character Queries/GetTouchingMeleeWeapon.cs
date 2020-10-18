@@ -8,7 +8,8 @@ namespace Roundbeargames
     {
         public override MeleeWeapon ReturnMeleeWeapon()
         {
-            foreach (KeyValuePair<TriggerDetector, List<Collider>> data in control.COLLIDING_OBJ_DATA.CollidingWeapons)
+            foreach (KeyValuePair<TriggerDetector, List<Collider>> data in
+                control.DATASET.COLLIDING_OBJ_DATA.CollidingWeapons)
             {
                 MeleeWeapon w = data.Value[0].gameObject.GetComponent<MeleeWeapon>();
                 return w;

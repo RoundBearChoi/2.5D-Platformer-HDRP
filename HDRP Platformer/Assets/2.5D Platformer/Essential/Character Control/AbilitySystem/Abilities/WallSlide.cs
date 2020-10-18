@@ -14,22 +14,22 @@ namespace Roundbeargames
             characterState.control.MoveLeft = false;
             characterState.control.MoveRight = false;
 
-            characterState.control.MOVE_DATA.Momentum = 0f;
-            characterState.control.JUMP_DATA.CanWallJump = false;
-            characterState.control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = MaxFallVelocity;
+            characterState.DATASET.MOVE_DATA.Momentum = 0f;
+            characterState.DATASET.JUMP_DATA.CanWallJump = false;
+            characterState.DATASET.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = MaxFallVelocity;
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
             if (!characterState.control.Jump)
             {
-                characterState.control.JUMP_DATA.CanWallJump = true;
+                characterState.DATASET.JUMP_DATA.CanWallJump = true;
             }
         }
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = Vector3.zero;
+            characterState.DATASET.VERTICAL_VELOCITY_DATA.MaxWallSlideVelocity = Vector3.zero;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Roundbeargames
         {
             get
             {
-                return control.MANUAL_INPUT_DATA;
+                return control.DATASET.MANUAL_INPUT_DATA;
             }
         }
 

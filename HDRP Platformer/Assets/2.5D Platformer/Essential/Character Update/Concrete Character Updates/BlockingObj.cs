@@ -28,7 +28,7 @@ namespace Roundbeargames
             // checking while ledge grabbing
             if (control.UpdatingAbility(typeof(MoveUp)))
             {
-                if (control.MOVE_DATA.LatestMoveUp.Speed > 0f)
+                if (control.DATASET.MOVE_DATA.LatestMoveUp.Speed > 0f)
                 {
                     control.RunFunction(typeof(CheckUpBlocking), 0.3f);
                 }
@@ -40,7 +40,8 @@ namespace Roundbeargames
                 {
                     control.RunFunction(typeof(CheckUpBlocking), 0.125f);
 
-                    foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.UpBlockingObjs)
+                    foreach (KeyValuePair<GameObject, List<GameObject>> data in
+                        control.DATASET.BLOCKING_DATA.UpBlockingObjs)
                     {
                         foreach(GameObject obj in data.Value)
                         {
@@ -73,8 +74,11 @@ namespace Roundbeargames
                 control.RunFunction(typeof(CheckMarioStomp));
             }
             
-            control.BLOCKING_DATA.FrontBlockingDicCount = control.BLOCKING_DATA.FrontBlockingObjs.Count;
-            control.BLOCKING_DATA.UpBlockingDicCount = control.BLOCKING_DATA.UpBlockingObjs.Count;
+            control.DATASET.BLOCKING_DATA.FrontBlockingDicCount =
+                control.DATASET.BLOCKING_DATA.FrontBlockingObjs.Count;
+
+            control.DATASET.BLOCKING_DATA.UpBlockingDicCount =
+                control.DATASET.BLOCKING_DATA.UpBlockingObjs.Count;
         }
 
         public override void OnUpdate()
@@ -86,28 +90,28 @@ namespace Roundbeargames
         {
             if (control.RIGID_BODY.velocity.y >= 0f)
             {
-                control.BLOCKING_DATA.MarioStompTargets.Clear();
-                control.BLOCKING_DATA.DownBlockingObjs.Clear();
+                control.DATASET.BLOCKING_DATA.MarioStompTargets.Clear();
+                control.DATASET.BLOCKING_DATA.DownBlockingObjs.Clear();
             }  
         }
 
         void CheckFrontBlocking()
         {
-            control.BLOCKING_DATA.FrontBlockingObjs.Clear();
+            control.DATASET.BLOCKING_DATA.FrontBlockingObjs.Clear();
 
             if (!control.GetBool(typeof(ForwardReversed)))
             {
-                FrontSpheresArray = control.COLLISION_SPHERE_DATA.FrontSpheres;
+                FrontSpheresArray = control.DATASET.COLLISION_SPHERE_DATA.FrontSpheres;
                 FrontDirectionMultiplier = 1f;
             }
             else
             {
-                FrontSpheresArray = control.COLLISION_SPHERE_DATA.BackSpheres;
+                FrontSpheresArray = control.DATASET.COLLISION_SPHERE_DATA.BackSpheres;
                 FrontDirectionMultiplier = -1f;
             }
 
             FrontRayDirection = this.transform.forward * FrontDirectionMultiplier;
-            FrontRayLength = control.MOVE_DATA.LatestMoveForward.GetBlockDistance();
+            FrontRayLength = control.DATASET.MOVE_DATA.LatestMoveForward.GetBlockDistance();
 
             for (int i = 0; i < FrontSpheresArray.Length; i++)
             {
@@ -120,7 +124,8 @@ namespace Roundbeargames
                 {
                     if (!CollisionDetection.IgnoreCollision(control, h))
                     {
-                        AddObjToDictionary.Add(control.BLOCKING_DATA.FrontBlockingObjs,
+                        AddObjToDictionary.Add(
+                            control.DATASET.BLOCKING_DATA.FrontBlockingObjs,
                             FrontSpheresArray[i],
                             h.collider.transform.root.gameObject);
                     }

@@ -6,6 +6,8 @@ namespace Roundbeargames
 {
     public class ProcessMeleeWeaponContact : CharacterFunction
     {
+        CollidingObjData COLLIDING_OBJS => control.DATASET.COLLIDING_OBJ_DATA;
+
         public override void RunFunction(Collider col, TriggerDetector triggerDetector)
         {
             MeleeWeapon w = col.transform.root.gameObject.GetComponent<MeleeWeapon>();
@@ -22,14 +24,14 @@ namespace Roundbeargames
             }
             else
             {
-                if (!control.COLLIDING_OBJ_DATA.CollidingWeapons.ContainsKey(triggerDetector))
+                if (!COLLIDING_OBJS.CollidingWeapons.ContainsKey(triggerDetector))
                 {
-                    control.COLLIDING_OBJ_DATA.CollidingWeapons.Add(triggerDetector, new List<Collider>());
+                    COLLIDING_OBJS.CollidingWeapons.Add(triggerDetector, new List<Collider>());
                 }
 
-                if (!control.COLLIDING_OBJ_DATA.CollidingWeapons[triggerDetector].Contains(col))
+                if (!COLLIDING_OBJS.CollidingWeapons[triggerDetector].Contains(col))
                 {
-                    control.COLLIDING_OBJ_DATA.CollidingWeapons[triggerDetector].Add(col);
+                    COLLIDING_OBJS.CollidingWeapons[triggerDetector].Add(col);
                 }
             }
         }

@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (!control.ATTACK_DATA.AttackTriggered)
+            if (!control.DATASET.ATTACK_DATA.AttackTriggered)
             {
                 return false;
             }

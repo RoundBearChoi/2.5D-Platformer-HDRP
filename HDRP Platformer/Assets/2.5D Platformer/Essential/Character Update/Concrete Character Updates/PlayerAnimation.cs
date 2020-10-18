@@ -20,7 +20,7 @@ namespace Roundbeargames
         {
             if (control.UpdatingAbility(typeof(LockTransition)))
             {
-                if (control.TRANSITION_DATA.LockTransition)
+                if (control.DATASET.TRANSITION_DATA.LockTransition)
                 {
                     control.ANIMATOR.SetBool(
                         HashManager.Instance.ArrMainParams[(int)MainParameterType.LockTransition],

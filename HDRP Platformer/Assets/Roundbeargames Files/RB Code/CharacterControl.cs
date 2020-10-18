@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Roundbeargames
 {
@@ -26,32 +24,25 @@ namespace Roundbeargames
         public CharacterUpdateProcessor characterUpdateProcessor;
         public CharacterQueryProcessor characterQueryProcessor;
 
-        [Header("Character Data")]
-        public MoveData MOVE_DATA;
-        [Space(3)] public DamageData DAMAGE_DATA;
-        [Space(3)] public BlockingObjData BLOCKING_DATA;
-        [Space(3)] public LedgeGrabData LEDGE_GRAB_DATA;
-        [Space(3)] public RagdollData RAGDOLL_DATA;
-        [Space(3)] public ManualInputData MANUAL_INPUT_DATA;
-        [Space(3)] public BoxColliderData BOX_COLLIDER_DATA;
-        [Space(3)] public VerticalVelocityData VERTICAL_VELOCITY_DATA;
-        [Space(3)] public TransitionData TRANSITION_DATA;
-        [Space(3)] public AbilityData ABILITY_DATA;
-        [Space(3)] public SpawnedObjData SPAWNED_OBJ_DATA;
-        [Space(3)] public RotationData ROTATION_DATA;
-        [Space(3)] public JumpData JUMP_DATA;
-        [Space(3)] public CollisionSphereData COLLISION_SPHERE_DATA;
-        [Space(3)] public GroundData GROUND_DATA;
-        [Space(3)] public AttackData ATTACK_DATA;
-        [Space(3)] public CollidingObjData COLLIDING_OBJ_DATA;
-        [Space(3)] public WeaponData WEAPON_DATA;
-        [Space(3)] public TurnData TURN_DATA;
-        [Space(3)] public CameraData CAMERA_DATA;
-
         public GameObject RIGHT_HAND_ATTACK => characterSetup.attackPartSetup.RightHand_Attack;
         public GameObject LEFT_HAND_ATTACK => characterSetup.attackPartSetup.LeftHand_Attack;
         public GameObject RIGHT_FOOT_ATTACK => characterSetup.attackPartSetup.RightFoot_Attack;
         public GameObject LEFT_FOOT_ATTACK => characterSetup.attackPartSetup.LeftFoot_Attack;
+
+        public Datasets DATASET
+        {
+            get
+            {
+                if (characterDatasets == null)
+                {
+                    characterDatasets = this.gameObject.GetComponent<Datasets>();
+                }
+
+                return characterDatasets;
+            }
+        }
+
+        private Datasets characterDatasets;
 
         private Rigidbody rigid;
 
@@ -133,7 +124,7 @@ namespace Roundbeargames
 
         private void OnCollisionStay(Collision collision)
         {
-            GROUND_DATA.BoxColliderContacts = collision.contacts;
+            DATASET.GROUND_DATA.BoxColliderContacts = collision.contacts;
         }
 
         public bool UpdatingAbility(System.Type abilityType)

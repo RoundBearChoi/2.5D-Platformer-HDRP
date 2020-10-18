@@ -12,9 +12,9 @@ namespace Roundbeargames
         {
             characterState.control.MoveLeft = false;
             characterState.control.MoveRight = false;
-            characterState.control.MOVE_DATA.Momentum = 0f;
-
             characterState.control.RIGID_BODY.velocity = Vector3.zero;
+
+            characterState.DATASET.MOVE_DATA.Momentum = 0f;
 
             if (characterState.control.GetBool(typeof(FacingForward)))
             {

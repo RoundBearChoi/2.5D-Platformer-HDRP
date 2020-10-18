@@ -31,7 +31,7 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.ATTACK_DATA.AttackTriggered = false;
+            characterState.DATASET.ATTACK_DATA.AttackTriggered = false;
                         
             GameObject obj = PoolManager.Instance.GetObject(PoolObjectType.ATTACK_CONDITION); 
             AttackCondition info = obj.GetComponent<AttackCondition>();
@@ -105,9 +105,9 @@ namespace Roundbeargames
 
                         foreach(CharacterControl c in CharacterManager.Instance.Characters)
                         {
-                            if (c.DAMAGE_DATA.BlockedAttack == info)
+                            if (c.DATASET.DAMAGE_DATA.BlockedAttack == info)
                             {
-                                c.DAMAGE_DATA.BlockedAttack = null;
+                                c.DATASET.DAMAGE_DATA.BlockedAttack = null;
                             }
                         }
 

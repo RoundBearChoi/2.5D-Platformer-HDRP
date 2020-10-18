@@ -32,13 +32,13 @@ namespace Roundbeargames
         {
             if (!control.UpdatingAbility(typeof(LockTurn)))
             {
-                if (control.ROTATION_DATA.LockTurn)
+                if (control.DATASET.ROTATION_DATA.LockTurn)
                 {
                     AnimatorStateInfo info = control.ANIMATOR.GetCurrentAnimatorStateInfo(0);
 
-                    if (info.normalizedTime >= control.ROTATION_DATA.UnlockTiming)
+                    if (info.normalizedTime >= control.DATASET.ROTATION_DATA.UnlockTiming)
                     {
-                        control.ROTATION_DATA.LockTurn = false;
+                        control.DATASET.ROTATION_DATA.LockTurn = false;
                     }
                 }
             }

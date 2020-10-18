@@ -11,13 +11,13 @@ namespace Roundbeargames
 
         public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.TURN_DATA.StartedForward =
+            characterState.DATASET.TURN_DATA.StartedForward =
                 characterState.control.GetBool(typeof(FacingForward));
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.control.TURN_DATA.StartedForward)
+            if (characterState.DATASET.TURN_DATA.StartedForward)
             {
                 MakeTurn(characterState.control, -180f);
             }
@@ -29,7 +29,7 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (characterState.control.TURN_DATA.StartedForward)
+            if (characterState.DATASET.TURN_DATA.StartedForward)
             {
                 characterState.control.RunFunction(typeof(FaceForward), false);
             }

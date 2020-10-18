@@ -8,7 +8,7 @@ namespace Roundbeargames
         public override bool ReturnBool(AttackCondition info)
         {
             foreach (KeyValuePair<TriggerDetector, List<Collider>> data in
-                control.COLLIDING_OBJ_DATA.CollidingBodyParts)
+                control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts)
             {
                 foreach (Collider collider in data.Value)
                 {
@@ -18,7 +18,7 @@ namespace Roundbeargames
 
                         if (attackingPart == collider.gameObject)
                         {
-                            control.DAMAGE_DATA.damageTaken = new DamageTaken(
+                            control.DATASET.DAMAGE_DATA.damageTaken = new DamageTaken(
                                 info.Attacker,
                                 info.AttackAbility,
                                 data.Key,

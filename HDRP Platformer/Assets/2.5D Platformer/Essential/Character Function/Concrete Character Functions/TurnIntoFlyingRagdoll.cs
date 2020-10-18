@@ -10,8 +10,8 @@ namespace Roundbeargames
         {
             if (info.AttackAbility.collateralDamageInfo.CreateCollateral)
             {
-                control.RAGDOLL_DATA.flyingRagdollData.IsTriggered = true;
-                control.RAGDOLL_DATA.flyingRagdollData.Attacker = info.Attacker;
+                control.DATASET.RAGDOLL_DATA.flyingRagdollData.IsTriggered = true;
+                control.DATASET.RAGDOLL_DATA.flyingRagdollData.Attacker = info.Attacker;
             }
         }
     }

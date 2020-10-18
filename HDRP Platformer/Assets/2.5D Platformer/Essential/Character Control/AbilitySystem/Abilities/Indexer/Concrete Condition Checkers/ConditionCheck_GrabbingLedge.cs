@@ -8,7 +8,7 @@ namespace Roundbeargames
     {
         public override bool MeetsCondition(CharacterControl control)
         {
-            if (control.LEDGE_GRAB_DATA.isGrabbingLedge)
+            if (control.DATASET.LEDGE_GRAB_DATA.isGrabbingLedge)
             {
                 return true;
             }

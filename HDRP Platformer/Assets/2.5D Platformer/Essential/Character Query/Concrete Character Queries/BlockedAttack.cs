@@ -6,9 +6,12 @@ namespace Roundbeargames
 {
     public class BlockedAttack : CharacterQuery
     {
+        DamageData DAMAGE => control.DATASET.DAMAGE_DATA;
+
         public override bool ReturnBool(AttackCondition info)
         {
-            if (info == control.DAMAGE_DATA.BlockedAttack && control.DAMAGE_DATA.BlockedAttack != null)
+            if (info == DAMAGE.BlockedAttack &&
+                DAMAGE.BlockedAttack != null)
             {
                 return true;
             }

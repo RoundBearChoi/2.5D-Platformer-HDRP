@@ -16,17 +16,17 @@ namespace Roundbeargames
             if (ShakeTiming == 0f)
             {
                 CameraManager.Instance.ShakeCamera(ShakeLength);
-                characterState.control.CAMERA_DATA.CameraShaken = true;
+                characterState.DATASET.CAMERA_DATA.CameraShaken = true;
             }
         }
 
         public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            if (!characterState.control.CAMERA_DATA.CameraShaken)
+            if (!characterState.DATASET.CAMERA_DATA.CameraShaken)
             {
                 if (stateInfo.normalizedTime >= ShakeTiming)
                 {
-                    characterState.control.CAMERA_DATA.CameraShaken = true;
+                    characterState.DATASET.CAMERA_DATA.CameraShaken = true;
                     CameraManager.Instance.ShakeCamera(ShakeLength);
                 }
             }
@@ -34,7 +34,7 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.CAMERA_DATA.CameraShaken = false;
+            characterState.DATASET.CAMERA_DATA.CameraShaken = false;
         }
     }
 }

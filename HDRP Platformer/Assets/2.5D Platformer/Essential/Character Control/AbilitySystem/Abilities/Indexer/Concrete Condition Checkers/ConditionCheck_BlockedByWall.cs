@@ -13,12 +13,14 @@ namespace Roundbeargames
 
         public static bool IsTrue(CharacterControl control)
         {
-            if (control.BLOCKING_DATA.FrontBlockingObjs.Count != control.COLLISION_SPHERE_DATA.FrontSpheres.Length)
+            if (control.DATASET.BLOCKING_DATA.FrontBlockingObjs.Count !=
+                control.DATASET.COLLISION_SPHERE_DATA.FrontSpheres.Length)
             {
                 return false;
             }
 
-            foreach (KeyValuePair<GameObject, List<GameObject>> data in control.BLOCKING_DATA.FrontBlockingObjs)
+            foreach (KeyValuePair<GameObject, List<GameObject>> data in
+                control.DATASET.BLOCKING_DATA.FrontBlockingObjs)
             {
                 if (data.Value == null)
                 {

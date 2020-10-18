@@ -8,13 +8,14 @@ namespace Roundbeargames
     {
         public override void RunFunction()
         {
-            if (control.LEDGE_GRAB_DATA.TargetLedge != null)
+            if (control.DATASET.LEDGE_GRAB_DATA.TargetLedge != null)
             {
-                BoxCollider boxCollider = control.LEDGE_GRAB_DATA.TargetLedge.GetComponent<BoxCollider>();
+                BoxCollider boxCollider =
+                    control.DATASET.LEDGE_GRAB_DATA.TargetLedge.GetComponent<BoxCollider>();
 
                 if (boxCollider != null)
                 {
-                    _doLedgeGrab(control.LEDGE_GRAB_DATA.TargetLedge, boxCollider);
+                    _doLedgeGrab(control.DATASET.LEDGE_GRAB_DATA.TargetLedge, boxCollider);
                 }
             }
         }

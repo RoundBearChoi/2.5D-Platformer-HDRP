@@ -29,7 +29,7 @@ namespace Roundbeargames
                 {
                     if (!IndexChecker.NotCondition(characterState.control, notConditions))
                     {
-                        characterState.control.TRANSITION_DATA.InstantTransitionMade = true;
+                        characterState.DATASET.TRANSITION_DATA.InstantTransitionMade = true;
                         MakeInstantTransition(characterState.control);
                     }
                 }
@@ -38,7 +38,7 @@ namespace Roundbeargames
 
         public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
         {
-            characterState.control.TRANSITION_DATA.InstantTransitionMade = false;
+            characterState.DATASET.TRANSITION_DATA.InstantTransitionMade = false;
         }
 
         void MakeInstantTransition(CharacterControl control)
@@ -76,12 +76,12 @@ namespace Roundbeargames
 
         bool Interfered(CharacterControl control)
         {
-            if (control.TRANSITION_DATA.LockTransition)
+            if (control.DATASET.TRANSITION_DATA.LockTransition)
             {
                 return true;
             }
 
-            if (control.TRANSITION_DATA.InstantTransitionMade)
+            if (control.DATASET.TRANSITION_DATA.InstantTransitionMade)
             {
                 return true;
             }

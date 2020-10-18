@@ -8,9 +8,9 @@ namespace Roundbeargames
     {
         public override void RunFunction(RagdollPushType ragdollPushType)
         {
-            if (control.DAMAGE_DATA.damageTaken != null)
+            if (control.DATASET.DAMAGE_DATA.damageTaken != null)
             {
-                if (control.DAMAGE_DATA.damageTaken.ATTACKER != null)
+                if (control.DATASET.DAMAGE_DATA.damageTaken.ATTACKER != null)
                 {
                     ProcAddForce(ragdollPushType);
                 }
@@ -19,13 +19,13 @@ namespace Roundbeargames
 
         void ProcAddForce(RagdollPushType pushType)
         {
-            DamageData damageData = control.DAMAGE_DATA;
+            DamageData damageData = control.DATASET.DAMAGE_DATA;
 
             Vector3 forwardDir = damageData.damageTaken.ATTACKER.transform.forward;
             Vector3 rightDir = damageData.damageTaken.ATTACKER.transform.right;
             Vector3 upDir = damageData.damageTaken.ATTACKER.transform.up;
 
-            Rigidbody body = control.DAMAGE_DATA.damageTaken.DAMAGEE.GetComponent<Rigidbody>();
+            Rigidbody body = control.DATASET.DAMAGE_DATA.damageTaken.DAMAGEE.GetComponent<Rigidbody>();
             Attack attack = damageData.damageTaken.ATTACK;
 
             if (pushType == RagdollPushType.NORMAL)

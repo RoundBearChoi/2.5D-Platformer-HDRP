@@ -37,7 +37,7 @@ namespace Roundbeargames
                 {
                     if (info.MustCollide)
                     {
-                        if (control.COLLIDING_OBJ_DATA.CollidingBodyParts.Count != 0)
+                        if (control.DATASET.COLLIDING_OBJ_DATA.CollidingBodyParts.Count != 0)
                         {
                             if (control.GetBool(typeof(IsCollidingWithAttack), info))
                             {
@@ -58,17 +58,20 @@ namespace Roundbeargames
 
         bool IsInLethalRange(AttackCondition info)
         {
-            for (int i = 0; i < control.RAGDOLL_DATA.ArrBodyParts.Length; i++)
+            for (int i = 0; i < control.DATASET.RAGDOLL_DATA.ArrBodyParts.Length; i++)
             {
                 float dist = Vector3.SqrMagnitude(
-                    control.RAGDOLL_DATA.ArrBodyParts[i].transform.position - info.Attacker.transform.position);
+                    control.DATASET.RAGDOLL_DATA.ArrBodyParts[i].transform.position - info.Attacker.transform.position);
 
                 if (dist <= info.LethalRange)
                 {
-                    int index = Random.Range(0, control.RAGDOLL_DATA.ArrBodyParts.Length);
-                    TriggerDetector triggerDetector = control.RAGDOLL_DATA.ArrBodyParts[index].GetComponent<TriggerDetector>();
+                    int index =
+                        Random.Range(0, control.DATASET.RAGDOLL_DATA.ArrBodyParts.Length);
 
-                    control.DAMAGE_DATA.damageTaken = new DamageTaken(
+                    TriggerDetector triggerDetector =
+                        control.DATASET.RAGDOLL_DATA.ArrBodyParts[index].GetComponent<TriggerDetector>();
+
+                    control.DATASET.DAMAGE_DATA.damageTaken = new DamageTaken(
                         info.Attacker,
                         info.AttackAbility,
                         triggerDetector,
