@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
 
 namespace Roundbeargames
 {
@@ -26,30 +26,42 @@ namespace Roundbeargames
         public TurnData TURN_DATA;
         public CameraData CAMERA_DATA;
 
-        private Dictionary<CharacterDataType, DatasetBase> DicDatasets = new Dictionary<CharacterDataType, DatasetBase>();
+        [Space(10)]
+
+        [SerializeField]
+        DatasetBase[] arrSets;
 
         public void InitDatasets()
         {
-            DicDatasets.Clear();
+            arrSets = new DatasetBase[(int)CharacterDataType.COUNT];
 
-            Dataset_Movement dataset_movement = new Dataset_Movement();
+            arrSets[(int)CharacterDataType.MOVE_DATA] = new Dataset_Movement();
 
-            DicDatasets.Add(CharacterDataType.MOVE_DATA, dataset_movement);
+            for (int i = 0; i < arrSets.Length; i++)
+            {
+                if (arrSets[i] != null)
+                {
+                    arrSets[i].SetName((CharacterDataType)i);
+                    arrSets[i].InitDataset();
+                }
+            }
+
+            //testing
+            SetFloat(CharacterDataType.MOVE_DATA, (int)MovementData_Floats.MOMENTUM, 10f);
         }
 
         public float GetFloat(CharacterDataType dataType, int dataIndex)
         {
-            if (DicDatasets.ContainsKey(dataType))
-            {
-                DatasetBase set = DicDatasets[dataType];
-                
-                if (set.DicFloats.ContainsKey(dataIndex))
-                {
-                    return set.DicFloats[dataIndex];
-                }
-            }
+            DatasetBase set = arrSets[(int)dataType];
 
-            return 0;
+            return set.GetFloat(dataIndex);
+        }
+
+        public void SetFloat(CharacterDataType dataType, int dataIndex, float value)
+        {
+            DatasetBase set = arrSets[(int)dataType];
+
+            set.SetFloat(dataIndex, value);
         }
     }
 }

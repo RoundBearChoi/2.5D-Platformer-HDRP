@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace Roundbeargames
 {
     public enum CharacterDataType
     {
-        NONE,
-
         MOVE_DATA,
         DAMAGE_DATA,
         BLOCKING_DATA,
@@ -26,17 +25,39 @@ namespace Roundbeargames
         WEAPON_DATA,
         TURN_DATA,
         CAMERA_DATA,
+
+        COUNT,
     }
 
-    public abstract class DatasetBase
+    [System.Serializable]
+    public class DatasetBase
     {
-        public Dictionary<int, float> DicFloats = new Dictionary<int, float>();
+        [SerializeField] protected string name;
+        [SerializeField] protected FloatData[] arrFloats;
 
-        public void ClearDics()
+        public void SetName(CharacterDataType dataType)
         {
-            DicFloats.Clear();
+            name = dataType.ToString();
         }
 
-        public abstract void DefineDataset();
+        public virtual void SetDefaultValues()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void InitDataset()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual float GetFloat(int dataIndex)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void SetFloat(int dataIndex, float value)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

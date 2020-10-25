@@ -1,12 +1,9 @@
 ﻿namespace Roundbeargames
 {
-    public enum MovementDataType
+    public enum MovementData_Floats
     {
-        NONE = 0,
+        MOMENTUM,
 
-        LATEST_MOVE_FORWARD = 100,
-        LATEST_MOVE_UP = 200,
-        IGNORE_CHARACTER_TIME = 300,
-        MOMENTUM = 400,
+        COUNT,
     }
 }
