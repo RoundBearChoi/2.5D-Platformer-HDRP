@@ -36,6 +36,7 @@ namespace Roundbeargames
                 if (characterDatasets == null)
                 {
                     characterDatasets = this.gameObject.GetComponent<Datasets>();
+                    characterDatasets.InitDatasets();
                 }
 
                 return characterDatasets;
