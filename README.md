@@ -1,5 +1,10 @@
 # 2.5D-Platformer-HDRP
 
+**Installing**
+
+1. "Download ZIP" or clone
+2. Open project in Unity
+
 **Channel**
 
 https://youtube.com/roundbeargames
