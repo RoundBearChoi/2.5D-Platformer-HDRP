@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FrameSettings
   m_EditorClassIdentifier: 
   TimeScale: 1
-  TargetFPS: 200
+  TargetFPS: 120
